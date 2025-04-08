@@ -32,7 +32,6 @@
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)  
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)  
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
-- [Detail Daemon](https://github.com/Jonseed/ComfyUI-Detail-Daemon)  
 - [Unload Models](https://github.com/SeanScripts/ComfyUI-Unload-Model)  
 - [Free Memory](https://github.com/ShmuelRonen/ComfyUI-FreeMemory)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)

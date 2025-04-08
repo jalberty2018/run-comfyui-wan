@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:28032025 AS base
+FROM ls250824/comfyui-runtime:08042025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -24,7 +24,6 @@ RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention psu
     git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
 	git clone https://github.com/asdrabael/Hunyuan-Multi-Lora-Loader.git && \
     git clone https://github.com/kijai/ComfyUI-KJNodes.git && \
-    git clone https://github.com/Jonseed/ComfyUI-Detail-Daemon.git && \
     git clone https://github.com/ShmuelRonen/ComfyUI-FreeMemory.git && \
     git clone https://github.com/SeanScripts/ComfyUI-Unload-Model.git && \
     git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git && \
@@ -36,7 +35,6 @@ RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention psu
 # Install Dependencies for Cloned Repositories
 RUN pip3 install --no-cache-dir \
     -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \
-    -r /ComfyUI/custom_nodes/ComfyUI-Detail-Daemon/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-TeaCache/requirements.txt \
