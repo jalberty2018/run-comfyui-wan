@@ -37,7 +37,7 @@ Base Image: ls250824/comfyui-runtime:28032025
 #### Custom Build: 
 
 ```bash
-docker pull ls250824/run-comfyui-hunyuanvideo:05042025
+docker pull ls250824/run-comfyui-wan21:13042025
 ```
 
 ## Environment Variables  
@@ -125,6 +125,7 @@ docker pull ls250824/run-comfyui-hunyuanvideo:05042025
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [WanVideoKsampler](https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler)
+- [MxToolkit](https://github.com/Smirnov75/ComfyUI-mxToolkit)
 
 ## Models
 

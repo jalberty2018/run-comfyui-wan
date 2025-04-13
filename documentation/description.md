@@ -63,6 +63,7 @@ See below for options.
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [WanVideoKsampler](https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler)
+- [MxToolkit](https://github.com/Smirnov75/ComfyUI-mxToolkit)
 
 ## Environment Variables  
 
