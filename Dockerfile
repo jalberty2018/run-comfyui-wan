@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:13042025 AS base
+FROM ls250824/comfyui-runtime:21042025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -17,7 +17,6 @@ RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention psu
     cd /ComfyUI/custom_nodes && \
     git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
     git clone https://github.com/rgthree/rgthree-comfy.git && \
-    git clone https://github.com/BlenderNeko/ComfyUI_Noise.git && \
 	git clone https://github.com/welltop-cn/ComfyUI-TeaCache.git && \
     git clone https://github.com/chrisgoringe/cg-noisetools.git && \
     git clone https://github.com/liusida/ComfyUI-Login.git && \
@@ -30,8 +29,7 @@ RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention psu
 	git clone https://github.com/kijai/ComfyUI-WanVideoWrapper.git && \
     git clone https://github.com/pydn/ComfyUI-to-Python-Extension.git && \
 	git clone https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative.git && \
-	git clone https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler.git && \
-	git clone https://github.com/Smirnov75/ComfyUI-mxToolkit.git
+	git clone https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler.git
 
 # Install Dependencies for Cloned Repositories
 RUN pip3 install --no-cache-dir \

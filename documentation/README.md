@@ -20,7 +20,7 @@
 
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI)  
 - [Code Server](https://github.com/coder/code-server)  
-- [HuggingFace CLI Guide](https://huggingface.co/docs/huggingface_hub/v0.27.0/guides/cli) 
+- [HuggingFace cli](https://huggingface.co/docs/huggingface_hub/guides/cli) 
 
 ### Custom Nodes ComfyUI 
 
@@ -29,7 +29,6 @@
 - [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
 - [Noise Tools](https://github.com/chrisgoringe/cg-noisetools)
 - [MultiLora Loader](https://github.com/asdrabael/Hunyuan-Multi-Lora-Loader)  
-- [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)  
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)  
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
 - [Unload Models](https://github.com/SeanScripts/ComfyUI-Unload-Model)  
@@ -40,7 +39,6 @@
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [WanVideoKsampler](https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler)
-- [MxToolkit](https://github.com/Smirnov75/ComfyUI-mxToolkit)
 
 ## Models
 

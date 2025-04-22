@@ -34,8 +34,12 @@ if [[ ${RUNPOD_GPU_COUNT:-0} -gt 0 ]]; then
 
     # Start ComfyUI (HTTP port 8188)
     python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen} &
+	
+	# Confirmation	
+	echo "[INFO] Code Server & ComfyUI started"
+	
 else
-    echo "WARNING: No GPU available, ComfyUI and code-server not started to limit memory use"
+    echo "WARNING: No GPU available, ComfyUI and Code Server not started to limit memory use"
 fi
 	
 # Login to Hugging Face if token is provided
@@ -75,16 +79,27 @@ download_model_CIVITAI() {
     civitai "${!url_var}" "/workspace/ComfyUI/models/$dest_dir/"
 }
 
-# Download Models and loras
+# Provisioning Models and loras
+
+echo "[INFO] Provisioning started"
+
 download_model_HF HF_MODEL_VAE HF_MODEL_VAE_SAFETENSORS "vae"
+
 download_model_HF HF_MODEL_UPSCALER1 HF_MODEL_UPSCALER_PTH1 "upscale_models"
 download_model_HF HF_MODEL_UPSCALER2 HF_MODEL_UPSCALER_PTH2 "upscale_models"
+
 download_model_HF HF_MODEL_TEXT_ENCODERS1 HF_MODEL_TEXT_ENCODERS_SAFETENSORS1 "text_encoders"
 download_model_HF HF_MODEL_TEXT_ENCODERS2 HF_MODEL_TEXT_ENCODERS_SAFETENSORS2 "text_encoders"
+
 download_model_HF HF_MODEL_LORA1 HF_MODEL_LORA_SAFETENSORS1 "loras"
 download_model_HF HF_MODEL_LORA2 HF_MODEL_LORA_SAFETENSORS2 "loras"
 download_model_HF HF_MODEL_LORA3 HF_MODEL_LORA_SAFETENSORS3 "loras"
 download_model_HF HF_MODEL_LORA4 HF_MODEL_LORA_SAFETENSORS4 "loras"
+download_model_HF HF_MODEL_LORA5 HF_MODEL_LORA_SAFETENSORS5 "loras"
+download_model_HF HF_MODEL_LORA6 HF_MODEL_LORA_SAFETENSORS6 "loras"
+download_model_HF HF_MODEL_LORA7 HF_MODEL_LORA_SAFETENSORS7 "loras"
+download_model_HF HF_MODEL_LORA8 HF_MODEL_LORA_SAFETENSORS8 "loras"
+
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL1 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL2 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL3 "loras"
@@ -93,11 +108,14 @@ download_model_CIVITAI CIVITAI_MODEL_LORA_URL5 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL6 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL7 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL8 "loras"
+
 download_model_HF HF_MODEL_DIFFUSION_MODELS HF_MODEL_DIFFUSION_MODELS_SAFETENSORS "diffusion_models"
+
 download_model_HF HF_MODEL_CHECKPOINTS HF_MODEL_CHECKPOINTS_SAFETENSORS "checkpoints"
 
 # Final message
-echo "[INFO] Provisioning done"
+echo "[INFO] Provisiong done. "
+echo "[INFO] Ready to create AI contents. "
 
 # Keep the container running
 exec sleep infinity

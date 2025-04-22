@@ -43,7 +43,7 @@ See below for options.
 
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI)  
 - [Code Server](https://github.com/coder/code-server)  
-- [HuggingFace CLI Guide](https://huggingface.co/docs/huggingface_hub/v0.27.0/guides/cli) 
+- [HuggingFace cli](https://huggingface.co/docs/huggingface_hub/guides/cli) 
 
 ### Custom Nodes ComfyUI 
 
@@ -51,7 +51,6 @@ See below for options.
 - [Login](https://github.com/liusida/ComfyUI-Login)  
 - [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
 - [Noise Tools](https://github.com/chrisgoringe/cg-noisetools)  
-- [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)  
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [MultiLora Loader](https://github.com/asdrabael/Hunyuan-Multi-Lora-Loader)  
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
@@ -63,7 +62,6 @@ See below for options.
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [WanVideoKsampler](https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler)
-- [MxToolkit](https://github.com/Smirnov75/ComfyUI-mxToolkit)
 
 ## Environment Variables  
 
@@ -90,13 +88,13 @@ See below for options.
 | Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-2]` | `HF_MODEL_TEXT_ENCODERS_SAFETENSORS[1-2]` |
 | VAE               | `HF_MODEL_VAE`                | `HF_MODEL_VAE_SAFETENSORS`                |
 | Upscalers         | `HF_MODEL_UPSCALER[1-2]`      | `HF_MODEL_UPSCALER_PTH[1-2]`              |
-| Loras huggingface | `HF_MODEL_LORA[1-4]`          | `HF_MODEL_LORA_SAFETENSORS[1-4]`          |
+| Loras huggingface | `HF_MODEL_LORA[1-8]`          | `HF_MODEL_LORA_SAFETENSORS[1-8]`          |
 
 ### **Diffusion Lora Setup CivitAI**  
 
 | Model Type        | URL (download link)            |
 |-------------------|--------------------------------|
-| Loras civitai     | `CIVITAI_MODEL_LORA_URL[1-10]` |
+| Loras civitai     | `CIVITAI_MODEL_LORA_URL[1-8]` |
 
 ## Connection options 
 
