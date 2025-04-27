@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:21042025 AS base
+FROM ls250824/comfyui-runtime:26042025 AS base
 
 # Set Working Directory
 WORKDIR /

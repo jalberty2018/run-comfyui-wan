@@ -10,10 +10,13 @@ huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/diffus
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
-## Text Encoder
+## Text Encoder (fp8 and fp16)
 
 ```bash
 huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors \
+--local-dir /workspace/ComfyUI/models/text_encoders/
+
+huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/text_encoders/umt5_xxl_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/text_encoders/
 ```
 

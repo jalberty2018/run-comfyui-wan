@@ -1,3 +1,5 @@
+[![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan21)](https://hub.docker.com/r/ls250824/run-comfyui-wan21)
+
 # Run ComfyUI Wan21 with Custom nodes on [RunPod.io](https://runpod.io?ref=se4tkc5o)
 
 ## Synopsis
@@ -32,12 +34,12 @@ See below for options.
 
 ### Image
 
-Base Image: ls250824/comfyui-runtime:21042025
+Base Image: ls250824/comfyui-runtime:26042025
 
 #### Custom Build: 
 
 ```bash
-docker pull ls250824/run-comfyui-wan21:21042025
+docker pull ls250824/run-comfyui-wan21:<version>
 ```
 
 ## Environment Variables  
@@ -197,8 +199,9 @@ Run the following command to clone the repository and build the image:
 
 ```bash
 git clone https://github.com/jalberty2018/run-comfyui-wan21.git
+cp run-comfyui-wan21/build-docker.py ..
 
-python3 run-comfyui-wan21/build-docker.py \
+python3 build-docker.py \
 --username=<your_dockerhub_username> \
 --tag=<custom_tag> \ 
 run-comfyui-wan21
