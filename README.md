@@ -32,11 +32,17 @@ See below for options.
 
 ## Available Images
 
-### Image
+### Base Images 
 
-Base Image: ls250824/comfyui-runtime:26042025
+#### ls250824/pytorch-cuda-ubuntu-runtime
+	
+[![Docker Image Version](https://img.shields.io/docker/v/ls250824/pytorch-cuda-ubuntu-runtime)](https://hub.docker.com/r/ls250824/pytorch-cuda-ubuntu-runtime)
 
-#### Custom Build: 
+#### ls250824/comfyui-runtime
+
+[![Docker Image Version](https://img.shields.io/docker/v/ls250824/comfyui-runtime)](https://hub.docker.com/r/ls250824/comfyui-runtime)
+
+### Custom Build: 
 
 ```bash
 docker pull ls250824/run-comfyui-wan21:<version>
