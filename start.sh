@@ -114,8 +114,8 @@ download_model_HF HF_MODEL_DIFFUSION_MODELS HF_MODEL_DIFFUSION_MODELS_SAFETENSOR
 download_model_HF HF_MODEL_CHECKPOINTS HF_MODEL_CHECKPOINTS_SAFETENSORS "checkpoints"
 
 # Final message
-echo "[INFO] Provisiong done. "
-echo "[INFO] Ready to create AI contents. "
+echo "[INFO] Provisioning done. "
+echo "[INFO] Ready to create AI content. "
 
 # Keep the container running
 exec sleep infinity

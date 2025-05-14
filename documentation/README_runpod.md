@@ -39,6 +39,7 @@
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [WanVideoKsampler](https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler)
+- [VideoUpscale](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 
 ## Models
 
