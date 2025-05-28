@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:14052025 AS base
+FROM ls250824/comfyui-runtime:28052025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -7,9 +7,9 @@ WORKDIR /
 # Copy Scripts and Configurations
 COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provisioning-on-workspace.sh onworkspace/readme-on-workspace.sh / 
 COPY --chmod=644 comfy.settings.json /ComfyUI/user/default/comfy.settings.json
-COPY --chmod=644 documentation/README.md /README.md
-COPY --chmod=644 provisioning/huggingface_wan21.md /provisioning/huggingface_wan21.md
-COPY --chmod=644 workflows/wan21-t2v-portrait.json /ComfyUI/user/default/workflows/wan21-t2v-portrait.json
+COPY --chmod=664 README.md /README.md
+COPY --chmod=644 provisioning/ /provisioning
+COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
 
 # Install Required Packages
 RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention psutil && \
@@ -30,7 +30,8 @@ RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention psu
     git clone https://github.com/pydn/ComfyUI-to-Python-Extension.git && \
 	git clone https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative.git && \
 	git clone https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler.git && \
-	git clone https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel
+	git clone https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel && \
+	git clone https://github.com/AEmotionStudio/ComfyUI-ShaderNoiseKsampler
 
 # Install Dependencies for Cloned Repositories
 RUN pip3 install --no-cache-dir \
