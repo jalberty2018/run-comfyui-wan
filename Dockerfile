@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:28052025 AS base
+FROM ls250824/comfyui-runtime:02062025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -7,7 +7,7 @@ WORKDIR /
 # Copy Scripts and Configurations
 COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provisioning-on-workspace.sh onworkspace/readme-on-workspace.sh / 
 COPY --chmod=644 comfy.settings.json /ComfyUI/user/default/comfy.settings.json
-COPY --chmod=664 README.md /README.md
+COPY --chmod=664 /documentation/README_docker.md /README.md
 COPY --chmod=644 provisioning/ /provisioning
 COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
 

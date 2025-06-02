@@ -133,6 +133,7 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [WanVideoKsampler](https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler)
 - [VideoUpscale](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [ShaderNoise](https://github.com/AEmotionStudio/ComfyUI-ShaderNoiseKSampler)
 
 ## Models
 
@@ -140,6 +141,7 @@ docker pull ls250824/run-comfyui-wan21:<version>
 
 - [Wan-Video Github](https://github.com/Wan-Video)
 - [Wan-AI Huggingface](https://huggingface.co/Wan-AI)  
+- [WAN-VACE Github](https://github.com/ali-vilab/VACE)
 
 ### Manual provisioning
 
