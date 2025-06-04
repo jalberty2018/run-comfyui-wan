@@ -41,6 +41,7 @@
 - [WanVideoKsampler](https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler)
 - [VideoUpscale](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 - [ShaderNoise](https://github.com/AEmotionStudio/ComfyUI-ShaderNoiseKSampler)
+- [RES4LYF sampler](https://github.com/ClownsharkBatwing/RES4LYF)
 
 ## Models
 
