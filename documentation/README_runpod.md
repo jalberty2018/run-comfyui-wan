@@ -27,7 +27,6 @@
 - [rgthree](https://github.com/rgthree/rgthree-comfy)  
 - [Login](https://github.com/liusida/ComfyUI-Login)  
 - [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
-- [Noise Tools](https://github.com/chrisgoringe/cg-noisetools)
 - [MultiLora Loader](https://github.com/asdrabael/Hunyuan-Multi-Lora-Loader)  
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)  
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  

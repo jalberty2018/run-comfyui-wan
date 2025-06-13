@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:02062025 AS base
+FROM ls250824/comfyui-runtime:13062025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -18,7 +18,6 @@ RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention psu
     git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
     git clone https://github.com/rgthree/rgthree-comfy.git && \
 	git clone https://github.com/welltop-cn/ComfyUI-TeaCache.git && \
-    git clone https://github.com/chrisgoringe/cg-noisetools.git && \
     git clone https://github.com/liusida/ComfyUI-Login.git && \
     git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
     git clone https://github.com/kijai/ComfyUI-KJNodes.git && \

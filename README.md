@@ -120,7 +120,6 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [rgthree](https://github.com/rgthree/rgthree-comfy)  
 - [Login](https://github.com/liusida/ComfyUI-Login)  
 - [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
-- [Noise Tools](https://github.com/chrisgoringe/cg-noisetools)  
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [MultiLora Loader](https://github.com/asdrabael/Hunyuan-Multi-Lora-Loader)  
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
@@ -143,6 +142,9 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [Wan-Video Github](https://github.com/Wan-Video)
 - [Wan-AI Huggingface](https://huggingface.co/Wan-AI)  
 - [WAN-VACE Github](https://github.com/ali-vilab/VACE)
+- [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
+- [MoviiGen Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1)
+
 
 ### Manual provisioning
 

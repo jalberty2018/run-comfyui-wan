@@ -9,6 +9,11 @@ huggingface-cli download  Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/diffu
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ``` 
 
+```bash
+huggingface-cli download vrgamedevgirl84/Wan14BT2VFusioniX Wan14BT2VFusioniX_fp16_.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+```
+
 ### image2Video
 
 ```bash
