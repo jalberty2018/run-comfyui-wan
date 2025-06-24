@@ -31,8 +31,10 @@ See below for options.
 - [Wiki](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
 - [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
 - [ComfyUI Examples](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
+- [AccVideo](https://github.com/aejion/AccVideo)
+- [CausVid](https://github.com/tianweiy/CausVid)
 
-## Workflow (not ready)
+## Workflow
 
 - Example Text to video workflow using available custom nodes in /workspace/ComfyUI/user/default/workflows
 - Open workflow from ComfyUI's interface on the left. 
@@ -60,10 +62,9 @@ See below for options.
 - [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
-- [WanVideoKsampler](https://github.com/ShmuelRonen/ComfyUI-WanVideoKsampler)
 - [VideoUpscale](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
-- [ShaderNoise](https://github.com/AEmotionStudio/ComfyUI-ShaderNoiseKSampler)
-- [RES4LYF sampler](https://github.com/ClownsharkBatwing/RES4LYF)
+- [Eses ImageAdjustments](https://github.com/quasiblob/ComfyUI-EsesImageAdjustments)
+- [MagCache](https://github.com/Zehong-Ma/ComfyUI-MagCache)
 
 ## Environment Variables  
 

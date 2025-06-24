@@ -6,6 +6,8 @@ mkdir -p /workspace
 if [[ ! -d /workspace/provisioning ]]
 then
 	mv /provisioning /workspace
+	# Set permissions right for directory
+    chmod -R 777 /workspace/provisioning
 else
 	rm -rf /provisioning
 fi
