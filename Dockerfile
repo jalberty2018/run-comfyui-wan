@@ -41,7 +41,7 @@ RUN pip3 install --no-cache-dir \
 	-r /ComfyUI/custom_nodes/ComfyUI-TeaCache/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-MagCache/requirements.txt \
-	-r /ComfyUI/custom_nodes/ClownsharkBatwing/requirements.txt
+	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace
