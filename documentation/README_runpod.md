@@ -42,6 +42,8 @@
 - [VideoUpscale](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 - [Eses ImageAdjustments](https://github.com/quasiblob/ComfyUI-EsesImageAdjustments)
 - [MagCache](https://github.com/Zehong-Ma/ComfyUI-MagCache)
+- [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
+- [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 
 ## Models
 

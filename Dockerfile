@@ -29,7 +29,9 @@ RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention psu
 	git clone https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative.git && \
 	git clone https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel && \
 	git clone https://github.com/quasiblob/ComfyUI-EsesImageAdjustments.git && \
-	git clone https://github.com/Zehong-Ma/ComfyUI-MagCache.git
+	git clone https://github.com/Zehong-Ma/ComfyUI-MagCache.git && \
+	git clone https://github.com/ClownsharkBatwing/RES4LYF.git && \
+	git clone https://github.com/BlenderNeko/ComfyUI_Noise.git
 
 # Install Dependencies for Cloned Repositories
 RUN pip3 install --no-cache-dir \
@@ -38,7 +40,8 @@ RUN pip3 install --no-cache-dir \
     -r /ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-TeaCache/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
-	-r /ComfyUI/custom_nodes/ComfyUI-MagCache/requirements.txt
+	-r /ComfyUI/custom_nodes/ComfyUI-MagCache/requirements.txt \
+	-r /ComfyUI/custom_nodes/ClownsharkBatwing/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace
