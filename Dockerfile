@@ -12,8 +12,8 @@ COPY --chmod=644 provisioning/ /provisioning
 COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
 
 # Install FlashAttention from wheel and remove it
-RUN wget https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.0.post2/flash_attn-2.8.0.post2+cu12torch2.7cxx11abiTRUE-cp311-cp311-linux_x86_64.whl -O /tmp/flash_attn.whl
-RUN pip3 install --no-cache-dir /tmp/flash_attn.whl && rm -f /tmp/flash_attn.whl
+RUN wget https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.0.post2/flash_attn-2.8.0.post2+cu12torch2.7cxx11abiTRUE-cp311-cp311-linux_x86_64.whl
+RUN pip3 install --no-cache-dir flash_attn-2.8.0.post2+cu12torch2.7cxx11abiTRUE-cp311-cp311-linux_x86_64.whl && rm -f flash_attn-2.8.0.post2+cu12torch2.7cxx11abiTRUE-cp311-cp311-linux_x86_64.whl
 
 # Install Required Packages
 RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention flash_attn psutil && \
