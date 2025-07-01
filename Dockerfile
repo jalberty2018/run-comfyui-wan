@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:13062025 AS base
+FROM ls250824/comfyui-runtime:01072025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -12,7 +12,7 @@ COPY --chmod=644 provisioning/ /provisioning
 COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
 
 # Install Required Packages
-RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention psutil && \
+RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention flash_attn psutil && \
     mkdir -p /ComfyUI/custom_nodes && \
     cd /ComfyUI/custom_nodes && \
     git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
@@ -31,7 +31,8 @@ RUN pip3 install --no-cache-dir opencv-python diffusers triton sageattention psu
 	git clone https://github.com/quasiblob/ComfyUI-EsesImageAdjustments.git && \
 	git clone https://github.com/Zehong-Ma/ComfyUI-MagCache.git && \
 	git clone https://github.com/ClownsharkBatwing/RES4LYF.git && \
-	git clone https://github.com/BlenderNeko/ComfyUI_Noise.git
+	git clone https://github.com/BlenderNeko/ComfyUI_Noise.git && \
+    git clone https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler.git
 
 # Install Dependencies for Cloned Repositories
 RUN pip3 install --no-cache-dir \
@@ -41,7 +42,8 @@ RUN pip3 install --no-cache-dir \
 	-r /ComfyUI/custom_nodes/ComfyUI-TeaCache/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-MagCache/requirements.txt \
-	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt
+	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
+	-r /ComfyUI/custom_nodes/ComfyUI-SeedVR2_VideoUpscaler/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace

@@ -132,11 +132,12 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
-- [VideoUpscale](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 - [Eses ImageAdjustments](https://github.com/quasiblob/ComfyUI-EsesImageAdjustments)
 - [MagCache](https://github.com/Zehong-Ma/ComfyUI-MagCache)
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
+- [SeedVR2 videoupscaler](https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler?tab=readme-ov-file)
 
 ## Models
 

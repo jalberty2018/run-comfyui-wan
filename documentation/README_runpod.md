@@ -44,6 +44,7 @@
 - [MagCache](https://github.com/Zehong-Ma/ComfyUI-MagCache)
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
+- [SeedVR2 videoupscaler](https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler?tab=readme-ov-file)
 
 ## Models
 
