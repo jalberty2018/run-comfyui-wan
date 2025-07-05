@@ -16,13 +16,17 @@ for script in comfyui-on-workspace.sh provisioning-on-workspace.sh readme-on-wor
         echo "Executing $script..."
         "/$script"
     else
-        echo "Skipping $script (not found)"
+        echo "WARNING: Skipping $script (not found)"
     fi
 done
 
 # Create output directory for cloud transfer
 mkdir -p /workspace/output/
 
+# Comfy-cli
+# comfy --install-completion
+
+# Run services
 if [[ ${RUNPOD_GPU_COUNT:-0} -gt 0 ]]; then
     # Start code-server (HTTP port 9000)
     if [[ -n "$PASSWORD" ]]; then
@@ -32,7 +36,7 @@ if [[ ${RUNPOD_GPU_COUNT:-0} -gt 0 ]]; then
         code-server /workspace --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     fi
 	
-	sleep 10
+	sleep 2
 
     # Start ComfyUI (HTTP port 8188)
     python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen} &
@@ -40,7 +44,7 @@ if [[ ${RUNPOD_GPU_COUNT:-0} -gt 0 ]]; then
 	# Wait until ComfyUI is ready
     until curl -s http://127.0.0.1:8188 > /dev/null; do
         echo "[INFO] Waiting for ComfyUI to start..."    
-		sleep 5
+		sleep 4
     done
 	
 	# Confirmation	
@@ -53,6 +57,7 @@ fi
 # Login to Hugging Face if token is provided
 if [[ -n "$HF_TOKEN" ]]; then
     huggingface-cli login --token "$HF_TOKEN"
+	sleep 1
 else
 	echo "WARNING: HF_TOKEN is not set as an environment variable"
 fi
@@ -65,6 +70,7 @@ download_model_HF() {
 
     if [[ -n "${!model_var}" && -n "${!file_var}" ]]; then
         huggingface-cli download "${!model_var}" "${!file_var}" --local-dir "/workspace/ComfyUI/models/$dest_dir/"
+		sleep 1
     fi
 }
 
@@ -85,6 +91,7 @@ download_model_CIVITAI() {
 
     # Run the civitai command
     civitai "${!url_var}" "/workspace/ComfyUI/models/$dest_dir/"
+	sleep 1
 }
 
 # Provisioning Models and loras
@@ -107,6 +114,8 @@ download_model_HF HF_MODEL_LORA5 HF_MODEL_LORA_SAFETENSORS5 "loras"
 download_model_HF HF_MODEL_LORA6 HF_MODEL_LORA_SAFETENSORS6 "loras"
 download_model_HF HF_MODEL_LORA7 HF_MODEL_LORA_SAFETENSORS7 "loras"
 download_model_HF HF_MODEL_LORA8 HF_MODEL_LORA_SAFETENSORS8 "loras"
+download_model_HF HF_MODEL_LORA9 HF_MODEL_LORA_SAFETENSORS9 "loras"
+download_model_HF HF_MODEL_LORA10 HF_MODEL_LORA_SAFETENSORS10 "loras"
 
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL1 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL2 "loras"
@@ -116,6 +125,8 @@ download_model_CIVITAI CIVITAI_MODEL_LORA_URL5 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL6 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL7 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL8 "loras"
+download_model_CIVITAI CIVITAI_MODEL_LORA_URL9 "loras"
+download_model_CIVITAI CIVITAI_MODEL_LORA_URL10 "loras"
 
 download_model_HF HF_MODEL_DIFFUSION_MODELS HF_MODEL_DIFFUSION_MODELS_SAFETENSORS "diffusion_models"
 

@@ -25,7 +25,7 @@ See below for options.
 - **Storage**:  
   - **Volume**: 75GB (`/workspace`)  
   - **Pod Volume**: 10GB  
-
+  
 ## Template [RunPod.io](https://runpod.io?ref=se4tkc5o)
 
 - [template](https://runpod.io/console/deploy?template=9edjw7pg7h&ref=se4tkc5o)
@@ -73,13 +73,13 @@ docker pull ls250824/run-comfyui-wan21:<version>
 | Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-2]` | `HF_MODEL_TEXT_ENCODERS_SAFETENSORS[1-2]` |
 | VAE               | `HF_MODEL_VAE`                | `HF_MODEL_VAE_SAFETENSORS`                |
 | Upscalers         | `HF_MODEL_UPSCALER[1-2]`      | `HF_MODEL_UPSCALER_PTH[1-2]`              |
-| Loras huggingface | `HF_MODEL_LORA[1-8]`          | `HF_MODEL_LORA_SAFETENSORS[1-8]`          |
+| Loras huggingface | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_SAFETENSORS[1-10]`          |
 
 ### **Diffusion Lora Setup CivitAI**  
 
 | Model Type        | URL (download link)           |
 |-------------------|-------------------------------|
-| Loras civitai     | `CIVITAI_MODEL_LORA_URL[1-8]` |
+| Loras civitai     | `CIVITAI_MODEL_LORA_URL[1-10]` |
 
 ## Connection options 
 
@@ -101,6 +101,7 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [ComfyUI Examples](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
+- [NAG](https://chendaryen.github.io/NAG.github.io/)
 
 ## Workflow
 
@@ -115,7 +116,7 @@ docker pull ls250824/run-comfyui-wan21:<version>
 
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI)  
 - [Code Server](https://github.com/coder/code-server)  
-- [HuggingFace cli](https://huggingface.co/docs/huggingface_hub/guides/cli) 
+- [HuggingFace cli](https://huggingface.co/docs/huggingface_hub/guides/cli)
 
 ### Custom Nodes ComfyUI 
 
@@ -123,9 +124,7 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [Login](https://github.com/liusida/ComfyUI-Login)  
 - [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
-- [MultiLora Loader](https://github.com/asdrabael/Hunyuan-Multi-Lora-Loader)  
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
-- [Unload Models](https://github.com/SeanScripts/ComfyUI-Unload-Model)  
 - [Free Memory](https://github.com/ShmuelRonen/ComfyUI-FreeMemory)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - [Python Extension](https://github.com/pydn/ComfyUI-to-Python-Extension)  
@@ -137,7 +136,7 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [MagCache](https://github.com/Zehong-Ma/ComfyUI-MagCache)
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
-- [SeedVR2 videoupscaler](https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler?tab=readme-ov-file)
+- [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 
 ## Models
 

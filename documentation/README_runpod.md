@@ -10,6 +10,7 @@
 - [ComfyUI Examples](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
+- [NAG](https://chendaryen.github.io/NAG.github.io/)
 
 ## Example workflow
 
@@ -22,17 +23,15 @@
 
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI)  
 - [Code Server](https://github.com/coder/code-server)  
-- [HuggingFace cli](https://huggingface.co/docs/huggingface_hub/guides/cli) 
+- [HuggingFace cli](https://huggingface.co/docs/huggingface_hub/guides/cli)
 
 ### Custom Nodes ComfyUI 
 
 - [rgthree](https://github.com/rgthree/rgthree-comfy)  
 - [Login](https://github.com/liusida/ComfyUI-Login)  
 - [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
-- [MultiLora Loader](https://github.com/asdrabael/Hunyuan-Multi-Lora-Loader)  
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)  
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
-- [Unload Models](https://github.com/SeanScripts/ComfyUI-Unload-Model)  
 - [Free Memory](https://github.com/ShmuelRonen/ComfyUI-FreeMemory)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - [Python Extension](https://github.com/pydn/ComfyUI-to-Python-Extension)  
@@ -44,7 +43,7 @@
 - [MagCache](https://github.com/Zehong-Ma/ComfyUI-MagCache)
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
-- [SeedVR2 videoupscaler](https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler?tab=readme-ov-file)
+- [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 
 ## Models
 
