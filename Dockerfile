@@ -28,11 +28,14 @@ RUN pip3 install --no-cache-dir opencv-python diffusers psutil && \
 	git clone https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative.git && \
 	git clone https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel && \
 	git clone https://github.com/quasiblob/ComfyUI-EsesImageAdjustments.git && \
+	git clone https://github.com/quasiblob/ComfyUI-EsesImageResize.git && \
 	git clone https://github.com/Zehong-Ma/ComfyUI-MagCache.git && \
 	git clone https://github.com/ClownsharkBatwing/RES4LYF.git && \
 	git clone https://github.com/BlenderNeko/ComfyUI_Noise.git && \
 	git clone https://github.com/ChenDarYen/ComfyUI-NAG.git && \
-	git clone https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git
+	git clone https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
+	git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git && \
+	git clone https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools.git
 
 # Install Dependencies for Cloned Repositories
 RUN pip3 install --no-cache-dir \
@@ -43,7 +46,8 @@ RUN pip3 install --no-cache-dir \
 	-r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-MagCache/requirements.txt \
 	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
-	-r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt	
+	-r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt \
+    -r /ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace

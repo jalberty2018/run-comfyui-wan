@@ -35,6 +35,7 @@ See below for options.
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
 - [vace](https://docs.comfy.org/tutorials/video/wan/vace)
 - [Phantom](https://github.com/Phantom-video/Phantom)
+- [FusionX Lora](https://civitai.com/models/1681541?modelVersionId=1903277)
 
 ## Workflow
 
@@ -77,12 +78,15 @@ See below for options.
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
-- [Eses ImageAdjustments](https://github.com/quasiblob/ComfyUI-EsesImageAdjustments)
+- [EsesImageAdjustments](https://github.com/quasiblob/ComfyUI-EsesImageAdjustments)
+- [EsesImageResize](https://github.com/quasiblob/ComfyUI-EsesImageResize)
 - [MagCache](https://github.com/Zehong-Ma/ComfyUI-MagCache)
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+- [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
 
 
 ## Environment Variables  
