@@ -1,42 +1,66 @@
 # Manual provisioning WAN 2.1
 
-- [Kijai](https://huggingface.co/Kijai/WanVideo_comfy/tree/main)
+- [Wan-Video Github](https://github.com/Wan-Video)
+- [Wan-AI Huggingface](https://huggingface.co/Wan-AI)  
+- [WAN-VACE Github](https://github.com/ali-vilab/VACE)
+- [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
+- [MoviiGen Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1)
+- [Fun](https://huggingface.co/collections/alibaba-pai/wan21-fun-v11-680f514c89fe7b4df9d44f17)
+- [alibaba-pai](https://huggingface.co/collections/alibaba-pai/wan21-fun-67e4fb3b76ca01241eb7e334)
+- [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 
-## Diffusion_models fp16
+## Diffusion_models
 
-### t2v t2i
-
-#### Original
+### t2v fp16
 
 ```bash
 huggingface-cli download  Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/diffusion_models/wan2.1_t2v_14B_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ``` 
 
-#### Checkpoint with specific loras
-
-```bash
-huggingface-cli download vrgamedevgirl84/Wan14BT2VFusioniX Wan14BT2VFusioniX_fp16_.safetensors \
---local-dir /workspace/ComfyUI/models/diffusion_models/
-```
-
-### i2v
+### i2v fp16
 
 ```bash
 huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/diffusion_models/wan2.1_i2v_720p_14B_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
-### VACE
+### FusionX t2v fp16
+
+```bash
+huggingface-cli download vrgamedevgirl84/Wan14BT2VFusioniX Wan14BT2VFusioniX_fp16_.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+```
+
+### SkyReels t2v fp16
+
+```bash
+huggingface-cli download Kijai/WanVideo_comfy Skyreels/Wan2_1-SkyReels-V2-DF-14B-720P_fp16.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+```
+
+### VACE t2v + references fp16
 
 ```bash
 huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/diffusion_models/wan2.1_vace_14B_fp16.safetensors --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
-### SkyReels t2v t2i
+```bash
+huggingface-cli download Kijai/WanVideo_comfy Wan2_1-VACE_module_14B_bf16.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+``` 
+
+### Phantom t2v + reference fp16
 
 ```bash
-huggingface-cli download Kijai/WanVideo_comfy Skyreels/Wan2_1-SkyReels-V2-DF-14B-720P_fp16.safetensors \
+huggingface-cli download Kijai/WanVideo_comfy Phantom-Wan-14B_fp16.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+```
+
+### Phantom FusionX t2v + reference fp16
+
+```bash
+huggingface-cli download vrgamedevgirl84/Wan14BT2VFusioniX Wan14BT2VFusioniX_Phantom_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
@@ -65,10 +89,14 @@ huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/text_e
 
 ## CLIP Vision encoders
 
+### Standard
+
 ```bash
 huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/clip_vision/clip_vision_h.safetensors \
 --local-dir /workspace/ComfyUI/models/clip_vision/
 ```
+
+### fp32
 
 ```bash
 huggingface-cli download Kijai/WanVideo_comfy open-clip-xlm-roberta-large-vit-huge-14_visual_fp32.safetensors \
@@ -77,8 +105,17 @@ huggingface-cli download Kijai/WanVideo_comfy open-clip-xlm-roberta-large-vit-hu
 
 ## Vae
 
+### Standard
+
 ```bash
 huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/vae/wan_2.1_vae.safetensors \
+--local-dir /workspace/ComfyUI/models/vae/
+```
+
+### fp32
+
+```bash
+huggingface-cli download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors \
 --local-dir /workspace/ComfyUI/models/vae/
 ```
 
@@ -92,9 +129,28 @@ huggingface-cli download LS110824/upscale 4x_foolhardy_Remacri.pth \
 --local-dir /workspace/ComfyUI/models/upscale_models/
 ```
 
-## Loras to use with original model
+## Loras to use with original models
 
-- [alibaba-pai](https://huggingface.co/collections/alibaba-pai/wan21-fun-67e4fb3b76ca01241eb7e334)
+### FusionX t2v
+
+```bash
+huggingface-cli download vrgamedevgirl84/Wan14BT2VFusioniX FusionX_LoRa/Wan2.1_T2V_14B_FusionX_LoRA.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+### FusionX i2v
+
+```bash
+huggingface-cli download vrgamedevgirl84/Wan14BT2VFusioniX FusionX_LoRa/Wan2.1_I2V_14B_FusionX_LoRA.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+### Phantom FusionX
+
+```bash
+huggingface-cli download vrgamedevgirl84/Wan14BT2VFusioniX FusionX_LoRa/Phantom_Wan_14B_FusionX_LoRA.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
 
 ### CausVid
 

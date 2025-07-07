@@ -3,7 +3,6 @@
 ## Workflows & Tutorials  
 
 - [wan-video](https://wan.video/)
-- [Prompt generator](https://wan21.net/prompt-generator)
 - [OpenArt.ai](https://openart.ai/workflows/home?keyword=Wan)  
 - [Wiki](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
 - [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
@@ -11,6 +10,8 @@
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
+- [vace](https://docs.comfy.org/tutorials/video/wan/vace)
+- [Phantom](https://github.com/Phantom-video/Phantom)
 
 ## Example workflow
 
@@ -30,7 +31,7 @@
 - [rgthree](https://github.com/rgthree/rgthree-comfy)  
 - [Login](https://github.com/liusida/ComfyUI-Login)  
 - [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
-- [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)  
+- [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
 - [Free Memory](https://github.com/ShmuelRonen/ComfyUI-FreeMemory)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
@@ -38,12 +39,13 @@
 - [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
-- [VideoUpscale](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 - [Eses ImageAdjustments](https://github.com/quasiblob/ComfyUI-EsesImageAdjustments)
 - [MagCache](https://github.com/Zehong-Ma/ComfyUI-MagCache)
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
+- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 
 ## Models
 
@@ -55,6 +57,7 @@
 - [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
 - [MoviiGen Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1)
 - [Fun](https://huggingface.co/collections/alibaba-pai/wan21-fun-v11-680f514c89fe7b4df9d44f17)
+- [alibaba-pai](https://huggingface.co/collections/alibaba-pai/wan21-fun-67e4fb3b76ca01241eb7e334)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 
 ### Manual provisioning

@@ -94,7 +94,6 @@ docker pull ls250824/run-comfyui-wan21:<version>
 ## Workflows & Tutorials  
 
 - [wan-video](https://wan.video/)
-- [Prompt generator](https://wan21.net/prompt-generator)
 - [OpenArt.ai](https://openart.ai/workflows/home?keyword=Wan)  
 - [Wiki](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
 - [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
@@ -102,6 +101,8 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
+- [vace](https://docs.comfy.org/tutorials/video/wan/vace)
+- [Phantom](https://github.com/Phantom-video/Phantom)
 
 ## Workflow
 
@@ -137,6 +138,7 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
+- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 
 ## Models
 
@@ -148,6 +150,7 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
 - [MoviiGen Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1)
 - [Fun](https://huggingface.co/collections/alibaba-pai/wan21-fun-v11-680f514c89fe7b4df9d44f17)
+- [alibaba-pai](https://huggingface.co/collections/alibaba-pai/wan21-fun-67e4fb3b76ca01241eb7e334)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 
 ### Manual provisioning
