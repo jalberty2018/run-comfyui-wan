@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:05072025 AS base
+FROM ls250824/comfyui-runtime:08072025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -24,7 +24,6 @@ RUN pip3 install --no-cache-dir opencv-python diffusers psutil && \
     git clone https://github.com/ShmuelRonen/ComfyUI-FreeMemory.git && \
     git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git && \
 	git clone https://github.com/kijai/ComfyUI-WanVideoWrapper.git && \
-    git clone https://github.com/pydn/ComfyUI-to-Python-Extension.git && \
 	git clone https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative.git && \
 	git clone https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel && \
 	git clone https://github.com/quasiblob/ComfyUI-EsesImageAdjustments.git && \
@@ -35,7 +34,8 @@ RUN pip3 install --no-cache-dir opencv-python diffusers psutil && \
 	git clone https://github.com/ChenDarYen/ComfyUI-NAG.git && \
 	git clone https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
 	git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git && \
-	git clone https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools.git
+	git clone https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools.git && \
+	git clone https://github.com/1038lab/ComfyUI-RMBG.git
 
 # Install Dependencies for Cloned Repositories
 RUN pip3 install --no-cache-dir \

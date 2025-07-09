@@ -36,7 +36,6 @@
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
 - [Free Memory](https://github.com/ShmuelRonen/ComfyUI-FreeMemory)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
-- [Python Extension](https://github.com/pydn/ComfyUI-to-Python-Extension)  
 - [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
@@ -50,6 +49,7 @@
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 - [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
 - [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
+- [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
 
 ## Models
 

@@ -71,9 +71,13 @@ docker pull ls250824/run-comfyui-wan21:<version>
 | Diffusion Model   | `HF_MODEL_DIFFUSION`          | `HF_MODEL_DIFFUSION_MODELS_SAFETENSORS`   |
 | Checkpoints       | `HF_MODEL_CHECKPOINTS`        | `HF_MODEL_CHECKPOINTS_SAFETENSORS`        |
 | Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-2]` | `HF_MODEL_TEXT_ENCODERS_SAFETENSORS[1-2]` |
+| Clip Vision       | `HF_MODEL_CLIP_VISION`        | `HF_MODEL_CLIP_VISION_SAFETENSORS` |
 | VAE               | `HF_MODEL_VAE`                | `HF_MODEL_VAE_SAFETENSORS`                |
 | Upscalers         | `HF_MODEL_UPSCALER[1-2]`      | `HF_MODEL_UPSCALER_PTH[1-2]`              |
 | Loras huggingface | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_SAFETENSORS[1-10]`          |
+
+
+HF_MODEL_CLIP_VISION HF_MODEL_CLIP_VISION_SAFETENSORS
 
 ### **Diffusion Lora Setup CivitAI**  
 
@@ -129,7 +133,6 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
 - [Free Memory](https://github.com/ShmuelRonen/ComfyUI-FreeMemory)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
-- [Python Extension](https://github.com/pydn/ComfyUI-to-Python-Extension)  
 - [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
@@ -143,7 +146,7 @@ docker pull ls250824/run-comfyui-wan21:<version>
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 - [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
 - [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
-
+- [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
 
 ## Models
 
