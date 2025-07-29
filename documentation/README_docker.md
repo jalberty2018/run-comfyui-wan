@@ -1,4 +1,4 @@
-# Run ComfyUI Wan21 with Custom nodes on [RunPod.io](https://runpod.io?ref=se4tkc5o)
+# Run ComfyUI Wan2.x with Custom nodes on [RunPod.io](https://runpod.io?ref=se4tkc5o)
 
 ## Synopsis
 
@@ -26,10 +26,10 @@ See below for options.
 ## Workflows & Tutorials  
 
 - [wan-video](https://wan.video/)
-- [OpenArt.ai](https://openart.ai/workflows/home?keyword=Wan)  
 - [Wiki](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
 - [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
-- [ComfyUI Examples](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
+- [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
+- [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
@@ -66,27 +66,28 @@ See below for options.
 
 ### Custom Nodes ComfyUI 
 
+#### Full list
+
+- [awesome-comfyui](https://awesome-comfyui.rozenlaan.site)
+
+#### Installed
+
 - [rgthree](https://github.com/rgthree/rgthree-comfy)  
 - [Login](https://github.com/liusida/ComfyUI-Login)  
 - [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
-- [Free Memory](https://github.com/ShmuelRonen/ComfyUI-FreeMemory)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
-- [EsesImageAdjustments](https://github.com/quasiblob/ComfyUI-EsesImageAdjustments)
-- [EsesImageResize](https://github.com/quasiblob/ComfyUI-EsesImageResize)
-- [MagCache](https://github.com/Zehong-Ma/ComfyUI-MagCache)
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 - [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
 - [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
-- [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
 
 ## Environment Variables  
 
@@ -108,14 +109,13 @@ See below for options.
 
 | Model Type        | Model                         | Safetensors                               |
 |-------------------|-------------------------------|-------------------------------------------| 
-| Diffusion Model   | `HF_MODEL_DIFFUSION`          | `HF_MODEL_DIFFUSION_MODELS_SAFETENSORS`   |
+| Diffusion Model   | `HF_MODEL_DIFFUSION[1-2]`          | `HF_MODEL_DIFFUSION_MODELS_SAFETENSORS[1-2]`|
 | Checkpoints       | `HF_MODEL_CHECKPOINTS`        | `HF_MODEL_CHECKPOINTS_SAFETENSORS`        |
 | Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-2]` | `HF_MODEL_TEXT_ENCODERS_SAFETENSORS[1-2]` |
 | Clip Vision       | `HF_MODEL_CLIP_VISION`        | `HF_MODEL_CLIP_VISION_SAFETENSORS` |
 | VAE               | `HF_MODEL_VAE`                | `HF_MODEL_VAE_SAFETENSORS`                |
 | Upscalers         | `HF_MODEL_UPSCALER[1-2]`      | `HF_MODEL_UPSCALER_PTH[1-2]`              |
 | Loras huggingface | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_SAFETENSORS[1-10]`          |
-
 
 ### **Diffusion Lora Setup CivitAI**  
 

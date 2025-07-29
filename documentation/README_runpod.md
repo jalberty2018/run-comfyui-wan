@@ -3,10 +3,10 @@
 ## Workflows & Tutorials  
 
 - [wan-video](https://wan.video/)
-- [OpenArt.ai](https://openart.ai/workflows/home?keyword=Wan)  
 - [Wiki](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
 - [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
-- [ComfyUI Examples](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
+- [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
+- [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
@@ -29,27 +29,29 @@
 
 ### Custom Nodes ComfyUI 
 
+#### Full list
+
+- [awesome-comfyui](https://awesome-comfyui.rozenlaan.site)
+
+#### Installed
+
 - [rgthree](https://github.com/rgthree/rgthree-comfy)  
 - [Login](https://github.com/liusida/ComfyUI-Login)  
 - [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
-- [Free Memory](https://github.com/ShmuelRonen/ComfyUI-FreeMemory)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
-- [EsesImageAdjustments](https://github.com/quasiblob/ComfyUI-EsesImageAdjustments)
-- [EsesImageResize](https://github.com/quasiblob/ComfyUI-EsesImageResize)
-- [MagCache](https://github.com/Zehong-Ma/ComfyUI-MagCache)
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 - [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
 - [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
-- [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
+
 
 ## Models
 
@@ -66,7 +68,8 @@
 
 ### Manual provisioning
 
-- [Script](provisioning/huggingface_wan21.md)
+- [Wan2.1](provisioning/huggingface_wan21.md)
+- [Wan2.2](provisioning/huggingface_wan22.md)
 
 #### **Huggingface**  
 
@@ -98,7 +101,7 @@ civitai "<download link>" /workspace/ComfyUI/models/loras
 ### **Clean up**  
 
 ```bash
-rm -rf /workspace/output/ /workspace/ComfyUI/output/ /workspace/ComfyUI/models/
+rm -rf /workspace/output/ /workspace/input/ /workspace/ComfyUI/output/ /workspace/ComfyUI/models/
 ```
 
 ## Utilities  

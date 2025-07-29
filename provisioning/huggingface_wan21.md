@@ -189,39 +189,24 @@ huggingface-cli download Kijai/WanVideo_comfy Wan21_T2V_14B_lightx2v_cfg_step_di
 
 ### DetailEnhacer
 
-#### Original
-
 ```bash
-huggingface-cli download vrgamedevgirl84/Wan14BT2VFusioniX "OtherLoRa's/DetailEnhancerV1.safetensors" \
---local-dir /workspace/ComfyUI/models/loras/
-```
-
-#### Alternative
-
-```bash
-huggingface-cli download LS110824/Wan21_lora DetailEnhancerV1.safetensors \
---local-dir /workspace/ComfyUI/models/loras/
+huggingface-cli download LS110824/Wan21_lora DetailEnhancerV1.safetensors --local-dir /workspace/ComfyUI/models/loras/
 ```
 
 ### Realismboost
 
-#### Original
-
 ```bash
-huggingface-cli download vrgamedevgirl84/Wan14BT2VFusioniX "OtherLoRa's/Wan14B_RealismBoost.safetensors" \
---local-dir /workspace/ComfyUI/models/loras/
-```
-
-#### Alternative
-
-```bash
-huggingface-cli download LS110824/Wan21_lora Wan14B_RealismBoost_T2V.safetensors --local-dir /wor
-kspace/ComfyUI/models/loras/
+huggingface-cli download LS110824/Wan21_lora Wan14B_RealismBoost_T2V.safetensors --local-dir /workspace/ComfyUI/models/loras/
 ```
 
 ### High speed dynamics
 
 ```bash
-huggingface-cli download LS110824/Wan21_lora HighSpeedDynamics.safetensors --local-dir /wor
-kspace/ComfyUI/models/loras/
+huggingface-cli download LS110824/Wan21_lora HighSpeedDynamics.safetensors --local-dir /workspace/ComfyUI/models/loras/
+```
+
+### FusionX FaceNaturalizer
+
+```bash
+huggingface-cli download LS110824/Wan21_lora Wan21_lora FusionX_FaceNaturalizer.safetensors --local-dir /workspace/ComfyUI/models/loras/
 ```

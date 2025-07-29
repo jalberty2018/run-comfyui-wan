@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[INFO] Pod run-comfyui-wan21 started"
+echo "[INFO] Pod run-comfyui-wan2.x started"
 
 # Enable SSH if PUBLIC_KEY is set
 if [[ -n "$PUBLIC_KEY" ]]; then
@@ -130,7 +130,8 @@ download_model_CIVITAI CIVITAI_MODEL_LORA_URL8 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL9 "loras"
 download_model_CIVITAI CIVITAI_MODEL_LORA_URL10 "loras"
 
-download_model_HF HF_MODEL_DIFFUSION_MODELS HF_MODEL_DIFFUSION_MODELS_SAFETENSORS "diffusion_models"
+download_model_HF HF_MODEL_DIFFUSION_MODELS1 HF_MODEL_DIFFUSION_MODELS_SAFETENSORS1 "diffusion_models"
+download_model_HF HF_MODEL_DIFFUSION_MODELS2 HF_MODEL_DIFFUSION_MODELS_SAFETENSORS2 "diffusion_models"
 
 download_model_HF HF_MODEL_CHECKPOINTS HF_MODEL_CHECKPOINTS_SAFETENSORS "checkpoints"
 
