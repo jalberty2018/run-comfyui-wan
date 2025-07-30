@@ -21,7 +21,7 @@ See below for options.
 
 ## Template [RunPod.io](https://runpod.io?ref=se4tkc5o)
 
-- [template](https://runpod.io/console/deploy?template=9edjw7pg7h&ref=se4tkc5o)
+- [template](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
 ## Workflows & Tutorials  
 
