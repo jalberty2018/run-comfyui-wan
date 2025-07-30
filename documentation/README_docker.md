@@ -1,4 +1,4 @@
-# Run ComfyUI Wan2.x with Custom nodes on [RunPod.io](https://runpod.io?ref=se4tkc5o)
+# Run WAN on ComfyUI with Custom nodes on [RunPod.io](https://runpod.io?ref=se4tkc5o)
 
 ## Synopsis
 
@@ -26,10 +26,10 @@ See below for options.
 ## Workflows & Tutorials  
 
 - [wan-video](https://wan.video/)
-- [Wiki](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
-- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
 - [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
 - [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/)
+- [Wiki 2.1](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
+- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
@@ -62,7 +62,6 @@ See below for options.
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI)  
 - [Code Server](https://github.com/coder/code-server)  
 - [HuggingFace cli](https://huggingface.co/docs/huggingface_hub/guides/cli)
-
 
 ### Custom Nodes ComfyUI 
 

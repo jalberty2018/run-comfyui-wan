@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[INFO] Pod run-comfyui-wan2.x started"
+echo "[INFO] Pod run-comfyui-wan started"
 
 # Enable SSH if PUBLIC_KEY is set
 if [[ -n "$PUBLIC_KEY" ]]; then
@@ -22,9 +22,6 @@ done
 
 # Create output directory for cloud transfer
 mkdir -p /workspace/output/
-
-# Comfy-cli
-# comfy --install-completion
 
 # Run services
 if [[ ${RUNPOD_GPU_COUNT:-0} -gt 0 ]]; then
@@ -56,7 +53,7 @@ fi
 	
 # Login to Hugging Face if token is provided
 if [[ -n "$HF_TOKEN" ]]; then
-    huggingface-cli login --token "$HF_TOKEN"
+    hf login --token "$HF_TOKEN"
 	sleep 1
 else
 	echo "WARNING: HF_TOKEN is not set as an environment variable"
@@ -69,7 +66,7 @@ download_model_HF() {
     local dest_dir="$3"
 
     if [[ -n "${!model_var}" && -n "${!file_var}" ]]; then
-        huggingface-cli download "${!model_var}" "${!file_var}" --local-dir "/workspace/ComfyUI/models/$dest_dir/"
+        hf download "${!model_var}" "${!file_var}" --local-dir "/workspace/ComfyUI/models/$dest_dir/" --quiet
 		sleep 1
     fi
 }

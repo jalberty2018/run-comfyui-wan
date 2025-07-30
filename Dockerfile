@@ -12,8 +12,7 @@ COPY --chmod=644 provisioning/ /provisioning
 COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
 
 # Install Required Packages
-RUN pip3 install --no-cache-dir diffusers psutil && \
-    mkdir -p /ComfyUI/custom_nodes && \
+RUN mkdir -p /ComfyUI/custom_nodes && \
     cd /ComfyUI/custom_nodes && \
     git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
     git clone https://github.com/rgthree/rgthree-comfy.git && \
@@ -32,9 +31,9 @@ RUN pip3 install --no-cache-dir diffusers psutil && \
 	git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git && \
 	git clone https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools.git && \
 	git clone https://github.com/evanspearman/ComfyMath.git
-	
-# Install Dependencies for Cloned Repositories
-RUN pip3 install --no-cache-dir \
+
+# Install Dependencies
+RUN pip3 install --no-cache-dir diffusers psutil -U "huggingface_hub[cli]" \
     -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt \
@@ -43,7 +42,7 @@ RUN pip3 install --no-cache-dir \
 	-r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt \
     -r /ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt \
 	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt
-	
+
 # Set Workspace
 WORKDIR /workspace
 

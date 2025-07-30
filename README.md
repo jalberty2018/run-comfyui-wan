@@ -1,8 +1,6 @@
+[![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan)](https://hub.docker.com/r/ls250824/run-comfyui-wan)
 
-
-[![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan2.x)](https://hub.docker.com/r/ls250824/run-comfyui-wan2.x)
-
-# Run ComfyUI Wan2x with Custom nodes on [RunPod.io](https://runpod.io?ref=se4tkc5o)
+# Run WAN on ComfyUI Wan with Custom nodes on [RunPod.io](https://runpod.io?ref=se4tkc5o)
 
 ## Synopsis
 
@@ -47,7 +45,7 @@ See below for options.
 ### Custom Build: 
 
 ```bash
-docker pull ls250824/run-comfyui-wan2.x:<version>
+docker pull ls250824/run-comfyui-wan:<version>
 ```
 
 ## Environment Variables  
@@ -97,10 +95,10 @@ docker pull ls250824/run-comfyui-wan2.x:<version>
 ## Workflows & Tutorials  
 
 - [wan-video](https://wan.video/)
-- [Wiki](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
-- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
 - [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
 - [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/)
+- [Wiki 2.1](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
+- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
@@ -165,6 +163,8 @@ docker pull ls250824/run-comfyui-wan2.x:<version>
 
 - [Wan2.1](provisioning/huggingface_wan21.md)
 - [Wan2.2](provisioning/huggingface_wan22.md)
+- [upscale](provisioning/huggingface_upscale.md)
+- [loras](provisioning/huggingface_loras.md)
 
 ## Building the Docker Image 
 
@@ -184,13 +184,13 @@ You can build and push the image to Docker Hub using the `build-docker.py` scrip
 Run the following command to clone the repository and build the image:
 
 ```bash
-git clone https://github.com/jalberty2018/run-comfyui-wan2.x.git
-cp run-comfyui-wan2.x/build-docker.py ..
+git clone https://github.com/jalberty2018/run-comfyui-wan.git
+cp run-comfyui-wan/build-docker.py ..
 
 python3 build-docker.py \
 --username=<your_dockerhub_username> \
 --tag=<custom_tag> \ 
-run-comfyui-wan2.x
+run-comfyui-wan
 ```
 
 Note: If you want to push the image with the latest tag, add the --latest flag at the end.

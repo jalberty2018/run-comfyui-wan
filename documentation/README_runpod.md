@@ -3,10 +3,10 @@
 ## Workflows & Tutorials  
 
 - [wan-video](https://wan.video/)
-- [Wiki](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
-- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
 - [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
 - [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/)
+- [Wiki 2.1](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
+- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
@@ -52,7 +52,6 @@
 - [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
 - [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
 
-
 ## Models
 
 ### Sources  
@@ -70,12 +69,14 @@
 
 - [Wan2.1](provisioning/huggingface_wan21.md)
 - [Wan2.2](provisioning/huggingface_wan22.md)
+- [upscale](provisioning/huggingface_upscale.md)
+- [loras](provisioning/huggingface_loras.md)
 
 #### **Huggingface**  
 
 ```bash
-huggingface-cli download model model_name.safetensors --local-dir /workspace/ComfyUI/models/diffusion_models/
-huggingface-cli upload model /workspace/model.safetensors
+hf download model model_name.safetensors --local-dir /workspace/ComfyUI/models/diffusion_models/
+hf upload model /workspace/model.safetensors
 ```
 
 #### **CivitAI**  
