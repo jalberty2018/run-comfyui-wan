@@ -23,6 +23,13 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ## 💻 Hardware Requirements
 
+### Example
+
+![Pod running on runpod.io](images/runpod-pod.jpg)
+
+
+### Recommended
+
 | Component        | Recommended             |
 |------------------|--------------------------|
 | GPU              | L40S, L40, RTX 6000 Ada  |
@@ -102,9 +109,13 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
 - [FusionX LoRA](https://civitai.com/models/1681541?modelVersionId=1903277)
 
-## 🧪 Example Workflows
+## 🧪 Workflows
 
-Workflows are preloaded in:
+### Example
+
+![Preloaded workflow for Wan 2.2](images/runpod-comfyui-workflow.jpg)
+
+### Workflows are preloaded in:
 
 ```
 /workspace/ComfyUI/user/default/workflows
