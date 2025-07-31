@@ -108,7 +108,7 @@ See below for options.
 
 | Model Type        | Model                         | Safetensors                               |
 |-------------------|-------------------------------|-------------------------------------------| 
-| Diffusion Model   | `HF_MODEL_DIFFUSION[1-2]`          | `HF_MODEL_DIFFUSION_MODELS_SAFETENSORS[1-2]`|
+| Diffusion Model   | `HF_MODEL_DIFFUSION_MODELS[1-2]`          | `HF_MODEL_DIFFUSION_MODELS_SAFETENSORS[1-2]`|
 | Checkpoints       | `HF_MODEL_CHECKPOINTS`        | `HF_MODEL_CHECKPOINTS_SAFETENSORS`        |
 | Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-2]` | `HF_MODEL_TEXT_ENCODERS_SAFETENSORS[1-2]` |
 | Clip Vision       | `HF_MODEL_CLIP_VISION`        | `HF_MODEL_CLIP_VISION_SAFETENSORS` |
