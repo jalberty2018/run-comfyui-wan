@@ -1,196 +1,167 @@
 [![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan)](https://hub.docker.com/r/ls250824/run-comfyui-wan)
 
-# Run WAN on ComfyUI Wan with Custom nodes on [RunPod.io](https://runpod.io?ref=se4tkc5o)
+# 🚀 Run WAN 2.x on ComfyUI with Custom Nodes — [RunPod.io Deployment](https://runpod.io?ref=se4tkc5o)
 
-## Synopsis
+A streamlined and automated environment for running **ComfyUI** with **WAN 2.x video models**, optimized for use on [RunPod.io](https://runpod.io?ref=se4tkc5o).
 
-A streamlined setup for running **ComfyUI** with **Wan2.x** on high-performance hardware.  
-This pod downloads models as specified in the **environment variables** set in the [RunPod.io template](https://runpod.io/console/deploy?template=9edjw7pg7h&ref=se4tkc5o).  
+## 🔧 Features
 
-- Models and loras are automatically downloaded based on the specified paths in the environment configuration.  
-- Authentication credentials can be set via secrets for:  
-  - **Code server** authentication (not possible to switch off) 
-  - **Hugging Face** and **CivitAI** tokens for model access.  
+- Automatic model and LoRA downloads via environment variables.
+- Built-in **authentication** for:
+  - Code Server (required)
+  - Hugging Face API
+  - CivitAI API
+- Supports advanced workflows for **video generation** and **enhancement** using pre-installed custom nodes.
+- Compatible with high-performance NVIDIA GPUs.
 
-Ensure that the required environment variables and secrets are correctly set before running the pod.
-See below for options.
+## 📦 Template Deployment
 
-## Pod running on [RunPod.io](https://runpod.io?ref=se4tkc5o)
+👉 **One-click Deploy on RunPod**  
+[**Deploy Now**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
-![Pod running](images/runpod-pod.jpg)
+> ✅ Be sure to configure environment variables and secrets appropriately (see below).
 
-## Hardware Requirements  
- 
-- **Recommended GPUs**: L40S, L40, RTX 6000 Ada  
-- **Storage**:  
-  - **Volume**: 75GB (`/workspace`)  
-  - **Pod Volume**: 10GB  
-  
-## Template [RunPod.io](https://runpod.io?ref=se4tkc5o)
+## 💻 Hardware Requirements
 
-- [template](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
+| Component        | Recommended             |
+|------------------|--------------------------|
+| GPU              | L40S, L40, RTX 6000 Ada  |
+| Volume Storage   | 75GB (`/workspace`)      |
+| Pod Storage      | 10GB                     |
 
-## Available Images
 
-### Base Images 
+## 🐳 Docker Images
 
-#### ls250824/pytorch-cuda-ubuntu-runtime
-	
-[![Docker Image Version](https://img.shields.io/docker/v/ls250824/pytorch-cuda-ubuntu-runtime)](https://hub.docker.com/r/ls250824/pytorch-cuda-ubuntu-runtime)
+### Base Images
 
-#### ls250824/comfyui-runtime
+- **PyTorch Runtime**  
+  [![Docker](https://img.shields.io/docker/v/ls250824/pytorch-cuda-ubuntu-runtime)](https://hub.docker.com/r/ls250824/pytorch-cuda-ubuntu-runtime)
 
-[![Docker Image Version](https://img.shields.io/docker/v/ls250824/comfyui-runtime)](https://hub.docker.com/r/ls250824/comfyui-runtime)
+- **ComfyUI Runtime**  
+  [![Docker](https://img.shields.io/docker/v/ls250824/comfyui-runtime)](https://hub.docker.com/r/ls250824/comfyui-runtime)
 
-### Custom Build: 
+### Main Image
 
 ```bash
 docker pull ls250824/run-comfyui-wan:<version>
 ```
 
-## Environment Variables  
+## ⚙️ Environment Variables
 
-### **ComfyUI Arguments**  
+### ComfyUI Configuration
 
-| Token        | Environment Variable     |
-|--------------|--------------------------|
-| Arguments    | `COMFYUI_EXTRA_ARGUMENTS`|
+| Variable                   | Description                    |
+|----------------------------|--------------------------------|
+| `COMFYUI_EXTRA_ARGUMENTS`  | Additional arguments for ComfyUI CLI |
 
-### **Authentication Tokens**  
 
-| Token        | Environment Variable |
-|--------------|----------------------|
-| Civitai      | `CIVITAI_TOKEN`      |
-| Huggingface  | `HF_TOKEN`           |
-| Code Server  | `PASSWORD`           |
+### Authentication Tokens
 
-### **Diffusion Models Setup Huggingface**  
+| Token Source   | Variable         | Required |
+|----------------|------------------|----------|
+| Code Server    | `PASSWORD`       | ✅ Yes   |
+| Hugging Face   | `HF_TOKEN`       | Optional |
+| CivitAI        | `CIVITAI_TOKEN`  | Optional |
 
-| Model Type        | Model                         | Safetensors                               |
-|-------------------|-------------------------------|-------------------------------------------| 
-| Diffusion Model   | `HF_MODEL_DIFFUSION_MODELS[1-2]`          | `HF_MODEL_DIFFUSION_MODELS_SAFETENSORS[1-2]`|
-| Checkpoints       | `HF_MODEL_CHECKPOINTS`        | `HF_MODEL_CHECKPOINTS_SAFETENSORS`        |
-| Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-2]` | `HF_MODEL_TEXT_ENCODERS_SAFETENSORS[1-2]` |
-| Clip Vision       | `HF_MODEL_CLIP_VISION`        | `HF_MODEL_CLIP_VISION_SAFETENSORS` |
-| VAE               | `HF_MODEL_VAE`                | `HF_MODEL_VAE_SAFETENSORS`                |
-| Upscalers         | `HF_MODEL_UPSCALER[1-2]`      | `HF_MODEL_UPSCALER_PTH[1-2]`              |
-| Loras huggingface | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_SAFETENSORS[1-10]`          |
+### 🧠 Hugging Face Model Configuration
 
-### **Diffusion Lora Setup CivitAI**  
+| Type             | Variable                                |
+|------------------|------------------------------------------|
+| Diffusion        | `HF_MODEL_DIFFUSION_MODELS[1-2]`         |
+| Diffusion (.safetensors) | `HF_MODEL_DIFFUSION_MODELS_SAFETENSORS[1-2]` |
+| Checkpoints      | `HF_MODEL_CHECKPOINTS`, `HF_MODEL_CHECKPOINTS_SAFETENSORS` |
+| Text Encoders    | `HF_MODEL_TEXT_ENCODERS[1-2]`, `HF_MODEL_TEXT_ENCODERS_SAFETENSORS[1-2]` |
+| CLIP Vision      | `HF_MODEL_CLIP_VISION`, `HF_MODEL_CLIP_VISION_SAFETENSORS` |
+| VAE              | `HF_MODEL_VAE`, `HF_MODEL_VAE_SAFETENSORS` |
+| Upscalers        | `HF_MODEL_UPSCALER[1-2]`, `HF_MODEL_UPSCALER_PTH[1-2]` |
+| LORAs            | `HF_MODEL_LORA[1-10]`, `HF_MODEL_LORA_SAFETENSORS[1-10]` |
 
-| Model Type        | URL (download link)           |
-|-------------------|-------------------------------|
-| Loras civitai     | `CIVITAI_MODEL_LORA_URL[1-10]` |
+### 🎨 CivitAI LORAs
 
-## Connection options 
+| Variable                          | Description                      |
+|----------------------------------|----------------------------------|
+| `CIVITAI_MODEL_LORA_URL[1-10]`   | Direct download links for LoRAs |
 
-### Services
 
-| Service         | Port          |
-|-----------------|---------------| 
-| **ComfyUI**     | `8188` (HTTP) |
-| **Code Server** | `9000` (HTTP) |
-| **SSH/SCP**     | `22`   (TCP)  |
- 
-## Workflows & Tutorials  
+## 🌐 Network Services
 
-- [wan-video](https://wan.video/)
+| Service       | Port   | Access Type |
+|---------------|--------|-------------|
+| ComfyUI       | `8188` | Web         |
+| Code Server   | `9000` | Web         |
+| SSH/SCP       | `22`   | Terminal    |
+
+## 📚 Tutorials & Resources
+
+- [WAN Video Homepage](https://wan.video/)
 - [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
 - [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/)
-- [Wiki 2.1](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
-- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
+- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
-- [vace](https://docs.comfy.org/tutorials/video/wan/vace)
-- [Phantom](https://github.com/Phantom-video/Phantom)
-- [FusionX Lora](https://civitai.com/models/1681541?modelVersionId=1903277)
+- [FusionX LoRA](https://civitai.com/models/1681541?modelVersionId=1903277)
 
-## Workflow
+## 🧪 Example Workflows
 
-- Example Text to video workflow using available custom nodes in /workspace/ComfyUI/user/default/workflows
-- Open workflow from ComfyUI's interface on the left. 
+Workflows are preloaded in:
 
-![Pod running ComfyUI workflow](images/runpod-comfyui-workflow.jpg)
+```
+/workspace/ComfyUI/user/default/workflows
+```
 
-## Software Repositories  
+Open ComfyUI (port `8188`) and load workflows from the left menu.
 
-### Core  
+## 🧩 Pre-Installed Custom Nodes
 
-- [ComfyUI](https://github.com/comfyanonymous/ComfyUI)  
-- [Code Server](https://github.com/coder/code-server)  
-- [HuggingFace cli](https://huggingface.co/docs/huggingface_hub/guides/cli)
-
-### Custom Nodes ComfyUI 
-
-#### Full list
-
-- [awesome-comfyui](https://awesome-comfyui.rozenlaan.site)
-
-#### Installed
-
-- [rgthree](https://github.com/rgthree/rgthree-comfy)  
-- [Login](https://github.com/liusida/ComfyUI-Login)  
-- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
+- [rgthree](https://github.com/rgthree/rgthree-comfy)
+- [Login](https://github.com/liusida/ComfyUI-Login)
+- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
-- [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
+- [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
+- [Video Upscale](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 - [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
-- [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
-- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
-- [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
-- [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
-- [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
-- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
-- [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
-- [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
 
-## Models
+## 🧩 All possible Custom Nodes
 
-### Sources  
+- [Full List](https://awesome-comfyui.rozenlaan.site)
 
-- [Wan-Video Github](https://github.com/Wan-Video)
-- [Wan-AI Huggingface](https://huggingface.co/Wan-AI)  
-- [WAN-VACE Github](https://github.com/ali-vilab/VACE)
-- [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
-- [MoviiGen Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1)
-- [Fun](https://huggingface.co/collections/alibaba-pai/wan21-fun-v11-680f514c89fe7b4df9d44f17)
-- [alibaba-pai](https://huggingface.co/collections/alibaba-pai/wan21-fun-67e4fb3b76ca01241eb7e334)
-- [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
+## 📦 Model Sources
 
-### Manual provisioning
+| Source         | URL |
+|----------------|-----|
+| Wan-Video      | [GitHub](https://github.com/Wan-Video) |
+| Wan-AI         | [HuggingFace](https://huggingface.co/Wan-AI) |
+| FusionX        | [HuggingFace](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX) |
+| MoviiGen       | [HuggingFace](https://huggingface.co/ZuluVision/MoviiGen1.1) |
+| VACE           | [GitHub](https://github.com/ali-vilab/VACE) |
 
-- [Wan2.1](provisioning/huggingface_wan21.md)
-- [Wan2.2](provisioning/huggingface_wan22.md)
-- [upscale](provisioning/huggingface_upscale.md)
-- [loras](provisioning/huggingface_loras.md)
+Manual setup guides:
+- [WAN 2.1](provisioning/huggingface_wan21.md)
+- [WAN 2.2](provisioning/huggingface_wan22.md)
+- [Upscale](provisioning/huggingface_upscale.md)
+- [Loras](provisioning/huggingface_loras.md)
 
-## Building the Docker Image 
+## 🛠️ Build & Push Docker Image (Optional)
 
-This is not possible on [runpod.io](https://runpod.io?ref=se4tkc5o) use local hardware.
-You can build and push the image to Docker Hub using the `build-docker.py` script.
+This is **not supported directly on RunPod.io**. Use local hardware to build the image using the included Python script.
 
-### `build-docker.py` script options
+### Build Script: `build-docker.py`
 
-| Option         | Description                                         | Default                |
-|----------------|-----------------------------------------------------|------------------------|
-| `--username`   | Docker Hub username                                 | Current user           |
-| `--tag`        | Tag to use for the image                            | Today's date           |
-| `--latest`     | If specified, also tags and pushes as `latest`      | Not enabled by default |
+| Argument       | Description                        | Default          |
+|----------------|------------------------------------|------------------|
+| `--username`   | Your Docker Hub username           | Current user     |
+| `--tag`        | Custom image tag                   | Today's date     |
+| `--latest`     | Also tag image as `latest`         | Disabled         |
 
-### Build & push Command
-
-Run the following command to clone the repository and build the image:
+### Example Usage
 
 ```bash
 git clone https://github.com/jalberty2018/run-comfyui-wan.git
 cp run-comfyui-wan/build-docker.py ..
 
-python3 build-docker.py \
---username=<your_dockerhub_username> \
---tag=<custom_tag> \ 
-run-comfyui-wan
+python3 build-docker.py   --username=<your_dockerhub_username>   --tag=<custom_tag>   --latest   run-comfyui-wan
 ```
-
-Note: If you want to push the image with the latest tag, add the --latest flag at the end.
