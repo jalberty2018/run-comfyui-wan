@@ -1,5 +1,7 @@
 ## Loras to use with original models
 
+- [light2xtv](https://huggingface.co/lightx2v)
+
 ### FusionX t2v
 
 ```bash
@@ -49,10 +51,20 @@ hf download alibaba-pai/Wan2.1-Fun-Reward-LoRAs Wan2.1-Fun-14B-InP-MPS.safetenso
 --local-dir /workspace/ComfyUI/models/loras/
 ```
 
-### lightx2v
+### lightx2v WAN 2.1
 
 ```bash
 hf download Kijai/WanVideo_comfy Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+### lightx2v WAN 2.2
+
+```bash
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1/low_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1/high_noise_model.safetensors \
 --local-dir /workspace/ComfyUI/models/loras/
 ```
 

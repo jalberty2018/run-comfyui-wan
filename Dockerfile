@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:29072025 AS base
+FROM ls250824/comfyui-runtime:06082025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -28,19 +28,16 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/BlenderNeko/ComfyUI_Noise.git && \
 	git clone https://github.com/ChenDarYen/ComfyUI-NAG.git && \
 	git clone https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
-	git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git && \
-	git clone https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools.git && \
 	git clone https://github.com/evanspearman/ComfyMath.git
 
 # Install Dependencies
-RUN pip3 install --no-cache-dir diffusers psutil -U "huggingface_hub[cli]" \
+RUN pip3 install --no-cache-dir diffusers psutil \
     -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-TeaCache/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
 	-r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt \
-    -r /ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt \
 	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt
 
 # Set Workspace
