@@ -1,6 +1,34 @@
 ## Loras to use with original models
 
+### lighttx2v
+
 - [light2xtv](https://huggingface.co/lightx2v)
+- [Kijai](https://huggingface.co/Kijai/WanVideo_comfy/tree/main/Wan22-Lightning)
+
+#### WAN 2.1
+
+```bash
+hf download Kijai/WanVideo_comfy Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+#### WAN 2.2
+
+```bash
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1/low_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1/high_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+```bash
+hf download Kijai/WanVideo_comfy Wan22-Lightning/Wan2.2-Lightning_T2V-v1.1-A14B-4steps-lora_HIGH_fp16.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download Kijai/WanVideo_comfy Wan22-Lightning/Wan2.2-Lightning_T2V-v1.1-A14B-4steps-lora_LOW_fp16.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
 
 ### FusionX t2v
 
@@ -48,23 +76,6 @@ hf download Kijai/WanVideo_comfy Wan21_T2V_14B_MoviiGen_lora_rank32_fp16.safeten
 
 ```bash
 hf download alibaba-pai/Wan2.1-Fun-Reward-LoRAs Wan2.1-Fun-14B-InP-MPS.safetensors \
---local-dir /workspace/ComfyUI/models/loras/
-```
-
-### lightx2v WAN 2.1
-
-```bash
-hf download Kijai/WanVideo_comfy Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors \
---local-dir /workspace/ComfyUI/models/loras/
-```
-
-### lightx2v WAN 2.2
-
-```bash
-hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1/low_noise_model.safetensors \
---local-dir /workspace/ComfyUI/models/loras/
-
-hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1/high_noise_model.safetensors \
 --local-dir /workspace/ComfyUI/models/loras/
 ```
 

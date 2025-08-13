@@ -4,6 +4,7 @@
 - [Wan-AI Huggingface](https://huggingface.co/Wan-AI)
 - [Kijai t2v scaled](https://hf-mirror.com/Kijai/WanVideo_comfy_fp8_scaled/tree/main/T2V)
 - [Kijai i2v scaled](https://hf-mirror.com/Kijai/WanVideo_comfy_fp8_scaled/tree/main/I2V)
+- [GGUF](https://huggingface.co/QuantStack)
 
 ## Diffusion_models
 

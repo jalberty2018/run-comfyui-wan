@@ -28,7 +28,9 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/BlenderNeko/ComfyUI_Noise.git && \
 	git clone https://github.com/ChenDarYen/ComfyUI-NAG.git && \
 	git clone https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
-	git clone https://github.com/evanspearman/ComfyMath.git
+	git clone https://github.com/evanspearman/ComfyMath.git && \
+	git clone https://github.com/city96/ComfyUI-GGUF.git && \
+	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git
 
 # Install Dependencies
 RUN pip3 install --no-cache-dir diffusers psutil \
@@ -38,7 +40,8 @@ RUN pip3 install --no-cache-dir diffusers psutil \
 	-r /ComfyUI/custom_nodes/ComfyUI-TeaCache/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
 	-r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt \
-	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt
+	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
+	-r /ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace

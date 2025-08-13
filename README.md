@@ -33,8 +33,8 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 | Component        | Recommended             |
 |------------------|--------------------------|
 | GPU              | L40S, L40, RTX 6000 Ada  |
-| Volume Storage   | 75GB (`/workspace`)      |
-| Pod Storage      | 10GB                     |
+| Volume Storage   | 80GB (`/workspace`)      |
+| Pod Storage      | 15GB                     |
 
 
 ## 🐳 Docker Images
@@ -74,14 +74,13 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 | Type             | Variable                                |
 |------------------|------------------------------------------|
-| Diffusion        | `HF_MODEL_DIFFUSION_MODELS[1-2]`         |
-| Diffusion (.safetensors) | `HF_MODEL_DIFFUSION_MODELS_SAFETENSORS[1-2]` |
-| Checkpoints      | `HF_MODEL_CHECKPOINTS`, `HF_MODEL_CHECKPOINTS_SAFETENSORS` |
-| Text Encoders    | `HF_MODEL_TEXT_ENCODERS[1-2]`, `HF_MODEL_TEXT_ENCODERS_SAFETENSORS[1-2]` |
-| CLIP Vision      | `HF_MODEL_CLIP_VISION`, `HF_MODEL_CLIP_VISION_SAFETENSORS` |
-| VAE              | `HF_MODEL_VAE`, `HF_MODEL_VAE_SAFETENSORS` |
+| Diffusion        | `HF_MODEL_DIFFUSION_MODELS[1-2]`, `HF_MODEL_DIFFUSION_MODELS_FILENAME[1-2]` |
+| Checkpoints      | `HF_MODEL_CHECKPOINTS`, `HF_MODEL_CHECKPOINTS_FILENAME` |
+| Text Encoders    | `HF_MODEL_TEXT_ENCODERS[1-2]`, `HF_MODEL_TEXT_ENCODERS_FILENAME[1-2]` |
+| CLIP Vision      | `HF_MODEL_CLIP_VISION`, `HF_MODEL_CLIP_VISION_FILENAME` |
+| VAE              | `HF_MODEL_VAE`, `HF_MODEL_VAE_FILENAME` |
 | Upscalers        | `HF_MODEL_UPSCALER[1-2]`, `HF_MODEL_UPSCALER_PTH[1-2]` |
-| LORAs            | `HF_MODEL_LORA[1-10]`, `HF_MODEL_LORA_SAFETENSORS[1-10]` |
+| LORAs            | `HF_MODEL_LORA[1-10]`, `HF_MODEL_LORA_FILENAME[1-10]` |
 
 ### 🎨 CivitAI LORAs
 
@@ -108,33 +107,33 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [CausVid](https://github.com/tianweiy/CausVid)
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
 - [FusionX LoRA](https://civitai.com/models/1681541?modelVersionId=1903277)
+- [light2xtv](https://huggingface.co/lightx2v)
 
 ## 🧪 Workflows
 
-### Example
-
 ![Preloaded workflow for Wan 2.2](images/runpod-comfyui-workflow.jpg)
-
-### Workflows are preloaded in:
-
-```
-/workspace/ComfyUI/user/default/workflows
-```
-
 Open ComfyUI (port `8188`) and load workflows from the left menu.
 
 ## 🧩 Pre-Installed Custom Nodes
 
-- [rgthree](https://github.com/rgthree/rgthree-comfy)
-- [Login](https://github.com/liusida/ComfyUI-Login)
-- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)
+- [rgthree](https://github.com/rgthree/rgthree-comfy)  
+- [Login](https://github.com/liusida/ComfyUI-Login)  
+- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
+- [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
-- [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
-- [Video Upscale](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
-- [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 - [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
+- [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
+- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
+- [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
+- [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
+- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
+- [GGUF](https://github.com/city96/ComfyUI-GGUF)
+- [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
+- [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 
 ## 🧩 All possible Custom Nodes
 
@@ -150,7 +149,8 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 | MoviiGen       | [HuggingFace](https://huggingface.co/ZuluVision/MoviiGen1.1) |
 | VACE           | [GitHub](https://github.com/ali-vilab/VACE) |
 
-Manual setup guides:
+## 📦 Manual setup guides:
+
 - [WAN 2.1](provisioning/huggingface_wan21.md)
 - [WAN 2.2](provisioning/huggingface_wan22.md)
 - [Upscale](provisioning/huggingface_upscale.md)

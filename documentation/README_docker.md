@@ -12,12 +12,14 @@ This project downloads models as specified in the **environment variables** set 
 Ensure that the required environment variables and secrets are correctly set before running the pod.
 See below for options.
 
-## Hardware Requirements  
- 
-- **Recommended GPUs**: L40S, L40, RTX 6000 Ada  
-- **Storage**:  
-  - **Volume**: 75GB (`/workspace`)  
-  - **Pod Volume**: 10GB  
+### Recommended
+
+| Component        | Recommended             |
+|------------------|--------------------------|
+| GPU              | L40S, L40, RTX 6000 Ada  |
+| Volume Storage   | 80GB (`/workspace`)      |
+| Pod Storage      | 15GB                     |
+
 
 ## Template [RunPod.io](https://runpod.io?ref=se4tkc5o)
 
@@ -36,6 +38,7 @@ See below for options.
 - [vace](https://docs.comfy.org/tutorials/video/wan/vace)
 - [Phantom](https://github.com/Phantom-video/Phantom)
 - [FusionX Lora](https://civitai.com/models/1681541?modelVersionId=1903277)
+- [light2xtv](https://huggingface.co/lightx2v)
 
 ## Workflow
 
@@ -85,10 +88,10 @@ See below for options.
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
-- [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
 - [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
-
-## Environment Variables  
+- [GGUF](https://github.com/city96/ComfyUI-GGUF)
+- [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
+- [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 
 ### **ComfyUI Arguments**  
 
@@ -106,15 +109,15 @@ See below for options.
 
 ### **Diffusion Models Setup Huggingface**  
 
-| Model Type        | Model                         | Safetensors                               |
-|-------------------|-------------------------------|-------------------------------------------| 
-| Diffusion Model   | `HF_MODEL_DIFFUSION_MODELS[1-2]`          | `HF_MODEL_DIFFUSION_MODELS_SAFETENSORS[1-2]`|
-| Checkpoints       | `HF_MODEL_CHECKPOINTS`        | `HF_MODEL_CHECKPOINTS_SAFETENSORS`        |
-| Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-2]` | `HF_MODEL_TEXT_ENCODERS_SAFETENSORS[1-2]` |
-| Clip Vision       | `HF_MODEL_CLIP_VISION`        | `HF_MODEL_CLIP_VISION_SAFETENSORS` |
-| VAE               | `HF_MODEL_VAE`                | `HF_MODEL_VAE_SAFETENSORS`                |
-| Upscalers         | `HF_MODEL_UPSCALER[1-2]`      | `HF_MODEL_UPSCALER_PTH[1-2]`              |
-| Loras huggingface | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_SAFETENSORS[1-10]`          |
+| Type             | Variable                                |
+|------------------|------------------------------------------|
+| Diffusion        | `HF_MODEL_DIFFUSION_MODELS[1-2]`, `HF_MODEL_DIFFUSION_MODELS_FILENAME[1-2]` |
+| Checkpoints      | `HF_MODEL_CHECKPOINTS`, `HF_MODEL_CHECKPOINTS_FILENAME` |
+| Text Encoders    | `HF_MODEL_TEXT_ENCODERS[1-2]`, `HF_MODEL_TEXT_ENCODERS_FILENAME[1-2]` |
+| CLIP Vision      | `HF_MODEL_CLIP_VISION`, `HF_MODEL_CLIP_VISION_FILENAME` |
+| VAE              | `HF_MODEL_VAE`, `HF_MODEL_VAE_FILENAME` |
+| Upscalers        | `HF_MODEL_UPSCALER[1-2]`, `HF_MODEL_UPSCALER_PTH[1-2]` |
+| LORAs            | `HF_MODEL_LORA[1-10]`, `HF_MODEL_LORA_FILENAME[1-10]` |
 
 ### **Diffusion Lora Setup CivitAI**  
 

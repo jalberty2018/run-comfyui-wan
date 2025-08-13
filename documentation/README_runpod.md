@@ -13,6 +13,7 @@
 - [vace](https://docs.comfy.org/tutorials/video/wan/vace)
 - [Phantom](https://github.com/Phantom-video/Phantom)
 - [FusionX Lora](https://civitai.com/models/1681541?modelVersionId=1903277)
+- [light2xtv](https://huggingface.co/lightx2v)
 
 ## Example workflow
 
@@ -49,8 +50,10 @@
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
-- [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
 - [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
+- [GGUF](https://github.com/city96/ComfyUI-GGUF)
+- [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
+- [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 
 ## Models
 
