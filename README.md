@@ -16,8 +16,7 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ## 📦 Template Deployment
 
-👉 **One-click Deploy on RunPod**  
-[**Deploy Now**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
+👉 [**One-click Deploy on RunPod**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
 > ✅ Be sure to configure environment variables and secrets appropriately (see below).
 
