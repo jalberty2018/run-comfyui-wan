@@ -30,7 +30,7 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
 	git clone https://github.com/evanspearman/ComfyMath.git && \
 	git clone https://github.com/city96/ComfyUI-GGUF.git && \
-	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git \
+	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git && \
     git clone https://github.com/Azornes/Comfyui-Resolution-Master.git
 
 # Install Dependencies
