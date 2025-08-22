@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:14082025 AS base
+FROM ls250824/comfyui-runtime:22082025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -30,7 +30,8 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
 	git clone https://github.com/evanspearman/ComfyMath.git && \
 	git clone https://github.com/city96/ComfyUI-GGUF.git && \
-	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git
+	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git \
+    git clone https://github.com/Azornes/Comfyui-Resolution-Master.git
 
 # Install Dependencies
 RUN pip3 install --no-cache-dir diffusers psutil \
@@ -45,6 +46,9 @@ RUN pip3 install --no-cache-dir diffusers psutil \
 
 # Set Workspace
 WORKDIR /workspace
+
+# Cache directory for Hugging Face
+ENV HF_HOME=/workspace/cache
 
 # Expose Necessary Ports
 EXPOSE 8188 9000

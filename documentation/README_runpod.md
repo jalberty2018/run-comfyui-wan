@@ -54,6 +54,7 @@
 - [GGUF](https://github.com/city96/ComfyUI-GGUF)
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
+- [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 
 ## Models
 

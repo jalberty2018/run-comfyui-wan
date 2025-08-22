@@ -1,6 +1,6 @@
-[![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan)](https://hub.docker.com/r/ls250824/run-comfyui-wan)
-
 # 🚀 Run WAN 2.x on ComfyUI with Custom Nodes — [RunPod.io Deployment](https://runpod.io?ref=se4tkc5o)
+
+[![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan)](https://hub.docker.com/r/ls250824/run-comfyui-wan)
 
 A streamlined and automated environment for running **ComfyUI** with **WAN 2.x video models**, optimized for use on [RunPod.io](https://runpod.io?ref=se4tkc5o).
 
@@ -22,19 +22,11 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ## 💻 Hardware Requirements
 
-### Example
-
-![Pod running on runpod.io](images/runpod-pod.jpg)
-
-
-### Recommended
-
 | Component        | Recommended             |
 |------------------|--------------------------|
-| GPU              | L40S, L40, RTX 6000 Ada  |
+| GPU              | L40S, RTX 6000 Ada  |
 | Volume Storage   | 80GB (`/workspace`)      |
-| Pod Storage      | 15GB                     |
-
+| Pod Storage      | 10GB                     |
 
 ## 🐳 Docker Images
 
@@ -133,6 +125,7 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [GGUF](https://github.com/city96/ComfyUI-GGUF)
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
+- [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 
 ## 🧩 All possible Custom Nodes
 
