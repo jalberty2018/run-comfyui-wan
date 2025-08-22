@@ -47,9 +47,6 @@ RUN pip3 install --no-cache-dir diffusers psutil \
 # Set Workspace
 WORKDIR /workspace
 
-# Cache directory for Hugging Face
-ENV HF_HOME=/workspace/cache
-
 # Expose Necessary Ports
 EXPOSE 8188 9000
 
