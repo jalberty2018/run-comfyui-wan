@@ -93,6 +93,7 @@ See below for options.
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
+- [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 
 ### **ComfyUI Arguments**  
 

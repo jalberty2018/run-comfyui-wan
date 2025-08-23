@@ -126,6 +126,7 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
+- [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 
 ## 🧩 All possible Custom Nodes
 

@@ -7,7 +7,7 @@ WORKDIR /
 # Copy Scripts and Configurations
 COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provisioning-on-workspace.sh onworkspace/readme-on-workspace.sh / 
 COPY --chmod=644 comfy.settings.json /ComfyUI/user/default/comfy.settings.json
-COPY --chmod=664 /documentation/README_runpod.md /README.md
+COPY --chmod=664 /documentation/README.md /README.md
 COPY --chmod=644 provisioning/ /provisioning
 COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
 
@@ -31,7 +31,8 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/evanspearman/ComfyMath.git && \
 	git clone https://github.com/city96/ComfyUI-GGUF.git && \
 	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git && \
-    git clone https://github.com/Azornes/Comfyui-Resolution-Master.git
+    git clone https://github.com/Azornes/Comfyui-Resolution-Master.git && \
+	git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive
 
 # Install Dependencies
 RUN pip3 install --no-cache-dir diffusers psutil \

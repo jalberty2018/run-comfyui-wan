@@ -1,55 +1,5 @@
 # Pod documentation
 
-### Recommended
-
-| Component        | Recommended             |
-|------------------|--------------------------|
-| GPU              | L40S, L40, RTX 6000 Ada  |
-| Volume Storage   | 80GB (`/workspace`)      |
-| Pod Storage      | 15GB                     |
-
-### **ComfyUI Arguments**  
-
-| Token        | Environment Variable     |
-|--------------|--------------------------|
-| Arguments    | `COMFYUI_EXTRA_ARGUMENTS`|
-
-### **Authentication Tokens**  
-
-| Token        | Environment Variable |
-|--------------|----------------------|
-| Civitai      | `CIVITAI_TOKEN`      |
-| Huggingface  | `HF_TOKEN`           |
-| Code Server  | `PASSWORD`           |
-
-### **Diffusion Models Setup Huggingface**  
-
-| Type             | Variable                                |
-|------------------|------------------------------------------|
-| Diffusion        | `HF_MODEL_DIFFUSION_MODELS[1-2]`, `HF_MODEL_DIFFUSION_MODELS_FILENAME[1-2]` |
-| Checkpoints      | `HF_MODEL_CHECKPOINTS`, `HF_MODEL_CHECKPOINTS_FILENAME` |
-| Text Encoders    | `HF_MODEL_TEXT_ENCODERS[1-2]`, `HF_MODEL_TEXT_ENCODERS_FILENAME[1-2]` |
-| CLIP Vision      | `HF_MODEL_CLIP_VISION`, `HF_MODEL_CLIP_VISION_FILENAME` |
-| VAE              | `HF_MODEL_VAE`, `HF_MODEL_VAE_FILENAME` |
-| Upscalers        | `HF_MODEL_UPSCALER[1-2]`, `HF_MODEL_UPSCALER_PTH[1-2]` |
-| LORAs            | `HF_MODEL_LORA[1-10]`, `HF_MODEL_LORA_FILENAME[1-10]` |
-
-### **Diffusion Lora Setup CivitAI**  
-
-| Model Type        | URL (download link)            |
-|-------------------|--------------------------------|
-| Loras civitai     | `CIVITAI_MODEL_LORA_URL[1-10]` |
-
-## Connection options 
-
-### Services
-
-| Service         | Port          |
-|-----------------|---------------| 
-| **ComfyUI**     | `8188` (HTTP) |
-| **Code Server** | `9000` (HTTP) |
-| **SSH/SCP**     | `22`   (TCP)  |
- 
 ## Workflows & Tutorials  
 
 - [wan-video](https://wan.video/)
@@ -107,7 +57,9 @@
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 
-### Models
+## Models
+
+### Sources  
 
 - [Wan-Video Github](https://github.com/Wan-Video)
 - [Wan-AI Huggingface](https://huggingface.co/Wan-AI)  
@@ -118,3 +70,52 @@
 - [alibaba-pai](https://huggingface.co/collections/alibaba-pai/wan21-fun-67e4fb3b76ca01241eb7e334)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 
+### Manual provisioning
+
+- [Wan2.1](provisioning/huggingface_wan21.md)
+- [Wan2.2](provisioning/huggingface_wan22.md)
+- [upscale](provisioning/huggingface_upscale.md)
+- [loras](provisioning/huggingface_loras.md)
+
+#### **Huggingface**  
+
+```bash
+hf download model model_name.safetensors --local-dir /workspace/ComfyUI/models/diffusion_models/
+hf upload model /workspace/model.safetensors
+```
+
+#### **CivitAI**  
+
+```bash
+civitai "<download link>" /workspace/ComfyUI/models/diffusion_models
+civitai "<download link>" /workspace/ComfyUI/models/loras
+```
+## 7z Compression  
+
+### **Encrypt & Archive Output**  
+
+```bash
+7z a -p -mhe=on /workspace/output/output-wan-x.7z /workspace/ComfyUI/output/
+```
+
+### **Extract Archive**  
+
+```bash
+7z x x.7z
+```
+
+### **Clean up**  
+
+```bash
+rm -rf /workspace/output/ /workspace/input/ /workspace/ComfyUI/output/ /workspace/ComfyUI/models/
+```
+
+## Utilities  
+
+```bash
+nvtop   # GPU Monitoring  
+htop    # Process Monitoring  
+mc      # Midnight Commander  
+nano    # Text Editor
+ncdu    # Clean Up
+```
