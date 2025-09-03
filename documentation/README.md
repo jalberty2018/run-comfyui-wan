@@ -14,6 +14,7 @@
 - [Phantom](https://github.com/Phantom-video/Phantom)
 - [FusionX Lora](https://civitai.com/models/1681541?modelVersionId=1903277)
 - [light2xtv](https://huggingface.co/lightx2v)
+- [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
 
 ## Example workflow
 
@@ -56,6 +57,7 @@
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
+- [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
 
 ## Models
 
@@ -72,14 +74,17 @@
 
 ### Manual provisioning
 
-- [Wan2.1](provisioning/huggingface_wan21.md)
-- [Wan2.2](provisioning/huggingface_wan22.md)
-- [upscale](provisioning/huggingface_upscale.md)
-- [loras](provisioning/huggingface_loras.md)
+- [WAN 2.1](provisioning/hf_wan21.md)
+- [WAN 2.2](provisioning/hf_wan22.md)
+- [Upscale](provisioning/hf_upscale.md)
+- [Loras wan21](provisioning/hf_loras_wan21.md)
+- [Loras wan22](provisioning/hf_loras_wan22.md)
 
 #### **Huggingface**  
 
 ```bash
+export HF_TOKEN="xxxxx"
+hf auth login --token "$HF_TOKEN"
 hf download model model_name.safetensors --local-dir /workspace/ComfyUI/models/diffusion_models/
 hf upload model /workspace/model.safetensors
 ```
@@ -87,6 +92,7 @@ hf upload model /workspace/model.safetensors
 #### **CivitAI**  
 
 ```bash
+export CIVITAI_TOKEN="xxxxx"
 civitai "<download link>" /workspace/ComfyUI/models/diffusion_models
 civitai "<download link>" /workspace/ComfyUI/models/loras
 ```

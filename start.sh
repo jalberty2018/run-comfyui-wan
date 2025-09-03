@@ -145,30 +145,5 @@ download_model_HF HF_MODEL_CHECKPOINTS HF_MODEL_CHECKPOINTS_FILENAME "checkpoint
 # Final message
 echo "✅ Provisioning done. Ready to create AI content."
 
-# Force ComfyUI Manager: preview_method=auto
-CONFIG="/workspace/ComfyUI/user/default/ComfyUI-Manager/config.ini"
-mkdir -p "$(dirname "$CONFIG")"
-
-CFG_PATH="$CONFIG" python3 - <<'PY'
-import os, configparser
-path = os.environ["CFG_PATH"]
-cfg = configparser.ConfigParser()
-cfg.optionxform = str.lower  # keep lowercase keys like in your file
-
-if os.path.exists(path) and os.path.getsize(path) > 0:
-    with open(path, "r", encoding="utf-8") as f:
-        cfg.read_file(f)
-
-if 'default' not in cfg:
-    cfg.add_section('default')
-
-cfg['default']['preview_method'] = 'auto'
-
-with open(path, "w", encoding="utf-8") as f:
-    cfg.write(f)
-
-print(f"[INFO] Set preview_method=auto in {path}")
-PY
-
 # Keep the container running
 exec sleep infinity

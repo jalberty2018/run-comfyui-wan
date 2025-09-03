@@ -16,7 +16,7 @@ See below for options.
 
 | Component        | Recommended             |
 |------------------|--------------------------|
-| GPU              | L40S, L40, RTX 6000 Ada  |
+| GPU              | L40S, RTX 6000 Ada  |
 | Volume Storage   | 80GB (`/workspace`)      |
 | Pod Storage      | 15GB                     |
 
@@ -39,6 +39,7 @@ See below for options.
 - [Phantom](https://github.com/Phantom-video/Phantom)
 - [FusionX Lora](https://civitai.com/models/1681541?modelVersionId=1903277)
 - [light2xtv](https://huggingface.co/lightx2v)
+- [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
 
 ## Workflow
 
@@ -94,6 +95,7 @@ See below for options.
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
+- [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
 
 ### **ComfyUI Arguments**  
 

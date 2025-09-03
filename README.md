@@ -102,7 +102,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 ## 🧪 Workflows
 
-![Preloaded workflow for Wan 2.2](images/runpod-comfyui-workflow.jpg)
+![Preloaded workflow for Wan 2.2](images/run_comfyui_workflow.jpg)
 Open ComfyUI (port `8188`) and load workflows from the left menu.
 
 ## 🧩 Pre-Installed Custom Nodes
@@ -127,6 +127,7 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
+- [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
 
 ## 🧩 All possible Custom Nodes
 
@@ -144,10 +145,11 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 
 ## 📦 Manual setup guides:
 
-- [WAN 2.1](provisioning/huggingface_wan21.md)
-- [WAN 2.2](provisioning/huggingface_wan22.md)
-- [Upscale](provisioning/huggingface_upscale.md)
-- [Loras](provisioning/huggingface_loras.md)
+- [WAN 2.1](provisioning/hf_wan21.md)
+- [WAN 2.2](provisioning/hf_wan22.md)
+- [Upscale](provisioning/hf_upscale.md)
+- [Loras wan21](provisioning/hf_loras_wan21.md)
+- [Loras wan22](provisioning/hf_loras_wan22.md)
 
 ## 🛠️ Build & Push Docker Image (Optional)
 

@@ -4,12 +4,15 @@ FROM ls250824/comfyui-runtime:28082025 AS base
 # Set Working Directory
 WORKDIR /
 
-# Copy Scripts and Configurations
+# Copy Scripts and documentation
 COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provisioning-on-workspace.sh onworkspace/readme-on-workspace.sh / 
-COPY --chmod=644 comfy.settings.json /ComfyUI/user/default/comfy.settings.json
 COPY --chmod=664 /documentation/README.md /README.md
 COPY --chmod=644 provisioning/ /provisioning
+
+# Copy ComfyUI configurations and workflows
 COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
+COPY --chmod=644 configuration/config.ini /ComfyUI/user/default/ComfyUI-Manager/config.ini
+COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.settings.json
 
 # Install Required Packages
 RUN mkdir -p /ComfyUI/custom_nodes && \
@@ -32,7 +35,8 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/city96/ComfyUI-GGUF.git && \
 	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git && \
     git clone https://github.com/Azornes/Comfyui-Resolution-Master.git && \
-	git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive
+	git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive && \
+    git clone https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit.git
 
 # Install Dependencies
 RUN pip3 install --no-cache-dir diffusers psutil \
@@ -43,7 +47,8 @@ RUN pip3 install --no-cache-dir diffusers psutil \
 	-r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
 	-r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt \
 	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
-	-r /ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
+	-r /ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt \
+    -r /ComfyUI/custom_nodes/comfyui-WhiteRabbit/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace
