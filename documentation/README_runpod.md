@@ -1,5 +1,12 @@
 # Pod documentation
 
+This project downloads models as specified in the **environment variables** set in the templates.  
+
+- Models and loras are automatically downloaded based on the specified paths in the environment configuration.  
+- Authentication credentials can be set via secrets for:  
+  - **Code server** authentication (not possible to switch off) 
+  - **Hugging Face** and **CivitAI** tokens for model access. 
+
 ### Recommended
 
 | Component        | Recommended             |
@@ -50,22 +57,6 @@
 | **Code Server** | `9000` (HTTP) |
 | **SSH/SCP**     | `22`   (TCP)  |
  
-## Workflows & Tutorials  
-
-- [wan-video](https://wan.video/)
-- [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
-- [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/)
-- [Wiki 2.1](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
-- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
-- [AccVideo](https://github.com/aejion/AccVideo)
-- [CausVid](https://github.com/tianweiy/CausVid)
-- [NAG](https://chendaryen.github.io/NAG.github.io/)
-- [vace](https://docs.comfy.org/tutorials/video/wan/vace)
-- [Phantom](https://github.com/Phantom-video/Phantom)
-- [FusionX Lora](https://civitai.com/models/1681541?modelVersionId=1903277)
-- [light2xtv](https://huggingface.co/lightx2v)
-- [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
-
 ## Example workflow
 
 - Text to video workflow available in /workspace/ComfyUI/user/default/workflows
@@ -108,15 +99,4 @@
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
-
-### Models
-
-- [Wan-Video Github](https://github.com/Wan-Video)
-- [Wan-AI Huggingface](https://huggingface.co/Wan-AI)  
-- [WAN-VACE Github](https://github.com/ali-vilab/VACE)
-- [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
-- [MoviiGen Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1)
-- [Fun](https://huggingface.co/collections/alibaba-pai/wan21-fun-v11-680f514c89fe7b4df9d44f17)
-- [alibaba-pai](https://huggingface.co/collections/alibaba-pai/wan21-fun-67e4fb3b76ca01241eb7e334)
-- [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 

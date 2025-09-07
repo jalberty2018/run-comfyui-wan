@@ -2,6 +2,8 @@
 
 [![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan)](https://hub.docker.com/r/ls250824/run-comfyui-wan)
 
+![Pod running](images/runpod.jpg)
+
 A streamlined and automated environment for running **ComfyUI** with **WAN 2.x video models**, optimized for use on [RunPod.io](https://runpod.io?ref=se4tkc5o).
 
 ## 🔧 Features
@@ -99,6 +101,8 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
 - [FusionX LoRA](https://civitai.com/models/1681541?modelVersionId=1903277)
 - [light2xtv](https://huggingface.co/lightx2v)
+- [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
+- [Animated preview](https://civitai.com/articles/12623/dont-just-guess-with-your-wan-gens-animated-previews-for-seed-hunting-guide-comfyui)
 
 ## 🧪 Workflows
 

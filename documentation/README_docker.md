@@ -40,6 +40,7 @@ See below for options.
 - [FusionX Lora](https://civitai.com/models/1681541?modelVersionId=1903277)
 - [light2xtv](https://huggingface.co/lightx2v)
 - [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
+- [Animated preview](https://civitai.com/articles/12623/dont-just-guess-with-your-wan-gens-animated-previews-for-seed-hunting-guide-comfyui)
 
 ## Workflow
 

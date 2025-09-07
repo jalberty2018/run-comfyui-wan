@@ -61,14 +61,6 @@ else
     echo "⚠️ WARNING: No GPU available, ComfyUI and Code Server not started to limit memory use"
 fi
 	
-# Login to Hugging Face if token is provided
-if [[ -n "$HF_TOKEN" ]]; then
-    hf auth login --token "$HF_TOKEN"
-	sleep 1
-else
-	echo "⚠️ WARNING: HF_TOKEN is not set as an environment variable"
-fi
-
 # Function to download models if variables are set
 download_model_HF() {
     local model_var="$1"
