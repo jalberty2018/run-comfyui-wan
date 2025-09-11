@@ -39,7 +39,7 @@ if [[ "$HAS_GPU" -eq 1 ]]; then
     if [[ -n "$PASSWORD" ]]; then
         code-server /workspace --auth password --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     else
-        echo "⚠️ WARNING: PASSWORD is not set as an environment variable"
+        echo "⚠️ PASSWORD is not set as an environment variable use password generated in log"
         code-server /workspace --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     fi
 	
@@ -104,6 +104,9 @@ download_model_HF HF_MODEL_UPSCALER2 HF_MODEL_UPSCALER_PTH2 "upscale_models"
 
 download_model_HF HF_MODEL_TEXT_ENCODERS1 HF_MODEL_TEXT_ENCODERS_FILENAME1 "text_encoders"
 download_model_HF HF_MODEL_TEXT_ENCODERS2 HF_MODEL_TEXT_ENCODERS_FILENAME2 "text_encoders"
+
+download_model_HF HF_MODEL_AUDIO_ENCODERS1 HF_MODEL_AUDIO_ENCODERS_FILENAME1 "audio_encoders"
+download_model_HF HF_MODEL_AUDIO_ENCODERS2 HF_MODEL_AUDIO_ENCODERS_FILENAME2 "audio_encoders"
 
 download_model_HF HF_MODEL_CLIP_VISION HF_MODEL_CLIP_VISION_FILENAME "clip_vision"
 

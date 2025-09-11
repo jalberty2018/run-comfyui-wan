@@ -70,6 +70,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 | Diffusion        | `HF_MODEL_DIFFUSION_MODELS[1-2]`, `HF_MODEL_DIFFUSION_MODELS_FILENAME[1-2]` |
 | Checkpoints      | `HF_MODEL_CHECKPOINTS`, `HF_MODEL_CHECKPOINTS_FILENAME` |
 | Text Encoders    | `HF_MODEL_TEXT_ENCODERS[1-2]`, `HF_MODEL_TEXT_ENCODERS_FILENAME[1-2]` |
+| Audio Encoders    | `HF_MODEL_AUDIO_ENCODERS[1-2]`, `HF_MODEL_AUDIO_ENCODERS_FILENAME[1-2]` |
 | CLIP Vision      | `HF_MODEL_CLIP_VISION`, `HF_MODEL_CLIP_VISION_FILENAME` |
 | VAE              | `HF_MODEL_VAE`, `HF_MODEL_VAE_FILENAME` |
 | Upscalers        | `HF_MODEL_UPSCALER[1-2]`, `HF_MODEL_UPSCALER_PTH[1-2]` |
@@ -95,6 +96,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [WAN Video Homepage](https://wan.video/)
 - [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
 - [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/)
+- [ComfyUI 2.2 s2v](https://docs.comfy.org/tutorials/video/wan/wan2-2-s2v)
 - [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
@@ -117,7 +119,6 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
-- [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
@@ -132,6 +133,7 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
+- [Was affine](https://github.com/WASasquatch/was_affine)
 
 ## 🧩 All possible Custom Nodes
 
@@ -150,7 +152,7 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 ## 📦 Manual setup guides:
 
 - [WAN 2.1](provisioning/hf_wan21.md)
-- [WAN 2.2](provisioning/hf_wan22.md)
+- [WAN 2.2 t2v s2v](provisioning/hf_wan22.md)
 - [Upscale](provisioning/hf_upscale.md)
 - [Loras wan21](provisioning/hf_loras_wan21.md)
 - [Loras wan22](provisioning/hf_loras_wan22.md)

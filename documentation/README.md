@@ -5,6 +5,7 @@
 - [wan-video](https://wan.video/)
 - [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
 - [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/)
+- [ComfyUI 2.2 s2v](https://docs.comfy.org/tutorials/video/wan/wan2-2-s2v)
 - [Wiki 2.1](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
 - [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
 - [AccVideo](https://github.com/aejion/AccVideo)
@@ -16,6 +17,7 @@
 - [light2xtv](https://huggingface.co/lightx2v)
 - [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
 - [Animated preview](https://civitai.com/articles/12623/dont-just-guess-with-your-wan-gens-animated-previews-for-seed-hunting-guide-comfyui)
+- [Tutorial s2v](https://www.kombitz.com/2025/09/02/how-to-use-wan-2-2-s2v-gguf-model-in-comfyui/)
 
 ## Example workflow
 
@@ -44,7 +46,6 @@
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
-- [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
@@ -59,12 +60,14 @@
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
+- [Was affine](https://github.com/WASasquatch/was_affine)
 
 ## Models
 
 ### Sources  
 
 - [Wan-Video Github](https://github.com/Wan-Video)
+- [Wan-s2v-webpage](https://humanaigc.github.io/wan-s2v-webpage/)
 - [Wan-AI Huggingface](https://huggingface.co/Wan-AI)  
 - [WAN-VACE Github](https://github.com/ali-vilab/VACE)
 - [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
@@ -76,7 +79,7 @@
 ### Manual provisioning
 
 - [WAN 2.1](provisioning/hf_wan21.md)
-- [WAN 2.2](provisioning/hf_wan22.md)
+- [WAN 2.2 t2v s2v](provisioning/hf_wan22.md)
 - [Upscale](provisioning/hf_upscale.md)
 - [Loras wan21](provisioning/hf_loras_wan21.md)
 - [Loras wan22](provisioning/hf_loras_wan22.md)

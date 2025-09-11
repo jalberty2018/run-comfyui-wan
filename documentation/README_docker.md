@@ -30,6 +30,7 @@ See below for options.
 - [wan-video](https://wan.video/)
 - [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
 - [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/)
+- [ComfyUI 2.2 s2v](https://docs.comfy.org/tutorials/video/wan/wan2-2-s2v)
 - [Wiki 2.1](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
 - [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
 - [AccVideo](https://github.com/aejion/AccVideo)
@@ -82,7 +83,6 @@ See below for options.
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
-- [TeaCache](https://github.com/welltop-cn/ComfyUI-TeaCache)
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
@@ -97,6 +97,7 @@ See below for options.
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
+- [Was affine](https://github.com/WASasquatch/was_affine)
 
 ### **ComfyUI Arguments**  
 
@@ -112,13 +113,14 @@ See below for options.
 | Huggingface  | `HF_TOKEN`           |
 | Code Server  | `PASSWORD`           |
 
-### **Diffusion Models Setup Huggingface**  
+### 🧠 Hugging Face Model Configuration
 
 | Type             | Variable                                |
 |------------------|------------------------------------------|
 | Diffusion        | `HF_MODEL_DIFFUSION_MODELS[1-2]`, `HF_MODEL_DIFFUSION_MODELS_FILENAME[1-2]` |
 | Checkpoints      | `HF_MODEL_CHECKPOINTS`, `HF_MODEL_CHECKPOINTS_FILENAME` |
 | Text Encoders    | `HF_MODEL_TEXT_ENCODERS[1-2]`, `HF_MODEL_TEXT_ENCODERS_FILENAME[1-2]` |
+| Audio Encoders    | `HF_MODEL_AUDIO_ENCODERS[1-2]`, `HF_MODEL_AUDIO_ENCODERS_FILENAME[1-2]` |
 | CLIP Vision      | `HF_MODEL_CLIP_VISION`, `HF_MODEL_CLIP_VISION_FILENAME` |
 | VAE              | `HF_MODEL_VAE`, `HF_MODEL_VAE_FILENAME` |
 | Upscalers        | `HF_MODEL_UPSCALER[1-2]`, `HF_MODEL_UPSCALER_PTH[1-2]` |

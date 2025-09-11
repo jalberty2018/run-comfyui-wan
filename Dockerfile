@@ -19,7 +19,6 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
     cd /ComfyUI/custom_nodes && \
     git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
     git clone https://github.com/rgthree/rgthree-comfy.git && \
-	git clone https://github.com/welltop-cn/ComfyUI-TeaCache.git && \
     git clone https://github.com/liusida/ComfyUI-Login.git && \
     git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
     git clone https://github.com/kijai/ComfyUI-KJNodes.git && \
@@ -36,7 +35,8 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git && \
     git clone https://github.com/Azornes/Comfyui-Resolution-Master.git && \
 	git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive && \
-    git clone https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit.git
+    git clone https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit.git && \
+	git clone https://github.com/WASasquatch/was_affine.git
 
 # Install Dependencies
 RUN pip3 install --no-cache-dir diffusers psutil \

@@ -2,8 +2,6 @@
 
 - [ComfyUI Huggingface](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/tree/main/split_files)
 - [Wan-AI Huggingface](https://huggingface.co/Wan-AI)
-- [Kijai t2v scaled](https://hf-mirror.com/Kijai/WanVideo_comfy_fp8_scaled/tree/main/T2V)
-- [Kijai i2v scaled](https://hf-mirror.com/Kijai/WanVideo_comfy_fp8_scaled/tree/main/I2V)
 - [GGUF](https://huggingface.co/QuantStack)
 
 ## Diffusion_models
@@ -23,21 +21,6 @@ hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/w
 hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_t2v_high_noise_14B_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ``` 
-### t2v fp8
-
-#### Low noise
-
-```bash
-hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors \
---local-dir /workspace/ComfyUI/models/diffusion_models/
-```
-
-#### High noise
-
-```bash
-hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_t2v_high_noise_14B_fp8_scaled.safetensors \
---local-dir /workspace/ComfyUI/models/diffusion_models/
-``` 
 
 ### i2v fp16
 
@@ -55,19 +38,10 @@ hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wa
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
-### i2v fp8
-
-#### Low noise
+### s2v bf16
 
 ```bash
-hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors \
---local-dir /workspace/ComfyUI/models/diffusion_models/
-```
-
-#### Heigh noise
-
-```bash
-hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors \
+hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_s2v_14B_bf16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
@@ -87,11 +61,11 @@ hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/text_encoders/umt5_
 --local-dir /workspace/ComfyUI/models/text_encoders/
 ```
 
-### fp8
+## CLIP Audio encoders
 
 ```bash
-hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/text_encoders/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors \
---local-dir /workspace/ComfyUI/models/text_encoders/
+hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/audio_encoders/wav2vec2_large_english_fp16.safetensors \
+--local-dir /workspace/ComfyUI/models/audio_encoders/
 ```
 
 ## Vae
@@ -109,4 +83,6 @@ hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/vae/wan_2.1_vae.saf
 hf download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors \
 --local-dir /workspace/ComfyUI/models/vae/
 ```
+
+
 
