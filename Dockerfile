@@ -43,7 +43,6 @@ RUN pip3 install --no-cache-dir diffusers psutil \
     -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt \
-	-r /ComfyUI/custom_nodes/ComfyUI-TeaCache/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
 	-r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt \
 	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
