@@ -17,7 +17,7 @@ See below for options.
 | Component        | Recommended             |
 |------------------|--------------------------|
 | GPU              | L40S, RTX 6000 Ada  |
-| Volume Storage   | 80GB (`/workspace`)      |
+| Volume Storage   | 90GB (`/workspace`)      |
 | Pod Storage      | 15GB                     |
 
 
@@ -75,28 +75,37 @@ See below for options.
 
 - [awesome-comfyui](https://awesome-comfyui.rozenlaan.site)
 
-#### Installed
+#### Interface
 
 - [rgthree](https://github.com/rgthree/rgthree-comfy)  
 - [Login](https://github.com/liusida/ComfyUI-Login)  
-- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
-- [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
+- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
+- [GGUF](https://github.com/city96/ComfyUI-GGUF)
+- [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
+- [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
+
+#### Video
+
+- [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
+- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
+
+#### Wan
+
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
-- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
+
+#### Inference
+
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
-- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
-- [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
-- [GGUF](https://github.com/city96/ComfyUI-GGUF)
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
-- [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
-- [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
-- [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
 - [Was affine](https://github.com/WASasquatch/was_affine)
 
 ### **ComfyUI Arguments**  

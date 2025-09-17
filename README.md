@@ -27,8 +27,8 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 | Component        | Recommended             |
 |------------------|--------------------------|
 | GPU              | L40S, RTX 6000 Ada  |
-| Volume Storage   | 80GB (`/workspace`)      |
-| Pod Storage      | 10GB                     |
+| Volume Storage   | 90GB (`/workspace`)      |
+| Pod Storage      | 15GB                     |
 
 ## 🐳 Docker Images
 
@@ -71,7 +71,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 | Checkpoints      | `HF_MODEL_CHECKPOINTS`, `HF_MODEL_CHECKPOINTS_FILENAME` |
 | Text Encoders    | `HF_MODEL_TEXT_ENCODERS[1-2]`, `HF_MODEL_TEXT_ENCODERS_FILENAME[1-2]` |
 | Audio Encoders    | `HF_MODEL_AUDIO_ENCODERS[1-2]`, `HF_MODEL_AUDIO_ENCODERS_FILENAME[1-2]` |
-| CLIP Vision      | `HF_MODEL_CLIP_VISION`, `HF_MODEL_CLIP_VISION_FILENAME` |
+| CLIP Visions      | `HF_MODEL_CLIP_VISIONS`, `HF_MODEL_CLIP_VISIONS_FILENAME` |
 | VAE              | `HF_MODEL_VAE`, `HF_MODEL_VAE_FILENAME` |
 | Upscalers        | `HF_MODEL_UPSCALER[1-2]`, `HF_MODEL_UPSCALER_PTH[1-2]` |
 | LORAs            | `HF_MODEL_LORA[1-10]`, `HF_MODEL_LORA_FILENAME[1-10]` |
@@ -113,26 +113,37 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 
 ## 🧩 Pre-Installed Custom Nodes
 
+### Interface
+
 - [rgthree](https://github.com/rgthree/rgthree-comfy)  
 - [Login](https://github.com/liusida/ComfyUI-Login)  
-- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
-- [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
+- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
+- [GGUF](https://github.com/city96/ComfyUI-GGUF)
+- [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
+- [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
+
+### Video
+
+- [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
+- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
+
+### Wan
+
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
-- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
+
+### Inference
+
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
-- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
-- [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
-- [GGUF](https://github.com/city96/ComfyUI-GGUF)
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
-- [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
-- [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
-- [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
 - [Was affine](https://github.com/WASasquatch/was_affine)
 
 ## 🧩 All possible Custom Nodes

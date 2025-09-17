@@ -51,7 +51,7 @@ if [[ "$HAS_GPU" -eq 1 ]]; then
 	# Wait until ComfyUI is ready
     until curl -s http://127.0.0.1:8188 > /dev/null; do
         echo "[INFO] Waiting for ComfyUI to start..."    
-		sleep 4
+		sleep 3
     done
 		
 	# Confirmation	
@@ -68,7 +68,7 @@ download_model_HF() {
     local dest_dir="$3"
 
     if [[ -n "${!model_var}" && -n "${!file_var}" ]]; then
-        hf download "${!model_var}" "${!file_var}" --local-dir "/workspace/ComfyUI/models/$dest_dir/" --quiet
+        hf download "${!model_var}" "${!file_var}" --local-dir "/workspace/ComfyUI/models/$dest_dir/"
 		sleep 1
     fi
 }
@@ -94,48 +94,52 @@ download_model_CIVITAI() {
 }
 
 # Provisioning Models and loras
-
 echo "[INFO] Provisioning started"
 
+# depricated
 download_model_HF HF_MODEL_VAE HF_MODEL_VAE_FILENAME "vae"
-
-download_model_HF HF_MODEL_UPSCALER1 HF_MODEL_UPSCALER_PTH1 "upscale_models"
-download_model_HF HF_MODEL_UPSCALER2 HF_MODEL_UPSCALER_PTH2 "upscale_models"
-
-download_model_HF HF_MODEL_TEXT_ENCODERS1 HF_MODEL_TEXT_ENCODERS_FILENAME1 "text_encoders"
-download_model_HF HF_MODEL_TEXT_ENCODERS2 HF_MODEL_TEXT_ENCODERS_FILENAME2 "text_encoders"
-
-download_model_HF HF_MODEL_AUDIO_ENCODERS1 HF_MODEL_AUDIO_ENCODERS_FILENAME1 "audio_encoders"
-download_model_HF HF_MODEL_AUDIO_ENCODERS2 HF_MODEL_AUDIO_ENCODERS_FILENAME2 "audio_encoders"
-
-download_model_HF HF_MODEL_CLIP_VISION HF_MODEL_CLIP_VISION_FILENAME "clip_vision"
-
-download_model_HF HF_MODEL_LORA1 HF_MODEL_LORA_FILENAME1 "loras"
-download_model_HF HF_MODEL_LORA2 HF_MODEL_LORA_FILENAME2 "loras"
-download_model_HF HF_MODEL_LORA3 HF_MODEL_LORA_FILENAME3 "loras"
-download_model_HF HF_MODEL_LORA4 HF_MODEL_LORA_FILENAME4 "loras"
-download_model_HF HF_MODEL_LORA5 HF_MODEL_LORA_FILENAME5 "loras"
-download_model_HF HF_MODEL_LORA6 HF_MODEL_LORA_FILENAME6 "loras"
-download_model_HF HF_MODEL_LORA7 HF_MODEL_LORA_FILENAME7 "loras"
-download_model_HF HF_MODEL_LORA8 HF_MODEL_LORA_FILENAME8 "loras"
-download_model_HF HF_MODEL_LORA9 HF_MODEL_LORA_FILENAME9 "loras"
-download_model_HF HF_MODEL_LORA10 HF_MODEL_LORA_FILENAME10 "loras"
-
-download_model_CIVITAI CIVITAI_MODEL_LORA_URL1 "loras"
-download_model_CIVITAI CIVITAI_MODEL_LORA_URL2 "loras"
-download_model_CIVITAI CIVITAI_MODEL_LORA_URL3 "loras"
-download_model_CIVITAI CIVITAI_MODEL_LORA_URL4 "loras"
-download_model_CIVITAI CIVITAI_MODEL_LORA_URL5 "loras"
-download_model_CIVITAI CIVITAI_MODEL_LORA_URL6 "loras"
-download_model_CIVITAI CIVITAI_MODEL_LORA_URL7 "loras"
-download_model_CIVITAI CIVITAI_MODEL_LORA_URL8 "loras"
-download_model_CIVITAI CIVITAI_MODEL_LORA_URL9 "loras"
-download_model_CIVITAI CIVITAI_MODEL_LORA_URL10 "loras"
-
-download_model_HF HF_MODEL_DIFFUSION_MODELS1 HF_MODEL_DIFFUSION_MODELS_FILENAME1 "diffusion_models"
-download_model_HF HF_MODEL_DIFFUSION_MODELS2 HF_MODEL_DIFFUSION_MODELS_FILENAME2 "diffusion_models"
-
+download_model_HF HF_MODEL_CLIP_VISIONS HF_MODEL_CLIP_VISIONS_FILENAME "clip_visions"
 download_model_HF HF_MODEL_CHECKPOINTS HF_MODEL_CHECKPOINTS_FILENAME "checkpoints"
+
+# categorie:  NAME:SUFFIX:MAP:MAX
+CATEGORIES_HF=(
+  "VAE:VAE_FILENAME:vae:5"
+  "UPSCALER:UPSCALER_PTH:upscale_models:5"
+  "TEXT_ENCODERS:TEXT_ENCODERS_FILENAME:text_encoders:5"
+  "CLIP_VISION:CLIP_VISION_FILENAME:clip_vision:5"
+  "PATCHES:PATCHES_FILENAME:model_patches:5"
+  "AUDIO_ENCODERS:AUDIO_ENCODERS_FILENAME:audio_encoders:5"
+  "HF_MODEL_LORA:HF_MODEL_LORA_FILENAME:loras:10"
+  "DIFFUSION_MODELS:DIFFUSION_MODELS_FILENAME:diffusion_models:5"
+  "CHECKPOINTS:CHECKPOINTS_FILENAME:checkpoints:5"
+)
+
+for cat in "${CATEGORIES_HF[@]}"; do
+  IFS=":" read -r NAME SUFFIX DIR MAX <<< "$cat"
+
+  for i in $(seq 1 "$MAX"); do
+    VAR1="HF_MODEL_${NAME}${i}"
+    VAR2="HF_MODEL_${SUFFIX}${i}"
+
+    download_model_HF "$VAR1" "$VAR2" "$DIR"
+  done
+done
+
+# categorie: NAME:MAP:MAX
+CATEGORIES_CIVITAI=(
+  "CIVITAI_MODEL_LORA_URL:loras:10"
+)
+
+for cat in "${CATEGORIES_CIVITAI[@]}"; do
+  IFS=":" read -r NAME DIR MAX <<< "$cat"
+
+  for i in $(seq 1 "$MAX"); do
+    VAR1="HF_MODEL_${NAME}${i}"
+
+    download_model_CIVITAI "$VAR1" "$DIR"
+  done
+done
+
 
 # Final message
 echo "✅ Provisioning done. Ready to create AI content."

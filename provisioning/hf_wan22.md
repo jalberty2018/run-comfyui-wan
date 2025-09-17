@@ -31,7 +31,7 @@ hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wa
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
-#### Heigh noise
+#### High noise
 
 ```bash
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp16.safetensors \

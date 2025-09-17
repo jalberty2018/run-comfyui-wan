@@ -38,28 +38,37 @@
 
 - [awesome-comfyui](https://awesome-comfyui.rozenlaan.site)
 
-#### Installed
+#### Interface
 
 - [rgthree](https://github.com/rgthree/rgthree-comfy)  
 - [Login](https://github.com/liusida/ComfyUI-Login)  
-- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)  
-- [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
+- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)
 - [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
+- [GGUF](https://github.com/city96/ComfyUI-GGUF)
+- [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
+- [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
+
+#### Video
+
+- [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
+- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
+
+#### Wan
+
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
-- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
+
+#### Inference
+
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
-- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
-- [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
-- [GGUF](https://github.com/city96/ComfyUI-GGUF)
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
-- [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
-- [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
-- [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
 - [Was affine](https://github.com/WASasquatch/was_affine)
 
 ## Models
@@ -88,9 +97,12 @@
 
 ```bash
 export HF_TOKEN="xxxxx"
-hf auth login --token "$HF_TOKEN"
 hf download model model_name.safetensors --local-dir /workspace/ComfyUI/models/diffusion_models/
 hf upload model /workspace/model.safetensors
+```
+
+```bash
+hf auth login --token xxxxx
 ```
 
 #### **CivitAI**  
@@ -114,10 +126,10 @@ civitai "<download link>" /workspace/ComfyUI/models/loras
 7z x x.7z
 ```
 
-### **Clean up**  
+## Clean up  
 
 ```bash
-rm -rf /workspace/output/ /workspace/input/ /workspace/ComfyUI/output/ /workspace/ComfyUI/models/
+rm -rf /workspace/output/ /workspace/input/ /workspace/ComfyUI/output/ /workspace/ComfyUI/models/loras/
 ```
 
 ## Utilities  
