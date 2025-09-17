@@ -1,11 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:17092025 AS base
-
-# Fast, quiet pip + cleaner Python layers
-ENV PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1
+FROM ls250824/comfyui-runtime:13092025 AS base
 
 # Set Working Directory
 WORKDIR /

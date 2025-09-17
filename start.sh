@@ -27,10 +27,18 @@ mkdir -p /workspace/output/
 HAS_GPU=0
 if [[ -n "${RUNPOD_GPU_COUNT:-}" && "${RUNPOD_GPU_COUNT:-0}" -gt 0 ]]; then
   HAS_GPU=1
+  echo "✅ [GPU DETECTED] Found via RUNPOD_GPU_COUNT=${RUNPOD_GPU_COUNT}"
 elif command -v nvidia-smi >/dev/null 2>&1; then
-  nvidia-smi >/dev/null 2>&1 && HAS_GPU=1 || true
+  if nvidia-smi >/dev/null 2>&1; then
+    HAS_GPU=1
+    GPU_MODEL=$(nvidia-smi --query-gpu=name --format=csv,noheader | xargs | sed 's/,/, /g')
+    echo " ✅ [GPU DETECTED] Found via nvidia-smi → Model(s): ${GPU_MODEL}"
+  fi
 elif [[ -n "${CUDA_VISIBLE_DEVICES:-}" && "${CUDA_VISIBLE_DEVICES}" != "-1" ]]; then
   HAS_GPU=1
+  echo "✅ [GPU DETECTED] Found via CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES}"
+else
+  echo "⚠️ [NO GPU] Running on CPU only"
 fi
 
 # Run services
