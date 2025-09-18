@@ -67,14 +67,14 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 | Model Type        | Model                         | Safetensors/GGUF                               |
 |-------------------|-------------------------------|-------------------------------------------| 
-| Diffusion Model   | `HF_MODEL_DIFFUSION_MODELS[1-5]`          | `HF_MODEL_DIFFUSION_MODELS_FILENAME[1-5]`   |
-| Checkpoints       | `HF_MODEL_CHECKPOINTS[1-5]`        | `HF_MODEL_CHECKPOINTS_FILENAME[1-5]`        |
-| Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-5]` | `HF_MODEL_TEXT_ENCODERS_FILENAME[1-5]` |
-| Clip Vision       | `HF_MODEL_CLIP_VISION[1-5]`        | `HF_MODEL_CLIP_VISION_FILENAME[1-5]` |
-| Audio Encoders    | `HF_MODEL_AUDIO_ENCODERS[1-5]` | `HF_MODEL_AUDIO_ENCODERS_FILENAME[1-5]` |
-| Model patches    | `HF_MODEL_PATCHES[1-5]` | `HF_MODEL_PATCHES_FILENAME[1-5]` |
-| VAE               | `HF_MODEL_VAE[1-5]`                | `HF_MODEL_VAE_FILENAME[1-5]`                |
-| Upscalers         | `HF_MODEL_UPSCALER[1-5]`      | `HF_MODEL_UPSCALER_PTH[1-5]`              |
+| Diffusion Model   | `HF_MODEL_DIFFUSION_MODELS[1-10]`          | `HF_MODEL_DIFFUSION_MODELS_FILENAME[1-10]`   |
+| Checkpoints       | `HF_MODEL_CHECKPOINTS[1-10]`        | `HF_MODEL_CHECKPOINTS_FILENAME[1-10]`        |
+| Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-10]` | `HF_MODEL_TEXT_ENCODERS_FILENAME[1-10]` |
+| Clip Vision       | `HF_MODEL_CLIP_VISION[1-10]`        | `HF_MODEL_CLIP_VISION_FILENAME[1-10]` |
+| Audio Encoders    | `HF_MODEL_AUDIO_ENCODERS[1-10]` | `HF_MODEL_AUDIO_ENCODERS_FILENAME[1-10]` |
+| Model patches    | `HF_MODEL_PATCHES[1-10]` | `HF_MODEL_PATCHES_FILENAME[1-10]` |
+| VAE               | `HF_MODEL_VAE[1-10]`                | `HF_MODEL_VAE_FILENAME[1-10]`                |
+| Upscalers         | `HF_MODEL_UPSCALER[1-10]`      | `HF_MODEL_UPSCALER_PTH[1-10]`              |
 | Loras          | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_FILENAME[1-10]`          |
 
 ### 🎨 CivitAI LORAs

@@ -115,23 +115,23 @@ download_model_HF HF_MODEL_VAE HF_MODEL_VAE_FILENAME "vae"
 download_model_HF HF_MODEL_CLIP_VISIONS HF_MODEL_CLIP_VISIONS_FILENAME "clip_visions"
 download_model_HF HF_MODEL_CHECKPOINTS HF_MODEL_CHECKPOINTS_FILENAME "checkpoints"
 
-# categorie:  NAME:SUFFIX:MAP:MAX
+# categorie:  NAME:SUFFIX:MAP
 CATEGORIES_HF=(
-  "VAE:VAE_FILENAME:vae:5"
-  "UPSCALER:UPSCALER_PTH:upscale_models:5"
-  "TEXT_ENCODERS:TEXT_ENCODERS_FILENAME:text_encoders:5"
-  "CLIP_VISION:CLIP_VISION_FILENAME:clip_vision:5"
-  "PATCHES:PATCHES_FILENAME:model_patches:5"
-  "AUDIO_ENCODERS:AUDIO_ENCODERS_FILENAME:audio_encoders:5"
-  "HF_MODEL_LORA:HF_MODEL_LORA_FILENAME:loras:10"
-  "DIFFUSION_MODELS:DIFFUSION_MODELS_FILENAME:diffusion_models:5"
-  "CHECKPOINTS:CHECKPOINTS_FILENAME:checkpoints:5"
+  "VAE:VAE_FILENAME:vae"
+  "UPSCALER:UPSCALER_PTH:upscale_models"
+  "HF_MODEL_LORA:HF_MODEL_LORA_FILENAME:loras"
+  "TEXT_ENCODERS:TEXT_ENCODERS_FILENAME:text_encoders"
+  "CLIP_VISION:CLIP_VISION_FILENAME:clip_vision"
+  "PATCHES:PATCHES_FILENAME:model_patches"
+  "AUDIO_ENCODERS:AUDIO_ENCODERS_FILENAME:audio_encoders"
+  "DIFFUSION_MODELS:DIFFUSION_MODELS_FILENAME:diffusion_models"
+  "CHECKPOINTS:CHECKPOINTS_FILENAME:checkpoints"
 )
 
 for cat in "${CATEGORIES_HF[@]}"; do
-  IFS=":" read -r NAME SUFFIX DIR MAX <<< "$cat"
+  IFS=":" read -r NAME SUFFIX DIR <<< "$cat"
 
-  for i in $(seq 1 "$MAX"); do
+  for i in $(seq 1 10); do
     VAR1="HF_MODEL_${NAME}${i}"
     VAR2="HF_MODEL_${SUFFIX}${i}"
 
@@ -139,15 +139,15 @@ for cat in "${CATEGORIES_HF[@]}"; do
   done
 done
 
-# categorie: NAME:MAP:MAX
+# categorie: NAME:MAP
 CATEGORIES_CIVITAI=(
-  "CIVITAI_MODEL_LORA_URL:loras:10"
+  "CIVITAI_MODEL_LORA_URL:loras"
 )
 
 for cat in "${CATEGORIES_CIVITAI[@]}"; do
   IFS=":" read -r NAME DIR MAX <<< "$cat"
 
-  for i in $(seq 1 "$MAX"); do
+  for i in $(seq 1 10); do
     VAR1="HF_MODEL_${NAME}${i}"
 
     download_model_CIVITAI "$VAR1" "$DIR"
