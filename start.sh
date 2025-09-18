@@ -63,7 +63,7 @@ if [[ "$HAS_GPU" -eq 1 ]]; then
     done
 		
 	# Confirmation	
-	echo "[INFO] Code Server & ComfyUI started"
+	echo "✅ [INFO] Code Server & ComfyUI started"
 	
 else
     echo "⚠️ WARNING: No GPU available, ComfyUI and Code Server not started to limit memory use"
@@ -76,9 +76,12 @@ download_model_HF() {
     local dest_dir="$3"
 
     if [[ -n "${!model_var}" && -n "${!file_var}" ]]; then
-        hf download "${!model_var}" "${!file_var}" --local-dir "/workspace/ComfyUI/models/$dest_dir/"
-		sleep 1
+        hf download "${!model_var}" "${!file_var}" --local-dir "/workspace/ComfyUI/models/$dest_dir/" || \
+            echo "⚠️ Failed to download ${!model_var}/${!file_var}"
+        sleep 1
     fi
+
+    return 0
 }
 
 download_model_CIVITAI() {
@@ -87,7 +90,7 @@ download_model_CIVITAI() {
 
     # Check if URL variable is set and not empty
     if [[ -z "${!url_var}" ]]; then
-        return 1
+        return 0
     fi
 
     # Check if CIVITAI_TOKEN is set
@@ -97,8 +100,11 @@ download_model_CIVITAI() {
     fi
 
     # Run the civitai command
-    civitai "${!url_var}" "/workspace/ComfyUI/models/$dest_dir/"
+    civitai "${!url_var}" "/workspace/ComfyUI/models/$dest_dir/" || \
+            echo "⚠️ Failed to download ${!url_var}"
 	sleep 1
+	
+	return 0
 }
 
 # Provisioning Models and loras

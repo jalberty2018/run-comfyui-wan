@@ -2,7 +2,7 @@
   "id": "ec7da562-7e21-4dac-a0d2-f4441e1efd3b",
   "revision": 0,
   "last_node_id": 94,
-  "last_link_id": 208,
+  "last_link_id": 210,
   "nodes": [
     {
       "id": 56,
@@ -91,7 +91,7 @@
         46
       ],
       "flags": {},
-      "order": 24,
+      "order": 22,
       "mode": 0,
       "inputs": [
         {
@@ -139,7 +139,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 28,
+      "order": 26,
       "mode": 0,
       "inputs": [
         {
@@ -191,49 +191,6 @@
       "bgcolor": "#355"
     },
     {
-      "id": 68,
-      "type": "LoraLoaderModelOnly",
-      "pos": [
-        18.064594268798828,
-        -307.6044006347656
-      ],
-      "size": [
-        367.5516357421875,
-        84.44208526611328
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 147
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            143
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.46",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "DR34ML4Y_I2V_14B_LOW.safetensors",
-        0.85
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 85,
       "type": "WanVideoTeaCacheKJ",
       "pos": [
@@ -245,13 +202,13 @@
         154
       ],
       "flags": {},
-      "order": 21,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
           "name": "model",
           "type": "MODEL",
-          "link": 185
+          "link": 209
         }
       ],
       "outputs": [
@@ -423,13 +380,13 @@
         154
       ],
       "flags": {},
-      "order": 22,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
           "name": "model",
           "type": "MODEL",
-          "link": 168
+          "link": 210
         }
       ],
       "outputs": [
@@ -639,7 +596,7 @@
         104.95491790771484
       ],
       "flags": {},
-      "order": 25,
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
@@ -676,49 +633,6 @@
       "bgcolor": "#355"
     },
     {
-      "id": 64,
-      "type": "LoraLoaderModelOnly",
-      "pos": [
-        426.54827880859375,
-        -309.15008544921875
-      ],
-      "size": [
-        361.33489990234375,
-        83.43672180175781
-      ],
-      "flags": {},
-      "order": 19,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 143
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            185
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.46",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "WAN-2.2-I2V-Orgasm-LOW-v1.safetensors",
-        0.75
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 73,
       "type": "FastUnsharpSharpen",
       "pos": [
@@ -749,9 +663,9 @@
         }
       ],
       "properties": {
+        "Node name for S&R": "FastUnsharpSharpen",
         "aux_id": "vrgamegirl19/comfyui-vrgamedevgirl",
-        "ver": "0c5580921e6e6ad56f9fc1ecddce3264790a15fb",
-        "Node name for S&R": "FastUnsharpSharpen"
+        "ver": "0c5580921e6e6ad56f9fc1ecddce3264790a15fb"
       },
       "widgets_values": [
         0.25
@@ -800,92 +714,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 71,
-      "type": "LoraLoaderModelOnly",
-      "pos": [
-        -397.98455810546875,
-        -308.7335205078125
-      ],
-      "size": [
-        358.1780090332031,
-        82
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 174
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            147
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.46",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "mn2lv1-low-epoch30.safetensors",
-        0.95
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 91,
-      "type": "LoraLoaderModelOnly",
-      "pos": [
-        -334.1452331542969,
-        -846.866943359375
-      ],
-      "size": [
-        362.5991516113281,
-        83.54096221923828
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 208
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            207
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.46",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "mn2lv1-high-epoch30.safetensors",
-        0.95
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 74,
       "type": "FastFilmGrain",
       "pos": [
@@ -916,9 +744,9 @@
         }
       ],
       "properties": {
+        "Node name for S&R": "FastFilmGrain",
         "aux_id": "vrgamegirl19/comfyui-vrgamedevgirl",
-        "ver": "0c5580921e6e6ad56f9fc1ecddce3264790a15fb",
-        "Node name for S&R": "FastFilmGrain"
+        "ver": "0c5580921e6e6ad56f9fc1ecddce3264790a15fb"
       },
       "widgets_values": [
         0.01,
@@ -990,159 +818,6 @@
       "bgcolor": "#355"
     },
     {
-      "id": 94,
-      "type": "MarkdownNote",
-      "pos": [
-        6.513254642486572,
-        120.6790542602539
-      ],
-      "size": [
-        441.544189453125,
-        158.37611389160156
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "High-noise expert: CFG 2–3 / Low-noise expert: CFG 4–6\n\nIf you see flicker or over-sharpening, cap the late CFG (e.g., max 5). \nIf results look washed-out or off-prompt, raise the late CFG slightly \nKeep negative prompts mild, high late-stage CFG amplifies them.\n\nlow CFG while the high-noise expert is active, higher CFG once the low-noise expert takes over."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 63,
-      "type": "LoraLoaderModelOnly",
-      "pos": [
-        536.4346923828125,
-        -846.79541015625
-      ],
-      "size": [
-        362.5991516113281,
-        83.54096221923828
-      ],
-      "flags": {},
-      "order": 20,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 141
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            168
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.46",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "WAN-2.2-I2V-Orgasm-HIGH-v1.safetensors",
-        0.8
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 67,
-      "type": "LoraLoaderModelOnly",
-      "pos": [
-        111.35428619384766,
-        -847.00146484375
-      ],
-      "size": [
-        362.5991516113281,
-        83.54096221923828
-      ],
-      "flags": {},
-      "order": 18,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 207
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            141
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.46",
-        "Node name for S&R": "LoraLoaderModelOnly",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "DR34ML4Y_I2V_14B_HIGH.safetensors",
-        0.85
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 6,
-      "type": "CLIPTextEncode",
-      "pos": [
-        531.5413818359375,
-        -77.10765075683594
-      ],
-      "size": [
-        674.9957275390625,
-        558.8426513671875
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 205
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [
-            193
-          ]
-        }
-      ],
-      "title": "CLIP Text Encode (Positive Prompt)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.46",
-        "Node name for S&R": "CLIPTextEncode",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "Subject: Two average looking slight toned naughty slender m0del girls in bikini.\n\nScene: Sand beach with water lapping at the shore, white clouds drifting lazily across a bright blue sky, two girls walking on the beach next to each other enjoying te sun.\n\nMotion: Maintain a steady focus on both the subjects as they walk.\n\nCamera Language: Frontal view, close up shot of both girls, laughing to the camera, focus on their happy faces and youthful body as they walk in front of the camera.\n\nAtmosphere: Carefree, playful, idyllic, slight teasing.\n\nStyling: High-resolution, hyper-realistic, intricate detailed figures.\n\nStyle: hyper-realistic, high resolution, intricate details, sunlight accenuating their slight toned youthful figures"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 7,
       "type": "CLIPTextEncode",
       "pos": [
@@ -1198,7 +873,7 @@
         334
       ],
       "flags": {},
-      "order": 29,
+      "order": 27,
       "mode": 0,
       "inputs": [
         {
@@ -1316,9 +991,9 @@
         }
       ],
       "properties": {
+        "Node name for S&R": "WanMoeKSampler",
         "aux_id": "stduhpf/ComfyUI-WanMoeKSampler",
-        "ver": "8fc990069a69175b1f64c0dc84acbacf71682a9b",
-        "Node name for S&R": "WanMoeKSampler"
+        "ver": "8fc990069a69175b1f64c0dc84acbacf71682a9b"
       },
       "widgets_values": [
         0.875,
@@ -1334,6 +1009,245 @@
       ],
       "color": "#332922",
       "bgcolor": "#593930"
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        531.5413818359375,
+        -77.10765075683594
+      ],
+      "size": [
+        674.9957275390625,
+        558.8426513671875
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 205
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            193
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46",
+        "Node name for S&R": "CLIPTextEncode",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "Two girls walking on a beach"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 94,
+      "type": "MarkdownNote",
+      "pos": [
+        20.77066421508789,
+        119.38292694091797
+      ],
+      "size": [
+        441.544189453125,
+        158.37611389160156
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "High-noise expert: CFG 2–3 / Low-noise expert: CFG 4–6\n\nIf you see flicker or over-sharpening, cap the late CFG (e.g., max 5). \nIf results look washed-out or off-prompt, raise the late CFG slightly \nKeep negative prompts mild, high late-stage CFG amplifies them.\n\nlow CFG while the high-noise expert is active, higher CFG once the low-noise expert takes over."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 68,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        454.85980224609375,
+        -298.53143310546875
+      ],
+      "size": [
+        367.5516357421875,
+        84.44208526611328
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 147
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            209
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "DR34ML4Y_I2V_14B_LOW.safetensors",
+        0.85
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 71,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        38.81059265136719,
+        -295.7723388671875
+      ],
+      "size": [
+        358.1780090332031,
+        82
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 174
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            147
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "mn2lv1-low-epoch30.safetensors",
+        0.95
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 67,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        499.5447082519531,
+        -829.5038452148438
+      ],
+      "size": [
+        362.5991516113281,
+        83.54096221923828
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 207
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            210
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "DR34ML4Y_I2V_14B_HIGH.safetensors",
+        0.85
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 91,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        68.95068359375,
+        -830.6653442382812
+      ],
+      "size": [
+        362.5991516113281,
+        83.54096221923828
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 208
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            207
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "mn2lv1-high-epoch30.safetensors",
+        0.95
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
     }
   ],
   "links": [
@@ -1344,22 +1258,6 @@
       8,
       1,
       "VAE"
-    ],
-    [
-      141,
-      67,
-      0,
-      63,
-      0,
-      "MODEL"
-    ],
-    [
-      143,
-      68,
-      0,
-      64,
-      0,
-      "MODEL"
     ],
     [
       144,
@@ -1426,14 +1324,6 @@
       "IMAGE"
     ],
     [
-      168,
-      63,
-      0,
-      81,
-      0,
-      "MODEL"
-    ],
-    [
       173,
       66,
       0,
@@ -1454,14 +1344,6 @@
       82,
       0,
       65,
-      0,
-      "MODEL"
-    ],
-    [
-      185,
-      64,
-      0,
-      85,
       0,
       "MODEL"
     ],
@@ -1560,6 +1442,22 @@
       91,
       0,
       "MODEL"
+    ],
+    [
+      209,
+      68,
+      0,
+      85,
+      0,
+      "MODEL"
+    ],
+    [
+      210,
+      67,
+      0,
+      81,
+      0,
+      "MODEL"
     ]
   ],
   "groups": [
@@ -1574,9 +1472,7 @@
       ],
       "color": "#3f789e",
       "font_size": 24,
-      "flags": {
-        "pinned": true
-      }
+      "flags": {}
     },
     {
       "id": 2,
@@ -1649,8 +1545,8 @@
       "bounding": [
         6.331976413726807,
         -165.08155822753906,
-        469.5888977050781,
-        220.7619171142578
+        474.1253356933594,
+        459.8975524902344
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1662,14 +1558,14 @@
     "ds": {
       "scale": 0.7715286618665673,
       "offset": [
-        -572.7916252597807,
-        227.20171899318842
+        -147.66159936227743,
+        900.5402813521918
       ]
     },
-    "frontendVersion": "1.25.11",
+    "frontendVersion": "1.26.11",
     "ue_links": [],
     "links_added_by_ue": [],
-    "VHS_latentpreview": true,
+    "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true
