@@ -119,7 +119,7 @@ download_model_HF HF_MODEL_CHECKPOINTS HF_MODEL_CHECKPOINTS_FILENAME "checkpoint
 CATEGORIES_HF=(
   "VAE:VAE_FILENAME:vae"
   "UPSCALER:UPSCALER_PTH:upscale_models"
-  "HF_MODEL_LORA:HF_MODEL_LORA_FILENAME:loras"
+  "LORA:LORA_FILENAME:loras"
   "TEXT_ENCODERS:TEXT_ENCODERS_FILENAME:text_encoders"
   "CLIP_VISION:CLIP_VISION_FILENAME:clip_vision"
   "PATCHES:PATCHES_FILENAME:model_patches"
@@ -141,14 +141,14 @@ done
 
 # categorie: NAME:MAP
 CATEGORIES_CIVITAI=(
-  "CIVITAI_MODEL_LORA_URL:loras"
+  "LORA_URL:loras"
 )
 
 for cat in "${CATEGORIES_CIVITAI[@]}"; do
   IFS=":" read -r NAME DIR MAX <<< "$cat"
 
   for i in $(seq 1 10); do
-    VAR1="HF_MODEL_${NAME}${i}"
+    VAR1="CIVITAI_MODEL_${NAME}${i}"
 
     download_model_CIVITAI "$VAR1" "$DIR"
   done
