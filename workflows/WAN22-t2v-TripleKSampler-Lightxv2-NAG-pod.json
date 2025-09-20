@@ -2,7 +2,7 @@
   "id": "ec7da562-7e21-4dac-a0d2-f4441e1efd3b",
   "revision": 0,
   "last_node_id": 92,
-  "last_link_id": 213,
+  "last_link_id": 214,
   "nodes": [
     {
       "id": 56,
@@ -1002,48 +1002,6 @@
       "bgcolor": "#353"
     },
     {
-      "id": 6,
-      "type": "CLIPTextEncode",
-      "pos": [
-        495.9722900390625,
-        15.776792526245117
-      ],
-      "size": [
-        698.381103515625,
-        388.0276184082031
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 74
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": []
-        }
-      ],
-      "title": "CLIP Text Encode (Positive Prompt)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.46",
-        "Node name for S&R": "CLIPTextEncode",
-        "widget_ue_connectable": {}
-      },
-      "widgets_values": [
-        "Girl walking on the beach"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 7,
       "type": "CLIPTextEncode",
       "pos": [
@@ -1305,7 +1263,7 @@
         {
           "name": "positive",
           "type": "CONDITIONING",
-          "link": null
+          "link": 214
         },
         {
           "name": "negative",
@@ -1348,10 +1306,54 @@
         -1,
         0.875,
         null,
-        false
+        null
       ],
       "color": "#222",
       "bgcolor": "#000"
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        490.88726806640625,
+        -9.64852237701416
+      ],
+      "size": [
+        698.381103515625,
+        388.0276184082031
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            214
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.46",
+        "Node name for S&R": "CLIPTextEncode",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "Girl walking on the beach"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -1594,6 +1596,14 @@
       92,
       4,
       "CONDITIONING"
+    ],
+    [
+      214,
+      6,
+      0,
+      92,
+      3,
+      "CONDITIONING"
     ]
   ],
   "groups": [
@@ -1679,10 +1689,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.3933084958821292,
+      "scale": 0.5777074936476841,
       "offset": [
-        758.1727514909992,
-        1316.0112209034776
+        278.4119576806328,
+        922.0891927947954
       ]
     },
     "frontendVersion": "1.26.13",
