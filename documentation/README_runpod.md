@@ -111,3 +111,4 @@ This project downloads models as specified in the **environment variables** set 
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [Was affine](https://github.com/WASasquatch/was_affine)
+- [TripleKSampler](https://github.com/VraethrDalkr/ComfyUI-TripleKSampler)

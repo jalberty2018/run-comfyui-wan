@@ -18,6 +18,7 @@
 - [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
 - [Animated preview](https://civitai.com/articles/12623/dont-just-guess-with-your-wan-gens-animated-previews-for-seed-hunting-guide-comfyui)
 - [Tutorial s2v](https://www.kombitz.com/2025/09/02/how-to-use-wan-2-2-s2v-gguf-model-in-comfyui/)
+- [Samplers](https://websim.com/c/I0nMJ7gYtQqdjW7yD)
 
 ## Example workflow
 
@@ -70,6 +71,7 @@
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [Was affine](https://github.com/WASasquatch/was_affine)
+- [TripleKSampler](https://github.com/VraethrDalkr/ComfyUI-TripleKSampler)
 
 ## Models
 

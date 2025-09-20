@@ -42,6 +42,7 @@ See below for options.
 - [light2xtv](https://huggingface.co/lightx2v)
 - [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
 - [Animated preview](https://civitai.com/articles/12623/dont-just-guess-with-your-wan-gens-animated-previews-for-seed-hunting-guide-comfyui)
+- [Samplers](https://websim.com/c/I0nMJ7gYtQqdjW7yD)
 
 ## Workflow
 
@@ -107,6 +108,7 @@ See below for options.
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [Was affine](https://github.com/WASasquatch/was_affine)
+- [TripleKSampler](https://github.com/VraethrDalkr/ComfyUI-TripleKSampler)
 
 ### **ComfyUI Arguments**  
 

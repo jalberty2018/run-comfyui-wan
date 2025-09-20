@@ -36,7 +36,8 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
     git clone https://github.com/Azornes/Comfyui-Resolution-Master.git && \
 	git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive && \
     git clone https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit.git && \
-	git clone https://github.com/WASasquatch/was_affine.git
+	git clone https://github.com/WASasquatch/was_affine.git && \
+    git clone https://github.com/VraethrDalkr/ComfyUI-TripleKSampler.git
 
 # Install Dependencies
 RUN pip3 install --no-cache-dir diffusers psutil \
@@ -57,3 +58,5 @@ EXPOSE 8188 9000
 
 # Start Server
 CMD [ "/start.sh" ]
+
+
