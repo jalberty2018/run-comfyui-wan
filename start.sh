@@ -23,6 +23,12 @@ done
 # Create output directory for cloud transfer
 mkdir -p /workspace/output/
 
+# Set optimalisations
+# export COMFYUI_USE_FLASH_ATTENTION=1 
+# export COMFYUI_USE_SAGE_ATTENTION=1
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True,garbage_collection_threshold:0.8
+export COMFYUI_VRAM_MODE=HIGH_VRAM
+
 # GPU detection
 HAS_GPU=0
 if [[ -n "${RUNPOD_GPU_COUNT:-}" && "${RUNPOD_GPU_COUNT:-0}" -gt 0 ]]; then
@@ -45,10 +51,10 @@ fi
 if [[ "$HAS_GPU" -eq 1 ]]; then
     # Start code-server (HTTP port 9000)
     if [[ -n "$PASSWORD" ]]; then
-        code-server /workspace --auth password --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
+        code-server /workspace --auth password --disable-telemetry --disable-update-check --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     else
         echo "⚠️ PASSWORD is not set as an environment variable use password generated in log"
-        code-server /workspace --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
+        code-server /workspace --disable-telemetry --disable-update-check --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     fi
 	
 	sleep 2

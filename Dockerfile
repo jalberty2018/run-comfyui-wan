@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:18092025 AS base
+FROM ls250824/comfyui-runtime:23092025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -35,7 +35,6 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git && \
     git clone https://github.com/Azornes/Comfyui-Resolution-Master.git && \
 	git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive && \
-    git clone https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit.git && \
 	git clone https://github.com/WASasquatch/was_affine.git && \
     git clone https://github.com/VraethrDalkr/ComfyUI-TripleKSampler.git
 
@@ -47,8 +46,7 @@ RUN pip3 install --no-cache-dir diffusers psutil \
 	-r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
 	-r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt \
 	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
-	-r /ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt \
-    -r /ComfyUI/custom_nodes/comfyui-WhiteRabbit/requirements.txt
+	-r /ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace

@@ -55,13 +55,11 @@
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
-- [White rabbit](https://github.com/Artificial-Sweetener/comfyui-WhiteRabbit)
 
 #### Wan
 
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
-- [SuperUltimateVaceTools](https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools)
 
 #### Inference
 
@@ -70,8 +68,6 @@
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
-- [Was affine](https://github.com/WASasquatch/was_affine)
-- [TripleKSampler](https://github.com/VraethrDalkr/ComfyUI-TripleKSampler)
 
 ## Models
 
