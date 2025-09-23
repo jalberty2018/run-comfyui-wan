@@ -79,7 +79,7 @@ This project downloads models as specified in the **environment variables** set 
 
 - [awesome-comfyui](https://awesome-comfyui.rozenlaan.site)
 
-#### Interface
+### Interface
 
 - [rgthree](https://github.com/rgthree/rgthree-comfy)  
 - [Login](https://github.com/liusida/ComfyUI-Login)  
@@ -89,24 +89,24 @@ This project downloads models as specified in the **environment variables** set 
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 
-#### Video
+### Video/Upscale
 
 - [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
+- [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 
-#### Wan
+### Wan
 
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 
-#### Inference
+### Inference
 
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
 - [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
-- [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [Was affine](https://github.com/WASasquatch/was_affine)
 - [TripleKSampler](https://github.com/VraethrDalkr/ComfyUI-TripleKSampler)
