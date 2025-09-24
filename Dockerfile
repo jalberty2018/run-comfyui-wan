@@ -39,7 +39,8 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
     git clone https://github.com/VraethrDalkr/ComfyUI-TripleKSampler.git && \
 	git clone https://github.com/kijai/ComfyUI-segment-anything-2.git && \
     git clone https://github.com/1038lab/ComfyUI-RMBG.git && \
-	git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git
+	git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git && \
+	git clone https://github.com/liusida/ComfyUI-AutoCropFaces.git
 
 # Install Dependencies
 RUN pip3 install --no-cache-dir diffusers psutil \
@@ -50,7 +51,8 @@ RUN pip3 install --no-cache-dir diffusers psutil \
 	-r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
 	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt \
-	-r /ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt
+	-r /ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt \
+	-r /ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace
