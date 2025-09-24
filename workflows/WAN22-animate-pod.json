@@ -2702,49 +2702,6 @@
       "bgcolor": "#593930"
     },
     {
-      "id": 21,
-      "type": "CLIPTextEncode",
-      "pos": [
-        -1349.180908203125,
-        -234.09288024902344
-      ],
-      "size": [
-        482.1330261230469,
-        238.99293518066406
-      ],
-      "flags": {},
-      "order": 50,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 18
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [
-            388
-          ]
-        }
-      ],
-      "title": "CLIP Text Encode (Positive Prompt)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.59",
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "The youthful 12 year old girl is tickled on her nude youthful breasts by the viewer."
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 236,
       "type": "PathchSageAttentionKJ",
       "pos": [
@@ -3995,6 +3952,49 @@
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 21,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -1349.180908203125,
+        -234.09288024902344
+      ],
+      "size": [
+        482.1330261230469,
+        238.99293518066406
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            388
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "A girl"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -4904,8 +4904,8 @@
     "ds": {
       "scale": 0.5054470284992942,
       "offset": [
-        3671.748487280072,
-        701.8439847057588
+        3267.1561393792963,
+        687.9948578827493
       ]
     },
     "frontendVersion": "1.26.13",
