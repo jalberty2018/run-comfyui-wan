@@ -18,7 +18,8 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ## 📦 Template Deployment
 
-👉 [**One-click Deploy on RunPod**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
+👉 [**One-click Deploy on RunPod WAN 2.2**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
+👉 [**One-click Deploy on RunPod WAN 2.2 animate**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
 > ✅ Be sure to configure environment variables and secrets appropriately (see below).
 
@@ -95,9 +96,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 ## 📚 Tutorials & Resources
 
 - [WAN Video Homepage](https://wan.video/)
-- [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
-- [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/)
-- [ComfyUI 2.2 s2v](https://docs.comfy.org/tutorials/video/wan/wan2-2-s2v)
+- [Docs ComfyUI](https://docs.comfy.org)
 - [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
@@ -107,6 +106,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
 - [Animated preview](https://civitai.com/articles/12623/dont-just-guess-with-your-wan-gens-animated-previews-for-seed-hunting-guide-comfyui)
 - [Tutorial s2v](https://www.kombitz.com/2025/09/02/how-to-use-wan-2-2-s2v-gguf-model-in-comfyui/)
+- [Wan 2.2 animate](https://wan.video/blog/wan2.2-animate)
 - [Samplers](https://websim.com/c/I0nMJ7gYtQqdjW7yD)
 
 ## 🧪 Workflows
@@ -134,6 +134,15 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 
+## Control
+
+- [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+
+## Segmentation
+
+- [Segment anything](https://github.com/kijai/ComfyUI-segment-anything-2)
+- [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
+
 ### Wan
 
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
@@ -154,21 +163,28 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 
 ## 📦 Model Sources
 
-| Source         | URL |
-|----------------|-----|
-| Wan-Video      | [GitHub](https://github.com/Wan-Video) |
-| Wan-AI         | [HuggingFace](https://huggingface.co/Wan-AI) |
-| FusionX        | [HuggingFace](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX) |
-| MoviiGen       | [HuggingFace](https://huggingface.co/ZuluVision/MoviiGen1.1) |
-| VACE           | [GitHub](https://github.com/ali-vilab/VACE) |
+- [Wan-Video Github](https://github.com/Wan-Video)
+- [Wan-Video 2.2 Github](https://github.com/Wan-Video/Wan2.2)
+- [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
+- [Wan-AI Huggingface](https://huggingface.co/Wan-AI)  
+- [WAN-VACE Github](https://github.com/ali-vilab/VACE)
+- [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
+- [MoviiGen Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1)
 
 ## 📦 Manual setup guides:
 
-- [WAN 2.1](provisioning/hf_wan21.md)
-- [WAN 2.2 t2v s2v](provisioning/hf_wan22.md)
-- [Upscale](provisioning/hf_upscale.md)
-- [Loras wan21](provisioning/hf_loras_wan21.md)
-- [Loras wan22](provisioning/hf_loras_wan22.md)
+### 2.2
+
+- [t2v](provisioning/hf_wan22_t2v.md)
+- [i2v](provisioning/hf_wan22_i2v.md)
+- [s2v](provisioning/hf_wan22_s2v.md)
+- [animate](provisioning/hf_wan22_animate.md)
+- [loras](provisioning/hf_wan22_loras.md)
+
+### 2.1
+
+- [WAN](provisioning/hf_wan21.md)
+- [loras](provisioning/hf_wan21_loras.md)
 
 ## 🛠️ Build & Push Docker Image (Optional)
 

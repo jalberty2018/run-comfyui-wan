@@ -97,6 +97,15 @@ This project downloads models as specified in the **environment variables** set 
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 
+## Control
+
+- [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+
+## Segmentation
+
+- [Segment anything](https://github.com/kijai/ComfyUI-segment-anything-2)
+- [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
+
 ### Wan
 
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)

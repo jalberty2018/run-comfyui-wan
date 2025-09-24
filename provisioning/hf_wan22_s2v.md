@@ -1,44 +1,11 @@
-# Manual provisioning WAN 2.2
+# Manual provisioning WAN 2.2 s2v
 
 - [ComfyUI Huggingface](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/tree/main/split_files)
 - [Wan-AI Huggingface](https://huggingface.co/Wan-AI)
 - [GGUF](https://huggingface.co/QuantStack)
+- [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 
-## Diffusion_models
-
-### t2v fp16
-
-#### Low noise
-
-```bash
-hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp16.safetensors \
---local-dir /workspace/ComfyUI/models/diffusion_models/
-```
-
-#### High noise
-
-```bash
-hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_t2v_high_noise_14B_fp16.safetensors \
---local-dir /workspace/ComfyUI/models/diffusion_models/
-``` 
-
-### i2v fp16
-
-#### Low noise
-
-```bash
-hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp16.safetensors \
---local-dir /workspace/ComfyUI/models/diffusion_models/
-```
-
-#### High noise
-
-```bash
-hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp16.safetensors \
---local-dir /workspace/ComfyUI/models/diffusion_models/
-```
-
-### s2v bf16
+## Diffusion model
 
 ```bash
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_s2v_14B_bf16.safetensors \
@@ -83,6 +50,4 @@ hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/vae/wan_2.1_vae.saf
 hf download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors \
 --local-dir /workspace/ComfyUI/models/vae/
 ```
-
-
 

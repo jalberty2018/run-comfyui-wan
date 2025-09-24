@@ -2,22 +2,18 @@
 
 ## Workflows & Tutorials  
 
-- [wan-video](https://wan.video/)
-- [ComfyUI 2.1](https://comfyanonymous.github.io/ComfyUI_examples/wan/)
-- [ComfyUI 2.2](https://comfyanonymous.github.io/ComfyUI_examples/wan22/)
-- [ComfyUI 2.2 s2v](https://docs.comfy.org/tutorials/video/wan/wan2-2-s2v)
-- [Wiki 2.1](https://comfyui-wiki.com/en/tutorial/advanced/wan21-video-model)
-- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)  
+- [WAN Video Homepage](https://wan.video/)
+- [Docs ComfyUI](https://docs.comfy.org)
+- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)
 - [AccVideo](https://github.com/aejion/AccVideo)
 - [CausVid](https://github.com/tianweiy/CausVid)
 - [NAG](https://chendaryen.github.io/NAG.github.io/)
-- [vace](https://docs.comfy.org/tutorials/video/wan/vace)
-- [Phantom](https://github.com/Phantom-video/Phantom)
-- [FusionX Lora](https://civitai.com/models/1681541?modelVersionId=1903277)
+- [FusionX LoRA](https://civitai.com/models/1681541?modelVersionId=1903277)
 - [light2xtv](https://huggingface.co/lightx2v)
 - [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
 - [Animated preview](https://civitai.com/articles/12623/dont-just-guess-with-your-wan-gens-animated-previews-for-seed-hunting-guide-comfyui)
 - [Tutorial s2v](https://www.kombitz.com/2025/09/02/how-to-use-wan-2-2-s2v-gguf-model-in-comfyui/)
+- [Wan 2.2 animate](https://wan.video/blog/wan2.2-animate)
 - [Samplers](https://websim.com/c/I0nMJ7gYtQqdjW7yD)
 
 ## Example workflow
@@ -57,6 +53,15 @@
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 
+## Control
+
+- [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+
+## Segmentation
+
+- [Segment anything](https://github.com/kijai/ComfyUI-segment-anything-2)
+- [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
+
 ### Wan
 
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
@@ -81,17 +86,22 @@
 - [WAN-VACE Github](https://github.com/ali-vilab/VACE)
 - [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
 - [MoviiGen Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1)
-- [Fun](https://huggingface.co/collections/alibaba-pai/wan21-fun-v11-680f514c89fe7b4df9d44f17)
-- [alibaba-pai](https://huggingface.co/collections/alibaba-pai/wan21-fun-67e4fb3b76ca01241eb7e334)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 
 ### Manual provisioning
 
-- [WAN 2.1](provisioning/hf_wan21.md)
-- [WAN 2.2 t2v s2v](provisioning/hf_wan22.md)
-- [Upscale](provisioning/hf_upscale.md)
-- [Loras wan21](provisioning/hf_loras_wan21.md)
-- [Loras wan22](provisioning/hf_loras_wan22.md)
+### 2.2
+
+- [t2v](provisioning/hf_wan22_t2v.md)
+- [i2v](provisioning/hf_wan22_i2v.md)
+- [s2v](provisioning/hf_wan22_s2v.md)
+- [animate](provisioning/hf_wan22_animate.md)
+- [loras](provisioning/hf_wan22_loras.md)
+
+### 2.1
+
+- [WAN](provisioning/hf_wan21.md)
+- [loras](provisioning/hf_wan21_loras.md)
 
 #### **Huggingface**  
 

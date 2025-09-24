@@ -23,7 +23,8 @@ See below for options.
 
 ## Template Deployment
 
-👉 [**One-click Deploy on RunPod**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
+👉 [**One-click Deploy on RunPod WAN 2.2**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
+👉 [**One-click Deploy on RunPod WAN 2.2 animate**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
 ## Workflows included in image.
 
@@ -61,6 +62,15 @@ See below for options.
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
 - [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+
+## Control
+
+- [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+
+## Segmentation
+
+- [Segment anything](https://github.com/kijai/ComfyUI-segment-anything-2)
+- [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
 
 ### Wan
 
