@@ -47,6 +47,21 @@ else
   echo "⚠️ [NO GPU] Running on CPU only"
 fi
 
+# Check available providers
+providers=$(python3 - <<'PY'
+import onnxruntime as ort
+print(",".join(ort.get_available_providers()))
+PY
+)
+
+if [[ "$providers" == *"CUDAExecutionProvider"* ]]; then
+  echo "✅ CUDAExecutionProvider available: $providers"
+else
+  echo "[Info] reinstalling onnxruntime-gpu==1.22.0"
+  pip3 uninstall -y onnxruntime onnxruntime-gpu || true
+  pip3 install --no-cache-dir onnxruntime-gpu==1.22.0
+fi
+
 # Run services
 if [[ "$HAS_GPU" -eq 1 ]]; then
     # Start code-server (HTTP port 9000)
@@ -58,7 +73,7 @@ if [[ "$HAS_GPU" -eq 1 ]]; then
     fi
 	
 	sleep 2
-
+	
     # Start ComfyUI (HTTP port 8188)
     python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen} &
 	
@@ -78,21 +93,6 @@ if [[ "$HAS_GPU" -eq 1 ]]; then
 	done
 else
     echo "⚠️ WARNING: No GPU available, ComfyUI and Code Server not started to limit memory use"
-fi
-
-# Check available providers
-providers=$(python3 - <<'PY'
-import onnxruntime as ort
-print(",".join(ort.get_available_providers()))
-PY
-)
-
-if [[ "$providers" == *"CUDAExecutionProvider"* ]]; then
-  echo "✅ CUDAExecutionProvider available: $providers"
-else
-  echo "[Info] installing onnxruntime-gpu==1.22.0"
-  pip3 uninstall -y onnxruntime onnxruntime-gpu || true
-  pip3 install --no-cache-dir onnxruntime-gpu==1.22.0
 fi
 
 # Function to download models if variables are set
