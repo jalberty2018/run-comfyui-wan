@@ -1,30 +1,5 @@
 # Loras to use with original models
 
-## lighttx2v
-
-- [light2xtv](https://huggingface.co/lightx2v)
-- [Kijai](https://huggingface.co/Kijai/WanVideo_comfy/tree/main/Wan22-Lightning)
-
-### 1.0
-
-```bash
-hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1/low_noise_model.safetensors \
---local-dir /workspace/ComfyUI/models/loras/
-
-hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1/high_noise_model.safetensors \
---local-dir /workspace/ComfyUI/models/loras/
-```
-
-### 1.1
-
-```bash
-hf download Kijai/WanVideo_comfy Wan22-Lightning/Wan2.2-Lightning_T2V-v1.1-A14B-4steps-lora_HIGH_fp16.safetensors \
---local-dir /workspace/ComfyUI/models/loras/
-
-hf download Kijai/WanVideo_comfy Wan22-Lightning/Wan2.2-Lightning_T2V-v1.1-A14B-4steps-lora_LOW_fp16.safetensors \
---local-dir /workspace/ComfyUI/models/loras/
-```
-
 ## Pusa
 
 - [Github](https://github.com/Yaofang-Liu/Pusa-VidGen)

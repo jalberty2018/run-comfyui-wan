@@ -1,4 +1,4 @@
-# 🚀 Run WAN 2.x on ComfyUI with Custom Nodes — [RunPod.io Deployment](https://runpod.io?ref=se4tkc5o)
+# 🚀 Run WAN 2.x with ComfyUI with provisioning — [RunPod.io Deployment](https://runpod.io?ref=se4tkc5o)
 
 [![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan)](https://hub.docker.com/r/ls250824/run-comfyui-wan)
 
@@ -18,10 +18,9 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ## 📦 Template Deployment
 
-👉 [**One-click Deploy on RunPod WAN 2.2**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
-👉 [**One-click Deploy on RunPod WAN 2.2 animate**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
-> ✅ Be sure to configure environment variables and secrets appropriately (see below).
+[**👉 One-click Deploy on RunPod WAN 2.2 animate**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
 ## 💻 Hardware Requirements
 
@@ -85,6 +84,12 @@ docker pull ls250824/run-comfyui-wan:<version>
 | `CIVITAI_MODEL_LORA_URL[1-10]`   | Direct download links for LoRAs |
 
 
+### Workflows
+
+| Variable         | Description                      |
+|------------------|----------------------------------|
+| `WORKFLOW[1-50]` | Download workflows (json) to use with ComfyUI |
+
 ## 🌐 Network Services
 
 | Service       | Port   | Access Type |
@@ -108,6 +113,8 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [Tutorial s2v](https://www.kombitz.com/2025/09/02/how-to-use-wan-2-2-s2v-gguf-model-in-comfyui/)
 - [Wan 2.2 animate](https://wan.video/blog/wan2.2-animate)
 - [Samplers](https://websim.com/c/I0nMJ7gYtQqdjW7yD)
+- [HuMo Website](https://phantom-video.github.io/HuMo/)
+- [HuMo Github](https://github.com/Phantom-video/HuMo)
 
 ## 🧪 Workflows
 
@@ -125,6 +132,8 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [GGUF](https://github.com/city96/ComfyUI-GGUF)
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
+- [Lucy edit](https://github.com/DecartAI/Lucy-Edit-ComfyUI)
+- [PG Nodes](https://github.com/GizmoR13/PG-Nodes)
 
 ### Video/Upscale
 
@@ -180,15 +189,17 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [s2v](provisioning/hf_wan22_s2v.md)
 - [animate](provisioning/hf_wan22_animate.md)
 - [loras](provisioning/hf_wan22_loras.md)
+- [Lucy edit](provisioning/hf_lucy_edit.md)
 
 ### 2.1
 
 - [WAN](provisioning/hf_wan21.md)
+- [HuMo](provisioning/hf_humo.md)
 - [loras](provisioning/hf_wan21_loras.md)
 
 ## 🛠️ Build & Push Docker Image (Optional)
 
-This is **not supported directly on RunPod.io**. Use local hardware to build the image using the included Python script.
+Use none docker setup to build the image using the included Python script.
 
 ### Build Script: `build-docker.py`
 
@@ -202,7 +213,7 @@ This is **not supported directly on RunPod.io**. Use local hardware to build the
 
 ```bash
 git clone https://github.com/jalberty2018/run-comfyui-wan.git
-cp run-comfyui-wan/build-docker.py ..
+cp ./run-comfyui-wan/build-docker.py ..
 
 python3 build-docker.py   --username=<your_dockerhub_username>   --tag=<custom_tag>   --latest   run-comfyui-wan
 ```

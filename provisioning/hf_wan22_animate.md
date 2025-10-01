@@ -4,6 +4,7 @@
 - [Wan-AI Huggingface](https://huggingface.co/Wan-AI)
 - [GGUF](https://huggingface.co/QuantStack)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
+- [lightx2v](https://huggingface.co/lightx2v)
 
 ## Diffusion_models
 
@@ -51,7 +52,7 @@ hf download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors \
 --local-dir /workspace/ComfyUI/models/vae/
 ```
 
-## Loras
+## Loras Lighning lightx2v & relight
 
 ```bash
 hf download Kijai/WanVideo_comfy Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors \

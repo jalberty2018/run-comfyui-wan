@@ -44,6 +44,8 @@
 - [GGUF](https://github.com/city96/ComfyUI-GGUF)
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
+- [Lucy edit](https://github.com/DecartAI/Lucy-Edit-ComfyUI)
+- [PG Nodes](https://github.com/GizmoR13/PG-Nodes)
 
 ### Video/Upscale
 
@@ -97,10 +99,12 @@
 - [s2v](provisioning/hf_wan22_s2v.md)
 - [animate](provisioning/hf_wan22_animate.md)
 - [loras](provisioning/hf_wan22_loras.md)
+- [Lucy edit](provisioning/hf_lucy_edit.md)
 
 ### 2.1
 
 - [WAN](provisioning/hf_wan21.md)
+- [HuMo](provisioning/hf_humo.md)
 - [loras](provisioning/hf_wan21_loras.md)
 
 #### **Huggingface**  

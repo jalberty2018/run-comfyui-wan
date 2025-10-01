@@ -1,4 +1,4 @@
-# Pod documentation
+# Run WAN 2.x with ComfyUI with provisioning
 
 This project downloads models as specified in the **environment variables** set in the templates.  
 
@@ -50,6 +50,12 @@ This project downloads models as specified in the **environment variables** set 
 |-------------------|--------------------------------|
 | Loras civitai     | `CIVITAI_MODEL_LORA_URL[1-10]` |
 
+### **Workflows**
+
+| Variable         | Description                      |
+|------------------|----------------------------------|
+| `WORKFLOW[1-50]` | Download workflows (json) to use with ComfyUI |
+
 ## Connection options 
 
 ### Services
@@ -88,6 +94,8 @@ This project downloads models as specified in the **environment variables** set 
 - [GGUF](https://github.com/city96/ComfyUI-GGUF)
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
+- [Lucy edit](https://github.com/DecartAI/Lucy-Edit-ComfyUI)
+- [PG Nodes](https://github.com/GizmoR13/PG-Nodes)
 
 ### Video/Upscale
 

@@ -1,22 +1,17 @@
 # Manual provisioning WAN 2.2 t2v
 
-- [ComfyUI Huggingface](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/tree/main/split_files)
-- [Wan-AI Huggingface](https://huggingface.co/Wan-AI)
+- [ComfyUI](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged)
+- [Wan-AI](https://huggingface.co/Wan-AI)
 - [GGUF](https://huggingface.co/QuantStack)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
+- [Lightning lightx2v](https://huggingface.co/lightx2v)
 
 ## Diffusion_models
-
-#### Low noise
 
 ```bash
 hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
-```
 
-#### High noise
-
-```bash
 hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_t2v_high_noise_14B_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ``` 
@@ -53,4 +48,34 @@ hf download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors \
 --local-dir /workspace/ComfyUI/models/vae/
 ```
 
+## Loras Lightning lightx2v
 
+### 1.0 Seko
+
+```bash
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1/low_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1/high_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+### 1.1 Seko
+
+```bash
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1.1/high_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1.1/low_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+### 250928
+
+```bash
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-250928/high_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```

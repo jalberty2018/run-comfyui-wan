@@ -1,4 +1,4 @@
-# Run WAN on ComfyUI with Custom nodes on [RunPod.io](https://runpod.io?ref=se4tkc5o)
+# Run WAN 2.x with ComfyUI with provisioning -[RunPod.io](https://runpod.io?ref=se4tkc5o)
 
 ## Synopsis
 
@@ -54,6 +54,8 @@ See below for options.
 - [GGUF](https://github.com/city96/ComfyUI-GGUF)
 - [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
+- [Lucy edit](https://github.com/DecartAI/Lucy-Edit-ComfyUI)
+- [PG Nodes](https://github.com/GizmoR13/PG-Nodes)
 
 ### Video/Upscale
 
@@ -119,6 +121,13 @@ See below for options.
 | Model Type        | URL (download link)            |
 |-------------------|--------------------------------|
 | Loras civitai     | `CIVITAI_MODEL_LORA_URL[1-10]` |
+
+### **Workflows**
+
+| Variable         | Description                      |
+|------------------|----------------------------------|
+| `WORKFLOW[1-50]` | Download workflows (json) to use with ComfyUI |
+
 
 ## Connection options 
 

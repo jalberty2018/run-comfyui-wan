@@ -51,9 +51,9 @@ fi
 if [[ "$HAS_GPU" -eq 1 ]]; then
     # Start code-server (HTTP port 9000)
     if [[ -n "$PASSWORD" ]]; then
-        code-server /workspace --auth password --disable-telemetry --disable-update-check --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
+        code-server /workspace --auth password --disable-update-check --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     else
-        echo "⚠️ PASSWORD is not set as an environment variable use password generated in log"
+        echo "⚠️ PASSWORD is not set as an environment variable use password in log file"
         code-server /workspace --disable-telemetry --disable-update-check --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     fi
 	
@@ -63,18 +63,43 @@ if [[ "$HAS_GPU" -eq 1 ]]; then
     python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen} &
 	
 	# Wait until ComfyUI is ready
-    until curl -s http://127.0.0.1:8188 > /dev/null; do
-        echo "[INFO] Waiting for ComfyUI to start..."    
-		sleep 3
-    done
-		
-	# Confirmation	
-	echo "✅ [INFO] Code Server & ComfyUI started"
+	MAX_TRIES=40
+	COUNT=0
 	
+	until curl -s http://127.0.0.1:8188 > /dev/null; do
+	    COUNT=$((COUNT+1))
+	    if [[ $COUNT -ge $MAX_TRIES ]]; then
+	        echo "❌ [ERROR] ComfyUI did not start after $MAX_TRIES attempts (~1min)."
+	        # Kill background processes if needed
+	        pkill -f "/workspace/ComfyUI/main.py" || true
+	    fi
+	    echo "[INFO] Waiting for ComfyUI to start... ($COUNT/$MAX_TRIES)"
+	    sleep 5
+	done
 else
     echo "⚠️ WARNING: No GPU available, ComfyUI and Code Server not started to limit memory use"
 fi
-	
+
+# Check if onnxruntime is installed
+if ! python3 -c "import onnxruntime" &>/dev/null; then
+  echo "⚠️ onnxruntime not installed or old version, installing GPU version..."
+  pip uninstall -y onnxruntime onnxruntime-gpu || true
+  pip install --no-cache-dir onnxruntime-gpu==1.22.0
+fi
+
+# Check available providers
+providers=$(python3 - <<'PY'
+import onnxruntime as ort
+print(",".join(ort.get_available_providers()))
+PY
+)
+
+if [[ "$providers" == *"CUDAExecutionProvider"* ]]; then
+  echo "✅ CUDAExecutionProvider available: $providers"
+else
+  echo "⚠️ ERROR: CUDAExecutionProvider still NOT available"
+fi
+
 # Function to download models if variables are set
 download_model_HF() {
     local model_var="$1"
@@ -113,8 +138,36 @@ download_model_CIVITAI() {
 	return 0
 }
 
-# Provisioning Models and loras
-echo "[INFO] Provisioning started"
+download_workflow() {
+    local url_var="$1"
+
+    # Check if URL variable is set and not empty
+    if [[ -z "${!url_var}" ]]; then
+        return 0
+    fi
+
+    # Destination directory
+    local dest_dir="/workspace/ComfyUI/user/default/workflows/"
+    mkdir -p "$dest_dir"
+
+    # Download the workflow into the directory
+    wget -q --show-progress -P "$dest_dir" "${!url_var}" || \
+        echo "⚠️ Failed to download ${!url_var}"
+
+    sleep 1
+    return 0
+}
+
+# provisioning workflows
+echo "[INFO] Provisioning workflows"
+
+for i in $(seq 1 50); do
+    VAR="WORKFLOW${i}"
+    download_workflow "$VAR"
+done
+
+# provisioning Models and loras
+echo "[INFO] Provisioning models"
 
 # depricated
 download_model_HF HF_MODEL_VAE HF_MODEL_VAE_FILENAME "vae"

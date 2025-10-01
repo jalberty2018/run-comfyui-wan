@@ -1,5 +1,5 @@
 # Base Image
-FROM ls250824/comfyui-runtime:23092025 AS base
+FROM ls250824/comfyui-runtime:01102025 AS base
 
 # Set Working Directory
 WORKDIR /
@@ -9,8 +9,8 @@ COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provis
 COPY --chmod=644 provisioning/ /provisioning
 COPY --chmod=664 /documentation/README.md /README.md
 
-# Copy ComfyUI configurations and workflows
-COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
+# Copy ComfyUI configurations
+# COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
 COPY --chmod=644 configuration/config.ini /ComfyUI/user/default/ComfyUI-Manager/config.ini
 COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.settings.json
 
@@ -40,7 +40,9 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/kijai/ComfyUI-segment-anything-2.git && \
     git clone https://github.com/1038lab/ComfyUI-RMBG.git && \
 	git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git && \
-	git clone https://github.com/liusida/ComfyUI-AutoCropFaces.git
+	git clone https://github.com/liusida/ComfyUI-AutoCropFaces.git && \
+	git clone https://github.com/DecartAI/Lucy-Edit-ComfyUI.git && \
+	git clone https://github.com/GizmoR13/PG-Nodes.git
 
 # Install Dependencies
 RUN pip3 install --no-cache-dir diffusers psutil \
@@ -52,6 +54,7 @@ RUN pip3 install --no-cache-dir diffusers psutil \
 	-r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt \
 	-r /ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt \
+	-r /ComfyUI/custom_nodes/Lucy-Edit-ComfyUI/requirements.txt \
 	-r /ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
 
 # Set Workspace

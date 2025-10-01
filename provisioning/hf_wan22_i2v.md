@@ -5,16 +5,12 @@
 - [GGUF](https://huggingface.co/QuantStack)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 
-## Low noise
+## Diffusion model
 
 ```bash
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
-```
 
-## High noise
-
-```bash
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
@@ -49,4 +45,16 @@ hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/vae/wan_2.1_vae.saf
 ```bash
 hf download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors \
 --local-dir /workspace/ComfyUI/models/vae/
+```
+
+## Loras Lightning lightx2v
+
+### 1.0 Seko
+
+```bash
+hf download lightx2v/Wan2.2-Lightning Wan2.2-I2V-A14B-4steps-lora-rank64-Seko-V1/high_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-Lightning Wan2.2-I2V-A14B-4steps-lora-rank64-Seko-V1/low_noise_model.safetensors  \
+--local-dir /workspace/ComfyUI/models/loras/
 ```
