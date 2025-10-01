@@ -80,13 +80,6 @@ else
     echo "⚠️ WARNING: No GPU available, ComfyUI and Code Server not started to limit memory use"
 fi
 
-# Check if onnxruntime is installed
-if ! python3 -c "import onnxruntime" &>/dev/null; then
-  echo "⚠️ onnxruntime not installed or old version, installing GPU version..."
-  pip uninstall -y onnxruntime onnxruntime-gpu || true
-  pip install --no-cache-dir onnxruntime-gpu==1.22.0
-fi
-
 # Check available providers
 providers=$(python3 - <<'PY'
 import onnxruntime as ort
@@ -97,7 +90,9 @@ PY
 if [[ "$providers" == *"CUDAExecutionProvider"* ]]; then
   echo "✅ CUDAExecutionProvider available: $providers"
 else
-  echo "⚠️ ERROR: CUDAExecutionProvider still NOT available"
+  echo "[Info] installing onnxruntime-gpu==1.22.0"
+  pip3 uninstall -y onnxruntime onnxruntime-gpu || true
+  pip3 install --no-cache-dir onnxruntime-gpu==1.22.0
 fi
 
 # Function to download models if variables are set

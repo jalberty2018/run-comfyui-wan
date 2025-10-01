@@ -10,7 +10,6 @@ COPY --chmod=644 provisioning/ /provisioning
 COPY --chmod=664 /documentation/README.md /README.md
 
 # Copy ComfyUI configurations
-# COPY --chmod=644 workflows/ /ComfyUI/user/default/workflows
 COPY --chmod=644 configuration/config.ini /ComfyUI/user/default/ComfyUI-Manager/config.ini
 COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.settings.json
 
@@ -29,7 +28,6 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/ClownsharkBatwing/RES4LYF.git && \
 	git clone https://github.com/BlenderNeko/ComfyUI_Noise.git && \
 	git clone https://github.com/ChenDarYen/ComfyUI-NAG.git && \
-	git clone https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
 	git clone https://github.com/evanspearman/ComfyMath.git && \
 	git clone https://github.com/city96/ComfyUI-GGUF.git && \
 	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git && \
@@ -42,7 +40,10 @@ RUN mkdir -p /ComfyUI/custom_nodes && \
 	git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git && \
 	git clone https://github.com/liusida/ComfyUI-AutoCropFaces.git && \
 	git clone https://github.com/DecartAI/Lucy-Edit-ComfyUI.git && \
-	git clone https://github.com/GizmoR13/PG-Nodes.git
+	git clone https://github.com/GizmoR13/PG-Nodes.git && \
+	git clone https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
+	cd /ComfyUI/custom_nodes/comfyui-vrgamedevgirl && \
+	git checkout 9c75221
 
 # Install Dependencies
 RUN pip3 install --no-cache-dir diffusers psutil \

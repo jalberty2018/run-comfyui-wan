@@ -29,7 +29,6 @@ HF_MODEL_LORA6=lightx2v/Wan2.2-Lightning
 HF_MODEL_LORA_FILENAME6=Wan2.2-T2V-A14B-4steps-lora-250928/high_noise_model.safetensors
 HF_MODEL_LORA7=lightx2v/Wan2.2-Lightning
 HF_MODEL_LORA_FILENAME7=Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors
-
 ```
 
 ### Private
@@ -52,7 +51,7 @@ HF_MODEL_LORA1=lightx2v/Wan2.2-Lightning
 HF_MODEL_LORA_FILENAME1=Wan2.2-T2V-A14B-4steps-lora-250928/high_noise_model.safetensors
 HF_MODEL_LORA2=lightx2v/Wan2.2-Lightning
 HF_MODEL_LORA_FILENAME2=Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors
-WORKLOW1=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-tripleKSampler-NAG-Lightning-pod.json
+WORKFLOW1=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-tripleKSampler-NAG-Lightning-pod.json
 ```
 
 ## WAN 2.2 animate
