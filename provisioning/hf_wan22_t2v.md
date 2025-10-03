@@ -8,6 +8,8 @@
 
 ## Diffusion_models
 
+### Standard fp16
+
 ```bash
 hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
@@ -15,6 +17,13 @@ hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/w
 hf download  Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_t2v_high_noise_14B_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ``` 
+
+### Lighting Dyno High
+
+```bash 
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-250928-dyno/Wan2.2-T2V-A14B-4steps-250928-dyno-high-lightx2v.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+```
 
 ## CLIP Text encoder
 

@@ -2,7 +2,7 @@
 
 ## t2v WAN 2.2
 
-### Public
+### Public standard with lighning & lighx2v dyno
 
 ```bash
 HF_MODEL_DIFFUSION_MODELS1=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
@@ -29,9 +29,19 @@ HF_MODEL_LORA6=lightx2v/Wan2.2-Lightning
 HF_MODEL_LORA_FILENAME6=Wan2.2-T2V-A14B-4steps-lora-250928/high_noise_model.safetensors
 HF_MODEL_LORA7=lightx2v/Wan2.2-Lightning
 HF_MODEL_LORA_FILENAME7=Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors
+WORKFLOW1=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-tripleKSampler-NAG-Lightning-pod.json
+WORKFLOW2=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/Lucy-edit-v2v-dev-pod.json
+WORKFLOW3=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-KSampler-Lightxv2-pod.json
+WORKFLOW4=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeKSampler-pod.json
+WORKFLOW5=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeSamplerAdv-Affine-pod.json
+WORKFLOW6=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-animate-vi2v-point-editor-pod.json
+WORKFLOW7=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-animate-vi2v-rmbg-sam-pod.json
+WORKFLOW8=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-KSampler-Lightx2v-dyno-pod.json
+WORKFLOW9=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeKSampler-Lightx2v-dyno-pod.json
+WORKFLOW10=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeSamplerAdv-Affine-Lightx2v-dyno-pod.json
 ```
 
-### Private
+### Private standard with lighning
 
 ```bash
 CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
@@ -52,6 +62,31 @@ HF_MODEL_LORA_FILENAME1=Wan2.2-T2V-A14B-4steps-lora-250928/high_noise_model.safe
 HF_MODEL_LORA2=lightx2v/Wan2.2-Lightning
 HF_MODEL_LORA_FILENAME2=Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors
 WORKFLOW1=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-tripleKSampler-NAG-Lightning-pod.json
+WORKFLOW2=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/Lucy-edit-v2v-dev-pod.json
+WORKFLOW3=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-KSampler-Lightxv2-pod.json
+WORKFLOW4=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeKSampler-pod.json
+WORKFLOW5=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeSamplerAdv-Affine-pod.json
+```
+
+### Private Lightning Dyno
+
+```bash
+CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
+HF_TOKEN="{{ RUNPOD_SECRET_HF_TOKEN_WRITE }}"
+PASSWORD="{{ RUNPOD_SECRET_CODE-SERVER-NEW }}"
+HF_MODEL_DIFFUSION_MODELS1=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
+HF_MODEL_DIFFUSION_MODELS_FILENAME1=split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp16.safetensors
+HF_MODEL_DIFFUSION_MODELS2=lightx2v/Wan2.2-Lightning
+HF_MODEL_DIFFUSION_MODELS_FILENAME2=Wan2.2-T2V-A14B-4steps-250928-dyno/Wan2.2-T2V-A14B-4steps-250928-dyno-high-lightx2v.safetensors
+HF_MODEL_VAE1=Kijai/WanVideo_comfy
+HF_MODEL_VAE_FILENAME1=Wan2_1_VAE_fp32.safetensors
+HF_MODEL_TEXT_ENCODERS1=LS110824/text_encoders
+HF_MODEL_TEXT_ENCODERS_FILENAME1=wan21UMT5XxlFP32_fp32.safetensors
+HF_MODEL_LORA1=lightx2v/Wan2.2-Lightning
+HF_MODEL_LORA_FILENAME1=Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors
+WORKFLOW1=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-KSampler-Lightx2v-dyno-pod.json
+WORKFLOW2=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeKSampler-Lightx2v-dyno-pod.json
+WORKFLOW3=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeSamplerAdv-Affine-Lightx2v-dyno-pod.json
 ```
 
 ## WAN 2.2 animate
@@ -73,6 +108,8 @@ HF_MODEL_LORA1=Kijai/WanVideo_comfy
 HF_MODEL_LORA_FILENAME1=Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors
 HF_MODEL_LORA2=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
 HF_MODEL_LORA_FILENAME2=split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors
+WORKFLOW1=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-animate-vi2v-point-editor-pod.json
+WORKFLOW2=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-animate-vi2v-rmbg-sam-pod.json
 ```
 
 ### Private
@@ -95,6 +132,8 @@ HF_MODEL_LORA1=Kijai/WanVideo_comfy
 HF_MODEL_LORA_FILENAME1=Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors
 HF_MODEL_LORA2=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
 HF_MODEL_LORA_FILENAME2=split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors
+WORKFLOW1=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-animate-vi2v-point-editor-pod.json
+WORKFLOW2=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-animate-vi2v-rmbg-sam-pod.json
 ```
 
 ## WAN 2.2 s2v

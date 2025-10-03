@@ -16,34 +16,32 @@ COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.s
 # Install Required Packages
 RUN mkdir -p /ComfyUI/custom_nodes && \
     cd /ComfyUI/custom_nodes && \
-    git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
-    git clone https://github.com/rgthree/rgthree-comfy.git && \
-    git clone https://github.com/liusida/ComfyUI-Login.git && \
-    git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
-    git clone https://github.com/kijai/ComfyUI-KJNodes.git && \
-    git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git && \
-	git clone https://github.com/kijai/ComfyUI-WanVideoWrapper.git && \
-	git clone https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative.git && \
-	git clone https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel && \
-	git clone https://github.com/ClownsharkBatwing/RES4LYF.git && \
-	git clone https://github.com/BlenderNeko/ComfyUI_Noise.git && \
-	git clone https://github.com/ChenDarYen/ComfyUI-NAG.git && \
-	git clone https://github.com/evanspearman/ComfyMath.git && \
-	git clone https://github.com/city96/ComfyUI-GGUF.git && \
-	git clone https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git && \
-    git clone https://github.com/Azornes/Comfyui-Resolution-Master.git && \
-	git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive && \
-	git clone https://github.com/WASasquatch/was_affine.git && \
-    git clone https://github.com/VraethrDalkr/ComfyUI-TripleKSampler.git && \
-	git clone https://github.com/kijai/ComfyUI-segment-anything-2.git && \
-    git clone https://github.com/1038lab/ComfyUI-RMBG.git && \
-	git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git && \
-	git clone https://github.com/liusida/ComfyUI-AutoCropFaces.git && \
-	git clone https://github.com/DecartAI/Lucy-Edit-ComfyUI.git && \
-	git clone https://github.com/GizmoR13/PG-Nodes.git && \
-	git clone https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
-	cd /ComfyUI/custom_nodes/comfyui-vrgamedevgirl && \
-	git checkout 9c75221
+    git clone  --depth=1 https://github.com/ltdrdata/ComfyUI-Manager.git && \
+    git clone  --depth=1 https://github.com/rgthree/rgthree-comfy.git && \
+    git clone  --depth=1 https://github.com/liusida/ComfyUI-Login.git && \
+    git clone  --depth=1 https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
+    git clone  --depth=1 https://github.com/kijai/ComfyUI-KJNodes.git && \
+    git clone  --depth=1 https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git && \
+	git clone  --depth=1 https://github.com/kijai/ComfyUI-WanVideoWrapper.git && \
+	git clone  --depth=1 https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative.git && \
+	git clone  --depth=1 https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel && \
+	git clone  --depth=1 https://github.com/ClownsharkBatwing/RES4LYF.git && \
+	git clone  --depth=1 https://github.com/BlenderNeko/ComfyUI_Noise.git && \
+	git clone  --depth=1 https://github.com/ChenDarYen/ComfyUI-NAG.git && \
+	git clone  --depth=1 https://github.com/evanspearman/ComfyMath.git && \
+	git clone  --depth=1 https://github.com/city96/ComfyUI-GGUF.git && \
+	git clone  --depth=1 https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git && \
+    git clone  --depth=1 https://github.com/Azornes/Comfyui-Resolution-Master.git && \
+	git clone  --depth=1 https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive && \
+	git clone  --depth=1 https://github.com/WASasquatch/was_affine.git && \
+    git clone  --depth=1 https://github.com/VraethrDalkr/ComfyUI-TripleKSampler.git && \
+	git clone  --depth=1 https://github.com/kijai/ComfyUI-segment-anything-2.git && \
+    git clone  --depth=1 https://github.com/1038lab/ComfyUI-RMBG.git && \
+	git clone  --depth=1 https://github.com/Fannovel16/comfyui_controlnet_aux.git && \
+	git clone  --depth=1 https://github.com/liusida/ComfyUI-AutoCropFaces.git && \
+	git clone  --depth=1 https://github.com/DecartAI/Lucy-Edit-ComfyUI.git && \
+	git clone  --depth=1 https://github.com/GizmoR13/PG-Nodes.git && \
+	git clone  --depth=1 https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git
 
 # Install Dependencies
 RUN pip3 install --no-cache-dir diffusers psutil \
