@@ -23,12 +23,11 @@ See below for options.
 
 ## Template Deployment
 
-👉 [**One-click Deploy on RunPod WAN 2.2**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
-👉 [**One-click Deploy on RunPod WAN 2.2 animate**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
-## Workflows included in image.
+[**👉 One-click Deploy on RunPod WAN 2.2 animate**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
-- Example Text to video workflow using available custom nodes in /workspace/ComfyUI/user/default/workflows
+- Example workflows using available custom nodes in /workspace/ComfyUI/user/default/workflows
 - Open workflow from ComfyUI's interface on the left. 
 
 ## Software Repositories  
@@ -56,6 +55,7 @@ See below for options.
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [Lucy edit](https://github.com/DecartAI/Lucy-Edit-ComfyUI)
 - [PG Nodes](https://github.com/GizmoR13/PG-Nodes)
+- [ComfyUi-Scale-Image-to-Total-Pixels-Advanced](https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced)
 
 ### Video/Upscale
 
@@ -63,7 +63,8 @@ See below for options.
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
-- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [VRgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [VideoStitcher](https://github.com/Kishor900/comfyui-wanv2v-video-stitcher)
 
 ## Control
 
@@ -116,17 +117,18 @@ See below for options.
 | Upscalers         | `HF_MODEL_UPSCALER[1-10]`      | `HF_MODEL_UPSCALER_PTH[1-10]`              |
 | Loras          | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_FILENAME[1-10]`          |
 
-### **Diffusion Lora Setup CivitAI**  
+### CivitAI LORAs
 
-| Model Type        | URL (download link)            |
-|-------------------|--------------------------------|
-| Loras civitai     | `CIVITAI_MODEL_LORA_URL[1-10]` |
+| Variable                          | Description                      |
+|----------------------------------|----------------------------------|
+| `CIVITAI_MODEL_LORA_URL[1-10]`   | Direct download links for LoRAs |
 
-### **Workflows**
+
+### Workflows
 
 | Variable         | Description                      |
 |------------------|----------------------------------|
-| `WORKFLOW[1-50]` | Download workflows (json) to use with ComfyUI |
+| `WORKFLOW[1-50]` |  download link (compressed or plain)  |
 
 
 ## Connection options 

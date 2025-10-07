@@ -47,24 +47,9 @@ else
   echo "⚠️ [NO GPU] Running on CPU only"
 fi
 
-# Check available providers
-providers=$(python3 - <<'PY'
-import onnxruntime as ort
-print(",".join(ort.get_available_providers()))
-PY
-)
-
-if [[ "$providers" == *"CUDAExecutionProvider"* ]]; then
-  echo "✅ CUDAExecutionProvider available: $providers"
-else
-  echo "[Info] reinstalling onnxruntime-gpu==1.22.0"
-  pip3 uninstall -y onnxruntime onnxruntime-gpu || true
-  pip3 install --no-cache-dir onnxruntime-gpu==1.22.0
-fi
-
 # Run services
-if [[ "$HAS_GPU" -eq 1 ]]; then
-    # Start code-server (HTTP port 9000)
+if [[ "$HAS_GPU" -eq 1 ]]; then    
+	# Start code-server (HTTP port 9000)
     if [[ -n "$PASSWORD" ]]; then
         code-server /workspace --auth password --disable-update-check --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     else
@@ -145,9 +130,45 @@ download_workflow() {
     local dest_dir="/workspace/ComfyUI/user/default/workflows/"
     mkdir -p "$dest_dir"
 
-    # Download the workflow into the directory
-    wget -q --show-progress -P "$dest_dir" "${!url_var}" || \
-        echo "⚠️ Failed to download ${!url_var}"
+    # Get filename from URL
+    local url="${!url_var}"
+    local filename
+    filename=$(basename "$url")
+
+    echo "[INFO] Downloading $filename ..."
+    if ! wget -q -P "$dest_dir" "$url"; then
+        echo "⚠️ Failed to download $url"
+        return 0
+    fi
+
+    local filepath="${dest_dir}${filename}"
+
+    # Automatically extract common archive formats
+    case "$filename" in
+        *.zip)
+            echo "[INFO] Unzipping $filename ..."
+            unzip -o "$filepath" -d "$dest_dir" >/dev/null 2>&1 || echo "⚠️ Failed to unzip $filename"
+            ;;
+        *.tar.gz|*.tgz)
+            echo "[INFO] Extracting $filename ..."
+            tar -xzf "$filepath" -C "$dest_dir" || echo "⚠️ Failed to extract $filename"
+            ;;
+        *.tar.xz)
+            echo "[INFO] Extracting $filename ..."
+            tar -xJf "$filepath" -C "$dest_dir" || echo "⚠️ Failed to extract $filename"
+            ;;
+        *.tar.bz2)
+            echo "[INFO] Extracting $filename ..."
+            tar -xjf "$filepath" -C "$dest_dir" || echo "⚠️ Failed to extract $filename"
+            ;;
+        *.7z)
+            echo "[INFO] Extracting $filename ..."
+            7z x -y -o"$dest_dir" "$filepath" >/dev/null 2>&1 || echo "⚠️ Failed to extract $filename"
+            ;;
+        *)
+            echo "[INFO] No extraction performed for $filename"
+            ;;
+    esac
 
     sleep 1
     return 0
@@ -209,8 +230,26 @@ for cat in "${CATEGORIES_CIVITAI[@]}"; do
 done
 
 
-# Final message
-echo "✅ Provisioning done. Ready to create AI content."
+# Final messages
+echo "✅ Provisioning done, running with following environment"
+
+python - <<'PY'
+import torch, platform, triton, os, onnxruntime as ort
+print(f"Python: {platform.python_version()}")
+print(f"PyTorch: {torch.__version__}")
+print(f"Triton version: {triton.__version__}")
+print(f"ONNX Runtime version: {ort.__version__}")
+print(f"Available providers: {ort.get_available_providers()}")
+print(f"CUDA provider available: { 'CUDAExecutionProvider' in ort.get_available_providers()}")
+print(f"CUDA available: {torch.cuda.is_available()}")
+if torch.cuda.is_available():
+    print(f"  ↳ CUDA runtime: {torch.version.cuda}")
+    print(f"  ↳ GPU(s): {[torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())]}")
+    print(f"  ↳ cuDNN: {torch.backends.cudnn.version()}")
+    print(f"Torch build info: {torch.__config__.show()}")
+PY
+
+echo "✅ Ready to create AI content."
 
 # Keep the container running
 exec sleep infinity

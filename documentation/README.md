@@ -49,6 +49,7 @@
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [Lucy edit](https://github.com/DecartAI/Lucy-Edit-ComfyUI)
 - [PG Nodes](https://github.com/GizmoR13/PG-Nodes)
+- [ComfyUi-Scale-Image-to-Total-Pixels-Advanced](https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced)
 
 ### Video/Upscale
 
@@ -56,7 +57,8 @@
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
-- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [VRgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [VideoStitcher](https://github.com/Kishor900/comfyui-wanv2v-video-stitcher)
 
 ## Control
 

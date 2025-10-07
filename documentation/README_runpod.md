@@ -44,17 +44,18 @@ This project downloads models as specified in the **environment variables** set 
 | Loras          | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_FILENAME[1-10]`          |
 
 
-### **Diffusion Lora Setup CivitAI**  
+### CivitAI LORAs
 
-| Model Type        | URL (download link)            |
-|-------------------|--------------------------------|
-| Loras civitai     | `CIVITAI_MODEL_LORA_URL[1-10]` |
+| Variable                          | Description                      |
+|----------------------------------|----------------------------------|
+| `CIVITAI_MODEL_LORA_URL[1-10]`   | Direct download links for LoRAs |
 
-### **Workflows**
+
+### Workflows
 
 | Variable         | Description                      |
 |------------------|----------------------------------|
-| `WORKFLOW[1-50]` | Download workflows (json) to use with ComfyUI |
+| `WORKFLOW[1-50]` |  download link (compressed or plain)  |
 
 ## Connection options 
 
@@ -96,6 +97,7 @@ This project downloads models as specified in the **environment variables** set 
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [Lucy edit](https://github.com/DecartAI/Lucy-Edit-ComfyUI)
 - [PG Nodes](https://github.com/GizmoR13/PG-Nodes)
+- [ComfyUi-Scale-Image-to-Total-Pixels-Advanced](https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced)
 
 ### Video/Upscale
 
@@ -103,7 +105,8 @@ This project downloads models as specified in the **environment variables** set 
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
-- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [VRgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [VideoStitcher](https://github.com/Kishor900/comfyui-wanv2v-video-stitcher)
 
 ## Control
 

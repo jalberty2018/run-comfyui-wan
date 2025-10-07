@@ -8,8 +8,17 @@
 
 ## Diffusion_models
 
+### bf16
+
 ```bash
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_animate_14B_bf16.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+```
+
+### fp8
+
+```bash
+hf download Kijai/WanVideo_comfy_fp8_scaled Wan22Animate/Wan2_2-Animate-14B_fp8_scaled_e4m3fn_KJ_v2.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 

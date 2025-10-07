@@ -22,6 +22,9 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 [**👉 One-click Deploy on RunPod WAN 2.2 animate**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
+- Example workflows using available custom nodes in /workspace/ComfyUI/user/default/workflows
+- Open workflow from ComfyUI's interface on the left. 
+
 ## 💻 Hardware Requirements
 
 | Component        | Recommended             |
@@ -40,7 +43,7 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 - **ComfyUI Runtime**  
   [![Docker](https://img.shields.io/docker/v/ls250824/comfyui-runtime)](https://hub.docker.com/r/ls250824/comfyui-runtime)
 
-### Main Image
+### Custom Image
 
 ```bash
 docker pull ls250824/run-comfyui-wan:<version>
@@ -81,14 +84,14 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 | Variable                          | Description                      |
 |----------------------------------|----------------------------------|
-| `CIVITAI_MODEL_LORA_URL[1-10]`   | Direct download links for LoRAs |
+| `CIVITAI_MODEL_LORA_URL[1-10]`   | Direct download link for LoRAs |
 
 
-### Workflows
+### 🎨 Workflows
 
 | Variable         | Description                      |
 |------------------|----------------------------------|
-| `WORKFLOW[1-50]` | Download workflows (json) to use with ComfyUI |
+| `WORKFLOW[1-50]` |  download link (compressed or plain)  |
 
 ## 🌐 Network Services
 
@@ -119,7 +122,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 ## 🧪 Workflows
 
-![Preloaded workflow for Wan 2.2](images/run_comfyui_workflow.jpg)
+![Workflows from environment variables](images/run_comfyui_workflow.jpg)
 Open ComfyUI (port `8188`) and load workflows from the left menu.
 
 ## 🧩 Pre-Installed Custom Nodes
@@ -135,6 +138,7 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
 - [Lucy edit](https://github.com/DecartAI/Lucy-Edit-ComfyUI)
 - [PG Nodes](https://github.com/GizmoR13/PG-Nodes)
+- [ComfyUi-Scale-Image-to-Total-Pixels-Advanced](https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced)
 
 ### Video/Upscale
 
@@ -142,7 +146,8 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
 - [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
-- [vrgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [VRgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
+- [VideoStitcher](https://github.com/Kishor900/comfyui-wanv2v-video-stitcher)
 
 ## Control
 
@@ -215,6 +220,9 @@ Use none docker setup to build the image using the included Python script.
 ```bash
 git clone https://github.com/jalberty2018/run-comfyui-wan.git
 cp ./run-comfyui-wan/build-docker.py ..
+
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
 
 python3 build-docker.py   --username=<your_dockerhub_username>   --tag=<custom_tag>   --latest   run-comfyui-wan
 ```

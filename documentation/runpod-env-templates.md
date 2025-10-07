@@ -2,7 +2,7 @@
 
 ## t2v WAN 2.2
 
-### Public standard with lighning & lighx2v dyno
+### Public with lighning
 
 ```bash
 HF_MODEL_DIFFUSION_MODELS1=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
@@ -41,7 +41,7 @@ WORKFLOW9=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/
 WORKFLOW10=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeSamplerAdv-Affine-Lightx2v-dyno-pod.json
 ```
 
-### Private standard with lighning
+### Private with lighning
 
 ```bash
 CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
@@ -68,7 +68,9 @@ WORKFLOW4=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/
 WORKFLOW5=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeSamplerAdv-Affine-pod.json
 ```
 
-### Private Lightning Dyno
+## t2v WAN 2.2 lighx2v dyno
+
+### Private
 
 ```bash
 CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
@@ -89,7 +91,7 @@ WORKFLOW2=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/
 WORKFLOW3=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-MoeSamplerAdv-Affine-Lightx2v-dyno-pod.json
 ```
 
-## WAN 2.2 animate
+## WAN 2.2 animate with lightning
 
 ### Public
 
