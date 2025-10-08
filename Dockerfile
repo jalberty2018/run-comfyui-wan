@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:07102025
+FROM ls250824/comfyui-runtime:08102025
 
 # Set Working Directory
 WORKDIR /
@@ -13,10 +13,10 @@ COPY --chmod=664 /documentation/README.md /README.md
 COPY --chmod=644 configuration/config.ini /ComfyUI/user/default/ComfyUI-Manager/config.ini
 COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.settings.json
 
-# Install Required Packages
+# Clone
+WORKDIR /ComfyUI/custom_nodes
+
 RUN --mount=type=cache,target=/root/.cache/git \
-    mkdir -p /ComfyUI/custom_nodes && \
-    cd /ComfyUI/custom_nodes && \
     git clone --depth=1 --filter=blob:none https://github.com/ltdrdata/ComfyUI-Manager.git && \
     git clone --depth=1 --filter=blob:none https://github.com/rgthree/rgthree-comfy.git && \
     git clone --depth=1 --filter=blob:none https://github.com/liusida/ComfyUI-Login.git && \
@@ -46,20 +46,32 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced
 
-# Install Dependencies
+# Change directory
+WORKDIR /
+
+# Rewrite any top-level CPU ORT refs to GPU ORT
+RUN set -eux; \
+  for f in \
+    /ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt; do \
+      [ -f "$f" ] || continue; \
+      sed -i -E 's/^( *| *)(onnxruntime)([<>=].*)?(\s*)$/\1onnxruntime-gpu==1.22.*\4/i' "$f"; \
+    done
+
+# Install Dependencies for Cloned Repositories
 RUN --mount=type=cache,target=/root/.cache/pip \
-    python -m pip install --no-cache-dir -c /constraints.txt \
-        diffusers psutil \
-        -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \
-        -r /ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt \
-        -r /ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt \
-        -r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt \
-        -r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
-        -r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
-        -r /ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt \
-        -r /ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt \
-        -r /ComfyUI/custom_nodes/Lucy-Edit-ComfyUI/requirements.txt \
-        -r /ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
+  python -m pip install --no-cache-dir -c /constraints.txt \
+    diffusers psutil \
+	-r /ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt \
+    -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \
+    -r /ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt \
+    -r /ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt \
+    -r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt \
+    -r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
+    -r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
+    -r /ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt \
+    -r /ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt \
+    -r /ComfyUI/custom_nodes/Lucy-Edit-ComfyUI/requirements.txt \
+    -r /ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace
@@ -67,23 +79,25 @@ WORKDIR /workspace
 # Expose Necessary Ports
 EXPOSE 8188 9000
 
-RUN python -c "import torch, torchvision, torchaudio, triton; \
-import importlib.util; \
-onnxruntime = importlib.util.find_spec('onnxruntime'); \
-onnxruntime_gpu = importlib.util.find_spec('onnxruntime_gpu'); \
+# Labels
+LABEL org.opencontainers.image.title="ComfyUI with custom_nodes for WAN inference" \
+      org.opencontainers.image.description="ComfyUI + flash-attn + sageattention + onnxruntime-gpu + code-server + civitai downloader + huggingface_hub + custom_nodes" \
+      org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
+      org.opencontainers.image.licenses="MIT"
+
+# Test
+RUN python -c "import torch, torchvision, torchaudio, triton, importlib, importlib.util as iu; \
 print(f'Torch: {torch.__version__}'); \
 print(f'Torchvision: {torchvision.__version__}'); \
 print(f'Torchaudio: {torchaudio.__version__}'); \
 print(f'Triton: {triton.__version__}'); \
-if onnxruntime_gpu: \
-    import onnxruntime_gpu as ort; print(f'ONNXRuntime-GPU: {ort.__version__}'); \
-elif onnxruntime: \
-    import onnxruntime as ort; print(f'ONNXRuntime: {ort.__version__}'); \
-else: \
-    print(\"ONNXRuntime: not installed\"); \
-print(f'CUDA available: {torch.cuda.is_available()}'); \
-print(f'CUDA version: {torch.version.cuda}'); \
-print(f'Device: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"CPU\"}')"
+name = 'onnxruntime_gpu' if iu.find_spec('onnxruntime_gpu') else ('onnxruntime' if iu.find_spec('onnxruntime') else None); \
+ver = (importlib.import_module(name).__version__ if name else 'not installed'); \
+label = 'ONNXRuntime-GPU' if name=='onnxruntime_gpu' else 'ONNXRuntime'; \
+print(f'{label}: {ver}'); \
+print('CUDA available:', torch.cuda.is_available()); \
+print('CUDA version:', torch.version.cuda); \
+print('Device:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU')"
 
 # Start Server
 CMD [ "/start.sh" ]
