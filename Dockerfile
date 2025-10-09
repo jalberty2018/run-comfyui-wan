@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:08102025
+FROM ls250824/comfyui-runtime:09102025
 
 # Set Working Directory
 WORKDIR /
@@ -10,7 +10,6 @@ COPY --chmod=644 provisioning/ /provisioning
 COPY --chmod=664 /documentation/README.md /README.md
 
 # Copy ComfyUI configurations
-COPY --chmod=644 configuration/config.ini /ComfyUI/user/default/ComfyUI-Manager/config.ini
 COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.settings.json
 
 # Clone
@@ -59,7 +58,7 @@ RUN set -eux; \
 
 # Install Dependencies for Cloned Repositories
 RUN --mount=type=cache,target=/root/.cache/pip \
-  python -m pip install --no-cache-dir -c /constraints.txt \
+  python -m pip install --no-cache-dir --root-user-action ignore -c /constraints.txt \
     diffusers psutil \
 	-r /ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt \
     -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \

@@ -60,7 +60,7 @@ if [[ "$HAS_GPU" -eq 1 ]]; then
 	sleep 2
 	
     # Start ComfyUI (HTTP port 8188)
-    python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen} &
+    python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen --preview-method latent2rgb} &
 	
 	# Wait until ComfyUI is ready
 	MAX_TRIES=40
@@ -184,11 +184,6 @@ done
 
 # provisioning Models and loras
 echo "[INFO] Provisioning models"
-
-# depricated
-download_model_HF HF_MODEL_VAE HF_MODEL_VAE_FILENAME "vae"
-download_model_HF HF_MODEL_CLIP_VISIONS HF_MODEL_CLIP_VISIONS_FILENAME "clip_visions"
-download_model_HF HF_MODEL_CHECKPOINTS HF_MODEL_CHECKPOINTS_FILENAME "checkpoints"
 
 # categorie:  NAME:SUFFIX:MAP
 CATEGORIES_HF=(
