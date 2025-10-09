@@ -1,6 +1,5 @@
 {
     "Comfy.DevMode": true,
     "Comfy.Minimap.Visible": false,
-    "Comfy.LinkRenderMode": -1,
-    "VHS.LatentPreview": true,
+    "VHS.LatentPreview": true
 }
