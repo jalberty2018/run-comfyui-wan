@@ -45,13 +45,10 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced
 
-# Change directory
-WORKDIR /
-
 # Rewrite any top-level CPU ORT refs to GPU ORT
 RUN set -eux; \
   for f in \
-    /ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt; do \
+    ComfyUI-RMBG/requirements.txt; do \
       [ -f "$f" ] || continue; \
       sed -i -E 's/^( *| *)(onnxruntime)([<>=].*)?(\s*)$/\1onnxruntime-gpu==1.22.*\4/i' "$f"; \
     done
@@ -60,17 +57,17 @@ RUN set -eux; \
 RUN --mount=type=cache,target=/root/.cache/pip \
   python -m pip install --no-cache-dir --root-user-action ignore -c /constraints.txt \
     diffusers psutil \
-	-r /ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt \
-    -r /ComfyUI/custom_nodes/ComfyUI-Login/requirements.txt \
-    -r /ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt \
-    -r /ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt \
-    -r /ComfyUI/custom_nodes/comfyui-vrgamedevgirl/requirements.txt \
-    -r /ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt \
-    -r /ComfyUI/custom_nodes/RES4LYF/requirements.txt \
-    -r /ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt \
-    -r /ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt \
-    -r /ComfyUI/custom_nodes/Lucy-Edit-ComfyUI/requirements.txt \
-    -r /ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
+	-r ComfyUI-Manager/requirements.txt \
+    -r ComfyUI-Login/requirements.txt \
+    -r ComfyUI-VideoHelperSuite/requirements.txt \
+    -r ComfyUI-KJNodes/requirements.txt \
+    -r comfyui-vrgamedevgirl/requirements.txt \
+    -r ComfyUI-WanVideoWrapper/requirements.txt \
+    -r RES4LYF/requirements.txt \
+    -r ComfyUI-GGUF/requirements.txt \
+    -r ComfyUI-RMBG/requirements.txt \
+    -r Lucy-Edit-ComfyUI/requirements.txt \
+    -r comfyui_controlnet_aux/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace

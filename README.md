@@ -20,7 +20,9 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 [**👉 One-click Deploy on RunPod WAN 2.2**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
-[**👉 One-click Deploy on RunPod WAN 2.2 animate**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2 animate lightx2v**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
+
+[**👉 One-click Deploy on RunPod WAN 2.2 lightx2v dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
 
 - Example workflows using available custom nodes in /workspace/ComfyUI/user/default/workflows
 - Open workflow from ComfyUI's interface on the left. 
@@ -203,6 +205,35 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [WAN](provisioning/hf_wan21.md)
 - [HuMo](provisioning/hf_humo.md)
 - [loras](provisioning/hf_wan21_loras.md)
+
+## Setup
+
+| Component | Version              |
+|-----------|----------------------|
+| OS        | `Ubuntu 24.04 x86_64`|
+| Python    | `3.11.x`             |
+| PyTorch   | `2.8.0`              |
+| CUDA      | `12.9.x`             |
+| Triton    | `3.4.x`              |
+| onnxruntime-gpu | `1.22.x` |
+| ComfyUI | Latest |
+| CodeServer | Latest |
+
+## Installed Attentions
+
+### Wheels
+
+| Package        | Version  |
+|----------------|----------|
+| flash_attn     | 2.8.3    |
+| sageattention  | 2.2.0    |
+
+### Build for
+
+| Processor | Compute Capability | SM |
+|------------|-----------------|-----------|
+| A40  | 8.6 | sm_86
+| L40S | 8.9 | sm_89
 
 ## 🛠️ Build & Push Docker Image (Optional)
 

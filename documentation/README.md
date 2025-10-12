@@ -19,10 +19,16 @@
 - [HuMo Github](https://github.com/Phantom-video/HuMo)
 - [Example prompts](https://alidocs.dingtalk.com/i/nodes/EpGBa2Lm8aZxe5myC99MelA2WgN7R35y)
 
-## Example workflow
+## Template Deployment with workflows
 
-- Text to video workflow available in /workspace/ComfyUI/user/default/workflows
-- Open workflow from ComfyUI's interface on the left.
+[**👉 One-click Deploy on RunPod WAN 2.2**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
+
+[**👉 One-click Deploy on RunPod WAN 2.2 animate lightx2v**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
+
+[**👉 One-click Deploy on RunPod WAN 2.2 lightx2v dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
+
+- Example workflows using available custom nodes in /workspace/ComfyUI/user/default/workflows
+- Open workflow from ComfyUI's interface on the left. 
 
 ## Software Repositories  
 
