@@ -68,14 +68,19 @@ See below for options.
 - [VRgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 - [VideoStitcher](https://github.com/Kishor900/comfyui-wanv2v-video-stitcher)
 
-## Control
+## Controlnet
 
 - [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+
+## Flow
+
+- [Power Flow](https://github.com/x3bits/ComfyUI-Power-Flow)
 
 ## Segmentation
 
 - [Segment anything](https://github.com/kijai/ComfyUI-segment-anything-2)
 - [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
+- [SecNodes](https://github.com/9nate-drake/Comfyui-SecNodes)
 
 ### Wan
 
@@ -119,6 +124,7 @@ See below for options.
 | Upscalers         | `HF_MODEL_UPSCALER[1-10]`      | `HF_MODEL_UPSCALER_PTH[1-10]`              |
 | Loras          | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_FILENAME[1-10]`          |
 | VLM/mmproj    | `HF_MODEL_VL[1-10]`          | `HF_MODEL_VL_FILENAME[1-10]`          |
+| SAM segmentation | `HF_MODEL_SAMS[1-10]`          | `HF_MODEL_SAMS_FILENAME[1-10]`          |
 
 ### CivitAI LORAs
 

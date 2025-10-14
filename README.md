@@ -82,10 +82,11 @@ docker pull ls250824/run-comfyui-wan:<version>
 | Upscalers         | `HF_MODEL_UPSCALER[1-10]`      | `HF_MODEL_UPSCALER_PTH[1-10]`              |
 | Loras          | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_FILENAME[1-10]`          |
 | VLM/mmproj    | `HF_MODEL_VL[1-10]`          | `HF_MODEL_VL_FILENAME[1-10]`          |
+| SAM segmentation | `HF_MODEL_SAMS[1-10]`          | `HF_MODEL_SAMS_FILENAME[1-10]`          |
 
 ### 🎨 CivitAI LORAs
 
-| Variable                          | Description                      |
+| Variable                         | Description                      |
 |----------------------------------|----------------------------------|
 | `CIVITAI_MODEL_LORA_URL[1-10]`   | Direct download link for LoRAs |
 
@@ -118,15 +119,11 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [Animated preview](https://civitai.com/articles/12623/dont-just-guess-with-your-wan-gens-animated-previews-for-seed-hunting-guide-comfyui)
 - [Tutorial s2v](https://www.kombitz.com/2025/09/02/how-to-use-wan-2-2-s2v-gguf-model-in-comfyui/)
 - [Wan 2.2 animate](https://wan.video/blog/wan2.2-animate)
+- [Wan 2.2 animate workflow](https://comfyui-wiki.com/en/tutorial/advanced/video/wan2.2/wan2-2-animate)
 - [Samplers](https://websim.com/c/I0nMJ7gYtQqdjW7yD)
 - [HuMo Website](https://phantom-video.github.io/HuMo/)
 - [HuMo Github](https://github.com/Phantom-video/HuMo)
 - [Example prompts](https://alidocs.dingtalk.com/i/nodes/EpGBa2Lm8aZxe5myC99MelA2WgN7R35y)
-
-## 🧪 Workflows
-
-![Workflows from environment variables](images/run_comfyui_workflow.jpg)
-Open ComfyUI (port `8188`) and load workflows from the left menu.
 
 ## 🧩 Pre-Installed Custom Nodes
 
@@ -152,14 +149,19 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [VRgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 - [VideoStitcher](https://github.com/Kishor900/comfyui-wanv2v-video-stitcher)
 
-## Control
+## Controlnet
 
 - [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+
+## Flow
+
+- [Power Flow](https://github.com/x3bits/ComfyUI-Power-Flow)
 
 ## Segmentation
 
 - [Segment anything](https://github.com/kijai/ComfyUI-segment-anything-2)
 - [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
+- [SecNodes](https://github.com/9nate-drake/Comfyui-SecNodes)
 
 ### Wan
 
@@ -205,6 +207,11 @@ Open ComfyUI (port `8188`) and load workflows from the left menu.
 - [WAN](provisioning/hf_wan21.md)
 - [HuMo](provisioning/hf_humo.md)
 - [loras](provisioning/hf_wan21_loras.md)
+
+### Others
+
+- [Sementation](provisioning/hf_segmentation.md)
+- [Upscale](provisioning/hf_upscale.md)
 
 ## Setup
 

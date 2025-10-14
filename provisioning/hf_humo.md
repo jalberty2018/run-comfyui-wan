@@ -27,7 +27,7 @@ hf download Comfy-Org/HuMo_ComfyUI split_files/audio_encoders/whisper_large_v3_f
   --local-dir ComfyUI/models/audio_encoders
 ```
 
-## CLIP text encoder
+## CLIP Text encoder
 
 ### fp32
 
@@ -36,11 +36,20 @@ hf download LS110824/text_encoders wan21UMT5XxlFP32_fp32.safetensors \
 --local-dir /workspace/ComfyUI/models/text_encoders/
 ```
 
-### fp8
+### fp16
+
+#### Standard
 
 ```bash
-hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors \
-  --local-dir ComfyUI/models/text_encoders
+hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/text_encoders/umt5_xxl_fp16.safetensors \
+--local-dir /workspace/ComfyUI/models/text_encoders/
+```
+
+#### Nsfw
+
+```bash
+hf download NSFW-API/NSFW-Wan-UMT5-XXL nsfw_wan_umt5-xxl_bf16.safetensors \
+--local-dir /workspace/ComfyUI/models/text_encoders/
 ```
 
 ## VAE

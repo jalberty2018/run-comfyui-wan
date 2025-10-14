@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:09102025
+FROM ls250824/comfyui-runtime:14102025
 
 # Set Working Directory
 WORKDIR /
@@ -43,7 +43,9 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/GizmoR13/PG-Nodes.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/Kishor900/comfyui-wanv2v-video-stitcher.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced
+	git clone --depth=1 --filter=blob:none https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced && \
+	git clone --depth=1 --filter=blob:none https://github.com/x3bits/ComfyUI-Power-Flow.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/9nate-drake/Comfyui-SecNodes.git
 
 # Rewrite any top-level CPU ORT refs to GPU ORT
 RUN set -eux; \
@@ -67,7 +69,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     -r ComfyUI-GGUF/requirements.txt \
     -r ComfyUI-RMBG/requirements.txt \
     -r Lucy-Edit-ComfyUI/requirements.txt \
-    -r comfyui_controlnet_aux/requirements.txt
+    -r comfyui_controlnet_aux/requirements.txt \
+	-r Comfyui-SecNodes/requirements.txt
 
 # Set Workspace
 WORKDIR /workspace

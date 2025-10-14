@@ -5,6 +5,7 @@
 - [GGUF](https://huggingface.co/QuantStack)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 - [lightx2v](https://huggingface.co/lightx2v)
+- [NSFW](https://huggingface.co/NSFW-API)
 
 ## Diffusion_models
 
@@ -33,15 +34,33 @@ hf download LS110824/text_encoders wan21UMT5XxlFP32_fp32.safetensors \
 
 ### fp16
 
+#### standard
+
 ```bash
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/text_encoders/umt5_xxl_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/text_encoders/
 ```
 
+#### Nsfw
+
+```bash
+hf download NSFW-API/NSFW-Wan-UMT5-XXL nsfw_wan_umt5-xxl_bf16.safetensors \
+--local-dir /workspace/ComfyUI/models/text_encoders/
+```
+
 ## CLIP Vision
+
+#### Standard
 
 ```bash
 hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/clip_vision/clip_vision_h.safetensors \
+--local-dir /workspace/ComfyUI/models/clip_vision
+``` 
+
+#### Nsfw
+
+```bash
+hf download LS110824/vision_encoders wan21NSFWClipVisionH_v10.safetensors \
 --local-dir /workspace/ComfyUI/models/clip_vision
 ``` 
 

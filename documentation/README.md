@@ -14,6 +14,7 @@
 - [Animated preview](https://civitai.com/articles/12623/dont-just-guess-with-your-wan-gens-animated-previews-for-seed-hunting-guide-comfyui)
 - [Tutorial s2v](https://www.kombitz.com/2025/09/02/how-to-use-wan-2-2-s2v-gguf-model-in-comfyui/)
 - [Wan 2.2 animate](https://wan.video/blog/wan2.2-animate)
+- [Wan 2.2 animate workflow](https://comfyui-wiki.com/en/tutorial/advanced/video/wan2.2/wan2-2-animate)
 - [Samplers](https://websim.com/c/I0nMJ7gYtQqdjW7yD)
 - [HuMo Website](https://phantom-video.github.io/HuMo/)
 - [HuMo Github](https://github.com/Phantom-video/HuMo)
@@ -66,14 +67,19 @@
 - [VRgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 - [VideoStitcher](https://github.com/Kishor900/comfyui-wanv2v-video-stitcher)
 
-## Control
+## Controlnet
 
 - [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+
+## Flow
+
+- [Power Flow](https://github.com/x3bits/ComfyUI-Power-Flow)
 
 ## Segmentation
 
 - [Segment anything](https://github.com/kijai/ComfyUI-segment-anything-2)
 - [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
+- [SecNodes](https://github.com/9nate-drake/Comfyui-SecNodes)
 
 ### Wan
 
@@ -117,6 +123,11 @@
 - [WAN](provisioning/hf_wan21.md)
 - [HuMo](provisioning/hf_humo.md)
 - [loras](provisioning/hf_wan21_loras.md)
+
+### Others
+
+- [Sementation](provisioning/hf_segmentation.md)
+- [Upscale](provisioning/hf_upscale.md)
 
 #### **Huggingface**  
 
