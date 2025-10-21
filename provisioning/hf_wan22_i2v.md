@@ -4,7 +4,7 @@
 - [Wan-AI Huggingface](https://huggingface.co/Wan-AI)
 - [GGUF](https://huggingface.co/QuantStack)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
-- [NSFW](https://huggingface.co/NSFW-API)
+- [Lightx2v](https://huggingface.co/lightx2v/Wan2.2-I2V-A14B-Moe-Distill-Lightx2v)
 
 ## Diffusion model
 
@@ -27,17 +27,8 @@ hf download LS110824/text_encoders wan21UMT5XxlFP32_fp32.safetensors \
 
 ### fp16
 
-#### Standard
-
 ```bash
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/text_encoders/umt5_xxl_fp16.safetensors \
---local-dir /workspace/ComfyUI/models/text_encoders/
-```
-
-#### Nsfw
-
-```bash
-hf download NSFW-API/NSFW-Wan-UMT5-XXL nsfw_wan_umt5-xxl_bf16.safetensors \
 --local-dir /workspace/ComfyUI/models/text_encoders/
 ```
 
@@ -66,13 +57,6 @@ hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/clip_vision/clip_vi
 --local-dir /workspace/ComfyUI/models/clip_vision
 ``` 
 
-#### Nsfw
-
-```bash
-hf download LS110824/vision_encoders wan21NSFWClipVisionH_v10.safetensors \
---local-dir /workspace/ComfyUI/models/clip_vision
-``` 
-
 ## Loras Lightning lightx2v
 
 ### 1.0 Seko
@@ -82,5 +66,20 @@ hf download lightx2v/Wan2.2-Lightning Wan2.2-I2V-A14B-4steps-lora-rank64-Seko-V1
 --local-dir /workspace/ComfyUI/models/loras/
 
 hf download lightx2v/Wan2.2-Lightning Wan2.2-I2V-A14B-4steps-lora-rank64-Seko-V1/low_noise_model.safetensors  \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+#### Moe Distill
+
+```bash
+hf download lightx2v/Wan2.2-I2V-A14B-Moe-Distill-Lightx2v loras/high_noise_model_rank64.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-I2V-A14B-Moe-Distill-Lightx2v loras/low_noise_model_rank64.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+```bash
+hf download Kijai/WanVideo_comfy LoRAs/Wan22_Lightx2v/Wan_2_2_I2V_A14B_HIGH_lightx2v_MoE_distill_lora_rank_64_bf16.safetensors \
 --local-dir /workspace/ComfyUI/models/loras/
 ```

@@ -29,11 +29,21 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ## 💻 Hardware Requirements
 
-| Component        | Recommended             |
+### T2V-A14B high/low model (fp16) 1024x768x122
+
+#### GPU
+
+| Recommended              | VRAM  | RAM   |
+|--------------------------|-------|-------|
+| L40S, RTX 6000 Ada, A40  | 40 GB | 90GB  | 
+
+##### Storage
+
+| Component        | Minimum                  |
 |------------------|--------------------------|
-| GPU              | L40S, RTX 6000 Ada  |
 | Volume Storage   | 90GB (`/workspace`)      |
 | Pod Storage      | 15GB                     |
+
 
 ## 🐳 Docker Images
 
@@ -167,8 +177,9 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
+- [iamccs](https://github.com/IAMCCS/IAMCCS-nodes)
 
-### Inference
+### Sampling
 
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
@@ -176,6 +187,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [Was affine](https://github.com/WASasquatch/was_affine)
 - [TripleKSampler](https://github.com/VraethrDalkr/ComfyUI-TripleKSampler)
+- [WanMoEScheduler](https://github.com/cmeka/ComfyUI-WanMoEScheduler)
 
 ## 🧩 All possible Custom Nodes
 
@@ -217,7 +229,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 | Component | Version              |
 |-----------|----------------------|
-| OS        | `Ubuntu 24.04 x86_64`|
+| OS        | `Ubuntu 22.04 x86_64`|
 | Python    | `3.11.x`             |
 | PyTorch   | `2.8.0`              |
 | CUDA      | `12.9.x`             |

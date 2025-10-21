@@ -85,8 +85,9 @@
 
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
+- [iamccs](https://github.com/IAMCCS/IAMCCS-nodes)
 
-### Inference
+### Sampling
 
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
@@ -94,6 +95,7 @@
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [Was affine](https://github.com/WASasquatch/was_affine)
 - [TripleKSampler](https://github.com/VraethrDalkr/ComfyUI-TripleKSampler)
+- [WanMoEScheduler](https://github.com/cmeka/ComfyUI-WanMoEScheduler)
 
 ## Models
 

@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:14102025
+FROM ls250824/comfyui-runtime:21102025
 
 # Set Working Directory
 WORKDIR /
@@ -45,7 +45,9 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced && \
 	git clone --depth=1 --filter=blob:none https://github.com/x3bits/ComfyUI-Power-Flow.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/9nate-drake/Comfyui-SecNodes.git
+	git clone --depth=1 --filter=blob:none https://github.com/9nate-drake/Comfyui-SecNodes.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/IAMCCS/IAMCCS-nodes.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/cmeka/ComfyUI-WanMoEScheduler.git
 
 # Rewrite any top-level CPU ORT refs to GPU ORT
 RUN set -eux; \
