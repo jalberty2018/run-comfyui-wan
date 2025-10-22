@@ -1,10 +1,10 @@
-# 🚀 Run WAN 2.x with ComfyUI with provisioning — [RunPod.io Deployment](https://runpod.io?ref=se4tkc5o)
+# 🚀 WAN 2.x inference with ComfyUI
 
 [![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan)](https://hub.docker.com/r/ls250824/run-comfyui-wan)
 
 ![Pod running](images/runpod.jpg)
 
-A streamlined and automated environment for running **ComfyUI** with **WAN 2.x video models**, optimized for use on [RunPod.io](https://runpod.io?ref=se4tkc5o).
+A streamlined and automated environment for running **ComfyUI** with **WAN 2.x video models**, optimized for use on RunPod.io
 
 ## 🔧 Features
 
@@ -23,7 +23,7 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 [**👉 One-click Deploy on RunPod WAN 2.2 animate lightx2v**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
-[**👉 One-click Deploy on RunPod WAN 2.2 lightx2v dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2 lightx2v Dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
 
 - Example workflows using available custom nodes in /workspace/ComfyUI/user/default/workflows
 - Open workflow from ComfyUI's interface on the left. 
@@ -45,23 +45,6 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 | Volume Storage   | 90GB (`/workspace`)      |
 | Pod Storage      | 15GB                     |
 
-
-## 🐳 Docker Images
-
-### Base Images
-
-- **PyTorch Runtime**  
-  [![Docker](https://img.shields.io/docker/v/ls250824/pytorch-cuda-ubuntu-runtime)](https://hub.docker.com/r/ls250824/pytorch-cuda-ubuntu-runtime)
-
-- **ComfyUI Runtime**  
-  [![Docker](https://img.shields.io/docker/v/ls250824/comfyui-runtime)](https://hub.docker.com/r/ls250824/comfyui-runtime)
-
-### Custom Image
-
-```bash
-docker pull ls250824/run-comfyui-wan:<version>
-```
-
 ## ⚙️ Environment Variables
 
 ### ComfyUI Configuration
@@ -77,7 +60,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 |----------------|------------------|
 | Code Server    | `PASSWORD`       | 
 | Hugging Face   | `HF_TOKEN`       | 
-| CivitAI        | `CIVITAI_TOKEN`  | 
+| CivitAI        | `CIVITAI_TOKEN`  |
 
 ### 🧠 Hugging Face Model Configuration
 
@@ -204,28 +187,6 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
 - [MoviiGen Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1)
 
-## 📦 Manual setup guides:
-
-### 2.2
-
-- [t2v](provisioning/hf_wan22_t2v.md)
-- [i2v](provisioning/hf_wan22_i2v.md)
-- [s2v](provisioning/hf_wan22_s2v.md)
-- [animate](provisioning/hf_wan22_animate.md)
-- [loras](provisioning/hf_wan22_loras.md)
-- [Lucy edit](provisioning/hf_lucy_edit.md)
-
-### 2.1
-
-- [WAN](provisioning/hf_wan21.md)
-- [HuMo](provisioning/hf_humo.md)
-- [loras](provisioning/hf_wan21_loras.md)
-
-### Others
-
-- [Sementation](provisioning/hf_segmentation.md)
-- [Upscale](provisioning/hf_upscale.md)
-
 ## Setup
 
 | Component | Version              |
@@ -254,27 +215,3 @@ docker pull ls250824/run-comfyui-wan:<version>
 |------------|-----------------|-----------|
 | A40  | 8.6 | sm_86
 | L40S | 8.9 | sm_89
-
-## 🛠️ Build & Push Docker Image (Optional)
-
-Use none docker setup to build the image using the included Python script.
-
-### Build Script: `build-docker.py`
-
-| Argument       | Description                        | Default          |
-|----------------|------------------------------------|------------------|
-| `--username`   | Your Docker Hub username           | Current user     |
-| `--tag`        | Custom image tag                   | Today's date     |
-| `--latest`     | Also tag image as `latest`         | Disabled         |
-
-### Example Usage
-
-```bash
-git clone https://github.com/jalberty2018/run-comfyui-wan.git
-cp ./run-comfyui-wan/build-docker.py ..
-
-export DOCKER_BUILDKIT=1
-export COMPOSE_DOCKER_CLI_BUILD=1
-
-python3 build-docker.py   --username=<your_dockerhub_username>   --tag=<custom_tag>   --latest   run-comfyui-wan
-```

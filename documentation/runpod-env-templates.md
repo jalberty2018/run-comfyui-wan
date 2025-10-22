@@ -102,7 +102,6 @@ HF_MODEL_LORA_FILENAME1=Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safet
 WORKFLOW1=https://github.com/jalberty2018/run-comfyui-wan/releases/download/1.0/WAN22-t2v-SamplerAdv-Dyno-pod.json
 ```
 
-
 ## WAN 2.2 animate with lightning
 
 ### Public

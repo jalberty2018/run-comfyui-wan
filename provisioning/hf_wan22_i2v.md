@@ -8,11 +8,23 @@
 
 ## Diffusion model
 
+### Standard fp16
+
 ```bash
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp16.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+```
+
+### Lightning
+
+```bash
+hf download lightx2v/Wan2.2-Official-Models wan2.2_i2v_A14b_high_noise_lightx2v.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+
+hf download lightx2v/Wan2.2-Official-Models wan2.2_i2v_A14b_low_noise_lightx2v.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 

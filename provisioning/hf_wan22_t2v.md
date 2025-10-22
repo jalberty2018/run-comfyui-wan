@@ -36,6 +36,8 @@ hf download LS110824/text_encoders wan21UMT5XxlFP32_fp32.safetensors \
 
 ### fp16
 
+
+
 ```bash
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/text_encoders/umt5_xxl_fp16.safetensors \
 --local-dir /workspace/ComfyUI/models/text_encoders/
