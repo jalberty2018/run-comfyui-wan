@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "[INFO] Pod run-comfyui-wan started"
+echo "[INFO] Wait until the message ✅ Ready to create AI content is displayed"
 
 # Enable SSH if PUBLIC_KEY is set
 if [[ -n "$PUBLIC_KEY" ]]; then
@@ -76,6 +77,8 @@ if [[ "$HAS_GPU" -eq 1 ]]; then
 	    echo "[INFO] Waiting for ComfyUI to start... ($COUNT/$MAX_TRIES)"
 	    sleep 5
 	done
+	
+	echo "✅ Services started"
 else
     echo "⚠️ WARNING: No GPU available, ComfyUI and Code Server not started to limit memory use"
 fi
@@ -134,39 +137,67 @@ download_workflow() {
     local url="${!url_var}"
     local filename
     filename=$(basename "$url")
+    local filepath="${dest_dir}${filename}"
 
-    echo "[INFO] Downloading $filename ..."
-    if ! wget -q -P "$dest_dir" "$url"; then
-        echo "⚠️ Failed to download $url"
+    # Skip entire process if file already exists
+    if [[ -f "$filepath" ]]; then
+        echo "⏭️  [SKIP] $filename already exists — skipping download and extraction"
         return 0
     fi
 
-    local filepath="${dest_dir}${filename}"
+    # Download file
+    echo "[DOWNLOAD] Fetching $filename ..."
+    if wget -q -P "$dest_dir" "$url"; then
+        echo "[DONE] Downloaded $filename"
+    else
+        echo "⚠️  [ERROR] Failed to download $url"
+        return 0
+    fi
 
     # Automatically extract common archive formats
     case "$filename" in
         *.zip)
-            echo "[INFO] Unzipping $filename ..."
-            unzip -o "$filepath" -d "$dest_dir" >/dev/null 2>&1 || echo "⚠️ Failed to unzip $filename"
+            echo "📦  [EXTRACT] Unzipping $filename ..."
+            if unzip -o "$filepath" -d "$dest_dir" >/dev/null 2>&1; then
+                echo "[DONE] Extracted $filename"
+            else
+                echo "⚠️  Failed to unzip $filename"
+            fi
             ;;
         *.tar.gz|*.tgz)
-            echo "[INFO] Extracting $filename ..."
-            tar -xzf "$filepath" -C "$dest_dir" || echo "⚠️ Failed to extract $filename"
+            echo "📦  [EXTRACT] Extracting $filename (tar.gz) ..."
+            if tar -xzf "$filepath" -C "$dest_dir"; then
+                echo "[DONE] Extracted $filename"
+            else
+                echo "⚠️  Failed to extract $filename"
+            fi
             ;;
         *.tar.xz)
-            echo "[INFO] Extracting $filename ..."
-            tar -xJf "$filepath" -C "$dest_dir" || echo "⚠️ Failed to extract $filename"
+            echo "📦  [EXTRACT] Extracting $filename (tar.xz) ..."
+            if tar -xJf "$filepath" -C "$dest_dir"; then
+                echo "[DONE] Extracted $filename"
+            else
+                echo "⚠️  Failed to extract $filename"
+            fi
             ;;
         *.tar.bz2)
-            echo "[INFO] Extracting $filename ..."
-            tar -xjf "$filepath" -C "$dest_dir" || echo "⚠️ Failed to extract $filename"
+            echo "📦  [EXTRACT] Extracting $filename (tar.bz2) ..."
+            if tar -xjf "$filepath" -C "$dest_dir"; then
+                echo "[DONE] Extracted $filename"
+            else
+                echo "⚠️  Failed to extract $filename"
+            fi
             ;;
         *.7z)
-            echo "[INFO] Extracting $filename ..."
-            7z x -y -o"$dest_dir" "$filepath" >/dev/null 2>&1 || echo "⚠️ Failed to extract $filename"
+            echo "📦  [EXTRACT] Extracting $filename (7z) ..."
+            if 7z x -y -o"$dest_dir" "$filepath" >/dev/null 2>&1; then
+                echo "DONE] Extracted $filename"
+            else
+                echo "⚠️  Failed to extract $filename"
+            fi
             ;;
         *)
-            echo "[INFO] No extraction performed for $filename"
+            echo "[INFO] No extraction needed for $filename"
             ;;
     esac
 
@@ -175,7 +206,7 @@ download_workflow() {
 }
 
 # provisioning workflows
-echo "[INFO] Provisioning workflows"
+echo "📥 Provisioning workflows"
 
 for i in $(seq 1 50); do
     VAR="WORKFLOW${i}"
@@ -183,7 +214,7 @@ for i in $(seq 1 50); do
 done
 
 # provisioning Models and loras
-echo "[INFO] Provisioning models"
+echo "📥 Provisioning models HF"
 
 # categorie:  NAME:SUFFIX:MAP
 CATEGORIES_HF=(
@@ -210,6 +241,9 @@ for cat in "${CATEGORIES_HF[@]}"; do
     download_model_HF "$VAR1" "$VAR2" "$DIR"
   done
 done
+
+# provisioning Models and loras
+echo "📥 Provisioning models CIVITAI"
 
 # categorie: NAME:MAP
 CATEGORIES_CIVITAI=(

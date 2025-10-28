@@ -4,6 +4,11 @@
 
 - [ComfyUI WAN 2.x](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
 
+## Workflows
+
+- Open from ComfyUI's interface on the left
+- View/Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
+
 ### Manual provisioning
 
 ### 2.2

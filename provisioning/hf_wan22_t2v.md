@@ -5,6 +5,7 @@
 - [GGUF](https://huggingface.co/QuantStack)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 - [Lightning lightx2v](https://huggingface.co/lightx2v)
+- [Fun Reward](https://huggingface.co/alibaba-pai/Wan2.2-Fun-Reward-LoRAs)
 
 ## Diffusion_models
 
@@ -35,8 +36,6 @@ hf download LS110824/text_encoders wan21UMT5XxlFP32_fp32.safetensors \
 ```
 
 ### fp16
-
-
 
 ```bash
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/text_encoders/umt5_xxl_fp16.safetensors \
@@ -90,3 +89,16 @@ hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-250928/high_no
 hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors \
 --local-dir /workspace/ComfyUI/models/loras/
 ```
+
+## Lora Fun Reward
+
+```bash
+hf download alibaba-pai/Wan2.2-Fun-Reward-LoRAs Wan2.2-Fun-A14B-InP-low-noise-HPS2.1.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-250928/high_noise_model.safetensors \
+--local-dir /ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors \
+--local-dir /ComfyUI/models/loras/

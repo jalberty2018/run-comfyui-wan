@@ -4,9 +4,11 @@
 
 - Automatic model and LoRA downloads via environment variables.
 - Built-in **authentication** for:
-  - Code Server (required)
+  - ComfyUI
+  - Code Server
   - Hugging Face API
   - CivitAI API
+
 - Supports advanced workflows for **video generation** and **enhancement** using pre-installed custom nodes.
 - Compatible with high-performance NVIDIA GPUs.
 
@@ -18,20 +20,32 @@
 
 [**👉 One-click Deploy on RunPod WAN 2.2 lightx2v Dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
 
-- Example workflows using available custom nodes in /workspace/ComfyUI/user/default/workflows
-- Open workflow from ComfyUI's interface on the left.
+### Workflows
+
+- Open from ComfyUI's interface on the left
+- View/Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
 
 ## Hardware Requirements
 
-### T2V-A14B high/low model (fp16) 1024x768x122
+### T2V-A14B high/low model 
 
-#### GPU
+- precision fp16
+- video settings 1024x768 122 frames
 
-| Recommended              | VRAM  | RAM   |
+| Recommended GPU          | VRAM  | RAM   |
 |--------------------------|-------|-------|
-| L40S, RTX 6000 Ada, A40  | 40 GB | 90GB  | 
+| L40S, RTX 6000 Ada       | 40 GB | 90GB  | 
 
-##### Storage
+### Animate
+
+- precision fp16
+- video settings 1024x768 77 chunks/Sampler
+
+| Recommended GPU          | VRAM  | RAM   |
+|--------------------------|-------|-------|
+| L40S, RTX 6000 Ada       | 40 GB | 105GB | 
+
+### Storage
 
 | Component        | Minimum                  |
 |------------------|--------------------------|

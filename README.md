@@ -25,26 +25,37 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 [**👉 One-click Deploy on RunPod WAN 2.2 lightx2v dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
 
-- Example workflows using available custom nodes in /workspace/ComfyUI/user/default/workflows
-- Open workflow from ComfyUI's interface on the left. 
+### Workflows
+
+- Open from ComfyUI's interface on the left
+- View/Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
 
 ## 💻 Hardware Requirements
 
-### T2V-A14B high/low model (fp16) 1024x768x122
+### T2V-A14B high/low model 
 
-#### GPU
+- precision fp16
+- video settings 1024x768 122 frames
 
-| Recommended              | VRAM  | RAM   |
+| Recommended GPU          | VRAM  | RAM   |
 |--------------------------|-------|-------|
-| L40S, RTX 6000 Ada, A40  | 40 GB | 90GB  | 
+| L40S, RTX 6000 Ada       | 40 GB | 90GB  | 
 
-##### Storage
+### Animate
+
+- precision fp16
+- video settings 1024x768 77 chunks/Sampler
+
+| Recommended GPU          | VRAM  | RAM   |
+|--------------------------|-------|-------|
+| L40S, RTX 6000 Ada       | 40 GB | 105GB | 
+
+### Storage
 
 | Component        | Minimum                  |
 |------------------|--------------------------|
 | Volume Storage   | 90GB (`/workspace`)      |
 | Pod Storage      | 15GB                     |
-
 
 ## 🐳 Docker Images
 
@@ -79,7 +90,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 | Hugging Face   | `HF_TOKEN`       | 
 | CivitAI        | `CIVITAI_TOKEN`  | 
 
-### 🧠 Hugging Face Model Configuration
+### Hugging Face Model Configuration
 
 | Model Type        | Model                         | Safetensors/GGUF                               |
 |-------------------|-------------------------------|-------------------------------------------| 
@@ -95,14 +106,14 @@ docker pull ls250824/run-comfyui-wan:<version>
 | VLM/mmproj    | `HF_MODEL_VL[1-10]`          | `HF_MODEL_VL_FILENAME[1-10]`          |
 | SAM segmentation | `HF_MODEL_SAMS[1-10]`          | `HF_MODEL_SAMS_FILENAME[1-10]`          |
 
-### 🎨 CivitAI LORAs
+### CivitAI LORAs
 
 | Variable                         | Description                      |
 |----------------------------------|----------------------------------|
 | `CIVITAI_MODEL_LORA_URL[1-10]`   | Direct download link for LoRAs |
 
 
-### 🎨 Workflows
+### Workflows
 
 | Variable         | Description                      |
 |------------------|----------------------------------|
@@ -160,15 +171,15 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [VRgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
 - [VideoStitcher](https://github.com/Kishor900/comfyui-wanv2v-video-stitcher)
 
-## Controlnet
+### Controlnet
 
 - [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
 
-## Flow
+### Flow
 
 - [Power Flow](https://github.com/x3bits/ComfyUI-Power-Flow)
 
-## Segmentation
+### Segmentation
 
 - [Segment anything](https://github.com/kijai/ComfyUI-segment-anything-2)
 - [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
@@ -179,6 +190,11 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [iamccs](https://github.com/IAMCCS/IAMCCS-nodes)
+- [Wan22FMLF](https://github.com/wallen0322/ComfyUI-Wan22FMLF)
+
+### Animate
+
+- [WanAnimate Enhancer](https://github.com/wallen0322/ComfyUI-WanAnimate-Enhancer.git)
 
 ### Sampling
 
@@ -226,7 +242,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [Sementation](provisioning/hf_segmentation.md)
 - [Upscale](provisioning/hf_upscale.md)
 
-## Setup
+## ⚙️ Setup
 
 | Component | Version              |
 |-----------|----------------------|
@@ -237,9 +253,9 @@ docker pull ls250824/run-comfyui-wan:<version>
 | Triton    | `3.4.x`              |
 | onnxruntime-gpu | `1.22.x` |
 | ComfyUI | Latest |
-| CodeServer | Latest |
+| Code Server | Latest |
 
-## Installed Attentions
+## ⚙️ Installed Attentions
 
 ### Wheels
 

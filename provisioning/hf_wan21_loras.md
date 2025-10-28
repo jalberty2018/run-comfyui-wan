@@ -1,6 +1,8 @@
 # Loras to use with original models
 
-## lighttx2v
+- [vrgamedevgirl](https://huggingface.co/vrgamedevgirl84)
+
+## lightx2v
 
 - [light2xtv](https://huggingface.co/lightx2v)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy/tree/main/Wan22-Lightning)
