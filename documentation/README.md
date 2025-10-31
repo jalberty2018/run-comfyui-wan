@@ -28,7 +28,7 @@
 
 ### Others
 
-- [Sementation](provisioning/hf_segmentation.md)
+- [Segmentation](provisioning/hf_segmentation.md)
 - [Upscale](provisioning/hf_upscale.md)
 
 #### **Huggingface**  

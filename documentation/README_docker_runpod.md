@@ -14,9 +14,11 @@
 
 ## Template Deployment
 
-[**👉 One-click Deploy on RunPod WAN 2.2**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2 t2v (lightx2v)**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
-[**👉 One-click Deploy on RunPod WAN 2.2 animate lightx2v**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2 i2v (lightx2v)**](https://console.runpod.io/deploy?template=moem21s8xb&ref=se4tkc5o)
+
+[**👉 One-click Deploy on RunPod WAN 2.2 animate (lightx2v)**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
 [**👉 One-click Deploy on RunPod WAN 2.2 lightx2v Dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
 
@@ -27,7 +29,7 @@
 
 ## Hardware Requirements
 
-### T2V-A14B high/low model 
+### T2V-A14B or I2V-A14B (high/low) 
 
 - precision fp16
 - video settings 1024x768 122 frames
@@ -35,6 +37,7 @@
 | Recommended GPU          | VRAM  | RAM   |
 |--------------------------|-------|-------|
 | L40S, RTX 6000 Ada       | 40 GB | 90GB  | 
+
 
 ### Animate
 

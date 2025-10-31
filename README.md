@@ -19,11 +19,13 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ## 📦 Template Deployment
 
-[**👉 One-click Deploy on RunPod WAN 2.2**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2 t2v (lightx2v)**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
-[**👉 One-click Deploy on RunPod WAN 2.2 animate lightx2v**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2 i2v (lightx2v)**](https://console.runpod.io/deploy?template=moem21s8xb&ref=se4tkc5o)
 
-[**👉 One-click Deploy on RunPod WAN 2.2 lightx2v dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2 animate (lightx2v)**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
+
+[**👉 One-click Deploy on RunPod WAN 2.2 lightx2v Dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
 
 ### Workflows
 
@@ -32,7 +34,7 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ## 💻 Hardware Requirements
 
-### T2V-A14B high/low model 
+### T2V-A14B or I2V-A14B (high/low) 
 
 - precision fp16
 - video settings 1024x768 122 frames
@@ -61,11 +63,9 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ### Base Images
 
-- **PyTorch Runtime**  
-  [![Docker](https://img.shields.io/docker/v/ls250824/pytorch-cuda-ubuntu-runtime)](https://hub.docker.com/r/ls250824/pytorch-cuda-ubuntu-runtime)
+- **PyTorch Runtime**  [![Docker](https://img.shields.io/docker/v/ls250824/pytorch-cuda-ubuntu-runtime)](https://hub.docker.com/r/ls250824/pytorch-cuda-ubuntu-runtime)
 
-- **ComfyUI Runtime**  
-  [![Docker](https://img.shields.io/docker/v/ls250824/comfyui-runtime)](https://hub.docker.com/r/ls250824/comfyui-runtime)
+- **ComfyUI Runtime**  [![Docker](https://img.shields.io/docker/v/ls250824/comfyui-runtime)](https://hub.docker.com/r/ls250824/comfyui-runtime)
 
 ### Custom Image
 
@@ -229,7 +229,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [s2v](provisioning/hf_wan22_s2v.md)
 - [animate](provisioning/hf_wan22_animate.md)
 - [loras](provisioning/hf_wan22_loras.md)
-- [Lucy edit](provisioning/hf_lucy_edit.md)
+- [lucy edit](provisioning/hf_lucy_edit.md)
 
 ### 2.1
 
@@ -239,7 +239,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 ### Others
 
-- [Sementation](provisioning/hf_segmentation.md)
+- [Segmentation](provisioning/hf_segmentation.md)
 - [Upscale](provisioning/hf_upscale.md)
 
 ## ⚙️ Setup

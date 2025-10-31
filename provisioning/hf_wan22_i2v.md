@@ -1,10 +1,11 @@
 # Manual provisioning WAN 2.2 i2v
 
-- [ComfyUI Huggingface](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/tree/main/split_files)
-- [Wan-AI Huggingface](https://huggingface.co/Wan-AI)
+- [ComfyUI](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/tree/main/split_files)
+- [Wan-AI](https://huggingface.co/Wan-AI)
 - [GGUF](https://huggingface.co/QuantStack)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
-- [Lightx2v](https://huggingface.co/lightx2v/Wan2.2-I2V-A14B-Moe-Distill-Lightx2v)
+- [Lightx2v](https://huggingface.co/lightx2v/)
+- [Lightx2v Distill](https://huggingface.co/lightx2v/Wan2.2-Distill-Loras)
 
 ## Diffusion model
 
@@ -18,13 +19,32 @@ hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wa
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
-### Lightning
+### Lightning (base model)
 
 ```bash
 hf download lightx2v/Wan2.2-Official-Models wan2.2_i2v_A14b_high_noise_lightx2v.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 
 hf download lightx2v/Wan2.2-Official-Models wan2.2_i2v_A14b_low_noise_lightx2v.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+```
+
+### Lightning
+
+#### Standard
+
+```bash
+hf download lightx2v/Wan2.2-Official-Models wan2.2_i2v_A14b_high_noise_lightx2v.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+
+hf download lightx2v/Wan2.2-Official-Models wan2.2_i2v_A14b_low_noise_lightx2v.safetensors \
+--local-dir /workspace/ComfyUI/models/diffusion_models/
+```
+
+#### 1O3O
+
+```bash
+hf download lightx2v/Wan2.2-Distill-Models wan2.2_i2v_A14b_high_noise_lightx2v_4step_1030.safetensors \
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
@@ -62,8 +82,6 @@ hf download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors \
 
 ## CLIP Vision
 
-#### Standard
-
 ```bash
 hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/clip_vision/clip_vision_h.safetensors \
 --local-dir /workspace/ComfyUI/models/clip_vision
@@ -81,7 +99,9 @@ hf download lightx2v/Wan2.2-Lightning Wan2.2-I2V-A14B-4steps-lora-rank64-Seko-V1
 --local-dir /workspace/ComfyUI/models/loras/
 ```
 
-#### Moe Distill
+### Distill
+
+#### MoE
 
 ```bash
 hf download lightx2v/Wan2.2-I2V-A14B-Moe-Distill-Lightx2v loras/high_noise_model_rank64.safetensors \
@@ -95,3 +115,14 @@ hf download lightx2v/Wan2.2-I2V-A14B-Moe-Distill-Lightx2v loras/low_noise_model_
 hf download Kijai/WanVideo_comfy LoRAs/Wan22_Lightx2v/Wan_2_2_I2V_A14B_HIGH_lightx2v_MoE_distill_lora_rank_64_bf16.safetensors \
 --local-dir /workspace/ComfyUI/models/loras/
 ```
+
+#### 1022
+
+```bash
+hf download lightx2v/Wan2.2-Distill-Loras wan2.2_i2v_A14b_high_noise_lora_rank64_lightx2v_4step_1022.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-Distill-Loras wan2.2_i2v_A14b_low_noise_lora_rank64_lightx2v_4step_1022.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
