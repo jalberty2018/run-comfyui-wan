@@ -35,7 +35,6 @@ WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeKSampler-p
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-TripleKSampler-pod.json
 WORKFLOW4=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-Dyno-pod.json
-WORKFLOW5=https://awesome-comfyui.rozenlaan.site/pod/wan/Lucy-edit-v2v-dev-pod.json
 ```
 
 ### Private with lighning
@@ -65,9 +64,9 @@ HF_MODEL_LORA_FILENAME4=Wan2.2-T2V-AgeSlider-14B_high_noise.safetensors
 HF_MODEL_LORA5=LS110824/Wan22_lora
 HF_MODEL_LORA_FILENAME5=Wan2.2-T2V-AgeSlider-14B_low_noise.safetensors
 HF_MODEL_LORA6=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME6=Wan2.2_skinny_fat_slider_v1_high_noise.safetensors
+HF_MODEL_LORA_FILENAME6=Wan2.2-T2V-BodySizeSliderv2-HIGH14B.safetensors
 HF_MODEL_LORA7=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME7=Wan2.2_skinny_fat_slider_v1_low_noise.safetensors
+HF_MODEL_LORA_FILENAME7=Wan2.2-T2V-BodySizeSliderv2-LOW14B.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-TripleKSampler-pod.json
@@ -114,9 +113,9 @@ HF_MODEL_LORA_FILENAME3=Wan2.2-T2V-AgeSlider-14B_high_noise.safetensors
 HF_MODEL_LORA4=LS110824/Wan22_lora
 HF_MODEL_LORA_FILENAME4=Wan2.2-T2V-AgeSlider-14B_low_noise.safetensors
 HF_MODEL_LORA5=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME5=Wan2.2_skinny_fat_slider_v1_high_noise.safetensors
+HF_MODEL_LORA_FILENAME5=Wan2.2-T2V-BodySizeSliderv2-HIGH14B.safetensors
 HF_MODEL_LORA6=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME6=Wan2.2_skinny_fat_slider_v1_low_noise.safetensors
+HF_MODEL_LORA_FILENAME6=Wan2.2-T2V-BodySizeSliderv2-LOW14B.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-Dyno-pod.json
 ```
 
@@ -158,8 +157,8 @@ HF_MODEL_DIFFUSION_MODELS2=lightx2v/Wan2.2-Official-Models
 HF_MODEL_DIFFUSION_MODELS_FILENAME2=wan2.2_i2v_A14b_low_noise_lightx2v.safetensors
 HF_MODEL_VAE1=Kijai/WanVideo_comfy
 HF_MODEL_VAE_FILENAME1=Wan2_1_VAE_fp32.safetensors
-HF_MODEL_CLIP_VISION1=Comfy-Org/Wan_2.1_ComfyUI_repackaged
-HF_MODEL_CLIP_VISION_FILENAME1=split_files/clip_vision/clip_vision_h.safetensors
+HF_MODEL_CLIP_VISION1=ricecake/wan21NSFWClipVisionH_v10
+HF_MODEL_CLIP_VISION_FILENAME1=wan21NSFWClipVisionH_v10.safetensors
 HF_MODEL_TEXT_ENCODERS1=LS110824/text_encoders
 HF_MODEL_TEXT_ENCODERS_FILENAME1=wan21UMT5XxlFP32_fp32.safetensors
 HF_MODEL_UPSCALER1=LS110824/upscale
@@ -246,4 +245,33 @@ HF_AUDIO_ENCODERS1=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
 HF_AUDIO_ENCODERS_FILENAME1=split_files/audio_encoders/wav2vec2_large_english_fp16.safetensors
 HF_MODEL_UPSCALER1=LS110824/upscale
 HF_MODEL_UPSCALER_PTH1=4x_foolhardy_Remacri.pth
+```
+
+## Lucy Edit v2v
+
+### Public
+
+```bash
+HF_MODEL_DIFFUSION_MODELS1=decart-ai/Lucy-Edit-Dev-ComfyUI
+HF_MODEL_DIFFUSION_MODELS_FILENAME1=lucy-edit-dev-cui-fp16.safetensors
+HF_MODEL_VAE1=Kijai/WanVideo_comfy
+HF_MODEL_VAE_FILENAME1=Wan2_1_VAE_fp32.safetensors
+HF_MODEL_TEXT_ENCODERS1=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
+HF_MODEL_TEXT_ENCODERS_FILENAME1=split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors
+WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/Lucy-edit-v2v-dev-pod.json
+```
+
+### Private
+
+```bash
+CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
+HF_TOKEN="{{ RUNPOD_SECRET_HF_TOKEN_WRITE }}"
+PASSWORD="{{ RUNPOD_SECRET_CODE-SERVER-NEW }}"
+HF_MODEL_DIFFUSION_MODELS1=decart-ai/Lucy-Edit-Dev-ComfyUI
+HF_MODEL_DIFFUSION_MODELS_FILENAME1=lucy-edit-dev-cui-fp16.safetensors
+HF_MODEL_VAE1=Kijai/WanVideo_comfy
+HF_MODEL_VAE_FILENAME1=Wan2_1_VAE_fp32.safetensors
+HF_MODEL_TEXT_ENCODERS1=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
+HF_MODEL_TEXT_ENCODERS_FILENAME1=split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors
+WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/Lucy-edit-v2v-dev-pod.json
 ```

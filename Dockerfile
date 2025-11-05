@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:28102025
+FROM ls250824/comfyui-runtime:05112025
 
 # Set Working Directory
 WORKDIR /
@@ -84,7 +84,7 @@ EXPOSE 8188 9000
 
 # Labels
 LABEL org.opencontainers.image.title="ComfyUI with custom_nodes for WAN inference" \
-      org.opencontainers.image.description="ComfyUI + flash-attn + sageattention + onnxruntime-gpu + code-server + civitai downloader + huggingface_hub + custom_nodes" \
+      org.opencontainers.image.description="ComfyUI 0.3.68 + flash-attn + sageattention + onnxruntime-gpu + code-server + civitai downloader + huggingface_hub + custom_nodes" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
       org.opencontainers.image.licenses="MIT"
 

@@ -34,6 +34,11 @@ hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/text_encoders/umt5_
 --local-dir /workspace/ComfyUI/models/text_encoders/
 ```
 
+### fp8
+
+hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors \
+--local-dir /workspace/ComfyUI/models/text_encoders/
+
 ## VAE encoder/decoder
 
 ```bash

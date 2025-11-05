@@ -27,6 +27,8 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 [**👉 One-click Deploy on RunPod WAN 2.2 lightx2v Dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
 
+[**👉 One-click Deploy on RunPod WAN 2.2 v2v Lucy Edit**](https://console.runpod.io/deploy?template=kay3oq4rx7&ref=se4tkc5o)
+
 ### Workflows
 
 - Open from ComfyUI's interface on the left
@@ -246,14 +248,14 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 | Component | Version              |
 |-----------|----------------------|
-| OS        | `Ubuntu 22.04 x86_64`|
+| OS        | `Ubuntu 22.04 x86_64` |
 | Python    | `3.11.x`             |
 | PyTorch   | `2.8.0`              |
 | CUDA      | `12.9.x`             |
 | Triton    | `3.4.x`              |
 | onnxruntime-gpu | `1.22.x` |
-| ComfyUI | Latest |
-| Code Server | Latest |
+| ComfyUI | `0.3.68`  | 
+| CodeServer | Latest |
 
 ## ⚙️ Installed Attentions
 

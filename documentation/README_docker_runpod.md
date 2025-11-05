@@ -3,14 +3,15 @@
 ## Features
 
 - Automatic model and LoRA downloads via environment variables.
-- Built-in **authentication** for:
-  - ComfyUI
-  - Code Server
-  - Hugging Face API
-  - CivitAI API
-
 - Supports advanced workflows for **video generation** and **enhancement** using pre-installed custom nodes.
 - Compatible with high-performance NVIDIA GPUs.
+
+## Built-in **authentication**
+  
+- ComfyUI
+- Code Server
+- Hugging Face API
+- CivitAI API
 
 ## Template Deployment
 
@@ -21,6 +22,8 @@
 [**👉 One-click Deploy on RunPod WAN 2.2 animate (lightx2v)**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
 [**👉 One-click Deploy on RunPod WAN 2.2 lightx2v Dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
+
+[**👉 One-click Deploy on RunPod WAN 2.2 v2v Lucy Edit**](https://console.runpod.io/deploy?template=kay3oq4rx7&ref=se4tkc5o)
 
 ### Workflows
 

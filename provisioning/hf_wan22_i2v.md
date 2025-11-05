@@ -82,10 +82,19 @@ hf download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors \
 
 ## CLIP Vision
 
+### Standard
+
 ```bash
 hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/clip_vision/clip_vision_h.safetensors \
 --local-dir /workspace/ComfyUI/models/clip_vision
 ``` 
+
+### NSFW
+
+```bash
+hf download ricecake/wan21NSFWClipVisionH_v10 wan21NSFWClipVisionH_v10.safetensors \ 
+--local-dir /workspace/ComfyUI/models/clip_vision
+```
 
 ## Loras Lightning lightx2v
 
