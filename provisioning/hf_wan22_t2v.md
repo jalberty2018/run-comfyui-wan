@@ -44,17 +44,17 @@ hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/text_encoders/umt5_
 
 ## Vae
 
-### Standard
-
-```bash
-hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/vae/wan_2.1_vae.safetensors \
---local-dir /workspace/ComfyUI/models/vae/
-```
-
 ### fp32
 
 ```bash
 hf download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors \
+--local-dir /workspace/ComfyUI/models/vae/
+```
+
+### Standard
+
+```bash
+hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/vae/wan_2.1_vae.safetensors \
 --local-dir /workspace/ComfyUI/models/vae/
 ```
 
@@ -90,15 +90,19 @@ hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-250928/low_noi
 --local-dir /workspace/ComfyUI/models/loras/
 ```
 
+### 2.0 Seko
+
+```bash
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2.0/high_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2.0/low_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
 ## Lora Fun Reward
 
 ```bash
 hf download alibaba-pai/Wan2.2-Fun-Reward-LoRAs Wan2.2-Fun-A14B-InP-low-noise-HPS2.1.safetensors \
 --local-dir /workspace/ComfyUI/models/loras/
 ```
-
-hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-250928/high_noise_model.safetensors \
---local-dir /ComfyUI/models/loras/
-
-hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors \
---local-dir /ComfyUI/models/loras/

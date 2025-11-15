@@ -66,6 +66,7 @@ hf download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors \
 ```bash
 hf download Kijai/WanVideo_comfy Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors \
 --local-dir /workspace/ComfyUI/models/loras/
+
 hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/loras/wan2.2_animate_14B_relight_lora_bf16.safetensors \
 --local-dir /workspace/ComfyUI/models/loras/
 ```

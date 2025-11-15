@@ -19,16 +19,6 @@ hf download Comfy-Org/Wan_2.2_ComfyUI_Repackaged split_files/diffusion_models/wa
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
-### Lightning (base model)
-
-```bash
-hf download lightx2v/Wan2.2-Official-Models wan2.2_i2v_A14b_high_noise_lightx2v.safetensors \
---local-dir /workspace/ComfyUI/models/diffusion_models/
-
-hf download lightx2v/Wan2.2-Official-Models wan2.2_i2v_A14b_low_noise_lightx2v.safetensors \
---local-dir /workspace/ComfyUI/models/diffusion_models/
-```
-
 ### Lightning
 
 #### Standard

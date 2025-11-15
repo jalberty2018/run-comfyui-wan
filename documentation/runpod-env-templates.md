@@ -22,9 +22,9 @@ HF_MODEL_LORA_FILENAME2=HighSpeedDynamics.safetensors
 HF_MODEL_LORA3=vrgamedevgirl84/Wan14BT2VFusioniX
 HF_MODEL_LORA_FILENAME3=FusionX_LoRa/Wan2.1_T2V_14B_FusionX_LoRA.safetensors
 HF_MODEL_LORA4=lightx2v/Wan2.2-Lightning
-HF_MODEL_LORA_FILENAME4=Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1.1/low_noise_model.safetensors
+HF_MODEL_LORA_FILENAME4=Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2.0/high_noise_model.safetensors
 HF_MODEL_LORA5=lightx2v/Wan2.2-Lightning
-HF_MODEL_LORA_FILENAME5=Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1.1/high_noise_model.safetensors
+HF_MODEL_LORA_FILENAME5=Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2.0/low_noise_model.safetensors
 HF_MODEL_LORA6=lightx2v/Wan2.2-Lightning
 HF_MODEL_LORA_FILENAME6=Wan2.2-T2V-A14B-4steps-lora-250928/high_noise_model.safetensors
 HF_MODEL_LORA7=lightx2v/Wan2.2-Lightning
@@ -34,7 +34,6 @@ HF_MODEL_LORA_FILENAME8=Wan14B_RealismBoost_T2V.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-TripleKSampler-pod.json
-WORKFLOW4=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-Dyno-pod.json
 ```
 
 ### Private with lighning
@@ -54,9 +53,9 @@ HF_MODEL_TEXT_ENCODERS_FILENAME1=wan21UMT5XxlFP32_fp32.safetensors
 HF_MODEL_UPSCALER1=LS110824/upscale
 HF_MODEL_UPSCALER_PTH1=4x_foolhardy_Remacri.pth
 HF_MODEL_LORA1=lightx2v/Wan2.2-Lightning
-HF_MODEL_LORA_FILENAME1=Wan2.2-T2V-A14B-4steps-lora-250928/high_noise_model.safetensors
+HF_MODEL_LORA_FILENAME1=Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2.0/high_noise_model.safetensors
 HF_MODEL_LORA2=lightx2v/Wan2.2-Lightning
-HF_MODEL_LORA_FILENAME2=Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors
+HF_MODEL_LORA_FILENAME2=Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2.0/low_noise_model.safetensors
 HF_MODEL_LORA3=LS110824/Wan21_lora 
 HF_MODEL_LORA_FILENAME3=Wan14B_RealismBoost_T2V.safetensors
 HF_MODEL_LORA4=LS110824/Wan22_lora
@@ -67,6 +66,14 @@ HF_MODEL_LORA6=LS110824/Wan22_lora
 HF_MODEL_LORA_FILENAME6=Wan2.2-T2V-BodySizeSliderv2-HIGH14B.safetensors
 HF_MODEL_LORA7=LS110824/Wan22_lora
 HF_MODEL_LORA_FILENAME7=Wan2.2-T2V-BodySizeSliderv2-LOW14B.safetensors
+HF_MODEL_LORA8=LS110824/Wan22_lora
+HF_MODEL_LORA_FILENAME8=Wan2.2-T2V-SameFaceFixv2-HIGH14B.safetensors
+HF_MODEL_LORA9=LS110824/Wan22_lora
+HF_MODEL_LORA_FILENAME9=Wan2.2-T2V-SameFaceFixv2-LOW14B.safetensors
+HF_MODEL_LORA10=LS110824/Wan22_lora
+HF_MODEL_LORA_FILENAME10=wan_2.2_t2v_highnoise_broken_v1.0.safetensors
+HF_MODEL_LORA11=LS110824/Wan22_lora
+HF_MODEL_LORA_FILENAME11=wan_2.2_t2v_lownoise_broken_v1.0.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-TripleKSampler-pod.json
@@ -143,6 +150,7 @@ HF_MODEL_LORA_FILENAME2=wan2.2_i2v_A14b_low_noise_lora_rank64_lightx2v_4step_102
 HF_MODEL_SAMS1=VeryAladeen/Sec-4B
 HF_MODEL_SAMS_FILENAME1=SeC-4B-fp16.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-TripleKSampler-pod.json
+WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-MoeKSampler-pod.json
 ```
 
 ### Private
@@ -170,6 +178,7 @@ HF_MODEL_LORA_FILENAME2=wan2.2_i2v_A14b_low_noise_lora_rank64_lightx2v_4step_102
 HF_MODEL_SAMS1=VeryAladeen/Sec-4B
 HF_MODEL_SAMS_FILENAME1=SeC-4B-fp16.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-TripleKSampler-pod.json
+WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-MoeKSampler-pod.json
 ```
 
 ## WAN 2.2 animate (lightning)
@@ -209,12 +218,10 @@ HF_MODEL_DIFFUSION_MODELS1=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
 HF_MODEL_DIFFUSION_MODELS_FILENAME1=split_files/diffusion_models/wan2.2_animate_14B_bf16.safetensors
 HF_MODEL_VAE1=Kijai/WanVideo_comfy
 HF_MODEL_VAE_FILENAME1=Wan2_1_VAE_fp32.safetensors
-HF_MODEL_CLIP_VISION1=Comfy-Org/Wan_2.1_ComfyUI_repackaged
-HF_MODEL_CLIP_VISION_FILENAME1=split_files/clip_vision/clip_vision_h.safetensors
+HF_MODEL_CLIP_VISION1=ricecake/wan21NSFWClipVisionH_v10
+HF_MODEL_CLIP_VISION_FILENAME1=wan21NSFWClipVisionH_v10.safetensors
 HF_MODEL_TEXT_ENCODERS1=LS110824/text_encoders
 HF_MODEL_TEXT_ENCODERS_FILENAME1=wan21UMT5XxlFP32_fp32.safetensors
-HF_MODEL_UPSCALER1=LS110824/upscale
-HF_MODEL_UPSCALER_PTH1=4x_foolhardy_Remacri.pth
 HF_MODEL_LORA1=Kijai/WanVideo_comfy
 HF_MODEL_LORA_FILENAME1=Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors
 HF_MODEL_LORA2=Comfy-Org/Wan_2.2_ComfyUI_Repackaged

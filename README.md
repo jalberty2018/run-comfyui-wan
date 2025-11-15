@@ -193,6 +193,8 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [iamccs](https://github.com/IAMCCS/IAMCCS-nodes)
 - [Wan22FMLF](https://github.com/wallen0322/ComfyUI-Wan22FMLF)
+- [PainterI2V](https://github.com/princepainter/ComfyUI-PainterI2V)
+- [PainterLongVideo](https://github.com/princepainter/ComfyUI-PainterLongVideo)
 
 ### Animate
 
@@ -202,7 +204,6 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
 - [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
-- [NAG](https://github.com/ChenDarYen/ComfyUI-NAG)
 - [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
 - [Was affine](https://github.com/WASasquatch/was_affine)
 - [TripleKSampler](https://github.com/VraethrDalkr/ComfyUI-TripleKSampler)
@@ -252,7 +253,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 | Python    | `3.11.x`             |
 | PyTorch   | `2.8.0`              |
 | CUDA      | `12.9.x`             |
-| Triton    | `3.4.x`              |
+| Triton    | `3.5.x`              |
 | onnxruntime-gpu | `1.22.x` |
 | ComfyUI | `0.3.68`  | 
 | CodeServer | Latest |

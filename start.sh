@@ -1,7 +1,6 @@
 #!/bin/bash
-
 echo "[INFO] Pod run-comfyui-wan started"
-echo "[INFO] Wait until the message ✅ Ready to create AI content is displayed"
+echo "[INFO] Wait until the message ✅ Provisioning done, ready to create AI content. is displayed"
 
 # Enable SSH if PUBLIC_KEY is set
 if [[ -n "$PUBLIC_KEY" ]]; then
@@ -27,25 +26,41 @@ mkdir -p /workspace/output/
 # Set optimalisations
 # export COMFYUI_USE_FLASH_ATTENTION=1 
 # export COMFYUI_USE_SAGE_ATTENTION=1
-export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True,garbage_collection_threshold:0.8
+export PYTORCH_ALLOC_CONF=expandable_segments:True,garbage_collection_threshold:0.8
 export COMFYUI_VRAM_MODE=HIGH_VRAM
 
-# GPU detection
+# GPU detection Runpod.io
 HAS_GPU=0
 if [[ -n "${RUNPOD_GPU_COUNT:-}" && "${RUNPOD_GPU_COUNT:-0}" -gt 0 ]]; then
   HAS_GPU=1
   echo "✅ [GPU DETECTED] Found via RUNPOD_GPU_COUNT=${RUNPOD_GPU_COUNT}"
-elif command -v nvidia-smi >/dev/null 2>&1; then
-  if nvidia-smi >/dev/null 2>&1; then
-    HAS_GPU=1
-    GPU_MODEL=$(nvidia-smi --query-gpu=name --format=csv,noheader | xargs | sed 's/,/, /g')
-    echo " ✅ [GPU DETECTED] Found via nvidia-smi → Model(s): ${GPU_MODEL}"
-  fi
-elif [[ -n "${CUDA_VISIBLE_DEVICES:-}" && "${CUDA_VISIBLE_DEVICES}" != "-1" ]]; then
-  HAS_GPU=1
-  echo "✅ [GPU DETECTED] Found via CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES}"
 else
-  echo "⚠️ [NO GPU] Running on CPU only"
+  echo "⚠️ [NO GPU] No Runpod.io GPU detected."
+fi  
+
+# GPU detection nvidia-smi
+if command -v nvidia-smi >/dev/null 2>&1; then
+  if nvidia-smi >/dev/null 2>&1; then
+	HAS_GPU=1
+    GPU_MODEL=$(nvidia-smi --query-gpu=name --format=csv,noheader | xargs | sed 's/,/, /g')
+    echo "✅ [GPU DETECTED] Found via nvidia-smi → Model(s): ${GPU_MODEL}"
+  fi
+else
+  echo "⚠️ [NO GPU] No found via nvidia-smi"
+fi
+
+# Torch CUDA check
+if python - << 'PY'
+import torch
+import sys
+sys.exit(0 if torch.cuda.is_available() else 1)
+PY
+then
+    echo "✅ PyTorch CUDA is available."
+    HAS_CUDA=1
+else
+    echo "❌ PyTorch CUDA is NOT available."
+    HAS_CUDA=0
 fi
 
 # Run services
@@ -58,8 +73,14 @@ if [[ "$HAS_GPU" -eq 1 ]]; then
         code-server /workspace --disable-telemetry --disable-update-check --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     fi
 	
-	sleep 2
+	echo "✅ code-server service started"
+else
+    echo "⚠️ WARNING: No GPU available, Code Server not started to limit memory use"
+fi
 	
+sleep 2
+
+if [[ "$HAS_CUDA" -eq 1 ]]; then  	
     # Start ComfyUI (HTTP port 8188)
     python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen --preview-method latent2rgb} &
 	
@@ -78,9 +99,9 @@ if [[ "$HAS_GPU" -eq 1 ]]; then
 	    sleep 5
 	done
 	
-	echo "✅ Services started"
+	echo "✅ ComfyUI service started"
 else
-    echo "⚠️ WARNING: No GPU available, ComfyUI and Code Server not started to limit memory use"
+    echo "⚠️ WARNING: No Pytorch CUDA driver available, ComfyUI not started"
 fi
 
 # Function to download models if variables are set
@@ -205,65 +226,71 @@ download_workflow() {
     return 0
 }
 
-# provisioning workflows
-echo "📥 Provisioning workflows"
+# Provisioning
 
-for i in $(seq 1 50); do
-    VAR="WORKFLOW${i}"
-    download_workflow "$VAR"
-done
+if [[ "$HAS_CUDA" -eq 1 ]]; then  
+	# provisioning workflows
+	echo "📥 Provisioning workflows"
+	
+	for i in $(seq 1 50); do
+	    VAR="WORKFLOW${i}"
+	    download_workflow "$VAR"
+	done
+	
+	# provisioning Models and loras
+	echo "📥 Provisioning models HF"
+	
+	# categorie:  NAME:SUFFIX:MAP
+	CATEGORIES_HF=(
+	  "VAE:VAE_FILENAME:vae"
+	  "UPSCALER:UPSCALER_PTH:upscale_models"
+	  "LORA:LORA_FILENAME:loras"
+	  "TEXT_ENCODERS:TEXT_ENCODERS_FILENAME:text_encoders"
+	  "CLIP_VISION:CLIP_VISION_FILENAME:clip_vision"
+	  "PATCHES:PATCHES_FILENAME:model_patches"
+	  "AUDIO_ENCODERS:AUDIO_ENCODERS_FILENAME:audio_encoders"
+	  "DIFFUSION_MODELS:DIFFUSION_MODELS_FILENAME:diffusion_models"
+	  "CHECKPOINTS:CHECKPOINTS_FILENAME:checkpoints"
+	  "VL:VL_FILENAME:VLM"
+	  "SAMS:SAMS_FILENAME:sams"
+	)
+	
+	for cat in "${CATEGORIES_HF[@]}"; do
+	  IFS=":" read -r NAME SUFFIX DIR <<< "$cat"
+	
+	  for i in $(seq 1 10); do
+	    VAR1="HF_MODEL_${NAME}${i}"
+	    VAR2="HF_MODEL_${SUFFIX}${i}"
+	
+	    download_model_HF "$VAR1" "$VAR2" "$DIR"
+	  done
+	done
+	
+	# provisioning Models and loras
+	echo "📥 Provisioning models CIVITAI"
+	
+	# categorie: NAME:MAP
+	CATEGORIES_CIVITAI=(
+	  "LORA_URL:loras"
+	)
+	
+	for cat in "${CATEGORIES_CIVITAI[@]}"; do
+	  IFS=":" read -r NAME DIR MAX <<< "$cat"
+	
+	  for i in $(seq 1 10); do
+	    VAR1="CIVITAI_MODEL_${NAME}${i}"
+	
+	    download_model_CIVITAI "$VAR1" "$DIR"
+	  done
+	done
+		
+	# Final messages
+	echo "✅ Provisioning done, ready to create AI content."
+else
+    echo "⚠️ WARNING: No workflows or models downloaded, ComfyUI was not started"
+fi
 
-# provisioning Models and loras
-echo "📥 Provisioning models HF"
-
-# categorie:  NAME:SUFFIX:MAP
-CATEGORIES_HF=(
-  "VAE:VAE_FILENAME:vae"
-  "UPSCALER:UPSCALER_PTH:upscale_models"
-  "LORA:LORA_FILENAME:loras"
-  "TEXT_ENCODERS:TEXT_ENCODERS_FILENAME:text_encoders"
-  "CLIP_VISION:CLIP_VISION_FILENAME:clip_vision"
-  "PATCHES:PATCHES_FILENAME:model_patches"
-  "AUDIO_ENCODERS:AUDIO_ENCODERS_FILENAME:audio_encoders"
-  "DIFFUSION_MODELS:DIFFUSION_MODELS_FILENAME:diffusion_models"
-  "CHECKPOINTS:CHECKPOINTS_FILENAME:checkpoints"
-  "VL:VL_FILENAME:VLM"
-  "SAMS:SAMS_FILENAME:sams"
-)
-
-for cat in "${CATEGORIES_HF[@]}"; do
-  IFS=":" read -r NAME SUFFIX DIR <<< "$cat"
-
-  for i in $(seq 1 10); do
-    VAR1="HF_MODEL_${NAME}${i}"
-    VAR2="HF_MODEL_${SUFFIX}${i}"
-
-    download_model_HF "$VAR1" "$VAR2" "$DIR"
-  done
-done
-
-# provisioning Models and loras
-echo "📥 Provisioning models CIVITAI"
-
-# categorie: NAME:MAP
-CATEGORIES_CIVITAI=(
-  "LORA_URL:loras"
-)
-
-for cat in "${CATEGORIES_CIVITAI[@]}"; do
-  IFS=":" read -r NAME DIR MAX <<< "$cat"
-
-  for i in $(seq 1 10); do
-    VAR1="CIVITAI_MODEL_${NAME}${i}"
-
-    download_model_CIVITAI "$VAR1" "$DIR"
-  done
-done
-
-
-# Final messages
-echo "✅ Provisioning done, running with following environment"
-
+# Environment
 python - <<'PY'
 import torch, platform, triton, os, onnxruntime as ort
 print(f"Python: {platform.python_version()}")
@@ -279,8 +306,6 @@ if torch.cuda.is_available():
     print(f"  ↳ cuDNN: {torch.backends.cudnn.version()}")
     print(f"Torch build info: {torch.__config__.show()}")
 PY
-
-echo "✅ Ready to create AI content."
-
+	
 # Keep the container running
 exec sleep infinity

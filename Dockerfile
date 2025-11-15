@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:05112025
+FROM ls250824/comfyui-runtime:15112025
 
 # Set Working Directory
 WORKDIR /
@@ -27,7 +27,6 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel && \
 	git clone --depth=1 --filter=blob:none https://github.com/ClownsharkBatwing/RES4LYF.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/BlenderNeko/ComfyUI_Noise.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/ChenDarYen/ComfyUI-NAG.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/evanspearman/ComfyMath.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/city96/ComfyUI-GGUF.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/stduhpf/ComfyUI-WanMoeKSampler.git && \
@@ -49,7 +48,9 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/IAMCCS/IAMCCS-nodes.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/cmeka/ComfyUI-WanMoEScheduler.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/wallen0322/ComfyUI-WanAnimate-Enhancer.git  && \
-	git clone --depth=1 --filter=blob:none https://github.com/wallen0322/ComfyUI-Wan22FMLF.git
+	git clone --depth=1 --filter=blob:none https://github.com/wallen0322/ComfyUI-Wan22FMLF.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterI2V.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterLongVideo.git
 
 # Rewrite any top-level CPU ORT refs to GPU ORT
 RUN set -eux; \
@@ -104,5 +105,3 @@ print('Device:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else
 
 # Start Server
 CMD [ "/start.sh" ]
-
-
