@@ -50,7 +50,8 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/wallen0322/ComfyUI-WanAnimate-Enhancer.git  && \
 	git clone --depth=1 --filter=blob:none https://github.com/wallen0322/ComfyUI-Wan22FMLF.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterI2V.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterLongVideo.git
+	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterLongVideo.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterI2VforKJ.git
 
 # Rewrite any top-level CPU ORT refs to GPU ORT
 RUN set -eux; \

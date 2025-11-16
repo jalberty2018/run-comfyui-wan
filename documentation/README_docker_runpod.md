@@ -15,6 +15,13 @@
 
 ## Template Deployment
 
+### Important notice
+
+- All images are tested on Runpod.io (L40S).
+- Don't use regions US-TX-3 and US-TX-4 as they offen fail to download or run the image (Pytorch CUDA).
+
+### Runpod.io templates
+
 [**👉 One-click Deploy on RunPod WAN 2.2 t2v (lightx2v)**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
 [**👉 One-click Deploy on RunPod WAN 2.2 i2v (lightx2v)**](https://console.runpod.io/deploy?template=moem21s8xb&ref=se4tkc5o)

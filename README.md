@@ -17,7 +17,14 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 - Supports advanced workflows for **video generation** and **enhancement** using pre-installed custom nodes.
 - Compatible with high-performance NVIDIA GPUs.
 
-## 📦 Template Deployment
+## Template Deployment
+
+### Important notice
+
+- All images are tested on Runpod.io (L40S).
+- Don't use regions US-TX-3 and US-TX-4 as they offen fail to download or run the image (Pytorch CUDA).
+
+### Runpod.io templates
 
 [**👉 One-click Deploy on RunPod WAN 2.2 t2v (lightx2v)**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
@@ -96,23 +103,23 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 | Model Type        | Model                         | Safetensors/GGUF                               |
 |-------------------|-------------------------------|-------------------------------------------| 
-| Diffusion Model   | `HF_MODEL_DIFFUSION_MODELS[1-10]`          | `HF_MODEL_DIFFUSION_MODELS_FILENAME[1-10]`   |
-| Checkpoints       | `HF_MODEL_CHECKPOINTS[1-10]`        | `HF_MODEL_CHECKPOINTS_FILENAME[1-10]`        |
-| Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-10]` | `HF_MODEL_TEXT_ENCODERS_FILENAME[1-10]` |
-| Clip Vision       | `HF_MODEL_CLIP_VISION[1-10]`        | `HF_MODEL_CLIP_VISION_FILENAME[1-10]` |
-| Audio Encoders    | `HF_MODEL_AUDIO_ENCODERS[1-10]` | `HF_MODEL_AUDIO_ENCODERS_FILENAME[1-10]` |
-| Model patches    | `HF_MODEL_PATCHES[1-10]` | `HF_MODEL_PATCHES_FILENAME[1-10]` |
-| VAE               | `HF_MODEL_VAE[1-10]`                | `HF_MODEL_VAE_FILENAME[1-10]`                |
-| Upscalers         | `HF_MODEL_UPSCALER[1-10]`      | `HF_MODEL_UPSCALER_PTH[1-10]`              |
-| Loras          | `HF_MODEL_LORA[1-10]`          | `HF_MODEL_LORA_FILENAME[1-10]`          |
-| VLM/mmproj    | `HF_MODEL_VL[1-10]`          | `HF_MODEL_VL_FILENAME[1-10]`          |
-| SAM segmentation | `HF_MODEL_SAMS[1-10]`          | `HF_MODEL_SAMS_FILENAME[1-10]`          |
+| Diffusion Model   | `HF_MODEL_DIFFUSION_MODELS[1-20]`          | `HF_MODEL_DIFFUSION_MODELS_FILENAME[1-20]`   |
+| Checkpoints       | `HF_MODEL_CHECKPOINTS[1-20]`        | `HF_MODEL_CHECKPOINTS_FILENAME[1-20]`        |
+| Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-20]` | `HF_MODEL_TEXT_ENCODERS_FILENAME[1-20]` |
+| Clip Vision       | `HF_MODEL_CLIP_VISION[1-20]`        | `HF_MODEL_CLIP_VISION_FILENAME[1-20]` |
+| Audio Encoders    | `HF_MODEL_AUDIO_ENCODERS[1-20]` | `HF_MODEL_AUDIO_ENCODERS_FILENAME[1-20]` |
+| Model patches    | `HF_MODEL_PATCHES[1-20]` | `HF_MODEL_PATCHES_FILENAME[1-20]` |
+| VAE               | `HF_MODEL_VAE[1-20]`                | `HF_MODEL_VAE_FILENAME[1-20]`                |
+| Upscalers         | `HF_MODEL_UPSCALER[1-20]`      | `HF_MODEL_UPSCALER_PTH[1-20]`              |
+| Loras          | `HF_MODEL_LORA[1-20]`          | `HF_MODEL_LORA_FILENAME[1-20]`          |
+| VLM/mmproj    | `HF_MODEL_VL[1-20]`          | `HF_MODEL_VL_FILENAME[1-20]`          |
+| SAM segmentation | `HF_MODEL_SAMS[1-20]`          | `HF_MODEL_SAMS_FILENAME[1-20]`          |
 
 ### CivitAI LORAs
 
 | Variable                         | Description                      |
 |----------------------------------|----------------------------------|
-| `CIVITAI_MODEL_LORA_URL[1-10]`   | Direct download link for LoRAs |
+| `CIVITAI_MODEL_LORA_URL[1-50]`   | Direct download link for LoRAs |
 
 
 ### Workflows
@@ -189,12 +196,13 @@ docker pull ls250824/run-comfyui-wan:<version>
 
 ### Wan
 
-- [Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
+- [WanVideoWrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
 - [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
 - [iamccs](https://github.com/IAMCCS/IAMCCS-nodes)
 - [Wan22FMLF](https://github.com/wallen0322/ComfyUI-Wan22FMLF)
 - [PainterI2V](https://github.com/princepainter/ComfyUI-PainterI2V)
 - [PainterLongVideo](https://github.com/princepainter/ComfyUI-PainterLongVideo)
+- [PainterI2VforKJ](https://github.com/princepainter/ComfyUI-PainterI2VforKJ)
 
 ### Animate
 
@@ -251,9 +259,9 @@ docker pull ls250824/run-comfyui-wan:<version>
 |-----------|----------------------|
 | OS        | `Ubuntu 22.04 x86_64` |
 | Python    | `3.11.x`             |
-| PyTorch   | `2.8.0`              |
-| CUDA      | `12.9.x`             |
-| Triton    | `3.5.x`              |
+| PyTorch   | `2.9.0`              |
+| CUDA      | `12.8.0`             |
+| Triton    | `3.5.0`              |
 | onnxruntime-gpu | `1.22.x` |
 | ComfyUI | `0.3.68`  | 
 | CodeServer | Latest |

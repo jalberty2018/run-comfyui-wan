@@ -34,6 +34,7 @@ HF_MODEL_LORA_FILENAME8=Wan14B_RealismBoost_T2V.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-TripleKSampler-pod.json
+WORKFLOW4=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-t2v-TripleKSampler-pod.json
 ```
 
 ### Private with lighning
@@ -77,6 +78,7 @@ HF_MODEL_LORA_FILENAME11=wan_2.2_t2v_lownoise_broken_v1.0.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-TripleKSampler-pod.json
+WORKFLOW4=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-t2v-TripleKSampler-pod.json
 ```
 
 ## t2v WAN 2.2 Dyno

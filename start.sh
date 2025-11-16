@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "[INFO] Pod run-comfyui-wan started"
-echo "[INFO] Wait until the message ✅ Provisioning done, ready to create AI content. is displayed"
+echo "ℹ️ Pod run-comfyui-wan started"
+echo "ℹ️ Wait until the message 🎉 Provisioning done, ready to create AI content. is displayed"
 
 # Enable SSH if PUBLIC_KEY is set
 if [[ -n "$PUBLIC_KEY" ]]; then
@@ -30,15 +30,16 @@ export PYTORCH_ALLOC_CONF=expandable_segments:True,garbage_collection_threshold:
 export COMFYUI_VRAM_MODE=HIGH_VRAM
 
 # GPU detection Runpod.io
-HAS_GPU=0
+HAS_GPU_RUNPOD=0
 if [[ -n "${RUNPOD_GPU_COUNT:-}" && "${RUNPOD_GPU_COUNT:-0}" -gt 0 ]]; then
-  HAS_GPU=1
+  HAS_GPU_RUNPOD=1
   echo "✅ [GPU DETECTED] Found via RUNPOD_GPU_COUNT=${RUNPOD_GPU_COUNT}"
 else
   echo "⚠️ [NO GPU] No Runpod.io GPU detected."
 fi  
 
 # GPU detection nvidia-smi
+HAS_GPU=0
 if command -v nvidia-smi >/dev/null 2>&1; then
   if nvidia-smi >/dev/null 2>&1; then
 	HAS_GPU=1
@@ -46,8 +47,27 @@ if command -v nvidia-smi >/dev/null 2>&1; then
     echo "✅ [GPU DETECTED] Found via nvidia-smi → Model(s): ${GPU_MODEL}"
   fi
 else
-  echo "⚠️ [NO GPU] No found via nvidia-smi"
+  echo "⚠️ [NO GPU] No GPU found via nvidia-smi"
 fi
+
+# Start code-server (HTTP port 9000) 
+if [[ "$HAS_GPU" -eq 1 || "$HAS_GPU_RUNPOD" -eq 1 ]]; then    
+	    
+	echo "✅ Code-Server service starting"
+	
+	if [[ -n "$PASSWORD" ]]; then
+        code-server /workspace --auth password --disable-update-check --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
+    else
+        echo "⚠️ PASSWORD is not set as an environment variable use password in log file"
+        code-server /workspace --disable-telemetry --disable-update-check --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
+    fi
+	
+	echo "🎉 code-server service started"
+else
+    echo "⚠️ WARNING: No GPU available, Code Server not started to limit memory use"
+fi
+	
+sleep 2
 
 # Torch CUDA check
 if python - << 'PY'
@@ -56,52 +76,45 @@ import sys
 sys.exit(0 if torch.cuda.is_available() else 1)
 PY
 then
-    echo "✅ PyTorch CUDA is available."
     HAS_CUDA=1
 else
-    echo "❌ PyTorch CUDA is NOT available."
     HAS_CUDA=0
 fi
 
-# Run services
-if [[ "$HAS_GPU" -eq 1 ]]; then    
-	# Start code-server (HTTP port 9000)
-    if [[ -n "$PASSWORD" ]]; then
-        code-server /workspace --auth password --disable-update-check --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
-    else
-        echo "⚠️ PASSWORD is not set as an environment variable use password in log file"
-        code-server /workspace --disable-telemetry --disable-update-check --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
-    fi
-	
-	echo "✅ code-server service started"
-else
-    echo "⚠️ WARNING: No GPU available, Code Server not started to limit memory use"
-fi
-	
-sleep 2
+# Start ComfyUI (HTTP port 8188)
+HAS_COMFYUI=0
 
 if [[ "$HAS_CUDA" -eq 1 ]]; then  	
-    # Start ComfyUI (HTTP port 8188)
+	
+    echo "✅ ComfyUI service starting (CUDA available)"
+	    
     python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen --preview-method latent2rgb} &
 	
-	# Wait until ComfyUI is ready
-	MAX_TRIES=40
-	COUNT=0
-	
-	until curl -s http://127.0.0.1:8188 > /dev/null; do
-	    COUNT=$((COUNT+1))
-	    if [[ $COUNT -ge $MAX_TRIES ]]; then
-	        echo "❌ [ERROR] ComfyUI did not start after $MAX_TRIES attempts (~1min)."
-	        # Kill background processes if needed
-	        pkill -f "/workspace/ComfyUI/main.py" || true
-	    fi
-	    echo "[INFO] Waiting for ComfyUI to start... ($COUNT/$MAX_TRIES)"
-	    sleep 5
-	done
-	
-	echo "✅ ComfyUI service started"
+    # Wait until ComfyUI is ready
+    MAX_TRIES=40
+    COUNT=0
+		
+    until curl -s http://127.0.0.1:8188 > /dev/null; do
+        COUNT=$((COUNT+1))
+
+        if [[ $COUNT -ge $MAX_TRIES ]]; then
+            echo "⚠️  WARNING: ComfyUI is still not responding after $MAX_TRIES attempts (~1 min)."
+            echo "⚠️  Continuing script anyway..."
+            break
+        fi
+
+        echo "ℹ️ Waiting for ComfyUI to come online... ($COUNT/$MAX_TRIES)"
+        sleep 5
+    done
+
+    # Success message only when ComfyUI responded
+    if curl -s http://127.0.0.1:8188 > /dev/null; then
+		HAS_COMFYUI=1
+        echo "🎉 ComfyUI is online!"
+    fi
+
 else
-    echo "⚠️ WARNING: No Pytorch CUDA driver available, ComfyUI not started"
+    echo "❌ ERROR: PyTorch CUDA driver mismatch or unavailable, ComfyUI not started"
 fi
 
 # Function to download models if variables are set
@@ -109,10 +122,11 @@ download_model_HF() {
     local model_var="$1"
     local file_var="$2"
     local dest_dir="$3"
-
-    if [[ -n "${!model_var}" && -n "${!file_var}" ]]; then
+	
+    if [[ -n "${!model_var}" && -n "${!file_var}" ]]; then		
+		echo "ℹ️ [DOWNLOAD] Fetching ${!model_var}/${!file_var} ..."		
         hf download "${!model_var}" "${!file_var}" --local-dir "/workspace/ComfyUI/models/$dest_dir/" || \
-            echo "⚠️ Failed to download ${!model_var}/${!file_var}"
+            echo "⚠️ Failed to download"
         sleep 1
     fi
 
@@ -135,10 +149,10 @@ download_model_CIVITAI() {
     fi
 
     # Run the civitai command
-    civitai "${!url_var}" "/workspace/ComfyUI/models/$dest_dir/" || \
-            echo "⚠️ Failed to download ${!url_var}"
-	sleep 1
-	
+    echo "ℹ️ [DOWNLOAD] Fetching ${!url_var} ..."			
+	civitai "${!url_var}" "/workspace/ComfyUI/models/$dest_dir/" || \
+            echo "⚠️ Failed to download"
+	sleep 1	
 	return 0
 }
 
@@ -167,11 +181,11 @@ download_workflow() {
     fi
 
     # Download file
-    echo "[DOWNLOAD] Fetching $filename ..."
+    echo "ℹ️ [DOWNLOAD] Fetching $filename ..."
     if wget -q -P "$dest_dir" "$url"; then
         echo "[DONE] Downloaded $filename"
     else
-        echo "⚠️  [ERROR] Failed to download $url"
+        echo "⚠️  Failed to download $url"
         return 0
     fi
 
@@ -226,9 +240,9 @@ download_workflow() {
     return 0
 }
 
-# Provisioning
+# Provisioning if comfyUI is responding running on GPU with CUDA
 
-if [[ "$HAS_CUDA" -eq 1 ]]; then  
+if [[ "$HAS_COMFYUI" -eq 1  ]]; then  
 	# provisioning workflows
 	echo "📥 Provisioning workflows"
 	
@@ -258,7 +272,7 @@ if [[ "$HAS_CUDA" -eq 1 ]]; then
 	for cat in "${CATEGORIES_HF[@]}"; do
 	  IFS=":" read -r NAME SUFFIX DIR <<< "$cat"
 	
-	  for i in $(seq 1 10); do
+	  for i in $(seq 1 20); do
 	    VAR1="HF_MODEL_${NAME}${i}"
 	    VAR2="HF_MODEL_${SUFFIX}${i}"
 	
@@ -277,7 +291,7 @@ if [[ "$HAS_CUDA" -eq 1 ]]; then
 	for cat in "${CATEGORIES_CIVITAI[@]}"; do
 	  IFS=":" read -r NAME DIR MAX <<< "$cat"
 	
-	  for i in $(seq 1 10); do
+	  for i in $(seq 1 50); do
 	    VAR1="CIVITAI_MODEL_${NAME}${i}"
 	
 	    download_model_CIVITAI "$VAR1" "$DIR"
@@ -285,12 +299,17 @@ if [[ "$HAS_CUDA" -eq 1 ]]; then
 	done
 		
 	# Final messages
-	echo "✅ Provisioning done, ready to create AI content."
+	echo "🎉 Provisioning done, ready to create AI content."
 else
-    echo "⚠️ WARNING: No workflows or models downloaded, ComfyUI was not started"
+    echo "❌ DRIVER ERROR: No workflows or models downloaded, ComfyUI was not started"	
+	if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then   		
+       echo "⚠️ SOLUTION runpod.io: Deploy pod on another region ⚠️"
+    fi
 fi
 
 # Environment
+echo "ℹ️ Running environment"
+
 python - <<'PY'
 import torch, platform, triton, os, onnxruntime as ort
 print(f"Python: {platform.python_version()}")
@@ -306,6 +325,7 @@ if torch.cuda.is_available():
     print(f"  ↳ cuDNN: {torch.backends.cudnn.version()}")
     print(f"Torch build info: {torch.__config__.show()}")
 PY
-	
+
 # Keep the container running
+echo "ℹ️ End script"
 exec sleep infinity
