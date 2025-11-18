@@ -12,7 +12,7 @@ if [[ -n "$PUBLIC_KEY" ]]; then
 fi
 
 # Move necessary files to workspace
-echo "ℹ️ [Moving necessary files to workspace] enabling rebooting of pod without data loss"
+echo "ℹ️ [Moving necessary files to workspace] enabling rebooting pod without data loss"
 for script in comfyui-on-workspace.sh provisioning-on-workspace.sh readme-on-workspace.sh; do
     if [ -f "/$script" ]; then
         echo "Executing $script..."
@@ -30,6 +30,9 @@ mkdir -p /workspace/output/
 # export COMFYUI_USE_SAGE_ATTENTION=1
 export PYTORCH_ALLOC_CONF=expandable_segments:True,garbage_collection_threshold:0.8
 export COMFYUI_VRAM_MODE=HIGH_VRAM
+
+# GPU detection
+echo "ℹ️ Testing GPU/CUDA provisioning"
 
 # GPU detection Runpod.io
 HAS_GPU_RUNPOD=0
@@ -334,28 +337,29 @@ if torch.cuda.is_available():
     print(f"Torch build info: {torch.__config__.show()}")
 PY
 
-if [[ "$HAS_PROVISIONING" -eq 1  ]]; then 
-   echo "🎉 Provisioning done, ready to create AI content."
-   if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then   		
-       echo "ℹ️ Connect to ComfyUI, Code-Server or shell from console menu on runpod.io"
-   fi
-else		
-	echo "ℹ️ Running error diagnosis"
-	
-	if [[ "$HAS_GPU_RUNPOD" -eq 0 ]]; then
-    echo "⚠️ Pod started without a runpod.io GPU"
+if [[ "$HAS_PROVISIONING" -eq 1 ]]; then 
+    echo "🎉 Provisioning done, ready to create AI content."
+    
+    if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then
+        echo "ℹ️ Connect to ComfyUI, Code-Server or shell from console menu on runpod.io"
     fi
-	
-	if [[ "$HAS_CUDA" -eq 0 ]]; then   		
-       echo "❌ Pytorch CUDA driver error/mismatch/not available"
-	   if [[ "$HAS_GPU_RUNPOD" -eq 1]]; then  
-	      echo "⚠️ [SOLUTION] Deploy pod on another region ⚠️"
-	   fi
+else
+    echo "ℹ️ Running error diagnosis"
+
+    if [[ "$HAS_GPU_RUNPOD" -eq 0 ]]; then
+        echo "⚠️ Pod started without a runpod.io GPU"
     fi
-	
-	if [[ "$HAS_CUDA" -eq 1 && "$HAS_COMFYUI" -eq 0 ]]; then
-       echo "❌ ComfyUI is not online"		
-       echo "⚠️ [SOLUTION] restart pod ⚠️"
+
+    if [[ "$HAS_CUDA" -eq 0 ]]; then
+        echo "❌ Pytorch CUDA driver error/mismatch/not available"
+        if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then
+            echo "⚠️ [SOLUTION] Deploy pod on another region ⚠️"
+        fi
+    fi
+
+    if [[ "$HAS_CUDA" -eq 1 && "$HAS_COMFYUI" -eq 0 ]]; then
+        echo "❌ ComfyUI is not online"
+        echo "⚠️ [SOLUTION] restart pod ⚠️"
     fi
 fi
 
