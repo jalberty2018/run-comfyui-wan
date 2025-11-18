@@ -1,13 +1,18 @@
 # Pod documentation
 
-## Full pod information
+## Information
 
-- [ComfyUI WAN 2.x](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
+- [Configurations](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
 
 ## Workflows
 
 - Open from ComfyUI's interface on the left
-- View/Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
+- Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
+
+## Installed custom nodes
+
+- Open ComfyUI manager installed custom nodes.
+- Included in latest image [custom_nodes](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_custom_nodes/)
 
 ### Manual provisioning
 
@@ -50,6 +55,13 @@ export CIVITAI_TOKEN="xxxxx"
 civitai "<download link>" /workspace/ComfyUI/models/diffusion_models
 civitai "<download link>" /workspace/ComfyUI/models/loras
 ```
+
+## Code-Server
+
+```bash
+export PASSWORD="xxxxx"
+```
+
 ## 7z Compression  
 
 ### **Encrypt & Archive Output**  
@@ -68,15 +80,26 @@ civitai "<download link>" /workspace/ComfyUI/models/loras
 
 ```bash
 rm -rf /workspace/output/ /workspace/input/ /workspace/ComfyUI/output/ /workspace/ComfyUI/models/loras/
+ncdu
 ```
 
 ## Utilities  
 
 ```bash
-nvtop   # GPU Monitoring  
+nvtop   # GPU Monitoring
+nvidia-smi # GPU information
 htop    # Process Monitoring  
 mc      # Midnight Commander  
 nano    # Text Editor
 ncdu    # Clean Up
-unzip
+unzip   # uncompress
+7z      # Archiving
+```
+
+## Test/debug
+
+```bash
+python /workspace/test/test_pytorch_cuda.py
+python /workspace/test/test_flash.py
+python /workspace/test/test_sage.py
 ```

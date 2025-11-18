@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:15112025
+FROM ls250824/comfyui-runtime:18112025
 
 # Set Working Directory
 WORKDIR /
@@ -7,6 +7,7 @@ WORKDIR /
 # Copy Scripts and documentation
 COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provisioning-on-workspace.sh onworkspace/readme-on-workspace.sh / 
 COPY --chmod=644 provisioning/ /provisioning
+COPY --chmod=644 test/ /test
 COPY --chmod=664 /documentation/README.md /README.md
 
 # Copy ComfyUI configurations
@@ -14,6 +15,8 @@ COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.s
 
 # Clone
 WORKDIR /ComfyUI/custom_nodes
+
+# VideoWrapper working with TripleKSampler -> e3c2a1431bcb7f0b9fd11a40d732d16ac117578a (13Nov25)
 
 RUN --mount=type=cache,target=/root/.cache/git \
     git clone --depth=1 --filter=blob:none https://github.com/ltdrdata/ComfyUI-Manager.git && \
@@ -51,7 +54,8 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/wallen0322/ComfyUI-Wan22FMLF.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterI2V.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterLongVideo.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterI2VforKJ.git
+	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterI2VforKJ.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/princepainter/Comfyui-PainterSampler.git
 
 # Rewrite any top-level CPU ORT refs to GPU ORT
 RUN set -eux; \
@@ -86,7 +90,7 @@ EXPOSE 8188 9000
 
 # Labels
 LABEL org.opencontainers.image.title="ComfyUI with custom_nodes for WAN inference" \
-      org.opencontainers.image.description="ComfyUI 0.3.68 + flash-attn + sageattention + onnxruntime-gpu + code-server + civitai downloader + huggingface_hub + custom_nodes" \
+      org.opencontainers.image.description="ComfyUI 0.3.69 + flash-attn + sageattention + onnxruntime-gpu + code-server + civitai downloader + huggingface_hub + custom_nodes" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
       org.opencontainers.image.licenses="MIT"
 

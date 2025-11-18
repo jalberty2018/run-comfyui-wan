@@ -48,9 +48,9 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 - precision fp16
 - video settings 1024x768 122 frames
 
-| Recommended GPU          | VRAM  | RAM   |
-|--------------------------|-------|-------|
-| L40S, RTX 6000 Ada       | 40 GB | 90GB  | 
+| Recommended GPU          | VRAM  | RAM Native/VideoWrapper |
+|--------------------------|-------|-------------------------|
+| L40S, RTX 6000 Ada,L40   | 45Gb | 90Gb/50Gb           |
 
 ### Animate
 
@@ -59,14 +59,14 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 | Recommended GPU          | VRAM  | RAM   |
 |--------------------------|-------|-------|
-| L40S, RTX 6000 Ada       | 40 GB | 105GB | 
+| L40S, RTX 6000 Ada, L40  | 45Gb | 105Gb | 
 
 ### Storage
 
 | Component        | Minimum                  |
 |------------------|--------------------------|
-| Volume Storage   | 90GB (`/workspace`)      |
-| Pod Storage      | 15GB                     |
+| Volume Storage   | 90Gb (`/workspace`)      |
+| Pod Storage      | 15Gb                     |
 
 ## 🐳 Docker Images
 
@@ -155,6 +155,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [HuMo Website](https://phantom-video.github.io/HuMo/)
 - [HuMo Github](https://github.com/Phantom-video/HuMo)
 - [Example prompts](https://alidocs.dingtalk.com/i/nodes/EpGBa2Lm8aZxe5myC99MelA2WgN7R35y)
+- [Lightx2v lora's comparing](https://huggingface.co/lightx2v/Wan2.2-Lightning/discussions/64)
 
 ## 🧩 Pre-Installed Custom Nodes
 
@@ -216,6 +217,7 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [Was affine](https://github.com/WASasquatch/was_affine)
 - [TripleKSampler](https://github.com/VraethrDalkr/ComfyUI-TripleKSampler)
 - [WanMoEScheduler](https://github.com/cmeka/ComfyUI-WanMoEScheduler)
+- [PainterSampler](https://github.com/princepainter/Comfyui-PainterSampler.git)
 
 ## 🧩 All possible Custom Nodes
 
@@ -253,34 +255,34 @@ docker pull ls250824/run-comfyui-wan:<version>
 - [Segmentation](provisioning/hf_segmentation.md)
 - [Upscale](provisioning/hf_upscale.md)
 
-## ⚙️ Setup
+## ⚙️ Setup latest image
 
 | Component | Version              |
 |-----------|----------------------|
-| OS        | `Ubuntu 22.04 x86_64` |
+| OS        | `Ubuntu 22.04 x86_64`|
 | Python    | `3.11.x`             |
-| PyTorch   | `2.9.0`              |
-| CUDA      | `12.8.0`             |
-| Triton    | `3.5.0`              |
+| PyTorch   | `2.9.1`              |
+| CUDA      | `12.8.x`             |
+| Triton    | `3.5.1`              |
 | onnxruntime-gpu | `1.22.x` |
-| ComfyUI | `0.3.68`  | 
-| CodeServer | Latest |
+| ComfyUI | `0.3.69` |
+| Code Server | Latest |
 
-## ⚙️ Installed Attentions
+## ⚙️ Installed Attentions latest image
 
 ### Wheels
 
 | Package        | Version  |
 |----------------|----------|
-| flash_attn     | 2.8.3    |
-| sageattention  | 2.2.0    |
+| flash_attn     | `2.8.3`    |
+| sageattention  | `2.2.0`    |
 
 ### Build for
 
 | Processor | Compute Capability | SM |
 |------------|-----------------|-----------|
-| A40  | 8.6 | sm_86
-| L40S | 8.9 | sm_89
+| A40  | `8.6` | `sm_86` |
+| L40S | `8.9` | `sm_89` |
 
 ## 🛠️ Build & Push Docker Image (Optional)
 

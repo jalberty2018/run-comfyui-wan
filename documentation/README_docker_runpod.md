@@ -35,7 +35,12 @@
 ### Workflows
 
 - Open from ComfyUI's interface on the left
-- View/Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
+- Download from [examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
+
+## Full documentation
+
+- [Configurations](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
+- [Installed custom nodes](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_custom_nodes/)
 
 ## Hardware Requirements
 
@@ -44,10 +49,9 @@
 - precision fp16
 - video settings 1024x768 122 frames
 
-| Recommended GPU          | VRAM  | RAM   |
-|--------------------------|-------|-------|
-| L40S, RTX 6000 Ada       | 40 GB | 90GB  | 
-
+| Recommended GPU          | VRAM  | RAM Native/VideoWrapper |
+|--------------------------|-------|-------------------------|
+| L40S, RTX 6000 Ada, L40       | 45Gb | 90Gb/50Gb           |
 
 ### Animate
 
@@ -56,14 +60,14 @@
 
 | Recommended GPU          | VRAM  | RAM   |
 |--------------------------|-------|-------|
-| L40S, RTX 6000 Ada       | 40 GB | 105GB | 
+| L40S, RTX 6000 Ada, L40  | 40Gb | 105Gb | 
 
 ### Storage
 
 | Component        | Minimum                  |
 |------------------|--------------------------|
-| Volume Storage   | 90GB (`/workspace`)      |
-| Pod Storage      | 15GB                     |
+| Volume Storage   | 90Gb (`/workspace`)      |
+| Pod Storage      | 15Gb                     |
 
 ### **ComfyUI Arguments**  
 
@@ -78,10 +82,3 @@
 | Civitai      | `CIVITAI_TOKEN`      |
 | Huggingface  | `HF_TOKEN`           |
 | Code Server  | `PASSWORD`           |
-
-## Configuration options and included custom nodes
-
-- [ComfyUI WAN 2.x](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
-
-
- 

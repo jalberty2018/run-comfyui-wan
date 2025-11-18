@@ -54,27 +54,25 @@ HF_MODEL_TEXT_ENCODERS_FILENAME1=wan21UMT5XxlFP32_fp32.safetensors
 HF_MODEL_UPSCALER1=LS110824/upscale
 HF_MODEL_UPSCALER_PTH1=4x_foolhardy_Remacri.pth
 HF_MODEL_LORA1=lightx2v/Wan2.2-Lightning
-HF_MODEL_LORA_FILENAME1=Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2.0/high_noise_model.safetensors
+HF_MODEL_LORA_FILENAME1=Wan2.2-T2V-A14B-4steps-lora-250928/high_noise_model.safetensors
 HF_MODEL_LORA2=lightx2v/Wan2.2-Lightning
-HF_MODEL_LORA_FILENAME2=Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2.0/low_noise_model.safetensors
-HF_MODEL_LORA3=LS110824/Wan21_lora 
-HF_MODEL_LORA_FILENAME3=Wan14B_RealismBoost_T2V.safetensors
+HF_MODEL_LORA_FILENAME2=Wan2.2-T2V-A14B-4steps-lora-250928/low_noise_model.safetensors
+HF_MODEL_LORA3=LS110824/Wan22_lora
+HF_MODEL_LORA_FILENAME3=Wan2.2-T2V-AgeSlider-14B_high_noise.safetensors
 HF_MODEL_LORA4=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME4=Wan2.2-T2V-AgeSlider-14B_high_noise.safetensors
+HF_MODEL_LORA_FILENAME4=Wan2.2-T2V-AgeSlider-14B_low_noise.safetensors
 HF_MODEL_LORA5=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME5=Wan2.2-T2V-AgeSlider-14B_low_noise.safetensors
+HF_MODEL_LORA_FILENAME5=Wan2.2-T2V-BodySizeSliderv2-HIGH14B.safetensors
 HF_MODEL_LORA6=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME6=Wan2.2-T2V-BodySizeSliderv2-HIGH14B.safetensors
+HF_MODEL_LORA_FILENAME6=Wan2.2-T2V-BodySizeSliderv2-LOW14B.safetensors
 HF_MODEL_LORA7=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME7=Wan2.2-T2V-BodySizeSliderv2-LOW14B.safetensors
+HF_MODEL_LORA_FILENAME7=Wan2.2-T2V-SameFaceFixv2-HIGH14B.safetensors
 HF_MODEL_LORA8=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME8=Wan2.2-T2V-SameFaceFixv2-HIGH14B.safetensors
+HF_MODEL_LORA_FILENAME8=Wan2.2-T2V-SameFaceFixv2-LOW14B.safetensors
 HF_MODEL_LORA9=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME9=Wan2.2-T2V-SameFaceFixv2-LOW14B.safetensors
+HF_MODEL_LORA_FILENAME9=wan_2.2_t2v_highnoise_broken_v1.0.safetensors
 HF_MODEL_LORA10=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME10=wan_2.2_t2v_highnoise_broken_v1.0.safetensors
-HF_MODEL_LORA11=LS110824/Wan22_lora
-HF_MODEL_LORA_FILENAME11=wan_2.2_t2v_lownoise_broken_v1.0.safetensors
+HF_MODEL_LORA_FILENAME10=wan_2.2_t2v_lownoise_broken_v1.0.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-TripleKSampler-pod.json
@@ -153,6 +151,7 @@ HF_MODEL_SAMS1=VeryAladeen/Sec-4B
 HF_MODEL_SAMS_FILENAME1=SeC-4B-fp16.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-TripleKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-MoeKSampler-pod.json
+WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-i2v-TripleKSampler-pod.json
 ```
 
 ### Private
@@ -181,6 +180,7 @@ HF_MODEL_SAMS1=VeryAladeen/Sec-4B
 HF_MODEL_SAMS_FILENAME1=SeC-4B-fp16.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-TripleKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-MoeKSampler-pod.json
+WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-i2v-TripleKSampler-pod.json
 ```
 
 ## WAN 2.2 animate (lightning)

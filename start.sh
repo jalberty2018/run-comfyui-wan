@@ -8,9 +8,11 @@ if [[ -n "$PUBLIC_KEY" ]]; then
     echo "$PUBLIC_KEY" >> ~/.ssh/authorized_keys
     chmod 600 ~/.ssh/authorized_keys
     service ssh start
+	echo "✅ [SSH enabled]"
 fi
 
 # Move necessary files to workspace
+echo "ℹ️ [Moving necessary files to workspace] enabling rebooting of pod without data loss"
 for script in comfyui-on-workspace.sh provisioning-on-workspace.sh readme-on-workspace.sh; do
     if [ -f "/$script" ]; then
         echo "Executing $script..."
@@ -42,9 +44,11 @@ fi
 HAS_GPU=0
 if command -v nvidia-smi >/dev/null 2>&1; then
   if nvidia-smi >/dev/null 2>&1; then
-	HAS_GPU=1
+    HAS_GPU=1
     GPU_MODEL=$(nvidia-smi --query-gpu=name --format=csv,noheader | xargs | sed 's/,/, /g')
     echo "✅ [GPU DETECTED] Found via nvidia-smi → Model(s): ${GPU_MODEL}"
+  else
+    echo "⚠️ [NO GPU] nvidia-smi found but failed to run (driver or permission issue)"
   fi
 else
   echo "⚠️ [NO GPU] No GPU found via nvidia-smi"
@@ -69,16 +73,22 @@ fi
 	
 sleep 2
 
-# Torch CUDA check
-if python - << 'PY'
-import torch
+# Python, Torch CUDA check
+HAS_CUDA=0
+if command -v python >/dev/null 2>&1; then
+  if python - << 'PY' >/dev/null 2>&1
 import sys
-sys.exit(0 if torch.cuda.is_available() else 1)
+try:
+    import torch
+    sys.exit(0 if torch.cuda.is_available() else 1)
+except Exception:
+    sys.exit(1)
 PY
-then
+  then
     HAS_CUDA=1
+  fi
 else
-    HAS_CUDA=0
+  echo "⚠️ Python not found – assuming no CUDA"
 fi
 
 # Start ComfyUI (HTTP port 8188)
@@ -124,9 +134,11 @@ download_model_HF() {
     local dest_dir="$3"
 	
     if [[ -n "${!model_var}" && -n "${!file_var}" ]]; then		
-		echo "ℹ️ [DOWNLOAD] Fetching ${!model_var}/${!file_var} ..."		
-        hf download "${!model_var}" "${!file_var}" --local-dir "/workspace/ComfyUI/models/$dest_dir/" || \
-            echo "⚠️ Failed to download"
+        local target="/workspace/ComfyUI/models/$dest_dir"
+        mkdir -p "$target"
+		echo "ℹ️ [DOWNLOAD] Fetching ${!model_var}/${!file_var} → $target"		
+        hf download "${!model_var}" "${!file_var}" --local-dir "$target" || \
+            echo "⚠️ Failed to download ${!model_var}/${!file_var}"
         sleep 1
     fi
 
@@ -137,23 +149,23 @@ download_model_CIVITAI() {
     local url_var="$1"
     local dest_dir="$2"
 
-    # Check if URL variable is set and not empty
     if [[ -z "${!url_var}" ]]; then
         return 0
     fi
 
-    # Check if CIVITAI_TOKEN is set
     if [[ -z "$CIVITAI_TOKEN" ]]; then
         echo "⚠️ ERROR: CIVITAI_TOKEN is not set as an environment variable '$url_var' not downloaded"
         return 1
     fi
 
-    # Run the civitai command
-    echo "ℹ️ [DOWNLOAD] Fetching ${!url_var} ..."			
-	civitai "${!url_var}" "/workspace/ComfyUI/models/$dest_dir/" || \
-            echo "⚠️ Failed to download"
-	sleep 1	
-	return 0
+    local target="/workspace/ComfyUI/models/$dest_dir"
+    mkdir -p "$target"
+
+    echo "ℹ️ [DOWNLOAD] Fetching ${!url_var} → $target ..."			
+    civitai "${!url_var}" "$target" || \
+        echo "⚠️ Failed to download ${!url_var}"
+    sleep 1	
+    return 0
 }
 
 download_workflow() {
@@ -226,7 +238,7 @@ download_workflow() {
         *.7z)
             echo "📦  [EXTRACT] Extracting $filename (7z) ..."
             if 7z x -y -o"$dest_dir" "$filepath" >/dev/null 2>&1; then
-                echo "DONE] Extracted $filename"
+                echo "[DONE] Extracted $filename"
             else
                 echo "⚠️  Failed to extract $filename"
             fi
@@ -283,28 +295,24 @@ if [[ "$HAS_COMFYUI" -eq 1  ]]; then
 	# provisioning Models and loras
 	echo "📥 Provisioning models CIVITAI"
 	
-	# categorie: NAME:MAP
+	# categorie: NAME:MAP	
 	CATEGORIES_CIVITAI=(
-	  "LORA_URL:loras"
-	)
-	
+       "LORA_URL:loras"
+    )
+
 	for cat in "${CATEGORIES_CIVITAI[@]}"; do
-	  IFS=":" read -r NAME DIR MAX <<< "$cat"
+	  IFS=":" read -r NAME DIR <<< "$cat"
 	
 	  for i in $(seq 1 50); do
 	    VAR1="CIVITAI_MODEL_${NAME}${i}"
-	
 	    download_model_CIVITAI "$VAR1" "$DIR"
 	  done
 	done
-		
-	# Final messages
-	echo "🎉 Provisioning done, ready to create AI content."
+	
+	HAS_PROVISIONING=1
 else
-    echo "❌ DRIVER ERROR: No workflows or models downloaded, ComfyUI was not started"	
-	if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then   		
-       echo "⚠️ SOLUTION runpod.io: Deploy pod on another region ⚠️"
-    fi
+    HAS_PROVISIONING=0   
+	echo "⚠️ Skipped Provisioning: No workflows or models downloaded as ComfyUI is not online"	
 fi
 
 # Environment
@@ -325,6 +333,31 @@ if torch.cuda.is_available():
     print(f"  ↳ cuDNN: {torch.backends.cudnn.version()}")
     print(f"Torch build info: {torch.__config__.show()}")
 PY
+
+if [[ "$HAS_PROVISIONING" -eq 1  ]]; then 
+   echo "🎉 Provisioning done, ready to create AI content."
+   if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then   		
+       echo "ℹ️ Connect to ComfyUI, Code-Server or shell from console menu on runpod.io"
+   fi
+else		
+	echo "ℹ️ Running error diagnosis"
+	
+	if [[ "$HAS_GPU_RUNPOD" -eq 0 ]]; then
+    echo "⚠️ Pod started without a runpod.io GPU"
+    fi
+	
+	if [[ "$HAS_CUDA" -eq 0 ]]; then   		
+       echo "❌ Pytorch CUDA driver error/mismatch/not available"
+	   if [[ "$HAS_GPU_RUNPOD" -eq 1]]; then  
+	      echo "⚠️ [SOLUTION] Deploy pod on another region ⚠️"
+	   fi
+    fi
+	
+	if [[ "$HAS_CUDA" -eq 1 && "$HAS_COMFYUI" -eq 0 ]]; then
+       echo "❌ ComfyUI is not online"		
+       echo "⚠️ [SOLUTION] restart pod ⚠️"
+    fi
+fi
 
 # Keep the container running
 echo "ℹ️ End script"
