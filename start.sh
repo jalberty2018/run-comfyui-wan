@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "ℹ️ Pod run-comfyui-wan started"
-echo "ℹ️ Wait until the message 🎉 Provisioning done, ready to create AI content. is displayed"
+echo "ℹ️ Wait until the message 🎉 Provisioning done, ready to create AI content 🎉. is displayed"
 
 # Enable SSH if PUBLIC_KEY is set
 if [[ -n "$PUBLIC_KEY" ]]; then
@@ -338,7 +338,7 @@ if torch.cuda.is_available():
 PY
 
 if [[ "$HAS_PROVISIONING" -eq 1 ]]; then 
-    echo "🎉 Provisioning done, ready to create AI content."
+    echo "🎉 Provisioning done, ready to create AI content 🎉"
     
     if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then
         echo "ℹ️ Connect to ComfyUI, Code-Server or shell from console menu on runpod.io"

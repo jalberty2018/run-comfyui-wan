@@ -13,12 +13,17 @@
 - Hugging Face API
 - CivitAI API
 
+## Images on Docker 
+
+- If the image is **less then one day old** it is possible that it is not tested or will be updated.
+
 ## Template Deployment
 
-### Important notice
+### Deployment/Usage information
 
-- All images are tested on Runpod.io (L40S).
-- Don't use regions US-TX-3 and US-TX-4 as they offen fail to download or run the image (Pytorch CUDA).
+- All available templates on runpod.io are tested on a L40S/A40.
+- Try to avoid regions US-TX-x as they often fail to download or run the image (Pytorch CUDA mismatch).
+- [Tutorial for deployment](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_deployment/)
 
 ### Runpod.io templates
 
@@ -46,12 +51,24 @@
 
 ### T2V-A14B or I2V-A14B (high/low) 
 
-- precision fp16
-- video settings 1024x768 122 frames
+#### **Recommended GPU**
 
-| Recommended GPU          | VRAM  | RAM Native/VideoWrapper |
+- precision fp16
+- video settings 1024x768 122 frames (ComfyUI-WanVideoWrapper offload 10)
+
+| GPU          | VRAM  | RAM ComfyUI-Native/ComfyUI-WanVideoWrapper |
 |--------------------------|-------|-------------------------|
 | L40S, RTX 6000 Ada, L40       | 45Gb | 90Gb/50Gb           |
+
+#### Possible GPU with limitations due to available ram on rupod.io
+
+- precision fp16
+- video settings 1024x768 80 frames (ComfyUI-WanVideoWrapper offload 10)
+- Only possible with worflows based on ComfyUI-WanVideoWrapper (included in pod)
+
+| GPU       | VRAM  | RAM ComfyUI-WanVideoWrapper |
+|--------------------------|-------|--------------|
+| A40       | 45Gb | 45Gb |
 
 ### Animate
 

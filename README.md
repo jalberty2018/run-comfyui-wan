@@ -45,12 +45,24 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ### T2V-A14B or I2V-A14B (high/low) 
 
-- precision fp16
-- video settings 1024x768 122 frames
+#### **Recommended GPU**
 
-| Recommended GPU          | VRAM  | RAM Native/VideoWrapper |
+- precision fp16
+- video settings 1024x768 122 frames (ComfyUI-WanVideoWrapper offload 10)
+
+| GPU          | VRAM  | RAM ComfyUI-Native/ComfyUI-WanVideoWrapper |
 |--------------------------|-------|-------------------------|
-| L40S, RTX 6000 Ada,L40   | 45Gb | 90Gb/50Gb           |
+| L40S, RTX 6000 Ada, L40       | 45Gb | 90Gb/50Gb           |
+
+#### Possible GPU with limitations due to available ram on rupod.io
+
+- precision fp16
+- video settings 1024x768 80 frames (ComfyUI-WanVideoWrapper offload 10)
+- Only possible with worflows based on ComfyUI-WanVideoWrapper (included in pod)
+
+| GPU       | VRAM  | RAM ComfyUI-WanVideoWrapper |
+|--------------------------|-------|--------------|
+| A40       | 45Gb | 45Gb |
 
 ### Animate
 
@@ -59,7 +71,7 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 | Recommended GPU          | VRAM  | RAM   |
 |--------------------------|-------|-------|
-| L40S, RTX 6000 Ada, L40  | 45Gb | 105Gb | 
+| L40S, RTX 6000 Ada, L40  | 40Gb | 105Gb | 
 
 ### Storage
 
