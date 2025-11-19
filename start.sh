@@ -13,7 +13,7 @@ fi
 
 # Move necessary files to workspace
 echo "ℹ️ [Moving necessary files to workspace] enabling rebooting pod without data loss"
-for script in comfyui-on-workspace.sh provisioning-on-workspace.sh readme-on-workspace.sh; do
+for script in comfyui-on-workspace.sh provisioning-on-workspace.sh readme-on-workspace.sh test-on-workspace.sh; do
     if [ -f "/$script" ]; then
         echo "Executing $script..."
         "/$script"
@@ -26,8 +26,6 @@ done
 mkdir -p /workspace/output/
 
 # Set optimalisations
-# export COMFYUI_USE_FLASH_ATTENTION=1 
-# export COMFYUI_USE_SAGE_ATTENTION=1
 export PYTORCH_ALLOC_CONF=expandable_segments:True,garbage_collection_threshold:0.8
 export COMFYUI_VRAM_MODE=HIGH_VRAM
 
