@@ -5,7 +5,7 @@ FROM ls250824/comfyui-runtime:19112025
 WORKDIR /
 
 # Copy Scripts and documentation
-COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provisioning-on-workspace.sh onworkspace/readme-on-workspace.sh / 
+COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/provisioning-on-workspace.sh onworkspace/readme-on-workspace.sh onworkspace/test-on-workspace.sh / 
 COPY --chmod=644 provisioning/ /provisioning
 COPY --chmod=644 test/ /test
 COPY --chmod=664 /documentation/README.md /README.md
@@ -15,8 +15,6 @@ COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.s
 
 # Clone
 WORKDIR /ComfyUI/custom_nodes
-
-# VideoWrapper working with TripleKSampler -> e3c2a1431bcb7f0b9fd11a40d732d16ac117578a (13Nov25)
 
 RUN --mount=type=cache,target=/root/.cache/git \
     git clone --depth=1 --filter=blob:none https://github.com/ltdrdata/ComfyUI-Manager.git && \
@@ -65,7 +63,15 @@ RUN set -eux; \
       sed -i -E 's/^( *| *)(onnxruntime)([<>=].*)?(\s*)$/\1onnxruntime-gpu==1.22.*\4/i' "$f"; \
     done
 
+# Specific git checkouts.
+# VideoWrapper working with TripleKSampler -> e3c2a1431bcb7f0b9fd11a40d732d16ac117578a (13Nov25)
+# VideoWrapper working with TripleKSampler -> fa7a967ee7af414de187f11102d0fb1c2c1c0e9d (17Nov25)
+
+RUN cd IAMCCS-nodes && git checkout 8722d908cdc042baa74bd46549ec32876e234411
+
 # Install Dependencies for Cloned Repositories
+WORKDIR /ComfyUI/custom_nodes
+
 RUN --mount=type=cache,target=/root/.cache/pip \
   python -m pip install --no-cache-dir --root-user-action ignore -c /constraints.txt \
     diffusers psutil \
