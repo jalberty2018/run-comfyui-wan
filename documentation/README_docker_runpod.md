@@ -63,8 +63,8 @@
 #### Possible GPU with limitations due to available ram on rupod.io
 
 - precision fp16
-- video settings 1024x768 80 frames (ComfyUI-WanVideoWrapper offload 10)
-- Only possible with worflows based on ComfyUI-WanVideoWrapper (included in pod)
+- video settings 1024x768 97 frames (ComfyUI-WanVideoWrapper Offload 10)
+- only possible with worflows based on ComfyUI-WanVideoWrapper (Included in pod)
 
 | GPU       | VRAM  | RAM ComfyUI-WanVideoWrapper |
 |--------------------------|-------|--------------|

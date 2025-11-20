@@ -15,3 +15,5 @@ if torch.cuda.is_available():
     print(f"Total GPU memory: {total_gpu_memory:.1f} GB")
 else:
   print(f"No GPU available")
+
+ 

@@ -86,14 +86,23 @@ ncdu
 ## Utilities  
 
 ```bash
-nvtop   # GPU Monitoring
+nvtop      # GPU Monitoring
 nvidia-smi # GPU information
-htop    # Process Monitoring  
-mc      # Midnight Commander  
-nano    # Text Editor
-ncdu    # Clean Up
-unzip   # uncompress
-7z      # Archiving
+htop       # Process Monitoring  
+mc         # Midnight Commander (file manager)  
+nano       # Text Editor
+ncdu       # Clean Up
+unzip      # uncompress
+7z         # Archiving
+runpodctl  # runpod pod management
+```
+
+## Comfy-cli
+
+```bash
+comfy-cli set-default /workspace/ComfyUI/
+comfy-cli
+comfy-cli env
 ```
 
 ## Test/debug

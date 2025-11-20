@@ -2,7 +2,9 @@
 
 [![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan)](https://hub.docker.com/r/ls250824/run-comfyui-wan)
 
-![Pod running](images/runpod.jpg)
+![Pod running on L40S native comfyUI](images/runpod.jpg)
+
+![Pod running on A40 comfyUI wanwrapper](images/runpod_A40_wrapper.jpg)
 
 A streamlined and automated environment for running **ComfyUI** with **WAN 2.x video models**, optimized for use on [RunPod.io](https://runpod.io?ref=se4tkc5o).
 
@@ -19,10 +21,11 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ## Template Deployment
 
-### Important notice
+### Deployment & Tutorial.
 
-- All images are tested on Runpod.io (L40S).
-- Don't use regions US-TX-3 and US-TX-4 as they offen fail to download or run the image (Pytorch CUDA).
+- All available templates on runpod.io are tested on a L40S/A40.
+- Try to avoid regions US-TX-x as they often fail to download or run the image (Pytorch CUDA mismatch).
+- [Tutorial for deployment](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_deployment/)
 
 ### Runpod.io templates
 
@@ -41,6 +44,8 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 - Open from ComfyUI's interface on the left
 - View/Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
 
+![Included t2s wrapper as easy example works on A40/L40S](images/ai-generated.jpg)
+
 ## 💻 Hardware Requirements
 
 ### T2V-A14B or I2V-A14B (high/low) 
@@ -57,8 +62,8 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 #### Possible GPU with limitations due to available ram on rupod.io
 
 - precision fp16
-- video settings 1024x768 80 frames (ComfyUI-WanVideoWrapper offload 10)
-- Only possible with worflows based on ComfyUI-WanVideoWrapper (included in pod)
+- video settings 1024x768 97 frames (ComfyUI-WanVideoWrapper Offload 10)
+- only possible with worflows based on ComfyUI-WanVideoWrapper (Included in pod)
 
 | GPU       | VRAM  | RAM ComfyUI-WanVideoWrapper |
 |--------------------------|-------|--------------|
