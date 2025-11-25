@@ -6,9 +6,9 @@ WORKDIR /
 
 # Copy Scripts and documentation
 COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/readme-on-workspace.sh onworkspace/test-on-workspace.sh onworkspace/docs-on-workspace.sh / 
+COPY --chmod=664 /documentation/README.md /README.md
 COPY --chmod=644 test/ /test
 COPY --chmod=644 docs/ /docs
-COPY --chmod=664 /documentation/README.md /README.md
 
 # Copy ComfyUI configurations
 COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.settings.json
@@ -101,7 +101,7 @@ WORKDIR /workspace
 EXPOSE 8188 9000
 
 # Labels
-LABEL org.opencontainers.image.title="ComfyUI 0.3.71 with custom_nodes for WAN 2.x inference" \
+LABEL org.opencontainers.image.title="ComfyUI 0.3.72 with custom_nodes for WAN 2.x inference" \
       org.opencontainers.image.description="ComfyUI  + flash-attn + sageattention + onnxruntime-gpu + torch_generic_nms + code-server + civitai downloader + huggingface_hub + custom_nodes" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
       org.opencontainers.image.licenses="MIT"

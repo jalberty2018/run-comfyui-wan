@@ -4,13 +4,14 @@
 
 - Automatic model and LoRA downloads via environment variables.
 - Supports advanced workflows for **video generation** and **enhancement** using pre-installed custom nodes.
-- Compatible with high-performance NVIDIA GPUs.
+- Compatible with high-performance NVIDIA GPUs (CUDA 12.8).
+- Compiled attentions and GPU accelerations.
 
 ## Built-in **authentication**
   
 - ComfyUI
 - Code Server
-- Hugging Face API
+- HuggingFace API
 - CivitAI API
 
 ## Images on Docker 
@@ -22,8 +23,8 @@
 ### Deployment/Usage information
 
 - All available templates on runpod.io are tested on a L40S/A40.
-- Try to avoid regions US-TX-x as they often fail to download or run the image (Pytorch CUDA mismatch).
-- [Tutorial for deployment](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_deployment/)
+- Try to avoid regions US-TX-4 as they often fail to download or run the image (Pytorch CUDA mismatch).
+- Avoid using ID's without a region as they are not reliable.
 
 ### Runpod.io templates
 
@@ -39,63 +40,13 @@
 
 ### Workflows
 
-- Open from ComfyUI's interface on the left
+- Open ComfyUI's interface on the left and select template.
 - Download from [examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
 
-## Full documentation
+### Image specific tutorial
 
-- [Configurations](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
-- [Installed custom nodes](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_custom_nodes/)
+- [Tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial/)
 
-## Hardware Requirements
+## Image documentation
 
-### T2V-A14B or I2V-A14B (high/low) 
-
-#### **Recommended GPU**
-
-- precision fp16
-- video settings 1024x768 122 frames (ComfyUI-WanVideoWrapper offload 10)
-
-| GPU          | VRAM  | RAM ComfyUI-Native/ComfyUI-WanVideoWrapper |
-|--------------------------|-------|-------------------------|
-| L40S, RTX 6000 Ada, L40       | 45Gb | 90Gb/50Gb           |
-
-#### Possible GPU with limitations due to available ram on rupod.io
-
-- precision fp16
-- video settings 1024x768 97 frames (ComfyUI-WanVideoWrapper Offload 10)
-- only possible with worflows based on ComfyUI-WanVideoWrapper (Included in pod)
-
-| GPU       | VRAM  | RAM ComfyUI-WanVideoWrapper |
-|--------------------------|-------|--------------|
-| A40       | 45Gb | 45Gb |
-
-### Animate
-
-- precision fp16
-- video settings 1024x768 77 chunks/Sampler
-
-| Recommended GPU          | VRAM  | RAM   |
-|--------------------------|-------|-------|
-| L40S, RTX 6000 Ada, L40  | 40Gb | 105Gb | 
-
-### Storage
-
-| Component        | Minimum                  |
-|------------------|--------------------------|
-| Volume Storage   | 90Gb (`/workspace`)      |
-| Pod Storage      | 15Gb                     |
-
-### **ComfyUI Arguments**  
-
-| Token        | Environment Variable     |
-|--------------|--------------------------|
-| Arguments    | `COMFYUI_EXTRA_ARGUMENTS`|
-
-### **Authentication Tokens**  
-
-| Token        | Environment Variable |
-|--------------|----------------------|
-| Civitai      | `CIVITAI_TOKEN`      |
-| Huggingface  | `HF_TOKEN`           |
-| Code Server  | `PASSWORD`           |
+- [Start](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
