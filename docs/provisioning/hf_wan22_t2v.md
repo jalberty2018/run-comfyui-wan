@@ -100,6 +100,22 @@ hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2
 --local-dir /workspace/ComfyUI/models/loras/
 ```
 
+### Step distilled
+
+#### rank128
+
+```bash
+ hf download Kijai/WanVideo_comfy Lightx2v lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank128_bf16.safetensors \
+ --local-dir ComfyUI/models/loras
+```
+
+#### rank256
+
+```bash
+ hf download Kijai/WanVideo_comfy Lightx2v lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank256_bf16.safetensors \
+ --local-dir ComfyUI/models/loras
+```
+
 ## Lora Fun Reward
 
 ```bash

@@ -4,8 +4,6 @@
 
 ![Pod running on L40S native comfyUI](images/runpod.jpg)
 
-![Pod running on A40 comfyUI wanwrapper](images/runpod_A40_wrapper.jpg)
-
 A streamlined and automated environment for running **ComfyUI** with **WAN 2.x video models**, optimized for use on [RunPod.io](https://runpod.io?ref=se4tkc5o).
 
 ## 🔧 Features
@@ -19,15 +17,14 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 - Supports advanced workflows for **video generation** and **enhancement** using pre-installed custom nodes.
 - Compatible with high-performance NVIDIA GPUs.
 
-## Template Deployment
+## 🧩 Template Deployment
 
-### Deployment & Tutorial.
+### Deployment.
 
-- All available templates on runpod.io are tested on a L40S/A40.
+- All available templates on runpod are tested on a L40S/A40.
 - Try to avoid regions US-TX-x as they often fail to download or run the image (Pytorch CUDA mismatch).
-- [Tutorial for deployment](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_deployment/)
 
-### Runpod.io templates
+### Runpod templates
 
 [**👉 One-click Deploy on RunPod WAN 2.2 t2v (lightx2v)**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
@@ -39,51 +36,16 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 [**👉 One-click Deploy on RunPod WAN 2.2 v2v Lucy Edit**](https://console.runpod.io/deploy?template=kay3oq4rx7&ref=se4tkc5o)
 
+## Tutorial
+
+- [Specific for these templates](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial.md)
+
 ### Workflows
 
 - Open from ComfyUI's interface on the left
 - View/Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
 
-![Included t2s wrapper as easy example works on A40/L40S](images/ai-generated.jpg)
-
-## 💻 Hardware Requirements
-
-### T2V-A14B or I2V-A14B (high/low) 
-
-#### **Recommended GPU**
-
-- precision fp16
-- video settings 1024x768 122 frames (ComfyUI-WanVideoWrapper offload 10)
-
-| GPU          | VRAM  | RAM ComfyUI-Native/ComfyUI-WanVideoWrapper |
-|--------------------------|-------|-------------------------|
-| L40S, RTX 6000 Ada, L40       | 45Gb | 90Gb/50Gb           |
-
-#### Possible GPU with limitations due to available ram on rupod.io
-
-- precision fp16
-- video settings 1024x768 97 frames (ComfyUI-WanVideoWrapper Offload 10)
-- only possible with worflows based on ComfyUI-WanVideoWrapper (Included in pod)
-
-| GPU       | VRAM  | RAM ComfyUI-WanVideoWrapper |
-|--------------------------|-------|--------------|
-| A40       | 45Gb | 45Gb |
-
-### Animate
-
-- precision fp16
-- video settings 1024x768 77 chunks/Sampler
-
-| Recommended GPU          | VRAM  | RAM   |
-|--------------------------|-------|-------|
-| L40S, RTX 6000 Ada, L40  | 40Gb | 105Gb | 
-
-### Storage
-
-| Component        | Minimum                  |
-|------------------|--------------------------|
-| Volume Storage   | 90Gb (`/workspace`)      |
-| Pod Storage      | 15Gb                     |
+![Included t2v wrapper as easy example to work on A40/L40S](images/ai-generated.jpg)
 
 ## 🐳 Docker Images
 
@@ -99,207 +61,14 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 docker pull ls250824/run-comfyui-wan:<version>
 ```
 
-## ⚙️ Environment Variables
+## 📚 Documentation
 
-### ComfyUI Configuration
-
-| Variable                   | Description                    |
-|----------------------------|--------------------------------|
-| `COMFYUI_EXTRA_ARGUMENTS`  | Additional arguments for ComfyUI CLI |
-
-
-### Authentication Tokens
-
-| Token Source   | Variable         | 
-|----------------|------------------|
-| Code Server    | `PASSWORD`       | 
-| Hugging Face   | `HF_TOKEN`       | 
-| CivitAI        | `CIVITAI_TOKEN`  | 
-
-### Hugging Face Model Configuration
-
-| Model Type        | Model                         | Safetensors/GGUF                               |
-|-------------------|-------------------------------|-------------------------------------------| 
-| Diffusion Model   | `HF_MODEL_DIFFUSION_MODELS[1-20]`          | `HF_MODEL_DIFFUSION_MODELS_FILENAME[1-20]`   |
-| Checkpoints       | `HF_MODEL_CHECKPOINTS[1-20]`        | `HF_MODEL_CHECKPOINTS_FILENAME[1-20]`        |
-| Text Encoders     | `HF_MODEL_TEXT_ENCODERS[1-20]` | `HF_MODEL_TEXT_ENCODERS_FILENAME[1-20]` |
-| Clip Vision       | `HF_MODEL_CLIP_VISION[1-20]`        | `HF_MODEL_CLIP_VISION_FILENAME[1-20]` |
-| Audio Encoders    | `HF_MODEL_AUDIO_ENCODERS[1-20]` | `HF_MODEL_AUDIO_ENCODERS_FILENAME[1-20]` |
-| Model patches    | `HF_MODEL_PATCHES[1-20]` | `HF_MODEL_PATCHES_FILENAME[1-20]` |
-| VAE               | `HF_MODEL_VAE[1-20]`                | `HF_MODEL_VAE_FILENAME[1-20]`                |
-| Upscalers         | `HF_MODEL_UPSCALER[1-20]`      | `HF_MODEL_UPSCALER_PTH[1-20]`              |
-| Loras          | `HF_MODEL_LORA[1-20]`          | `HF_MODEL_LORA_FILENAME[1-20]`          |
-| VLM/mmproj    | `HF_MODEL_VL[1-20]`          | `HF_MODEL_VL_FILENAME[1-20]`          |
-| SAM segmentation | `HF_MODEL_SAMS[1-20]`          | `HF_MODEL_SAMS_FILENAME[1-20]`          |
-
-### CivitAI LORAs
-
-| Variable                         | Description                      |
-|----------------------------------|----------------------------------|
-| `CIVITAI_MODEL_LORA_URL[1-50]`   | Direct download link for LoRAs |
-
-
-### Workflows
-
-| Variable         | Description                      |
-|------------------|----------------------------------|
-| `WORKFLOW[1-50]` |  download link (compressed or plain)  |
-
-## 🌐 Network Services
-
-| Service       | Port   | Access Type |
-|---------------|--------|-------------|
-| ComfyUI       | `8188` | Web         |
-| Code Server   | `9000` | Web         |
-| SSH/SCP       | `22`   | Terminal    |
-
-## 📚 Tutorials & Resources
-
-- [WAN Video Homepage](https://wan.video/)
-- [Docs ComfyUI](https://docs.comfy.org)
-- [Enhance a Video](https://oahzxl.github.io/Enhance_A_Video/)
-- [AccVideo](https://github.com/aejion/AccVideo)
-- [CausVid](https://github.com/tianweiy/CausVid)
-- [NAG](https://chendaryen.github.io/NAG.github.io/)
-- [FusionX LoRA](https://civitai.com/models/1681541?modelVersionId=1903277)
-- [LightX2V](https://github.com/ModelTC/LightX2V)
-- [Pusa-VidGen](https://github.com/Yaofang-Liu/Pusa-VidGen)
-- [Animated preview](https://civitai.com/articles/12623/dont-just-guess-with-your-wan-gens-animated-previews-for-seed-hunting-guide-comfyui)
-- [Tutorial s2v](https://www.kombitz.com/2025/09/02/how-to-use-wan-2-2-s2v-gguf-model-in-comfyui/)
-- [Wan 2.2 animate](https://wan.video/blog/wan2.2-animate)
-- [Wan 2.2 animate workflow](https://comfyui-wiki.com/en/tutorial/advanced/video/wan2.2/wan2-2-animate)
-- [Samplers](https://websim.com/c/I0nMJ7gYtQqdjW7yD)
-- [HuMo Website](https://phantom-video.github.io/HuMo/)
-- [HuMo Github](https://github.com/Phantom-video/HuMo)
-- [Example prompts](https://alidocs.dingtalk.com/i/nodes/EpGBa2Lm8aZxe5myC99MelA2WgN7R35y)
-- [Lightx2v lora's comparing](https://huggingface.co/lightx2v/Wan2.2-Lightning/discussions/64)
-
-## 🧩 Pre-Installed Custom Nodes
-
-### Interface
-
-- [rgthree](https://github.com/rgthree/rgthree-comfy)  
-- [Login](https://github.com/liusida/ComfyUI-Login)  
-- [Manager](https://github.com/ltdrdata/ComfyUI-Manager)
-- [KJNodes](https://github.com/kijai/ComfyUI-KJNodes)  
-- [GGUF](https://github.com/city96/ComfyUI-GGUF)
-- [ComfyMath](https://github.com/evanspearman/ComfyMath.git)
-- [Resolution master](https://github.com/Azornes/Comfyui-Resolution-Master.git)
-- [Lucy edit](https://github.com/DecartAI/Lucy-Edit-ComfyUI)
-- [PG Nodes](https://github.com/GizmoR13/PG-Nodes)
-- [ComfyUi-Scale-Image-to-Total-Pixels-Advanced](https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced)
-
-### Video/Upscale
-
-- [Video Helper Suite](https://github.com/kosinkadink/ComfyUI-VideoHelperSuite)
-- [Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
-- [VideoUpscale with Model](https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel)
-- [SD Upscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale)
-- [VRgamedevgirl](https://github.com/vrgamegirl19/comfyui-vrgamedevgirl)
-- [VideoStitcher](https://github.com/Kishor900/comfyui-wanv2v-video-stitcher)
-
-### Controlnet
-
-- [controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
-
-### Flow
-
-- [Power Flow](https://github.com/x3bits/ComfyUI-Power-Flow)
-
-### Segmentation
-
-- [Segment anything](https://github.com/kijai/ComfyUI-segment-anything-2)
-- [RMBG](https://github.com/1038lab/ComfyUI-RMBG)
-- [SecNodes](https://github.com/9nate-drake/Comfyui-SecNodes)
-
-### Wan
-
-- [WanVideoWrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
-- [StartEndFrame](https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative)
-- [iamccs](https://github.com/IAMCCS/IAMCCS-nodes)
-- [Wan22FMLF](https://github.com/wallen0322/ComfyUI-Wan22FMLF)
-- [PainterI2V](https://github.com/princepainter/ComfyUI-PainterI2V)
-- [PainterLongVideo](https://github.com/princepainter/ComfyUI-PainterLongVideo)
-- [PainterI2VforKJ](https://github.com/princepainter/ComfyUI-PainterI2VforKJ)
-
-### Animate
-
-- [WanAnimate Enhancer](https://github.com/wallen0322/ComfyUI-WanAnimate-Enhancer.git)
-
-### Sampling
-
-- [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
-- [Noise](https://github.com/BlenderNeko/ComfyUI_Noise)
-- [WanMoeKSampler](https://github.com/stduhpf/ComfyUI-WanMoeKSampler)
-- [Was affine](https://github.com/WASasquatch/was_affine)
-- [TripleKSampler](https://github.com/VraethrDalkr/ComfyUI-TripleKSampler)
-- [WanMoEScheduler](https://github.com/cmeka/ComfyUI-WanMoEScheduler)
-- [PainterSampler](https://github.com/princepainter/Comfyui-PainterSampler.git)
-
-## 🧩 All possible Custom Nodes
-
-- [Full List](https://awesome-comfyui.rozenlaan.site)
-
-## 📦 Model Sources
-
-- [Wan-Video Github](https://github.com/Wan-Video)
-- [Wan-Video 2.2 Github](https://github.com/Wan-Video/Wan2.2)
-- [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
-- [Wan-AI Huggingface](https://huggingface.co/Wan-AI)  
-- [WAN-VACE Github](https://github.com/ali-vilab/VACE)
-- [FusionX Huggingface](https://huggingface.co/vrgamedevgirl84/Wan14BT2VFusioniX)
-- [MoviiGen Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1)
-
-## 📦 Manual setup guides:
-
-### 2.2
-
-- [t2v](provisioning/hf_wan22_t2v.md)
-- [i2v](provisioning/hf_wan22_i2v.md)
-- [s2v](provisioning/hf_wan22_s2v.md)
-- [animate](provisioning/hf_wan22_animate.md)
-- [loras](provisioning/hf_wan22_loras.md)
-- [lucy edit](provisioning/hf_lucy_edit.md)
-
-### 2.1
-
-- [WAN](provisioning/hf_wan21.md)
-- [HuMo](provisioning/hf_humo.md)
-- [loras](provisioning/hf_wan21_loras.md)
-
-### Others
-
-- [Segmentation](provisioning/hf_segmentation.md)
-- [Upscale](provisioning/hf_upscale.md)
-
-## ⚙️ Setup latest image
-
-| Component | Version              |
-|-----------|----------------------|
-| OS        | `Ubuntu 22.04 x86_64`|
-| Python    | `3.11.x`             |
-| PyTorch   | `2.9.1`              |
-| CUDA      | `12.8.x`             |
-| Triton    | `3.5.1`              |
-| onnxruntime-gpu | `1.22.x` |
-| ComfyUI | `0.3.69` |
-| Code Server | Latest |
-
-## ⚙️ Installed Attentions latest image
-
-### Wheels
-
-| Package        | Version  |
-|----------------|----------|
-| flash_attn     | `2.8.3`    |
-| sageattention  | `2.2.0`    |
-
-### Build for
-
-| Processor | Compute Capability | SM |
-|------------|-----------------|-----------|
-| A40  | `8.6` | `sm_86` |
-| L40S | `8.9` | `sm_89` |
+- [💻 Hardware Requirements](docs/ComfyUI_WAN_hardware.md)
+- [🧩 Pre-Installed Custom Nodes](docs/ComfyUI_WAN_custom_nodes.md)
+- [📚 Resources](docs/ComfyUI_WAN_resources.md)
+- [📦 Model provisioning](docs/ComfyUI_WAN_provisioning.md)
+- [⚙️ Image setup](docs/ComfyUI_WAN_image_setup.md)
+- [⚙️ Environment variables](docs/ComfyUI_WAN_configuration.md)
 
 ## 🛠️ Build & Push Docker Image (Optional)
 

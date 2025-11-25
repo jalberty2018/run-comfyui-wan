@@ -35,6 +35,7 @@ WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeKSampler-p
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-TripleKSampler-pod.json
 WORKFLOW4=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-t2v-TripleKSampler-pod.json
+WORKFLOW5=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-t2v-MoESheduler-pod.json
 ```
 
 ### Private with lighning
@@ -77,6 +78,7 @@ WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeKSampler-p
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-MoeSamplerAdv-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-t2v-TripleKSampler-pod.json
 WORKFLOW4=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-t2v-TripleKSampler-pod.json
+WORKFLOW5=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-t2v-MoESheduler-pod.json
 ```
 
 ## t2v WAN 2.2 Dyno

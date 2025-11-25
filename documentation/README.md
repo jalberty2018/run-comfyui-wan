@@ -1,40 +1,23 @@
-# Pod documentation
-
-## Information
-
-- [Configurations](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
+# Pod WAN 2.x
 
 ## Workflows
 
 - Open from ComfyUI's interface on the left
-- Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
+- Download from [workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
 
-## Installed custom nodes
+## Pre-Installed Custom Nodes
 
 - Open ComfyUI manager installed custom nodes.
-- Included in latest image [custom_nodes](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_custom_nodes/)
+- [custom_nodes](docs/ComfyUI_WAN_custom_nodes.md)
 
-### Manual provisioning
+## Documentation
 
-### 2.2
-
-- [t2v](provisioning/hf_wan22_t2v.md)
-- [i2v](provisioning/hf_wan22_i2v.md)
-- [s2v](provisioning/hf_wan22_s2v.md)
-- [animate](provisioning/hf_wan22_animate.md)
-- [loras](provisioning/hf_wan22_loras.md)
-- [Lucy edit](provisioning/hf_lucy_edit.md)
-
-### 2.1
-
-- [WAN](provisioning/hf_wan21.md)
-- [HuMo](provisioning/hf_humo.md)
-- [loras](provisioning/hf_wan21_loras.md)
-
-### Others
-
-- [Segmentation](provisioning/hf_segmentation.md)
-- [Upscale](provisioning/hf_upscale.md)
+- [Model provisioning](docs/ComfyUI_WAN_provisioning.md)
+- [Resources](docs/ComfyUI_WAN_resources.md)
+- [Image setup](docs/ComfyUI_WAN_image_setup.md)
+- [Environment variables](docs/ComfyUI_WAN_configuration.md)
+- [Hardware Requirements](docs/ComfyUI_WAN_hardware.md)
+- [Tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial/)
 
 #### **Huggingface**  
 
@@ -54,12 +37,6 @@ hf auth login --token xxxxx
 export CIVITAI_TOKEN="xxxxx"
 civitai "<download link>" /workspace/ComfyUI/models/diffusion_models
 civitai "<download link>" /workspace/ComfyUI/models/loras
-```
-
-## Code-Server
-
-```bash
-export PASSWORD="xxxxx"
 ```
 
 ## 7z Compression  
@@ -111,4 +88,5 @@ comfy-cli env
 python /workspace/test/test_pytorch_cuda.py
 python /workspace/test/test_flash.py
 python /workspace/test/test_sage.py
+python /wirkspace/test/test_torch_generic_nms.py
 ```
