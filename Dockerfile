@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:25112025
+FROM ls250824/comfyui-runtime:26112025
 
 # Set Working Directory
 WORKDIR /
@@ -69,6 +69,7 @@ RUN set -eux; \
 
 # VideoWrapper working with TripleKSampler -> e3c2a1431bcb7f0b9fd11a40d732d16ac117578a (13Nov25)
 # VideoWrapper working with TripleKSampler -> fa7a967ee7af414de187f11102d0fb1c2c1c0e9d (17Nov25)
+# VideoWrapper working with TripleKSampler -> 44feb24290db02279988a2ce8845ee65e62f3cce (26Nov25)
 
 RUN cd IAMCCS-nodes && git checkout 8722d908cdc042baa74bd46549ec32876e234411
 
@@ -101,7 +102,7 @@ WORKDIR /workspace
 EXPOSE 8188 9000
 
 # Labels
-LABEL org.opencontainers.image.title="ComfyUI 0.3.72 with custom_nodes for WAN 2.x inference" \
+LABEL org.opencontainers.image.title="ComfyUI 0.3.75 for WAN 2.x inference" \
       org.opencontainers.image.description="ComfyUI  + flash-attn + sageattention + onnxruntime-gpu + torch_generic_nms + code-server + civitai downloader + huggingface_hub + custom_nodes" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
       org.opencontainers.image.licenses="MIT"

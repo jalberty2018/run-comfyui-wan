@@ -154,6 +154,7 @@ HF_MODEL_SAMS_FILENAME1=SeC-4B-fp16.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-TripleKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-MoeKSampler-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-i2v-TripleKSampler-pod.json
+WORKFLOW4=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-i2v-MoESheduler-pod.json
 ```
 
 ### Private
@@ -183,6 +184,7 @@ HF_MODEL_SAMS_FILENAME1=SeC-4B-fp16.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-TripleKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-MoeKSampler-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-i2v-TripleKSampler-pod.json
+WORKFLOW4=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-i2v-MoESheduler-pod.json
 ```
 
 ## WAN 2.2 animate (lightning)
