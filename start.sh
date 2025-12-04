@@ -11,6 +11,15 @@ if [[ -n "$PUBLIC_KEY" ]]; then
     echo "✅ [SSH enabled]"
 fi
 
+# Export env variables
+if [[ -n "${RUNPOD_GPU_COUNT:-}" ]]; then
+   echo "ℹ️ Exporting runpod.io environment variables..."
+   printenv | grep -E '^RUNPOD_|^PATH=|^_=' \
+     | awk -F = '{ print "export " $1 "=\"" $2 "\"" }' >> /etc/rp_environment
+
+   echo 'source /etc/rp_environment' >> ~/.bashrc
+fi
+
 # Move necessary files to workspace
 echo "ℹ️ [Moving necessary files to workspace] enabling rebooting pod without data loss"
 for script in comfyui-on-workspace.sh readme-on-workspace.sh test-on-workspace.sh docs-on-workspace.sh; do

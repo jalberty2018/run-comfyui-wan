@@ -58,6 +58,10 @@
 - [WanMoEScheduler](https://github.com/cmeka/ComfyUI-WanMoEScheduler)
 - [PainterSampler](https://github.com/princepainter/Comfyui-PainterSampler.git)
 
+### VRAM management
+
+- [PainterVRAM](https://github.com/princepainter/Comfyui-PainterVRAM)
+
 ### Model Specific
 
 #### Animate

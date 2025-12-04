@@ -212,6 +212,8 @@ HF_MODEL_SAMS1=VeryAladeen/Sec-4B
 HF_MODEL_SAMS_FILENAME1=SeC-4B-fp16.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-animate-vi2v-sam2-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-animate-vi2v-sec-point-editor-pod.json
+WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-animate-vi2v-sam2-pod.json
+WORKFLOW4=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-animate-vi2v-sam3-point-collector-pod.json
 ```
 
 ### Private
@@ -238,6 +240,8 @@ HF_MODEL_SAMS1=VeryAladeen/Sec-4B
 HF_MODEL_SAMS_FILENAME1=SeC-4B-fp16.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-animate-vi2v-sam2-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-animate-vi2v-sec-point-editor-pod.json
+WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-animate-vi2v-sam2-pod.json
+WORKFLOW4=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-animate-vi2v-sam3-point-collector-pod.json
 ``` 
 
 ## WAN 2.2 s2v

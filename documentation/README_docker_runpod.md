@@ -34,9 +34,43 @@
 
 [**👉 One-click Deploy on RunPod WAN 2.2 animate (lightx2v)**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
-[**👉 One-click Deploy on RunPod WAN 2.2 lightx2v Dyno**](https://console.runpod.io/deploy?template=hcgfvldif0&ref=se4tkc5o)
-
 [**👉 One-click Deploy on RunPod WAN 2.2 v2v Lucy Edit**](https://console.runpod.io/deploy?template=kay3oq4rx7&ref=se4tkc5o)
+
+##  Hardware Requirements
+
+### T2V-A14B or I2V-A14B (high/low) 
+
+#### **Recommended GPU**
+
+- precision fp16
+- video settings 1024x768 122 frames
+
+| GPU          | VRAM  | RAM ComfyUI-Native/ComfyUI-WanVideoWrapper |
+|--------------------------|-------|-------------------------|
+| L40S, RTX 6000 Ada, L40       | 45Gb | 90Gb/50Gb           |
+
+#### Possible GPU with limitations due to available ram on rupod.io
+
+- precision fp16
+- video settings 1024x768 97 frames (ComfyUI-WanVideoWrapper Offload 10)
+- only possible with worflows based on ComfyUI-WanVideoWrapper
+
+| GPU       | VRAM  | RAM ComfyUI-WanVideoWrapper |
+|--------------------------|-------|--------------|
+| A40       | 45Gb | 45Gb |
+
+### Animate
+
+- precision fp16
+- video settings 1024x768 77 chunks/Sampler
+
+| Recommended GPU          | VRAM  | RAM   |
+|--------------------------|-------|-------|
+| L40S, RTX 6000 Ada, L40  | 40Gb | 105Gb | 
+
+## Image documentation
+
+- [Start](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
 
 ### Workflows
 
@@ -46,7 +80,3 @@
 ### Image specific tutorial
 
 - [Tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial/)
-
-## Image documentation
-
-- [Start](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
