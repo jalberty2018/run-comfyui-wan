@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:02122025
+FROM ls250824/comfyui-runtime:10122025
 
 # Set Working Directory
 WORKDIR /
@@ -9,6 +9,17 @@ COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/readme
 COPY --chmod=664 /documentation/README.md /README.md
 COPY --chmod=644 test/ /test
 COPY --chmod=644 docs/ /docs
+
+# Copy docs *inside* the image
+RUN mkdir -p /docs && \
+    cp /awesome-comfyui-docs/ComfyUI_WAN_configuration.md /docs/ComfyUI_WAN_configuration.md && \
+    cp /awesome-comfyui-docs/ComfyUI_WAN_custom_nodes.md /docs/ComfyUI_WAN_custom_nodes.md && \
+    cp /awesome-comfyui-docs/ComfyUI_WAN_hardware.md /docs/ComfyUI_WAN_hardware.md && \
+    cp /awesome-comfyui-docs/ComfyUI_WAN_image_setup.md /docs/ComfyUI_WAN_image_setup.md && \
+    cp /awesome-comfyui-docs/ComfyUI_WAN_resources.md /docs/ComfyUI_WAN_resources.md
+
+# Cleanup
+RUN rm -rf /awesome-comfyui-docs
 
 # Copy ComfyUI configurations
 COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.settings.json
@@ -21,6 +32,7 @@ RUN --mount=type=cache,target=/root/.cache/git \
     git clone --depth=1 --filter=blob:none https://github.com/rgthree/rgthree-comfy.git && \
     git clone --depth=1 --filter=blob:none https://github.com/liusida/ComfyUI-Login.git && \
     git clone --depth=1 --filter=blob:none https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/1038lab/ComfyUI-JoyCaption.git && \
     git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-KJNodes.git && \
     git clone --depth=1 --filter=blob:none https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-WanVideoWrapper.git && \
@@ -56,7 +68,8 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/princepainter/Comfyui-PainterSampler.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/princepainter/Comfyui-PainterFLF2V.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/PozzettiAndrea/ComfyUI-SAM3.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/princepainter/Comfyui-PainterVRAM.git
+	git clone --depth=1 --filter=blob:none https://github.com/princepainter/Comfyui-PainterVRAM.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/ckinpdx/ComfyUI-WanKeyframeBuilder.git
 
 # Rewrite any top-level CPU ORT refs to GPU ORT
 RUN set -eux; \
@@ -69,6 +82,7 @@ RUN set -eux; \
 # Specific git checkouts.
 
 # VideoWrapper working with TripleKSampler -> 44feb24290db02279988a2ce8845ee65e62f3cce (26Nov25)
+# VideoWrapper working with TripleKSampler -> e2333d0f04e7292e07d504cb824256f1ca8e63e4 (04dec25)
 
 RUN cd IAMCCS-nodes && git checkout 8722d908cdc042baa74bd46549ec32876e234411
 
@@ -89,7 +103,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     -r ComfyUI-RMBG/requirements.txt \
     -r Lucy-Edit-ComfyUI/requirements.txt \
     -r comfyui_controlnet_aux/requirements.txt \
-	-r Comfyui-SecNodes/requirements.txt
+	-r Comfyui-SecNodes/requirements.txt \
+	-r ComfyUI-JoyCaption/requirements.txt \
+	-r ComfyUI-JoyCaption/requirements_gguf.txt
 
 WORKDIR /ComfyUI/custom_nodes/ComfyUI-SAM3
 RUN python install.py
@@ -101,8 +117,8 @@ WORKDIR /workspace
 EXPOSE 8188 9000
 
 # Labels
-LABEL org.opencontainers.image.title="ComfyUI 0.3.76 for WAN 2.x inference" \
-      org.opencontainers.image.description="ComfyUI  + flash-attn + sageattention + onnxruntime-gpu + torch_generic_nms + code-server + civitai downloader + huggingface_hub + custom_nodes" \
+LABEL org.opencontainers.image.title="ComfyUI 0.4.0 for WAN 2.x inference" \
+      org.opencontainers.image.description="ComfyUI + flash-attn + sageattention + onnxruntime-gpu + torch_generic_nms + code-server + civitai downloader + huggingface_hub + custom_nodes" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
       org.opencontainers.image.licenses="MIT"
 

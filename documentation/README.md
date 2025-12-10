@@ -88,5 +88,6 @@ comfy-cli env
 python /workspace/test/test_pytorch_cuda.py
 python /workspace/test/test_flash.py
 python /workspace/test/test_sage.py
-python /wirkspace/test/test_torch_generic_nms.py
+python /workspace/test/test_torch_generic_nms.py
+python /workspace/test/test_llama_cpp.py
 ```
