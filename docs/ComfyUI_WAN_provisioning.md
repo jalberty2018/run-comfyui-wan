@@ -6,6 +6,7 @@
 - [i2v](provisioning/hf_wan22_i2v.md)
 - [s2v](provisioning/hf_wan22_s2v.md)
 - [animate](provisioning/hf_wan22_animate.md)
+- [Longcat](provisioning/hf_longcat.md)
 - [loras](provisioning/hf_wan22_loras.md)
 - [lucy edit](provisioning/hf_lucy_edit.md)
 

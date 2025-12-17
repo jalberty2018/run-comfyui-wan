@@ -26,6 +26,16 @@ hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-250928-dyno/Wan2.2-
 --local-dir /workspace/ComfyUI/models/diffusion_models/
 ```
 
+### VACE
+
+```bash
+hf download Kijai/WanVideo_comfy Fun/VACE/Wan2_2_Fun_VACE_module_A14B_HIGH_bf16.safetensors \
+--local-dir=/workspace/ComfyUI/models/diffusion_models/
+
+hf download Kijai/WanVideo_comfy Fun/VACE/Wan2_2_Fun_VACE_module_A14B_LOW_bf16.safetensors \
+--local-dir=/workspace/ComfyUI/models/diffusion_models/
+```
+
 ## CLIP Text encoder
 
 ### fp32

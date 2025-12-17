@@ -71,7 +71,7 @@ if [[ "$HAS_GPU" -eq 1 || "$HAS_GPU_RUNPOD" -eq 1 ]]; then
     if [[ -n "$PASSWORD" ]]; then
         code-server /workspace --auth password --disable-update-check --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     else
-        echo "⚠️ PASSWORD is not set as an environment variable use password from /root/.config/code-server/config.yaml"
+        echo "⚠️ PASSWORD is not set as an environment. password created in /root/.config/code-server/config.yaml"
         code-server /workspace --disable-telemetry --disable-update-check --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     fi
 	
@@ -199,7 +199,7 @@ download_model_CIVITAI() {
     mkdir -p "$target"
 
     echo "ℹ️ [DOWNLOAD] Fetching ${!url_var} → $target ..."
-    civitai "${!url_var}" "$target" || \
+    civitai --quit "${!url_var}" "$target" || \
         echo "⚠️ Failed to download ${!url_var}"
     sleep 1
     return 0
@@ -441,6 +441,13 @@ if [[ "$HAS_PROVISIONING" -eq 1 ]]; then
     if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then
         echo "ℹ️ Connect to ComfyUI, Code-Server or shell from console menu on runpod.io"
     fi
+	
+    if [[ -n "$PASSWORD" ]]; then
+		echo "ℹ️ Code-Server login use PASSWORD set as env"
+	else 
+		echo "⚠️ Code-Server password not provided via env (PASSWORD) use generated."
+		cat /root/.config/code-server/config.yaml        
+    fi	
 else
     echo "ℹ️ Running error diagnosis"
 

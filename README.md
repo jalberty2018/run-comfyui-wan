@@ -22,7 +22,6 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 ### Deployment.
 
 - All available templates on runpod are tested on a L40S/A40.
-- Try to avoid regions US-TX-x as they often fail to download or run the image (Pytorch CUDA mismatch).
 
 ### Runpod templates
 
@@ -32,8 +31,6 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 [**👉 One-click Deploy on RunPod WAN 2.2 animate (lightx2v)**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
-[**👉 One-click Deploy on RunPod WAN 2.2 v2v Lucy Edit**](https://console.runpod.io/deploy?template=kay3oq4rx7&ref=se4tkc5o)
-
 ## Tutorial
 
 - [Specific for these templates](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial.md)
@@ -41,7 +38,7 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 ### Workflows
 
 - Open from ComfyUI's interface on the left
-- View/Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_workflows/)
+- View/Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_workflows/)
 
 ![Included t2v wrapper as easy example to work on A40/L40S](images/ai-generated.jpg)
 

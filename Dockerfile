@@ -1,25 +1,8 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:10122025
+FROM ls250824/comfyui-runtime:17122025
 
 # Set Working Directory
 WORKDIR /
-
-# Copy Scripts and documentation
-COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/readme-on-workspace.sh onworkspace/test-on-workspace.sh onworkspace/docs-on-workspace.sh / 
-COPY --chmod=664 /documentation/README.md /README.md
-COPY --chmod=644 test/ /test
-COPY --chmod=644 docs/ /docs
-
-# Copy docs *inside* the image
-RUN mkdir -p /docs && \
-    cp /awesome-comfyui-docs/ComfyUI_WAN_configuration.md /docs/ComfyUI_WAN_configuration.md && \
-    cp /awesome-comfyui-docs/ComfyUI_WAN_custom_nodes.md /docs/ComfyUI_WAN_custom_nodes.md && \
-    cp /awesome-comfyui-docs/ComfyUI_WAN_hardware.md /docs/ComfyUI_WAN_hardware.md && \
-    cp /awesome-comfyui-docs/ComfyUI_WAN_image_setup.md /docs/ComfyUI_WAN_image_setup.md && \
-    cp /awesome-comfyui-docs/ComfyUI_WAN_resources.md /docs/ComfyUI_WAN_resources.md
-
-# Cleanup
-RUN rm -rf /awesome-comfyui-docs
 
 # Copy ComfyUI configurations
 COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.settings.json
@@ -69,7 +52,11 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/princepainter/Comfyui-PainterFLF2V.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/PozzettiAndrea/ComfyUI-SAM3.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/princepainter/Comfyui-PainterVRAM.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/ckinpdx/ComfyUI-WanKeyframeBuilder.git
+	git clone --depth=1 --filter=blob:none https://github.com/geroldmeisinger/ComfyUI-outputlists-combiner.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/lrzjason/Comfyui-LatentUtils.git
+
+# triton-windows error
+RUN cd ComfyUI-RMBG && git fetch --unshallow && git checkout 9ecda2e689d72298b4dca39403a85d13e53ea659
 
 # Rewrite any top-level CPU ORT refs to GPU ORT
 RUN set -eux; \
@@ -79,11 +66,9 @@ RUN set -eux; \
       sed -i -E 's/^( *| *)(onnxruntime)([<>=].*)?(\s*)$/\1onnxruntime-gpu==1.22.*\4/i' "$f"; \
     done
 
-# Specific git checkouts.
-
-# VideoWrapper working with TripleKSampler -> 44feb24290db02279988a2ce8845ee65e62f3cce (26Nov25)
 # VideoWrapper working with TripleKSampler -> e2333d0f04e7292e07d504cb824256f1ca8e63e4 (04dec25)
 
+# IAMCSS V1 used for animate workflow.
 RUN cd IAMCCS-nodes && git checkout 8722d908cdc042baa74bd46549ec32876e234411
 
 # Install Dependencies for Cloned Repositories
@@ -105,10 +90,35 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     -r comfyui_controlnet_aux/requirements.txt \
 	-r Comfyui-SecNodes/requirements.txt \
 	-r ComfyUI-JoyCaption/requirements.txt \
-	-r ComfyUI-JoyCaption/requirements_gguf.txt
+	-r ComfyUI-JoyCaption/requirements_gguf.txt \
+	-r ComfyUI-outputlists-combiner/requirements.txt
 
 WORKDIR /ComfyUI/custom_nodes/ComfyUI-SAM3
 RUN python install.py
+
+# Set Working Directory
+WORKDIR /
+
+# Copy Scripts and documentation
+COPY --chmod=755 start.sh onworkspace/comfyui-on-workspace.sh onworkspace/readme-on-workspace.sh onworkspace/test-on-workspace.sh onworkspace/docs-on-workspace.sh / 
+COPY --chmod=664 /documentation/README.md /README.md
+COPY --chmod=644 test/ /test
+COPY --chmod=644 docs/ /docs
+
+# Clone documentation repo into /awesome-comfyui-docs
+RUN --mount=type=cache,target=/root/.cache/git \
+    git clone --depth=1 --filter=blob:none https://github.com/jalberty2018/awesome-comfyui-docs.git /awesome-comfyui-docs
+
+# Copy docs *inside* the image
+RUN mkdir -p /docs && \
+    cp /awesome-comfyui-docs/ComfyUI_WAN_configuration.md /docs/ComfyUI_WAN_configuration.md && \
+    cp /awesome-comfyui-docs/ComfyUI_WAN_custom_nodes.md /docs/ComfyUI_WAN_custom_nodes.md && \
+    cp /awesome-comfyui-docs/ComfyUI_WAN_hardware.md /docs/ComfyUI_WAN_hardware.md && \
+    cp /awesome-comfyui-docs/ComfyUI_WAN_image_setup.md /docs/ComfyUI_WAN_image_setup.md && \
+    cp /awesome-comfyui-docs/ComfyUI_WAN_resources.md /docs/ComfyUI_WAN_resources.md
+
+# Cleanup
+RUN rm -rf /awesome-comfyui-docs
 
 # Set Workspace
 WORKDIR /workspace
@@ -117,7 +127,7 @@ WORKDIR /workspace
 EXPOSE 8188 9000
 
 # Labels
-LABEL org.opencontainers.image.title="ComfyUI 0.4.0 for WAN 2.x inference" \
+LABEL org.opencontainers.image.title="ComfyUI 0.5.0 for WAN 2.x inference" \
       org.opencontainers.image.description="ComfyUI + flash-attn + sageattention + onnxruntime-gpu + torch_generic_nms + code-server + civitai downloader + huggingface_hub + custom_nodes" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
       org.opencontainers.image.licenses="MIT"

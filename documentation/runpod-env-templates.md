@@ -139,8 +139,8 @@ HF_MODEL_DIFFUSION_MODELS2=lightx2v/Wan2.2-Official-Models
 HF_MODEL_DIFFUSION_MODELS_FILENAME2=wan2.2_i2v_A14b_low_noise_lightx2v.safetensors
 HF_MODEL_VAE1=Kijai/WanVideo_comfy
 HF_MODEL_VAE_FILENAME1=Wan2_1_VAE_fp32.safetensors
-HF_MODEL_CLIP_VISION1=Comfy-Org/Wan_2.1_ComfyUI_repackaged
-HF_MODEL_CLIP_VISION_FILENAME1=split_files/clip_vision/clip_vision_h.safetensors
+HF_MODEL_CLIP_VISION1=ricecake/wan21NSFWClipVisionH_v10
+HF_MODEL_CLIP_VISION_FILENAME1=wan21NSFWClipVisionH_v10.safetensors
 HF_MODEL_TEXT_ENCODERS1=LS110824/text_encoders
 HF_MODEL_TEXT_ENCODERS_FILENAME1=wan21UMT5XxlFP32_fp32.safetensors
 HF_MODEL_UPSCALER1=LS110824/upscale
@@ -179,8 +179,6 @@ HF_MODEL_LORA1=lightx2v/Wan2.2-Distill-Loras
 HF_MODEL_LORA_FILENAME1=wan2.2_i2v_A14b_high_noise_lora_rank64_lightx2v_4step_1022.safetensors
 HF_MODEL_LORA2=lightx2v/Wan2.2-Distill-Loras
 HF_MODEL_LORA_FILENAME2=wan2.2_i2v_A14b_low_noise_lora_rank64_lightx2v_4step_1022.safetensors
-HF_MODEL_SAMS1=VeryAladeen/Sec-4B
-HF_MODEL_SAMS_FILENAME1=SeC-4B-fp16.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-TripleKSampler-pod.json
 WORKFLOW2=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-MoeKSampler-pod.json
 WORKFLOW3=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-i2v-TripleKSampler-pod.json
@@ -264,6 +262,24 @@ HF_MODEL_UPSCALER1=LS110824/upscale
 HF_MODEL_UPSCALER_PTH1=4x_foolhardy_Remacri.pth
 ```
 
+## Longcat ti2v (long video generation)
+
+### private
+
+```bash
+CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
+HF_TOKEN="{{ RUNPOD_SECRET_HF_TOKEN_WRITE }}"
+PASSWORD="{{ RUNPOD_SECRET_CODE-SERVER-NEW }}"
+HF_MODEL_DIFFUSION_MODELS1=Kijai/LongCat-Video_comfy
+HF_MODEL_DIFFUSION_MODELS_FILENAME1=LongCat_TI2V_comfy_bf16.safetensors
+HF_MODEL_VAE1=Kijai/WanVideo_comfy
+HF_MODEL_VAE_FILENAME1=Wan2_1_VAE_fp32.safetensors
+HF_MODEL_TEXT_ENCODERS1=LS110824/text_encoders
+HF_MODEL_TEXT_ENCODERS_FILENAME1=wan21UMT5XxlFP32_fp32.safetensors
+HF_MODEL_LORA1=Kijai/LongCat-Video_comfy
+HF_MODEL_LORA_FILENAME1=LongCat_distill_lora_alpha64_bf16.safetensors
+```
+
 ## Lucy Edit v2v
 
 ### Public
@@ -292,3 +308,54 @@ HF_MODEL_TEXT_ENCODERS1=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
 HF_MODEL_TEXT_ENCODERS_FILENAME1=split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors
 WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/Lucy-edit-v2v-dev-pod.json
 ```
+
+## WAN 2.1
+
+### Phantom
+
+```bash
+CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
+HF_TOKEN="{{ RUNPOD_SECRET_HF_TOKEN_WRITE }}"
+PASSWORD="{{ RUNPOD_SECRET_CODE-SERVER-NEW }}"
+HF_MODEL_DIFFUSION_MODELS1=Kijai/WanVideo_comfy
+HF_MODEL_DIFFUSION_MODELS_SAFETENSOR1S=Phantom-Wan-14B_fp16.safetensors
+HF_MODEL_VAE=Kijai/WanVideo_comfy
+HF_MODEL_VAE_SAFETENSORS=Wan2_1_VAE_fp32.safetensors
+HF_MODEL_TEXT_ENCODERS1=LS110824/text_encoders
+HF_MODEL_TEXT_ENCODERS_SAFETENSORS1=wan21UMT5XxlFP32_fp32.safetensors
+HF_MODEL_UPSCALER1=LS110824/upscale
+HF_MODEL_UPSCALER_PTH1=4x_foolhardy_Remacri.pth
+HF_MODEL_LORA1=vrgamedevgirl84/Wan14BT2VFusioniX
+HF_MODEL_LORA_SAFETENSORS1=FusionX_LoRa/Phantom_Wan_14B_FusionX_LoRA.safetensors
+HF_MODEL_LORA2=Kijai/WanVideo_comfy
+HF_MODEL_LORA_SAFETENSORS2=Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors
+HF_MODEL_LORA3=LS110824/Wan21_lora
+HF_MODEL_LORA_SAFETENSORS3=FusionX_FaceNaturalizer.safetensors
+HF_MODEL_LORA4=LS110824/Wan21_lora
+HF_MODEL_LORA_SAFETENSORS4=HighSpeedDynamics.safetensors
+```
+
+### SkyReels
+
+```bash
+CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
+HF_TOKEN="{{ RUNPOD_SECRET_HF_TOKEN_WRITE }}"
+PASSWORD="{{ RUNPOD_SECRET_CODE-SERVER-NEW }}"
+HF_MODEL_DIFFUSION_MODELS1=Kijai/WanVideo_comfy
+HF_MODEL_DIFFUSION_MODELS_SAFETENSORS1=Skyreels/Wan2_1-SkyReels-V2-DF-14B-720P_fp16.safetensors
+HF_MODEL_VAE=Kijai/WanVideo_comfy
+HF_MODEL_VAE_SAFETENSORS=Wan2_1_VAE_fp32.safetensors
+HF_MODEL_TEXT_ENCODERS1=LS110824/text_encoders
+HF_MODEL_TEXT_ENCODERS_SAFETENSORS1=wan21UMT5XxlFP32_fp32.safetensors
+HF_MODEL_UPSCALER2=LS110824/upscale
+HF_MODEL_UPSCALER_PTH2=4x_foolhardy_Remacri.pth
+HF_MODEL_LORA1=LS110824/Wan21_lora
+HF_MODEL_LORA_SAFETENSORS1=DetailEnhancerV1.safetensors
+HF_MODEL_LORA2=LS110824/Wan21_lora
+HF_MODEL_LORA_SAFETENSORS2=HighSpeedDynamics.safetensors
+HF_MODEL_LORA3=vrgamedevgirl84/Wan14BT2VFusioniX
+HF_MODEL_LORA_SAFETENSORS3=FusionX_LoRa/Wan2.1_T2V_14B_FusionX_LoRA.safetensors
+HF_MODEL_LORA4=LS110824/Wan21_lora
+HF_MODEL_LORA_SAFETENSORS4=HighSpeedDynamics.safetensors
+```
+
