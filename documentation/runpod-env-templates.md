@@ -359,3 +359,16 @@ HF_MODEL_LORA4=LS110824/Wan21_lora
 HF_MODEL_LORA_SAFETENSORS4=HighSpeedDynamics.safetensors
 ```
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libegl1 \
+    libgl1 \
+    libgles2 \
+    libx11-6 \
+    libxext6 \
+    libxrender1 \
+    libxfixes3 \
+    libxi6 \
+    libxcursor1 \
+    libfontconfig1 \
+    libfreetype6 \
+ && rm -rf /var/lib/apt/lists/*

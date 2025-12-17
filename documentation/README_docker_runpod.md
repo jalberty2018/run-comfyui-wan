@@ -33,6 +33,12 @@
 
 [**👉 One-click Deploy on RunPod WAN 2.2 animate (lightx2v)**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
+## Documentation
+
+- [Start](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
+- [Tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial/)
+- [Workflows](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_workflows/)
+
 ##  Hardware Requirements
 
 ### T2V-A14B or I2V-A14B (high/low) 
@@ -65,15 +71,6 @@
 |--------------------------|-------|-------|
 | L40S, RTX 6000 Ada, L40  | 40Gb | 105Gb | 
 
-## Image documentation
 
-- [Start](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN/)
 
-### Workflows
 
-- Open ComfyUI's interface on the left and select template.
-- Download from [examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_workflows/)
-
-### Image specific tutorial
-
-- [Tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial/)
