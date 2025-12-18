@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-FROM ls250824/comfyui-runtime:17122025
+FROM ls250824/comfyui-runtime:18122025
 
 # Set Working Directory
 WORKDIR /
@@ -53,7 +53,8 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/PozzettiAndrea/ComfyUI-SAM3.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/princepainter/Comfyui-PainterVRAM.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/geroldmeisinger/ComfyUI-outputlists-combiner.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/lrzjason/Comfyui-LatentUtils.git
+	git clone --depth=1 --filter=blob:none https://github.com/lrzjason/Comfyui-LatentUtils.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-SCAIL-Pose.git
 
 # triton-windows error
 RUN cd ComfyUI-RMBG && git fetch --unshallow && git checkout 9ecda2e689d72298b4dca39403a85d13e53ea659
@@ -91,7 +92,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 	-r Comfyui-SecNodes/requirements.txt \
 	-r ComfyUI-JoyCaption/requirements.txt \
 	-r ComfyUI-JoyCaption/requirements_gguf.txt \
-	-r ComfyUI-outputlists-combiner/requirements.txt
+	-r ComfyUI-outputlists-combiner/requirements.txt \
+	-r ComfyUI-SCAIL-Pose/requirements.txt
 
 WORKDIR /ComfyUI/custom_nodes/ComfyUI-SAM3
 RUN python install.py
@@ -127,7 +129,7 @@ WORKDIR /workspace
 EXPOSE 8188 9000
 
 # Labels
-LABEL org.opencontainers.image.title="ComfyUI 0.5.0 for WAN 2.x inference" \
+LABEL org.opencontainers.image.title="ComfyUI 0.5.1 for WAN 2.x inference" \
       org.opencontainers.image.description="ComfyUI + flash-attn + sageattention + onnxruntime-gpu + torch_generic_nms + code-server + civitai downloader + huggingface_hub + custom_nodes" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
       org.opencontainers.image.licenses="MIT"
