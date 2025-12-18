@@ -1,4 +1,5 @@
 # syntax=docker/dockerfile:1.7
+# run-comfyui-wan
 FROM ls250824/comfyui-runtime:18122025
 
 # Set Working Directory
@@ -54,7 +55,8 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/princepainter/Comfyui-PainterVRAM.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/geroldmeisinger/ComfyUI-outputlists-combiner.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/lrzjason/Comfyui-LatentUtils.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-SCAIL-Pose.git
+	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-SCAIL-Pose.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-WanAnimatePreprocess.git
 
 # triton-windows error
 RUN cd ComfyUI-RMBG && git fetch --unshallow && git checkout 9ecda2e689d72298b4dca39403a85d13e53ea659
@@ -93,7 +95,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 	-r ComfyUI-JoyCaption/requirements.txt \
 	-r ComfyUI-JoyCaption/requirements_gguf.txt \
 	-r ComfyUI-outputlists-combiner/requirements.txt \
-	-r ComfyUI-SCAIL-Pose/requirements.txt
+	-r ComfyUI-SCAIL-Pose/requirements.txt \
+	-r ComfyUI-WanAnimatePreprocess/requirements.txt
 
 WORKDIR /ComfyUI/custom_nodes/ComfyUI-SAM3
 RUN python install.py

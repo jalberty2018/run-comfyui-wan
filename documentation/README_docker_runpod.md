@@ -23,7 +23,7 @@
 ### Deployment/Usage information
 
 - All available templates on runpod.io are tested on a L40S/A40.
-- Avoid using ID's without a region as they are not reliable.
+- Avoid using ID's without a region an US-TX-4 as they are unreliable.
 
 ### Runpod.io templates
 

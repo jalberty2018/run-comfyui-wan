@@ -89,5 +89,7 @@ python /workspace/test/test_pytorch_cuda.py
 python /workspace/test/test_flash.py
 python /workspace/test/test_sage.py
 python /workspace/test/test_torch_generic_nms.py
-python /workspace/test/test_llama_cpp.py
+python /workspace/test/test_llmama_cpp.py
+python /workspace/test/test/environment.py
+python /workspace/test/test_environment_runpod.py
 ```
