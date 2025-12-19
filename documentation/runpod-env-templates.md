@@ -311,6 +311,33 @@ WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/Lucy-edit-v2v-dev-pod.j
 
 ## WAN 2.1
 
+### SCAIL
+
+```bash
+CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
+HF_TOKEN="{{ RUNPOD_SECRET_HF_TOKEN_WRITE }}"
+PASSWORD="{{ RUNPOD_SECRET_CODE-SERVER-NEW }}"
+HF_MODEL_DIFFUSION_MODELS1=Kijai/WanVideo_comfy
+HF_MODEL_DIFFUSION_MODELS_FILENAME1=SCAIL/Wan21-14B-SCAIL-preview_comfy_bf16.safetensors
+HF_MODEL_VAE1=Kijai/WanVideo_comfy
+HF_MODEL_VAE_FILENAME1=Wan2_1_VAE_fp32.safetensors
+HF_MODEL_TEXT_ENCODERS1=LS110824/text_encoders
+HF_MODEL_TEXT_ENCODERS_FILENAME1=wan21UMT5XxlFP32_fp32.safetensors
+HF_MODEL_UPSCALER2=LS110824/upscale
+HF_MODEL_UPSCALER_PTH2=4x_foolhardy_Remacri.pth
+HF_MODEL_LORA1=Kijai/WanVideo_comfy
+HF_MODEL_LORA_FILENAME1=Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors
+HF_MODEL_CLIP_VISION1=ricecake/wan21NSFWClipVisionH_v10
+HF_MODEL_CLIP_VISION_FILENAME1=wan21NSFWClipVisionH_v10.safetensors
+HF_MODEL1=JunkyByte/easy_ViTPose
+HF_MODEL_FILENAME1=onnx/wholebody/vitpose-l-wholebody.onnx
+HF_MODEL_DIR1=models/detection
+HF_MODEL2=Wan-AI/Wan2.2-Animate-14B
+HF_MODEL_FILENAME2=process_checkpoint/det/yolov10m.onnx
+HF_MODEL_DIR2=models/detection
+WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/SCAIL-vi2v-wanwrapper-pod.json
+```
+
 ### Phantom
 
 ```bash
@@ -318,21 +345,21 @@ CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
 HF_TOKEN="{{ RUNPOD_SECRET_HF_TOKEN_WRITE }}"
 PASSWORD="{{ RUNPOD_SECRET_CODE-SERVER-NEW }}"
 HF_MODEL_DIFFUSION_MODELS1=Kijai/WanVideo_comfy
-HF_MODEL_DIFFUSION_MODELS_SAFETENSOR1S=Phantom-Wan-14B_fp16.safetensors
+HF_MODEL_DIFFUSION_MODELS_FILENAME1=Phantom-Wan-14B_fp16.safetensors
 HF_MODEL_VAE=Kijai/WanVideo_comfy
-HF_MODEL_VAE_SAFETENSORS=Wan2_1_VAE_fp32.safetensors
+HF_MODEL_VAE_FILENAME=Wan2_1_VAE_fp32.safetensors
 HF_MODEL_TEXT_ENCODERS1=LS110824/text_encoders
-HF_MODEL_TEXT_ENCODERS_SAFETENSORS1=wan21UMT5XxlFP32_fp32.safetensors
+HF_MODEL_TEXT_ENCODERS_FILENAME1=wan21UMT5XxlFP32_fp32.safetensors
 HF_MODEL_UPSCALER1=LS110824/upscale
 HF_MODEL_UPSCALER_PTH1=4x_foolhardy_Remacri.pth
 HF_MODEL_LORA1=vrgamedevgirl84/Wan14BT2VFusioniX
-HF_MODEL_LORA_SAFETENSORS1=FusionX_LoRa/Phantom_Wan_14B_FusionX_LoRA.safetensors
+HF_MODEL_LORA_FILENAME1=FusionX_LoRa/Phantom_Wan_14B_FusionX_LoRA.safetensors
 HF_MODEL_LORA2=Kijai/WanVideo_comfy
-HF_MODEL_LORA_SAFETENSORS2=Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors
+HF_MODEL_LORA_FILENAME2=Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors
 HF_MODEL_LORA3=LS110824/Wan21_lora
-HF_MODEL_LORA_SAFETENSORS3=FusionX_FaceNaturalizer.safetensors
+HF_MODEL_LORA_FILENAME3=FusionX_FaceNaturalizer.safetensors
 HF_MODEL_LORA4=LS110824/Wan21_lora
-HF_MODEL_LORA_SAFETENSORS4=HighSpeedDynamics.safetensors
+HF_MODEL_LORA_FILENAME4=HighSpeedDynamics.safetensors
 ```
 
 ### SkyReels
@@ -342,19 +369,19 @@ CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
 HF_TOKEN="{{ RUNPOD_SECRET_HF_TOKEN_WRITE }}"
 PASSWORD="{{ RUNPOD_SECRET_CODE-SERVER-NEW }}"
 HF_MODEL_DIFFUSION_MODELS1=Kijai/WanVideo_comfy
-HF_MODEL_DIFFUSION_MODELS_SAFETENSORS1=Skyreels/Wan2_1-SkyReels-V2-DF-14B-720P_fp16.safetensors
+HF_MODEL_DIFFUSION_MODELS_FILENAME1=Skyreels/Wan2_1-SkyReels-V2-DF-14B-720P_fp16.safetensors
 HF_MODEL_VAE=Kijai/WanVideo_comfy
-HF_MODEL_VAE_SAFETENSORS=Wan2_1_VAE_fp32.safetensors
+HF_MODEL_VAE_FILENAME=Wan2_1_VAE_fp32.safetensors
 HF_MODEL_TEXT_ENCODERS1=LS110824/text_encoders
-HF_MODEL_TEXT_ENCODERS_SAFETENSORS1=wan21UMT5XxlFP32_fp32.safetensors
+HF_MODEL_TEXT_ENCODERS_FILENAME1=wan21UMT5XxlFP32_fp32.safetensors
 HF_MODEL_UPSCALER2=LS110824/upscale
 HF_MODEL_UPSCALER_PTH2=4x_foolhardy_Remacri.pth
 HF_MODEL_LORA1=LS110824/Wan21_lora
-HF_MODEL_LORA_SAFETENSORS1=DetailEnhancerV1.safetensors
+HF_MODEL_LORA_FILENAME1=DetailEnhancerV1.safetensors
 HF_MODEL_LORA2=LS110824/Wan21_lora
-HF_MODEL_LORA_SAFETENSORS2=HighSpeedDynamics.safetensors
+HF_MODEL_LORA_FILENAME2=HighSpeedDynamics.safetensors
 HF_MODEL_LORA3=vrgamedevgirl84/Wan14BT2VFusioniX
-HF_MODEL_LORA_SAFETENSORS3=FusionX_LoRa/Wan2.1_T2V_14B_FusionX_LoRA.safetensors
+HF_MODEL_LORA_FILENAME3=FusionX_LoRa/Wan2.1_T2V_14B_FusionX_LoRA.safetensors
 HF_MODEL_LORA4=LS110824/Wan21_lora
-HF_MODEL_LORA_SAFETENSORS4=HighSpeedDynamics.safetensors
+HF_MODEL_LORA_FILENAME4=HighSpeedDynamics.safetensors
 ```

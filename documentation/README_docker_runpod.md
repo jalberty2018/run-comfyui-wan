@@ -23,7 +23,7 @@
 ### Deployment/Usage information
 
 - All available templates on runpod.io are tested on a L40S/A40.
-- Avoid using ID's without a region an US-TX-4 as they are unreliable.
+- Avoid regions **US-TX-4** — they often fail to download or run the image (PyTorch CUDA errors).
 
 ### Runpod.io templates
 
@@ -32,6 +32,8 @@
 [**👉 One-click Deploy on RunPod WAN 2.2 i2v (lightx2v)**](https://console.runpod.io/deploy?template=moem21s8xb&ref=se4tkc5o)
 
 [**👉 One-click Deploy on RunPod WAN 2.2 animate (lightx2v)**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
+
+[**👉 One-click Deploy on Runpod WAN SCAIL VI2V (lightx2v)**](https://console.runpod.io/deploy?template=9i0lkwau54&ref=se4tkc5o)
 
 ## Documentation
 
@@ -72,5 +74,13 @@
 | L40S, RTX 6000 Ada, L40  | 40Gb | 105Gb | 
 
 
+### SCAIL
+
+- precision fp16
+- Depends on length and size of video.
+
+| Recommended GPU          | VRAM  | RAM   |
+|--------------------------|-------|-------|
+| L40S, RTX 6000 Ada, L40  | 40Gb | 105Gb | 
 
 
