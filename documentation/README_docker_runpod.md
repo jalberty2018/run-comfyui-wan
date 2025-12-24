@@ -52,7 +52,7 @@
 
 | GPU          | VRAM  | RAM ComfyUI-Native/ComfyUI-WanVideoWrapper |
 |--------------------------|-------|-------------------------|
-| L40S, RTX 6000 Ada, L40       | 45Gb | 90Gb/50Gb           |
+| L40S, RTX 6000 Ada        | 45Gb | 90Gb/50Gb           |
 
 #### Possible GPU with limitations due to available ram on rupod.io
 
@@ -62,7 +62,7 @@
 
 | GPU       | VRAM  | RAM ComfyUI-WanVideoWrapper |
 |--------------------------|-------|--------------|
-| A40       | 45Gb | 45Gb |
+| A40, RTX 6000 | 45Gb | 45Gb |
 
 ### Animate
 
@@ -71,8 +71,7 @@
 
 | Recommended GPU          | VRAM  | RAM   |
 |--------------------------|-------|-------|
-| L40S, RTX 6000 Ada, L40  | 40Gb | 105Gb | 
-
+| L40S, RTX 6000 Ada       | 40Gb | 105Gb | 
 
 ### SCAIL
 
@@ -81,6 +80,6 @@
 
 | Recommended GPU          | VRAM  | RAM   |
 |--------------------------|-------|-------|
-| L40S, RTX 6000 Ada, L40  | 40Gb | 105Gb | 
+| L40S, RTX 6000 (Ada)     | 40Gb | 105Gb | 
 
 

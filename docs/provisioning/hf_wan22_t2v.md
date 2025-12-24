@@ -4,7 +4,8 @@
 - [Wan-AI](https://huggingface.co/Wan-AI)
 - [GGUF](https://huggingface.co/QuantStack)
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
-- [Lightning lightx2v](https://huggingface.co/lightx2v)
+- [lightx2v](https://huggingface.co/lightx2v)
+- [lightx2v distill loras](https://huggingface.co/lightx2v/Wan2.2-Distill-Loras/tree/main)
 - [Fun Reward](https://huggingface.co/alibaba-pai/Wan2.2-Fun-Reward-LoRAs)
 
 ## Diffusion_models
@@ -107,6 +108,18 @@ hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2
 --local-dir /workspace/ComfyUI/models/loras/
 
 hf download lightx2v/Wan2.2-Lightning Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V2.0/low_noise_model.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+```
+
+## Loras Lightning lightx2v distill
+
+### 1217
+
+```bash
+hf download lightx2v/Wan2.2-Distill-Loras wan2.2_t2v_A14b_high_noise_lora_rank64_lightx2v_4step_1217.safetensors \
+--local-dir /workspace/ComfyUI/models/loras/
+
+hf download lightx2v/Wan2.2-Distill-Loras wan2.2_t2v_A14b_low_noise_lora_rank64_lightx2v_4step_1217.safetensors \
 --local-dir /workspace/ComfyUI/models/loras/
 ```
 

@@ -1,6 +1,6 @@
-# 🚀 Run WAN 2.x with ComfyUI with provisioning — RunPod
-
 [![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan)](https://hub.docker.com/r/ls250824/run-comfyui-wan)
+
+# 🚀 Run WAN 2.x with ComfyUI with provisioning — RunPod
 
 ![Pod running on L40S native comfyUI](images/runpod.jpg)
 
@@ -33,16 +33,10 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 [**👉 One-click Deploy on Runpod WAN SCAIL VI2V (lightx2v)**](https://console.runpod.io/deploy?template=9i0lkwau54&ref=se4tkc5o)
 
-## Tutorial
+### Documentation
 
-- [Specific for these templates](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial.md)
-
-### Workflows
-
-- Open from ComfyUI's interface on the left
-- View/Download from [Workflow examples](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_workflows/)
-
-![Included t2v wrapper as easy example to work on A40/L40S](images/ai-generated.jpg)
+- [Image & tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN)
+- [Provisioning](docs/ComfyUI_WAN_provisioning.md)
 
 ## 🐳 Docker Images
 
@@ -54,18 +48,7 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ### Custom Image
 
-```bash
-docker pull ls250824/run-comfyui-wan:<version>
-```
-
-## 📚 Documentation
-
-- [💻 Hardware Requirements](docs/ComfyUI_WAN_hardware.md)
-- [🧩 Pre-Installed Custom Nodes](docs/ComfyUI_WAN_custom_nodes.md)
-- [📚 Resources](docs/ComfyUI_WAN_resources.md)
-- [📦 Model provisioning](docs/ComfyUI_WAN_provisioning.md)
-- [⚙️ Image setup](docs/ComfyUI_WAN_image_setup.md)
-- [⚙️ Environment variables](docs/ComfyUI_WAN_configuration.md)
+docker pull ls250824/run-comfyui-wan:<[![Docker Image Version](https://img.shields.io/docker/v/ls250824/run-comfyui-wan)](https://hub.docker.com/r/ls250824/run-comfyui-wan)>
 
 ## 🛠️ Build & Push Docker Image (Optional)
 

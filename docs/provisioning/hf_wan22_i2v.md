@@ -6,6 +6,7 @@
 - [Kijai](https://huggingface.co/Kijai/WanVideo_comfy)
 - [Lightx2v](https://huggingface.co/lightx2v/)
 - [Lightx2v Distill](https://huggingface.co/lightx2v/Wan2.2-Distill-Loras)
+- [Stable video infinity](https://huggingface.co/vita-video-gen/svi-model)
 
 ## Diffusion model
 
@@ -84,6 +85,18 @@ hf download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/clip_vision/clip_vi
 ```bash
 hf download ricecake/wan21NSFWClipVisionH_v10 wan21NSFWClipVisionH_v10.safetensors \ 
 --local-dir=/workspace/ComfyUI/models/clip_vision
+```
+
+## Loras Stable video infinity (SVI)
+
+### 2.0
+
+```bash
+hf download vita-video-gen/svi-model version-2.0/SVI_Wan2.2-I2V-A14B_high_noise_lora_v2.0.safetensors \
+--local-dir=/workspace/ComfyUI/models/loras/
+
+hf download vita-video-gen/svi-model version-2.0/SVI_Wan2.2-I2V-A14B_low_noise_lora_v2.0.safetensors  \
+--local-dir=/workspace/ComfyUI/models/loras/
 ```
 
 ## Loras Lightning lightx2v
