@@ -1,18 +1,26 @@
 # syntax=docker/dockerfile:1.7
 # run-comfyui-wan
-FROM ls250824/comfyui-runtime:18122025
+FROM ls250824/comfyui-runtime:24122025
 
 # Set Working Directory
-WORKDIR /
+WORKDIR /ComfyUI
 
 # Copy ComfyUI configurations
-COPY --chmod=644 configuration/comfy.settings.json /ComfyUI/user/default/comfy.settings.json
+COPY --chmod=644 configuration/comfy.settings.json user/default/comfy.settings.json
+
+# Copy ComfyUI ini settings
+COPY --chmod=644 configuration/config.ini user/__manager/config.ini
+
+# Adding requirements internal comfyui-manager
+RUN --mount=type=cache,target=/root/.cache/pip \
+    python -m pip install --no-cache-dir --root-user-action ignore -c /constraints.txt \
+    matrix-nio \
+    -r manager_requirements.txt
 
 # Clone
 WORKDIR /ComfyUI/custom_nodes
 
 RUN --mount=type=cache,target=/root/.cache/git \
-    git clone --depth=1 --filter=blob:none https://github.com/ltdrdata/ComfyUI-Manager.git && \
     git clone --depth=1 --filter=blob:none https://github.com/rgthree/rgthree-comfy.git && \
     git clone --depth=1 --filter=blob:none https://github.com/liusida/ComfyUI-Login.git && \
     git clone --depth=1 --filter=blob:none https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
@@ -58,6 +66,9 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-SCAIL-Pose.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-WanAnimatePreprocess.git
 
+# Outputlists-combiner working version
+# RUN cd ComfyUI-outputlists-combiner && git fetch --unshallow && git checkout be17d247db29d555df4bc1c776b2b9289f7f42ba
+
 # triton-windows error
 RUN cd ComfyUI-RMBG && git fetch --unshallow && git checkout 9ecda2e689d72298b4dca39403a85d13e53ea659
 
@@ -80,7 +91,6 @@ WORKDIR /ComfyUI/custom_nodes
 RUN --mount=type=cache,target=/root/.cache/pip \
   python -m pip install --no-cache-dir --root-user-action ignore -c /constraints.txt \
     diffusers psutil \
-	-r ComfyUI-Manager/requirements.txt \
     -r ComfyUI-Login/requirements.txt \
     -r ComfyUI-VideoHelperSuite/requirements.txt \
     -r ComfyUI-KJNodes/requirements.txt \
@@ -98,6 +108,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 	-r ComfyUI-SCAIL-Pose/requirements.txt \
 	-r ComfyUI-WanAnimatePreprocess/requirements.txt
 
+# Activate SAM3
 WORKDIR /ComfyUI/custom_nodes/ComfyUI-SAM3
 RUN python install.py
 
@@ -132,8 +143,8 @@ WORKDIR /workspace
 EXPOSE 8188 9000
 
 # Labels
-LABEL org.opencontainers.image.title="ComfyUI 0.5.1 for WAN 2.x inference" \
-      org.opencontainers.image.description="ComfyUI + flash-attn + sageattention + onnxruntime-gpu + torch_generic_nms + code-server + civitai downloader + huggingface_hub + custom_nodes" \
+LABEL org.opencontainers.image.title="ComfyUI 0.6.0 for WAN 2.x inference" \
+      org.opencontainers.image.description="ComfyUI + internal manager + flash-attn + sageattention + onnxruntime-gpu + torch_generic_nms + code-server + civitai downloader + huggingface_hub + custom_nodes" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
       org.opencontainers.image.licenses="MIT"
 

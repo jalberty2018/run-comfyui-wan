@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "ℹ️ Pod run-comfyui-wan started"
-echo "ℹ️ Wait until the message 🎉 Provisioning done, ready to create AI content 🎉. is displayed"
+echo "ℹ️ Wait until the message 🎉 Provisioning done, ready to create AI content 🎉 is displayed"
 
 # Enable SSH if PUBLIC_KEY is set
 if [[ -n "$PUBLIC_KEY" ]]; then
@@ -66,12 +66,12 @@ fi
 
 # Start code-server (HTTP port 9000) 
 if [[ "$HAS_GPU" -eq 1 || "$HAS_GPU_RUNPOD" -eq 1 ]]; then    
-    echo "✅ Code-Server service starting"
+    echo "▶️ Code-Server service starting"
 	
     if [[ -n "$PASSWORD" ]]; then
         code-server /workspace --auth password --disable-update-check --disable-telemetry --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     else
-        echo "⚠️ PASSWORD is not set as an environment. password created in /root/.config/code-server/config.yaml"
+        echo "⚠️ PASSWORD is not set as an environment. Password file: /root/.config/code-server/config.yaml"
         code-server /workspace --disable-telemetry --disable-update-check --host 0.0.0.0 --bind-addr 0.0.0.0:9000 &
     fi
 	
@@ -104,9 +104,9 @@ fi
 HAS_COMFYUI=0
 
 if [[ "$HAS_CUDA" -eq 1 ]]; then  	
-    echo "✅ ComfyUI service starting (CUDA available)"
+   	echo "▶️ ComfyUI service starting (CUDA available)"
 	    
-    python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen --preview-method latent2rgb} &
+    python3 /workspace/ComfyUI/main.py ${COMFYUI_EXTRA_ARGUMENTS:---listen --enable-manager --preview-method latent2rgb} &
 
     # Wait until ComfyUI is ready
     MAX_TRIES=40

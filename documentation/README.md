@@ -37,6 +37,7 @@ hf auth login --token xxxxx
 export CIVITAI_TOKEN="xxxxx"
 civitai "<download link>" /workspace/ComfyUI/models/diffusion_models
 civitai "<download link>" /workspace/ComfyUI/models/loras
+civitai --file batch.txt
 ```
 
 ## 7z Compression  
