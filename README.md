@@ -4,7 +4,7 @@
 
 ![Pod running on L40S native comfyUI](images/runpod.jpg)
 
-A streamlined and automated environment for running **ComfyUI** with **WAN 2.x video models**, optimized for use on [RunPod.io](https://runpod.io?ref=se4tkc5o).
+A streamlined and automated environment for running **ComfyUI** with **WAN 2.x video models**, optimized for use on RunPod
 
 ## 🔧 Features
 
@@ -35,8 +35,9 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ### Documentation
 
-- [Image & tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN)
-- [Provisioning](docs/ComfyUI_WAN_provisioning.md)
+- [Start](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN)
+- [Tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial)
+- [Provisioning examples](docs/ComfyUI_WAN_provisioning.md)
 
 ## 🐳 Docker Images
 
