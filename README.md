@@ -4,6 +4,8 @@
 
 ![Pod running on L40S native comfyUI](images/runpod.jpg)
 
+![Workflow i2v SVI 2.0 PRO](images/ai-generated.jpg)
+
 A streamlined and automated environment for running **ComfyUI** with **WAN 2.x video models**, optimized for use on RunPod
 
 ## 🔧 Features
@@ -27,7 +29,7 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 [**👉 One-click Deploy on RunPod WAN 2.2 t2v (lightx2v)**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
-[**👉 One-click Deploy on RunPod WAN 2.2 i2v (lightx2v)**](https://console.runpod.io/deploy?template=moem21s8xb&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2 i2v + SVI 2.0 PRO (lightx2v)**](https://console.runpod.io/deploy?template=moem21s8xb&ref=se4tkc5o)
 
 [**👉 One-click Deploy on RunPod WAN 2.2 animate (lightx2v)**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 

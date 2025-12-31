@@ -89,13 +89,13 @@ hf download ricecake/wan21NSFWClipVisionH_v10 wan21NSFWClipVisionH_v10.safetenso
 
 ## Loras Stable video infinity (SVI)
 
-### 2.0
+### 2.0 PRO
 
 ```bash
-hf download vita-video-gen/svi-model version-2.0/SVI_Wan2.2-I2V-A14B_high_noise_lora_v2.0.safetensors \
+hf download Kijai/WanVideo_comfy LoRAs/Stable-Video-Infinity/v2.0/SVI_v2_PRO_Wan2.2-I2V-A14B_HIGH_lora_rank_128_fp16.safetensors \
 --local-dir=/workspace/ComfyUI/models/loras/
 
-hf download vita-video-gen/svi-model version-2.0/SVI_Wan2.2-I2V-A14B_low_noise_lora_v2.0.safetensors  \
+hf download Kijai/WanVideo_comfy LoRAs/Stable-Video-Infinity/v2.0/SVI_v2_PRO_Wan2.2-I2V-A14B_LOW_lora_rank_128_fp16.safetensors \
 --local-dir=/workspace/ComfyUI/models/loras/
 ```
 
@@ -138,3 +138,9 @@ hf download lightx2v/Wan2.2-Distill-Loras wan2.2_i2v_A14b_low_noise_lora_rank64_
 --local-dir=/workspace/ComfyUI/models/loras/
 ```
 
+#### 1030
+
+```bash
+hf download Kijai/WanVideo_comfy LoRAs/Wan22_Lightx2v/Wan_2_2_I2V_A14B_HIGH_lightx2v_4step_lora_v1030_rank_64_bf16.safetensors \
+--local-dir=/workspace/ComfyUI/models/loras/
+```
