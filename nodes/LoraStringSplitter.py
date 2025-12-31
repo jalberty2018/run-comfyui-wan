@@ -27,17 +27,22 @@ class LoraStringSplitter:
         lora1,strength1,lora2,strength2,rest...
         """
 
-        # Split op komma
         parts = [p.strip() for p in input_string.split(",")]
 
-        # Veiligheidsnet (vaste indices)
-        lora_high = parts[0] if len(parts) > 0 else "none"
+        lora_high = parts[0] if len(parts) > 0 else ""
         strength_high = float(parts[1]) if len(parts) > 1 and parts[1] else 0.0
-        lora_low = parts[2] if len(parts) > 2 else "none"
+        lora_low = parts[2] if len(parts) > 2 else ""
         strength_low = float(parts[3]) if len(parts) > 3 and parts[3] else 0.0
 
-        # Alles na index 3 is text (kan zelf komma’s bevatten)
+        # Alles na index 3 is text
         text = ",".join(parts[4:]).strip() if len(parts) > 4 else ""
+
+        # Normaliseer "none" → empty string
+        if lora_high.lower() == "none":
+            lora_high = ""
+
+        if lora_low.lower() == "none":
+            lora_low = ""
 
         return (
             lora_high,
@@ -53,5 +58,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "LoraStringSplitter": "LoRA CSV → 2x LoRA/strenght + Text"
+    "LoraStringSplitter": "LoRA CSV → 2× LoRA/Strength + Text"
 }
