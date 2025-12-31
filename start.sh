@@ -473,7 +473,7 @@ if [[ "$HAS_PROVISIONING" -eq 1 ]]; then
     if [[ -n "$PASSWORD" ]]; then
 		echo "ℹ️ Code-Server login use PASSWORD set as env"
 	else 
-		echo "⚠️ Code-Server password not provided via env (PASSWORD) use generated."
+        echo "⚠️ Code-Server login use the logged password"
 		cat /root/.config/code-server/config.yaml        
     fi	
 else
@@ -486,7 +486,7 @@ else
     if [[ "$HAS_CUDA" -eq 0 ]]; then
         echo "❌ Pytorch CUDA driver error/mismatch/not available"
         if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then
-            echo "⚠️ [SOLUTION] Deploy pod on another region ⚠️"
+            echo "⚠️ [SOLUTION] Deploy pod on another region then $RUNPOD_DC_ID ⚠️"
         fi
     fi
 

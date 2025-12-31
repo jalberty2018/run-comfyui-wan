@@ -18,6 +18,7 @@
 - [Environment variables](docs/ComfyUI_WAN_configuration.md)
 - [Hardware Requirements](docs/ComfyUI_WAN_hardware.md)
 - [Tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial/)
+- [Update](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_update/)
 
 #### **Huggingface**  
 

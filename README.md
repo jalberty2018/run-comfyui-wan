@@ -35,9 +35,9 @@ A streamlined and automated environment for running **ComfyUI** with **WAN 2.x v
 
 ### Documentation
 
-- [Start](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN)
-- [Tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial)
-- [Provisioning examples](docs/ComfyUI_WAN_provisioning.md)
+- [⚙️ Start](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN)
+- [📚 Tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial)
+- [⚙️ Provisioning examples](docs/ComfyUI_WAN_provisioning.md)
 
 ## 🐳 Docker Images
 

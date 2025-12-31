@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.7
 # run-comfyui-wan
-FROM ls250824/comfyui-runtime:24122025
+FROM ls250824/comfyui-runtime:31122025
 
 # Set Working Directory
 WORKDIR /ComfyUI
@@ -64,7 +64,9 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/geroldmeisinger/ComfyUI-outputlists-combiner.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/lrzjason/Comfyui-LatentUtils.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-SCAIL-Pose.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-WanAnimatePreprocess.git
+	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-WanAnimatePreprocess.git && \
+    git clone --depth=1 --filter=blob:none https://github.com/shootthesound/comfyUI-LongLook.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterI2Vadvanced.git
 
 # Outputlists-combiner working version
 # RUN cd ComfyUI-outputlists-combiner && git fetch --unshallow && git checkout be17d247db29d555df4bc1c776b2b9289f7f42ba
@@ -112,6 +114,10 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 WORKDIR /ComfyUI/custom_nodes/ComfyUI-SAM3
 RUN python install.py
 
+# Own custom_nodes (local)
+WORKDIR /ComfyUI/custom_nodes
+COPY --chmod=644 nodes/ ComfyUI-JANodes
+
 # Set Working Directory
 WORKDIR /
 
@@ -143,7 +149,7 @@ WORKDIR /workspace
 EXPOSE 8188 9000
 
 # Labels
-LABEL org.opencontainers.image.title="ComfyUI 0.6.0 for WAN 2.x inference" \
+LABEL org.opencontainers.image.title="ComfyUI 0.7.0 for WAN 2.x inference" \
       org.opencontainers.image.description="ComfyUI + internal manager + flash-attn + sageattention + onnxruntime-gpu + torch_generic_nms + code-server + civitai downloader + huggingface_hub + custom_nodes" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
       org.opencontainers.image.licenses="MIT"

@@ -22,14 +22,14 @@
 
 ### Deployment/Usage information
 
-- All available templates on runpod.io are tested on a L40S/A40.
+- All available templates on runpod are tested on a L40S /RTX A6000 (Ada) / A40.
 - Avoid regions **US-TX-4** — they often fail to download or run the image (PyTorch CUDA errors).
 
 ### Runpod.io templates
 
 [**👉 One-click Deploy on RunPod WAN 2.2 t2v (lightx2v)**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
-[**👉 One-click Deploy on RunPod WAN 2.2 i2v (lightx2v)**](https://console.runpod.io/deploy?template=moem21s8xb&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2 i2v + longvideo (lightx2v)**](https://console.runpod.io/deploy?template=moem21s8xb&ref=se4tkc5o)
 
 [**👉 One-click Deploy on RunPod WAN 2.2 animate (lightx2v)**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 
