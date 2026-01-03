@@ -2,7 +2,7 @@
 
 ## Features
 
-- Automatic model and LoRA downloads via environment variables.
+- Automatic model and LoRA provisioning via environment variables.
 - Supports advanced workflows for **video generation** and **enhancement** using pre-installed custom nodes.
 - Compatible with high-performance NVIDIA GPUs (CUDA 12.8).
 - Compiled attentions and GPU accelerations.
@@ -25,11 +25,15 @@
 - All available templates on runpod are tested on a L40S / RTX A6000 Ada / A40.
 - Avoid regions **US-TX-4** — they often fail to download or run the image (PyTorch CUDA errors).
 
-### Runpod.io templates
+### Runpod templates
+
+- Use L40S or RTX6000 Ada as GPU.
+- Specific models/loras/workflows for the templates are downloaded when the pod starts.
+- See the [tutorial](https://awesome-comfyui.rozenlaan.site/ComfyUI_WAN_tutorial/) for the available features.
 
 [**👉 One-click Deploy on RunPod WAN 2.2 t2v (lightx2v)**](https://console.runpod.io/deploy?template=qvozvvb1xd&ref=se4tkc5o)
 
-[**👉 One-click Deploy on RunPod WAN 2.2 i2v + SVI 2.0 PRO (lightx2v)**](https://console.runpod.io/deploy?template=moem21s8xb&ref=se4tkc5o)
+[**👉 One-click Deploy on RunPod WAN 2.2 i2v + SVI v2 PRO (lightx2v)**](https://console.runpod.io/deploy?template=moem21s8xb&ref=se4tkc5o)
 
 [**👉 One-click Deploy on RunPod WAN 2.2 animate (lightx2v)**](https://console.runpod.io/deploy?template=tp7gj0khyo&ref=se4tkc5o)
 

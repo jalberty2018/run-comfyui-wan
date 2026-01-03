@@ -22,7 +22,7 @@ fi
 
 # Move necessary files to workspace
 echo "ℹ️ [Moving necessary files to workspace] enabling rebooting pod without data loss"
-for script in comfyui-on-workspace.sh readme-on-workspace.sh test-on-workspace.sh docs-on-workspace.sh; do
+for script in comfyui-on-workspace.sh files-on-workspace.sh test-on-workspace.sh docs-on-workspace.sh; do
     if [ -f "/$script" ]; then
         echo "Executing $script..."
         "/$script"
@@ -349,8 +349,9 @@ if [[ "$HAS_COMFYUI" -eq 1 ]]; then
     # categorie: NAME:MAP	
     CATEGORIES_CIVITAI=(
        "LORA_URL:loras"
+	   "UNET_URL:diffusion_models"
     )
-
+	
     for cat in "${CATEGORIES_CIVITAI[@]}"; do
       IFS=":" read -r NAME DIR <<< "$cat"
 	
