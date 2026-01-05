@@ -116,7 +116,7 @@ RUN python install.py
 
 # Own custom_nodes (local)
 WORKDIR /ComfyUI/custom_nodes
-COPY --chmod=644 nodes/ ComfyUI-JANodes
+COPY --chmod=755 nodes/ ComfyUI-JANodes
 
 # Set Working Directory
 WORKDIR /

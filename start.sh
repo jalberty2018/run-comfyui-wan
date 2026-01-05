@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "ℹ️ Pod run-comfyui-wan started"
+echo "▶️ Pod run-comfyui-wan started"
 echo "ℹ️ Wait until the message 🎉 Provisioning done, ready to create AI content 🎉 is displayed"
 
 # Enable SSH if PUBLIC_KEY is set
@@ -186,21 +186,43 @@ download_model_CIVITAI() {
     local url_var="$1"
     local dest_dir="$2"
 
+    # Geen URL → niets doen
     if [[ -z "${!url_var}" ]]; then
         return 0
     fi
 
+    # Token check
     if [[ -z "$CIVITAI_TOKEN" ]]; then
-        echo "⚠️ ERROR: CIVITAI_TOKEN is not set as an environment variable '$url_var' not downloaded"
+        echo "⚠️ ERROR: CIVITAI_TOKEN is not set as an environment variable – '${!url_var}' not downloaded"
         return 1
     fi
 
     local target="/workspace/ComfyUI/models/$dest_dir"
     mkdir -p "$target"
 
-    echo "ℹ️ [DOWNLOAD] Fetching ${!url_var} → $target ..."
-    civitai --quit "${!url_var}" "$target" || \
-        echo "⚠️ Failed to download ${!url_var}"
+    local url="${!url_var}"
+
+    # Probeer bestandsnaam te bepalen
+    local filename
+    filename="$(basename "$(printf '%s\n' "$url" | sed 's/[?#].*$//')")"
+
+    # Fallback: onbekende naam (bij API download)
+    if [[ "$filename" == "download" || "$filename" == "models" || -z "$filename" ]]; then
+        filename=""
+    fi
+
+    # Bestaat het bestand al?
+    if [[ -n "$filename" ]] && compgen -G "$target/$filename*" > /dev/null; then
+        echo "✅ [SKIP] $filename already exists in $target"
+        return 0
+    fi
+
+    echo "ℹ️ [DOWNLOAD] Fetching $url → $target ..."
+    civitai --quit "$url" "$target" || {
+        echo "⚠️ Failed to download $url"
+        return 1
+    }
+
     sleep 1
     return 0
 }
