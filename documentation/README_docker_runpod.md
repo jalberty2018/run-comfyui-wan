@@ -23,7 +23,7 @@
 ### Deployment/Usage information
 
 - All available templates on runpod are tested on a L40S / RTX A6000 Ada / A40.
-- Avoid regions **US-TX-4** — they often fail to download or run the image (PyTorch CUDA errors).
+- Avoid pods without region they are unstable.
 
 ### Runpod templates
 

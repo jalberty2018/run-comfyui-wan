@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.7
 # run-comfyui-wan
-FROM ls250824/comfyui-runtime:31122025
+FROM ls250824/comfyui-runtime:07012026
 
 # Set Working Directory
 WORKDIR /ComfyUI
@@ -66,13 +66,14 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-SCAIL-Pose.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-WanAnimatePreprocess.git && \
     git clone --depth=1 --filter=blob:none https://github.com/shootthesound/comfyUI-LongLook.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterI2Vadvanced.git
+	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterI2Vadvanced.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/SeanScripts/ComfyUI-Unload-Model.git
 
 # Outputlists-combiner working version
 # RUN cd ComfyUI-outputlists-combiner && git fetch --unshallow && git checkout be17d247db29d555df4bc1c776b2b9289f7f42ba
 
 # triton-windows error
-RUN cd ComfyUI-RMBG && git fetch --unshallow && git checkout 9ecda2e689d72298b4dca39403a85d13e53ea659
+# RUN cd ComfyUI-RMBG && git fetch --unshallow && git checkout 9ecda2e689d72298b4dca39403a85d13e53ea659
 
 # Rewrite any top-level CPU ORT refs to GPU ORT
 RUN set -eux; \
@@ -149,7 +150,7 @@ WORKDIR /workspace
 EXPOSE 8188 9000
 
 # Labels
-LABEL org.opencontainers.image.title="ComfyUI 0.7.0 for WAN 2.x inference" \
+LABEL org.opencontainers.image.title="ComfyUI 0.8.0 for WAN 2.x inference" \
       org.opencontainers.image.description="ComfyUI + internal manager + flash-attn + sageattention + onnxruntime-gpu + torch_generic_nms + code-server + civitai downloader + huggingface_hub + custom_nodes" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-comfyui-wan" \
       org.opencontainers.image.licenses="MIT"

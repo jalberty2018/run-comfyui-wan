@@ -193,6 +193,29 @@ WORKFLOW5=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-wrapper-i2v-SVI-2
 WORKFLOW6=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-SVI-20-pro-pod.json
 ```
 
+#### Private fp8
+
+```bash
+CIVITAI_TOKEN="{{ RUNPOD_SECRET_CivitAI_API_KEY }}"
+HF_TOKEN="{{ RUNPOD_SECRET_HF_TOKEN_WRITE }}"
+PASSWORD="{{ RUNPOD_SECRET_CODE-SERVER-NEW }}"
+HF_MODEL_DIFFUSION_MODELS1=lightx2v/Wan2.2-Distill-Models
+HF_MODEL_DIFFUSION_MODELS_FILENAME1=wan2.2_i2v_A14b_high_noise_scaled_fp8_e4m3_lightx2v_4step_comfyui.safetensors
+HF_MODEL_DIFFUSION_MODELS2=lightx2v/Wan2.2-Distill-Models
+HF_MODEL_DIFFUSION_MODELS_FILENAME2=wan2.2_i2v_A14b_low_noise_scaled_fp8_e4m3_lightx2v_4step_comfyui.safetensors
+HF_MODEL_VAE1=Comfy-Org/Wan_2.1_ComfyUI_repackaged
+HF_MODEL_VAE_FILENAME1=split_files/vae/wan_2.1_vae.safetensors
+HF_MODEL_TEXT_ENCODERS1=Comfy-Org/Wan_2.2_ComfyUI_Repackaged
+HF_MODEL_TEXT_ENCODERS_FILENAME1=split_files/text_encoders/umt5_xxl_fp16.safetensors
+HF_MODEL_LORA3=Kijai/WanVideo_comfy
+HF_MODEL_LORA_FILENAME3=LoRAs/Stable-Video-Infinity/v2.0/SVI_v2_PRO_Wan2.2-I2V-A14B_HIGH_lora_rank_128_fp16.safetensors
+HF_MODEL_LORA4=Kijai/WanVideo_comfy
+HF_MODEL_LORA_FILENAME4=LoRAs/Stable-Video-Infinity/v2.0/SVI_v2_PRO_Wan2.2-I2V-A14B_LOW_lora_rank_128_fp16.safetensors
+HF_MODEL_LORA5=Kijai/WanVideo_comfy
+HF_MODEL_LORA_FILENAME5=LoRAs/Wan22_Lightx2v/Wan_2_2_I2V_A14B_HIGH_lightx2v_4step_lora_v1030_rank_64_bf16.safetensors
+WORKFLOW1=https://awesome-comfyui.rozenlaan.site/pod/wan/WAN22-i2v-SVI-20-pro-pod.json
+```
+
 ### animate (lightning)
 
 #### Public
