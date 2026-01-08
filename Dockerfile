@@ -28,7 +28,6 @@ RUN --mount=type=cache,target=/root/.cache/git \
     git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-KJNodes.git && \
     git clone --depth=1 --filter=blob:none https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-WanVideoWrapper.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/ShmuelRonen/ComfyUI-VideoUpscale_WithModel && \
 	git clone --depth=1 --filter=blob:none https://github.com/ClownsharkBatwing/RES4LYF.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/BlenderNeko/ComfyUI_Noise.git && \
@@ -45,12 +44,11 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/liusida/ComfyUI-AutoCropFaces.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/DecartAI/Lucy-Edit-ComfyUI.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/GizmoR13/PG-Nodes.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/Kishor900/comfyui-wanv2v-video-stitcher.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/vrgamegirl19/comfyui-vrgamedevgirl.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/BigStationW/ComfyUi-Scale-Image-to-Total-Pixels-Advanced && \
 	git clone --depth=1 --filter=blob:none https://github.com/x3bits/ComfyUI-Power-Flow.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/9nate-drake/Comfyui-SecNodes.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/IAMCCS/IAMCCS-nodes.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/jalberty2018/IAMCCS-nodes.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/cmeka/ComfyUI-WanMoEScheduler.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/wallen0322/ComfyUI-WanAnimate-Enhancer.git  && \
 	git clone --depth=1 --filter=blob:none https://github.com/wallen0322/ComfyUI-Wan22FMLF.git && \
@@ -67,7 +65,8 @@ RUN --mount=type=cache,target=/root/.cache/git \
 	git clone --depth=1 --filter=blob:none https://github.com/kijai/ComfyUI-WanAnimatePreprocess.git && \
     git clone --depth=1 --filter=blob:none https://github.com/shootthesound/comfyUI-LongLook.git && \
 	git clone --depth=1 --filter=blob:none https://github.com/princepainter/ComfyUI-PainterI2Vadvanced.git && \
-	git clone --depth=1 --filter=blob:none https://github.com/SeanScripts/ComfyUI-Unload-Model.git
+	git clone --depth=1 --filter=blob:none https://github.com/SeanScripts/ComfyUI-Unload-Model.git && \
+	git clone --depth=1 --filter=blob:none https://github.com/Windecay/ComfyUI_Dynamic-RAMCache.git
 
 # Outputlists-combiner working version
 # RUN cd ComfyUI-outputlists-combiner && git fetch --unshallow && git checkout be17d247db29d555df4bc1c776b2b9289f7f42ba
@@ -86,7 +85,7 @@ RUN set -eux; \
 # VideoWrapper working with TripleKSampler -> e2333d0f04e7292e07d504cb824256f1ca8e63e4 (04dec25)
 
 # IAMCSS V1 used for animate workflow.
-RUN cd IAMCCS-nodes && git checkout 8722d908cdc042baa74bd46549ec32876e234411
+# RUN cd IAMCCS-nodes && git checkout 8722d908cdc042baa74bd46549ec32876e234411
 
 # Install Dependencies for Cloned Repositories
 WORKDIR /ComfyUI/custom_nodes
